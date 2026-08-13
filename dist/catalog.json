@@ -1,0 +1,189 @@
+{
+  "entries": [
+    {
+      "category": "效率规划",
+      "id": "define-goal",
+      "install": {
+        "destination": "%USERPROFILE%/.codex/skills/define-goal",
+        "mode": "copy-source-directory",
+        "preflight": [
+          "verify-catalog-digest",
+          "verify-source-commit",
+          "verify-license",
+          "scan-files",
+          "show-source-and-risk",
+          "confirm-user",
+          "backup-existing"
+        ],
+        "requires_auth": false
+      },
+      "license": {
+        "scope": "skill-directory",
+        "spdx": "Apache-2.0",
+        "verified_at": "2026-08-13"
+      },
+      "name": "目标澄清助手",
+      "publisher": {
+        "kind": "official",
+        "name": "OpenAI",
+        "url": "https://github.com/openai"
+      },
+      "review": {
+        "evidence": "docs/reviews/initial-openai-skills.md",
+        "reviewed_at": "2026-08-13T08:30:00Z",
+        "reviewer": "暴喵市场维护者（MVP）",
+        "status": "approved"
+      },
+      "risk": {
+        "capabilities": [
+          "none"
+        ],
+        "has_executable_files": false,
+        "level": "low",
+        "notes_zh": "纯提示词工作流，无脚本、网络调用或凭证要求。"
+      },
+      "schema_version": 1,
+      "source": {
+        "commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/define-goal/LICENSE.txt",
+        "path": "skills/.curated/define-goal",
+        "repository": "https://github.com/openai/skills",
+        "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/define-goal/SKILL.md"
+      },
+      "summary_zh": "把模糊想法整理成可验证的目标、范围和停止条件，适合项目启动、排障和多人协作前对齐。",
+      "tags": [
+        "目标",
+        "规划",
+        "验收",
+        "协作"
+      ]
+    },
+    {
+      "category": "文档处理",
+      "id": "pdf",
+      "install": {
+        "destination": "%USERPROFILE%/.codex/skills/pdf",
+        "mode": "copy-source-directory",
+        "preflight": [
+          "verify-catalog-digest",
+          "verify-source-commit",
+          "verify-license",
+          "scan-files",
+          "show-source-and-risk",
+          "confirm-user",
+          "backup-existing"
+        ],
+        "requires_auth": false
+      },
+      "license": {
+        "scope": "skill-directory",
+        "spdx": "Apache-2.0",
+        "verified_at": "2026-08-13"
+      },
+      "name": "PDF 文档处理",
+      "publisher": {
+        "kind": "official",
+        "name": "OpenAI",
+        "url": "https://github.com/openai"
+      },
+      "review": {
+        "evidence": "docs/reviews/initial-openai-skills.md",
+        "reviewed_at": "2026-08-13T08:30:00Z",
+        "reviewer": "暴喵市场维护者（MVP）",
+        "status": "approved"
+      },
+      "risk": {
+        "capabilities": [
+          "filesystem-read",
+          "filesystem-write",
+          "shell"
+        ],
+        "has_executable_files": false,
+        "level": "medium",
+        "notes_zh": "Skill 本身不含脚本；工作流会读写 PDF，并可能调用本机 Poppler/Python 工具。"
+      },
+      "schema_version": 1,
+      "source": {
+        "commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf/LICENSE.txt",
+        "path": "skills/.curated/pdf",
+        "repository": "https://github.com/openai/skills",
+        "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf/SKILL.md"
+      },
+      "summary_zh": "读取、创建和检查 PDF，强调先渲染页面再确认排版，适合合同、报告与资料归档。",
+      "tags": [
+        "PDF",
+        "文档",
+        "排版",
+        "质检"
+      ]
+    },
+    {
+      "category": "安全治理",
+      "id": "security-threat-model",
+      "install": {
+        "destination": "%USERPROFILE%/.codex/skills/security-threat-model",
+        "mode": "copy-source-directory",
+        "preflight": [
+          "verify-catalog-digest",
+          "verify-source-commit",
+          "verify-license",
+          "scan-files",
+          "show-source-and-risk",
+          "confirm-user",
+          "backup-existing"
+        ],
+        "requires_auth": false
+      },
+      "license": {
+        "scope": "skill-directory",
+        "spdx": "Apache-2.0",
+        "verified_at": "2026-08-13"
+      },
+      "name": "代码库威胁建模",
+      "publisher": {
+        "kind": "official",
+        "name": "OpenAI",
+        "url": "https://github.com/openai"
+      },
+      "review": {
+        "evidence": "docs/reviews/initial-openai-skills.md",
+        "reviewed_at": "2026-08-13T08:30:00Z",
+        "reviewer": "暴喵市场维护者（MVP）",
+        "status": "approved"
+      },
+      "risk": {
+        "capabilities": [
+          "filesystem-read",
+          "filesystem-write"
+        ],
+        "has_executable_files": false,
+        "level": "medium",
+        "notes_zh": "Skill 本身不含脚本；执行时需要读取代码库，并按用户要求写出威胁模型报告。"
+      },
+      "schema_version": 1,
+      "source": {
+        "commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/LICENSE.txt",
+        "path": "skills/.curated/security-threat-model",
+        "repository": "https://github.com/openai/skills",
+        "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/SKILL.md"
+      },
+      "summary_zh": "基于代码库证据梳理资产、边界、攻击路径和缓解措施，适合上线前安全评审。",
+      "tags": [
+        "安全",
+        "威胁建模",
+        "代码审查",
+        "上线"
+      ]
+    }
+  ],
+  "marketplace": {
+    "client_contract": "docs/client-contract.md",
+    "generated_at": "2026-08-13T08:00:00Z",
+    "id": "baomiao-codex-skills",
+    "name_zh": "暴喵 Codex Skills 市场",
+    "review_policy": "human-approved-only"
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,22 @@
+{
+  "name": "define-goal",
+  "version": "1.0.0",
+  "description": "把模糊想法整理成可验证、可验收的目标。",
+  "author": {
+    "name": "OpenAI",
+    "url": "https://github.com/openai"
+  },
+  "repository": "https://github.com/openai/skills",
+  "homepage": "https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/define-goal",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "目标澄清助手",
+    "shortDescription": "把想法变成可验证的目标与验收条件。",
+    "longDescription": "固定来源于 OpenAI Skills；适合项目启动、排障或协作前明确范围与停止条件。",
+    "developerName": "OpenAI",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": ["帮我把这个想法整理成可验收的目标。"]
+  }
+}

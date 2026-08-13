@@ -1,0 +1,22 @@
+{
+  "name": "security-threat-model",
+  "version": "1.0.0",
+  "description": "基于代码库证据生成威胁模型与缓解建议。",
+  "author": {
+    "name": "OpenAI",
+    "url": "https://github.com/openai"
+  },
+  "repository": "https://github.com/openai/skills",
+  "homepage": "https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "代码库威胁建模",
+    "shortDescription": "梳理资产、边界、攻击路径与缓解措施。",
+    "longDescription": "固定来源于 OpenAI Skills；基于代码证据形成上线前可审阅的安全威胁模型。",
+    "developerName": "OpenAI",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": ["为当前代码库生成一份证据充分的威胁模型。"]
+  }
+}

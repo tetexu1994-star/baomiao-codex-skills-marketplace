@@ -1,0 +1,22 @@
+{
+  "name": "pdf",
+  "version": "1.0.0",
+  "description": "读取、创建和检查 PDF，并通过页面渲染验证排版。",
+  "author": {
+    "name": "OpenAI",
+    "url": "https://github.com/openai"
+  },
+  "repository": "https://github.com/openai/skills",
+  "homepage": "https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "PDF 文档处理",
+    "shortDescription": "读写 PDF，并检查最终页面排版。",
+    "longDescription": "固定来源于 OpenAI Skills；适合报告、合同和资料归档，强调渲染后再验收。",
+    "developerName": "OpenAI",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Shell"],
+    "defaultPrompt": ["检查这份 PDF 的内容和页面排版。"]
+  }
+}

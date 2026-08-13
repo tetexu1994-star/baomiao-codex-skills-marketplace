@@ -1,0 +1,44 @@
+{
+  "name": "baomiao-codex",
+  "interface": {
+    "displayName": "暴喵 Codex Skills"
+  },
+  "plugins": [
+    {
+      "name": "pdf",
+      "source": {
+        "source": "local",
+        "path": "./plugins/pdf"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "define-goal",
+      "source": {
+        "source": "local",
+        "path": "./plugins/define-goal"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "security-threat-model",
+      "source": {
+        "source": "local",
+        "path": "./plugins/security-threat-model"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

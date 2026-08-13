@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "openai-curated",
+      "repository": "https://github.com/openai/skills",
+      "api_repository": "https://api.github.com/repos/openai/skills",
+      "allowed_paths": [
+        "skills/.curated/pdf",
+        "skills/.curated/define-goal",
+        "skills/.curated/security-threat-model"
+      ],
+      "license_files": ["LICENSE.txt"],
+      "policy": "candidate-only",
+      "max_file_bytes": 524288,
+      "allow_executable_files": false
+    }
+  ]
+}
+

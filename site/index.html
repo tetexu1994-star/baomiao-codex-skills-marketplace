@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="暴喵 Codex Skills 市场：来源透明、人工审核、面向中文用户。">
+  <meta name="theme-color" content="#071426">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>暴喵 Codex Skills 市场</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23071426'/%3E%3Cpath d='M7 23V18h4v5zm7 0V13h4v10zm7 0V7h4v16z' fill='%23ffb000'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">跳到技能列表</a>
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="暴喵 Codex Skills 市场首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>暴喵</strong><small>CODEX SKILLS</small></span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="#catalog">技能目录</a>
+      <a href="#standard">审核标准</a>
+      <a href="contract.html">客户端契约</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">为中国大陆 Windows 用户准备</p>
+        <h1 id="hero-title">每一条线路，<br><em>先看清来源</em>再安装。</h1>
+        <p class="lede">暴喵帮助客户端更稳定地访问 GitHub 原始来源。市场只发布固定版本、许可证清楚、经过人工审核的 Codex Skill。</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#catalog">查看已审核技能</a>
+          <a class="text-action" href="contract.html">一键安装如何保护你 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="route-panel" aria-label="市场安全路径">
+        <div class="route-head"><span>安装路径</span><b>VERIFIED ROUTE</b></div>
+        <ol>
+          <li><span class="route-node">01</span><div><strong>暴喵市场目录</strong><small>SHA-256 校验</small></div></li>
+          <li><span class="route-node">02</span><div><strong>原始 GitHub 来源</strong><small>固定 40 位提交</small></div></li>
+          <li><span class="route-node">03</span><div><strong>安装前本机复检</strong><small>显示权限 · 可回退</small></div></li>
+        </ol>
+        <p><span aria-hidden="true">●</span> 加速传输，不改写作者身份</p>
+      </div>
+    </section>
+
+    <section class="assurance-strip" aria-label="市场承诺">
+      <p><b id="approved-count">—</b><span>已审核条目</span></p>
+      <p><b>0</b><span>浮动版本</span></p>
+      <p><b>0</b><span>未知许可证</span></p>
+      <p><b>人工</b><span>最终发布门禁</span></p>
+    </section>
+
+    <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">已审核目录</p>
+          <h2 id="catalog-title">少而清楚，比堆满更重要</h2>
+        </div>
+        <p id="catalog-meta" role="status" aria-live="polite">正在读取目录…</p>
+      </div>
+
+      <form class="filters" id="filters" role="search">
+        <label class="search-field" for="search">
+          <span>搜索技能</span>
+          <input id="search" name="q" type="search" autocomplete="off" placeholder="例如：PDF、规划、安全">
+        </label>
+        <label for="category">分类
+          <select id="category" name="category"><option value="">全部分类</option></select>
+        </label>
+        <label for="publisher">来源
+          <select id="publisher" name="publisher">
+            <option value="">全部来源</option>
+            <option value="official">官方来源</option>
+            <option value="community">社区来源</option>
+          </select>
+        </label>
+        <label for="risk">风险
+          <select id="risk" name="risk">
+            <option value="">全部等级</option>
+            <option value="low">低风险</option>
+            <option value="medium">中风险</option>
+          </select>
+        </label>
+        <button type="reset">清除筛选</button>
+      </form>
+
+      <div class="catalog-grid" id="catalog-list" aria-busy="true"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <strong>没有符合条件的技能</strong>
+        <p>换一个关键词，或清除部分筛选条件。</p>
+      </div>
+      <div class="error-state" id="error-state" role="alert" hidden>
+        <strong>目录暂时无法读取</strong>
+        <p>请刷新页面；若仍失败，可检查仓库中的 <code>dist/catalog.json</code>。</p>
+      </div>
+    </section>
+
+    <section class="standard" id="standard" aria-labelledby="standard-title">
+      <div>
+        <p class="eyebrow">发布门槛</p>
+        <h2 id="standard-title">同步不是上架。</h2>
+        <p>机器人只生成候选；审核者确认许可证、固定版本、完整文件清单与权限后，才能进入公开目录。</p>
+      </div>
+      <ul>
+        <li><b>01</b><span><strong>许可可核验</strong>Skill 目录或仓库必须有明确的再分发许可。</span></li>
+        <li><b>02</b><span><strong>全目录扫描</strong>脚本、凭证模式、危险命令与高风险权限默认阻断。</span></li>
+        <li><b>03</b><span><strong>来源不隐身</strong>展示原作者、仓库、提交与许可证链接。</span></li>
+        <li><b>04</b><span><strong>安装可回退</strong>替换旧版本前本地备份，失败后原子恢复。</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>暴喵 Codex Skills 市场</strong> · 一个可审计的中文索引</p>
+    <p>“官方来源”仅说明上游身份，不代表暴喵对第三方功能作担保。</p>
+  </footer>
+</body>
+</html>

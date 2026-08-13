@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>客户端接入契约 · 暴喵 Codex Skills</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="index.html" aria-label="返回市场首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>暴喵</strong><small>CLIENT CONTRACT V1</small></span>
+    </a>
+    <nav aria-label="文档导航"><a href="index.html">返回市场</a><a href="docs/client-contract.md">查看机器可读原文</a></nav>
+  </header>
+  <main class="contract-page">
+    <header>
+      <p class="eyebrow">一键安装不是盲目安装</p>
+      <h1>客户端接入契约 <em>v1</em></h1>
+      <p>加速层只负责稳定传输。来源身份、固定提交、许可证、权限确认与本地回退必须始终可见。</p>
+    </header>
+    <aside aria-label="契约性质"><strong>暴喵自定义契约</strong><p>本页不冒充 Codex 官方插件协议；Codex 的加载行为以用户当前版本为准。</p></aside>
+    <section class="contract-steps" aria-labelledby="steps-title">
+      <h2 id="steps-title">安装前七道门</h2>
+      <ol>
+        <li><b>01</b><span><strong>校验市场摘要</strong>按原始字节比对 <code>catalog.sha256</code>。</span></li>
+        <li><b>02</b><span><strong>锁定原始版本</strong>只接受条目中的 40 位提交哈希。</span></li>
+        <li><b>03</b><span><strong>核对许可证</strong>许可证必须覆盖被安装的 Skill 目录。</span></li>
+        <li><b>04</b><span><strong>完整扫描目录</strong>拒绝路径穿越、秘密、高危命令和未申报脚本。</span></li>
+        <li><b>05</b><span><strong>展示来源与风险</strong>用户看到发布者、仓库、版本和全部能力。</span></li>
+        <li><b>06</b><span><strong>由用户确认</strong>按钮明确写“从原始来源安装”。</span></li>
+        <li><b>07</b><span><strong>备份后原子替换</strong>安装失败立即恢复上一份本地副本。</span></li>
+      </ol>
+    </section>
+    <section class="contract-boundaries" aria-labelledby="boundaries-title">
+      <h2 id="boundaries-title">不可越过的边界</h2>
+      <div>
+        <article><strong>不改写身份</strong><p>不把暴喵或匿名镜像伪装成 OpenAI、GitHub 或社区作者。</p></article>
+        <article><strong>不上传凭证</strong><p>GitHub token、Codex 凭证、Cookie 与工作区内容不上传市场或加速层。</p></article>
+        <article><strong>不静默换源</strong><p>失败时只回退本地备份，不自动下载另一个来源。</p></article>
+      </div>
+    </section>
+    <p class="contract-link"><a href="docs/client-contract.md">查看完整字段、状态码与 TypeScript 接口 →</a></p>
+  </main>
+  <footer><p><strong>暴喵 Codex Skills 市场</strong> · 来源透明，安装可退</p></footer>
+</body>
+</html>
