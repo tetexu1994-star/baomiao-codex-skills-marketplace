@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "linear",
+  "name": "Linear 项目协作",
+  "summary_zh": "通过 Linear MCP 查询、创建和更新事项、项目、标签与评论，适合需求管理、缺陷分流和迭代规划。",
+  "category": "效率规划",
+  "tags": [
+    "Linear",
+    "项目管理",
+    "工单",
+    "OAuth"
+  ],
+  "publisher": {
+    "name": "OpenAI",
+    "kind": "official",
+    "url": "https://github.com/openai"
+  },
+  "source": {
+    "repository": "https://github.com/openai/skills",
+    "commit": "49f948faa9258a0c61caceaf225e179651397431",
+    "path": "skills/.curated/linear",
+    "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/linear/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/linear/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "high",
+    "capabilities": [
+      "network",
+      "credentials",
+      "external-write"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "需要 Linear OAuth；可在用户授权的工作区创建或修改事项、项目、标签和评论。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（增强权限复核）",
+    "reviewed_at": "2026-08-13T11:20:00Z",
+    "evidence": "docs/reviews/enhanced-permissions-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/linear",
+    "requires_auth": true,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "confirm-enhanced-permissions",
+      "backup-existing"
+    ]
+  }
+}

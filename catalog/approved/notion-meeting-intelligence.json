@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "notion-meeting-intelligence",
+  "name": "Notion 会议准备",
+  "summary_zh": "汇总 Notion 上下文并生成议程、会前材料和决策清单，适合项目会、复盘、评审和一对一沟通。",
+  "category": "效率规划",
+  "tags": [
+    "Notion",
+    "会议",
+    "议程",
+    "OAuth"
+  ],
+  "publisher": {
+    "name": "OpenAI",
+    "kind": "official",
+    "url": "https://github.com/openai"
+  },
+  "source": {
+    "repository": "https://github.com/openai/skills",
+    "commit": "49f948faa9258a0c61caceaf225e179651397431",
+    "path": "skills/.curated/notion-meeting-intelligence",
+    "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-meeting-intelligence/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-meeting-intelligence/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "MIT",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "high",
+    "capabilities": [
+      "network",
+      "credentials",
+      "external-write"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "需要 Notion OAuth；会搜索授权内容，并创建或更新会议议程、会前材料与任务。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（增强权限复核）",
+    "reviewed_at": "2026-08-13T11:20:00Z",
+    "evidence": "docs/reviews/enhanced-permissions-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/notion-meeting-intelligence",
+    "requires_auth": true,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "confirm-enhanced-permissions",
+      "backup-existing"
+    ]
+  }
+}

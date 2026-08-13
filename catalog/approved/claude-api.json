@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "claude-api",
+  "name": "Claude API 开发参考",
+  "summary_zh": "按 Anthropic 官方参考开发 Claude API 应用，覆盖 SDK、流式响应、工具调用、缓存、迁移和多语言示例。",
+  "category": "研发工具",
+  "tags": [
+    "Claude",
+    "API",
+    "SDK",
+    "LLM",
+    "MCP"
+  ],
+  "publisher": {
+    "name": "Anthropic",
+    "kind": "official",
+    "url": "https://github.com/anthropics"
+  },
+  "source": {
+    "repository": "https://github.com/anthropics/skills",
+    "commit": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
+    "path": "skills/claude-api",
+    "skill_url": "https://raw.githubusercontent.com/anthropics/skills/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/claude-api/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/anthropics/skills/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/claude-api/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "medium",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write",
+      "shell",
+      "network",
+      "credentials"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "Skill 只有文档；开发和测试 Claude API 时会安装 SDK、联网并使用用户本机配置的 API 凭证。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（扩容复核）",
+    "reviewed_at": "2026-08-13T10:30:00Z",
+    "evidence": "docs/reviews/ecosystem-expansion-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/claude-api",
+    "requires_auth": true,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "backup-existing"
+    ]
+  }
+}

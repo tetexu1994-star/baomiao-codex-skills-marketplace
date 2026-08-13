@@ -1,0 +1,47 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T13:00:00Z",
+  "commit": "e75f841df3482c00d90144cca37d9b2a3b6ff0fb",
+  "files": [
+    {
+      "bytes": 11964,
+      "path": "SKILL.md",
+      "sha256": "48fc57b8768f2a7f75a0356737cf2ceca9cec58620274626392a37dc7733676a"
+    },
+    {
+      "bytes": 2229,
+      "path": "references/cd-containerized-step-group.md",
+      "sha256": "f14c2fab090bf3035b2ede841b48c03bcd89c6472f5bee7ba6ab01bfae17406c"
+    },
+    {
+      "bytes": 5846,
+      "path": "references/interactive-wizard-flow.md",
+      "sha256": "fc1179ca2996ba78a3fc1ad68040bde18f49f176325987e62d056af609686e6c"
+    },
+    {
+      "bytes": 6182,
+      "path": "references/slsa-generation-step.md",
+      "sha256": "cd1fed7824c342b5269e0bd6b97da96f200eecc658fd7ff52aaaf3be247ea61a"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
+  },
+  "path": "skills/generate-slsa",
+  "policy": "candidate-only",
+  "repository": "https://github.com/harness/harness-skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 4,
+    "findings": [],
+    "total_bytes": 26221,
+    "verdict": "review-required"
+  },
+  "source_id": "harness-official"
+}

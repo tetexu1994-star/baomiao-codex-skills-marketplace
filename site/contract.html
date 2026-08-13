@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#071426">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>客户端接入契约 · 暴喵 Codex Skills</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23071426'/%3E%3Cpath d='M7 23V18h4v5zm7 0V13h4v10zm7 0V7h4v16z' fill='%23ffb000'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -24,15 +25,16 @@
     </header>
     <aside aria-label="契约性质"><strong>暴喵自定义契约</strong><p>本页不冒充 Codex 官方插件协议；Codex 的加载行为以用户当前版本为准。</p></aside>
     <section class="contract-steps" aria-labelledby="steps-title">
-      <h2 id="steps-title">安装前七道门</h2>
+      <h2 id="steps-title">安装前八道门</h2>
       <ol>
         <li><b>01</b><span><strong>校验市场摘要</strong>按原始字节比对 <code>catalog.sha256</code>。</span></li>
         <li><b>02</b><span><strong>锁定原始版本</strong>只接受条目中的 40 位提交哈希。</span></li>
-        <li><b>03</b><span><strong>核对许可证</strong>许可证必须覆盖被安装的 Skill 目录。</span></li>
-        <li><b>04</b><span><strong>完整扫描目录</strong>拒绝路径穿越、秘密、高危命令和未申报脚本。</span></li>
+        <li><b>03</b><span><strong>核对许可证与摘要</strong>验证目录级或仓库级许可，并比对许可证 SHA-256。</span></li>
+        <li><b>04</b><span><strong>逐文件复核</strong>比对目录内全部文件摘要，拒绝路径穿越、秘密、高危命令和未申报脚本。</span></li>
         <li><b>05</b><span><strong>展示来源与风险</strong>用户看到发布者、仓库、版本和全部能力。</span></li>
         <li><b>06</b><span><strong>由用户确认</strong>按钮明确写“从原始来源安装”。</span></li>
-        <li><b>07</b><span><strong>备份后原子替换</strong>安装失败立即恢复上一份本地副本。</span></li>
+        <li><b>07</b><span><strong>增强权限再确认</strong>OAuth、外部写入、系统配置和无沙箱要求单独确认。</span></li>
+        <li><b>08</b><span><strong>备份后原子替换</strong>安装失败立即恢复上一份本地副本。</span></li>
       </ol>
     </section>
     <section class="contract-boundaries" aria-labelledby="boundaries-title">

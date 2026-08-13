@@ -1,0 +1,118 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T11:00:00Z",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "files": [
+    {
+      "bytes": 1057,
+      "path": "LICENSE.txt",
+      "sha256": "0f377d9b2a1db642e4b0531ffa126e96d9bc6c085f8d9441f220fb25f723c6f8"
+    },
+    {
+      "bytes": 3418,
+      "path": "SKILL.md",
+      "sha256": "bad61faccbbe0f2cab53bcfbc4cb22f847ba8593ef14c2e37fea5b9b03346332"
+    },
+    {
+      "bytes": 512,
+      "path": "agents/openai.yaml",
+      "sha256": "5c7b40b8e174653303dadaa3152dd44d3c0e426c4857f937dc0d11e4ae982453"
+    },
+    {
+      "bytes": 15777,
+      "path": "assets/notion-small.svg",
+      "sha256": "00f5e4b758cc5c3e36e783dca2fabfafd05169c2f2175063e56d2e1fb6a55f81"
+    },
+    {
+      "bytes": 8526,
+      "path": "assets/notion.png",
+      "sha256": "5eef1e62d96a3d09bc9d18e4140486c22799145b017033bd0924c2c49d741cd4"
+    },
+    {
+      "bytes": 3971,
+      "path": "evaluations/README.md",
+      "sha256": "0991780b6c2a29a2ef84b8a37f5e3ea0dc898d31118b8968bbfe26680ac73f24"
+    },
+    {
+      "bytes": 3441,
+      "path": "evaluations/decision-meeting-prep.json",
+      "sha256": "3ba23fc1fc3edfa26e51afff0d92f88f41e93e0f8a20852a19d90cd9354f299a"
+    },
+    {
+      "bytes": 3312,
+      "path": "evaluations/status-meeting-prep.json",
+      "sha256": "3f7b065f14e68dc1f0d1ffc3720fb0cd32fcf9cdf23365d935338425b2ce4021"
+    },
+    {
+      "bytes": 3133,
+      "path": "examples/customer-meeting.md",
+      "sha256": "5371f1d9df68454df163ffc28e69ad8f2434ad47c19ebe19099d1aeaea0cc3f5"
+    },
+    {
+      "bytes": 2150,
+      "path": "examples/executive-review.md",
+      "sha256": "e39b93e00564cc7631fcc95ba948f9d6fb94e5a7f23eb6100de6b421bddaa4fc"
+    },
+    {
+      "bytes": 12840,
+      "path": "examples/project-decision.md",
+      "sha256": "511decfaed53dcf8462874a4f6cafe1656dca635fa4bcaf9196a354a3f1a86b5"
+    },
+    {
+      "bytes": 2100,
+      "path": "examples/sprint-planning.md",
+      "sha256": "e6ad6b8b3ec26b8181ad61c2cb9f91897d023749dd6e57a2c86559c0130f2776"
+    },
+    {
+      "bytes": 1480,
+      "path": "reference/brainstorming-template.md",
+      "sha256": "4f118f04c8e5eef18f55faf12ecbdb7f8243cd189a4773c98c0d61b822706b14"
+    },
+    {
+      "bytes": 1825,
+      "path": "reference/decision-meeting-template.md",
+      "sha256": "f0b46b0f71a2886bd72af7f9b219ece1d68742b5fba6e2a7fe78f9c65f140d98"
+    },
+    {
+      "bytes": 932,
+      "path": "reference/one-on-one-template.md",
+      "sha256": "1c7f328738b5d6139b22e977608b5ef47f3fa45d95211991168efc632a73c7ae"
+    },
+    {
+      "bytes": 940,
+      "path": "reference/retrospective-template.md",
+      "sha256": "b1e18f96323ce83405f25fa24833b3d3e97fbab86e20c99e6ccfb9a826bd354c"
+    },
+    {
+      "bytes": 1301,
+      "path": "reference/sprint-planning-template.md",
+      "sha256": "1eed8455dc48c330eaecd0f79cbd18150973d47b93329826c7ae611a10dece66"
+    },
+    {
+      "bytes": 1356,
+      "path": "reference/status-update-template.md",
+      "sha256": "c5f53adde43d8a9333555ce0e4634b85f4f6a44faa560f3a250c6104eebe4f17"
+    },
+    {
+      "bytes": 1948,
+      "path": "reference/template-selection-guide.md",
+      "sha256": "a29b16db340c153a3a32579b7031809b398ed319210fbea2d29ec424c68d147e"
+    }
+  ],
+  "license_evidence": "LICENSE.txt",
+  "path": "skills/.curated/notion-meeting-intelligence",
+  "policy": "candidate-only",
+  "repository": "https://github.com/openai/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 19,
+    "findings": [],
+    "total_bytes": 70019,
+    "verdict": "review-required"
+  },
+  "source_id": "openai-curated"
+}

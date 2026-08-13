@@ -1,0 +1,19 @@
+{
+  "name": "cli-creator",
+  "version": "1.0.0",
+  "description": "把 API 或现有工具整理成可复用、可组合的命令行程序。",
+  "author": {"name": "OpenAI", "url": "https://github.com/openai"},
+  "repository": "https://github.com/openai/skills",
+  "homepage": "https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/cli-creator",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "命令行工具构建器",
+    "shortDescription": "从 API 文档构建稳定 CLI。",
+    "longDescription": "固定来源于 OpenAI Skills；适合将 OpenAPI、SDK 或内部脚本产品化为 CLI。",
+    "developerName": "OpenAI",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write", "Shell"],
+    "defaultPrompt": ["帮我把这套 API 做成可复用的命令行工具。"]
+  }
+}

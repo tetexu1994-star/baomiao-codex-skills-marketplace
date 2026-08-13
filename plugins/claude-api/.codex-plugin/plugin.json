@@ -1,0 +1,19 @@
+{
+  "name": "claude-api",
+  "version": "1.0.0",
+  "description": "使用 Anthropic 官方参考开发和迁移 Claude API 应用。",
+  "author": {"name": "Anthropic", "url": "https://github.com/anthropics"},
+  "repository": "https://github.com/anthropics/skills",
+  "homepage": "https://github.com/anthropics/skills/tree/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/claude-api",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Claude API 开发参考",
+    "shortDescription": "开发 Claude API 与 SDK 应用。",
+    "longDescription": "固定来源于 Anthropic Skills；覆盖 SDK、流式响应、工具调用、缓存和迁移。",
+    "developerName": "Anthropic",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write", "Shell"],
+    "defaultPrompt": ["按官方 Claude API 参考实现这个功能。"]
+  }
+}

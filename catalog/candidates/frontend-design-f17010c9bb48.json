@@ -1,0 +1,33 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T10:00:00Z",
+  "commit": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
+  "files": [
+    {
+      "bytes": 10174,
+      "path": "LICENSE.txt",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "bytes": 8260,
+      "path": "SKILL.md",
+      "sha256": "1608ea77fbb6fc30d13a97d12cfa8ebf31358d40f0dd97beed24829d6b3f45dd"
+    }
+  ],
+  "license_evidence": "LICENSE.txt",
+  "path": "skills/frontend-design",
+  "policy": "candidate-only",
+  "repository": "https://github.com/anthropics/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 2,
+    "findings": [],
+    "total_bytes": 18434,
+    "verdict": "review-required"
+  },
+  "source_id": "anthropic-official"
+}

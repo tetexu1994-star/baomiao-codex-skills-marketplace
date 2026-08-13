@@ -1,0 +1,19 @@
+{
+  "name": "aspnet-core",
+  "version": "1.0.0",
+  "description": "基于当前官方实践开发、审查和升级 ASP.NET Core 应用。",
+  "author": {"name": "OpenAI", "url": "https://github.com/openai"},
+  "repository": "https://github.com/openai/skills",
+  "homepage": "https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/aspnet-core",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ASP.NET Core 开发指南",
+    "shortDescription": "开发和审查 .NET Web 应用。",
+    "longDescription": "固定来源于 OpenAI Skills；覆盖 Blazor、MVC、API、认证、测试和升级。",
+    "developerName": "OpenAI",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write", "Shell"],
+    "defaultPrompt": ["按当前 ASP.NET Core 实践帮我审查这个项目。"]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T13:00:00Z",
+  "commit": "e75f841df3482c00d90144cca37d9b2a3b6ff0fb",
+  "files": [
+    {
+      "bytes": 31105,
+      "path": "SKILL.md",
+      "sha256": "900dbc20a7d2811d9b5db0749b6836afd1eddebc4c0ef4a40045d0f3fe3f99dc"
+    },
+    {
+      "bytes": 18793,
+      "path": "reference.md",
+      "sha256": "4d8704ec6846d5f397c99836b78ba536c6dde0211d59c7511a0bc4f903b498be"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
+  },
+  "path": "skills/dbops-changeset",
+  "policy": "candidate-only",
+  "repository": "https://github.com/harness/harness-skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 2,
+    "findings": [],
+    "total_bytes": 49898,
+    "verdict": "review-required"
+  },
+  "source_id": "harness-official"
+}

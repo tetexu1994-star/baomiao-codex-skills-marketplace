@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "cli-creator",
+  "name": "命令行工具构建器",
+  "summary_zh": "把 API 文档、OpenAPI 或现有脚本整理成可复用的命令行工具，强调稳定 JSON、认证边界和可组合命令。",
+  "category": "研发工具",
+  "tags": [
+    "CLI",
+    "OpenAPI",
+    "自动化",
+    "开发工具"
+  ],
+  "publisher": {
+    "name": "OpenAI",
+    "kind": "official",
+    "url": "https://github.com/openai"
+  },
+  "source": {
+    "repository": "https://github.com/openai/skills",
+    "commit": "49f948faa9258a0c61caceaf225e179651397431",
+    "path": "skills/.curated/cli-creator",
+    "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/cli-creator/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/cli-creator/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "medium",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write",
+      "shell",
+      "network",
+      "credentials"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "Skill 包不含可执行文件；使用时会创建 CLI、运行构建命令，并可能按目标 API 使用本机凭证。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（扩容复核）",
+    "reviewed_at": "2026-08-13T10:30:00Z",
+    "evidence": "docs/reviews/ecosystem-expansion-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/cli-creator",
+    "requires_auth": false,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "backup-existing"
+    ]
+  }
+}

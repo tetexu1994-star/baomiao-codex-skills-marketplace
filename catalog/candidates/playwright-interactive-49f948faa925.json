@@ -1,0 +1,53 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T11:00:00Z",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "files": [
+    {
+      "bytes": 11552,
+      "path": "LICENSE.txt",
+      "sha256": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda"
+    },
+    {
+      "bytes": 478,
+      "path": "NOTICE.txt",
+      "sha256": "7fe676d2e5359fb6aa0bdf5b0881b26e14c272dd36b04408366d4b0e26738322"
+    },
+    {
+      "bytes": 31711,
+      "path": "SKILL.md",
+      "sha256": "f6c1155d923e6ae3ccc12abfef2266f119f8e9546df2ddeee1f5eb369845a0a1"
+    },
+    {
+      "bytes": 345,
+      "path": "agents/openai.yaml",
+      "sha256": "7342e0a2c2cb8f3e20982317467f58b06c8bf71ba308ed8fcc1cda4a6e9397d8"
+    },
+    {
+      "bytes": 843,
+      "path": "assets/playwright-small.svg",
+      "sha256": "0744d0d4cc1433e2130c3522196e1571222d502f1461f39274f680520e728588"
+    },
+    {
+      "bytes": 1785,
+      "path": "assets/playwright.png",
+      "sha256": "29b51cdeeb4e541565d1d419e5150e11913af50f72ebb4d27cfcc8813185ffd6"
+    }
+  ],
+  "license_evidence": "LICENSE.txt",
+  "path": "skills/.curated/playwright-interactive",
+  "policy": "candidate-only",
+  "repository": "https://github.com/openai/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 6,
+    "findings": [],
+    "total_bytes": 46714,
+    "verdict": "review-required"
+  },
+  "source_id": "openai-curated"
+}

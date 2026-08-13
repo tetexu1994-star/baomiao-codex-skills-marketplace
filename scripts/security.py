@@ -20,7 +20,9 @@ BLOCKED_PATTERNS = {
     "powershell-eval": re.compile(r"\b(?:Invoke-Expression|IEX)\b", re.I),
     "encoded-command": re.compile(r"\b(?:powershell|pwsh)\b[^\n]{0,160}\s-(?:enc|encodedcommand)\b", re.I),
     "credential-exfiltration": re.compile(r"(?:curl|wget|requests\.(?:post|put))[^\n]{0,500}(?:GITHUB_TOKEN|GH_TOKEN|OPENAI_API_KEY|AWS_SECRET_ACCESS_KEY)", re.I),
-    "shell-execution": re.compile(r"(?:shell\s*=\s*True|\bos\.system\s*\(|\bsubprocess\.(?:run|Popen)\s*\()", re.I),
+}
+REVIEW_PATTERNS = {
+    "documented-shell-execution": re.compile(r"(?:shell\s*=\s*True|\bos\.system\s*\(|\bsubprocess\.(?:run|Popen)\s*\()", re.I),
 }
 
 
@@ -55,9 +57,12 @@ def scan_files(files: Iterable[tuple[str, bytes]]) -> dict:
         for rule, pattern in BLOCKED_PATTERNS.items():
             if pattern.search(text):
                 findings.append(Finding("blocked", rule, raw_path, "命中高风险静态模式，需人工拒绝或隔离分析"))
+        for rule, pattern in REVIEW_PATTERNS.items():
+            if pattern.search(text):
+                findings.append(Finding("review", rule, raw_path, "文档含命令执行示例，必须人工判断用途与上下文"))
     findings.sort(key=lambda item: (item.severity, item.rule, item.path))
     return {
-        "verdict": "blocked" if findings else "review-required",
+        "verdict": "blocked" if any(item.severity == "blocked" for item in findings) else "review-required",
         "file_count": file_count,
         "total_bytes": total_bytes,
         "findings": [asdict(item) for item in findings],
@@ -66,4 +71,3 @@ def scan_files(files: Iterable[tuple[str, bytes]]) -> dict:
 
 def has_executable_paths(paths: Iterable[str]) -> bool:
     return any(PurePosixPath(path).suffix.lower() in EXECUTABLE_SUFFIXES for path in paths)
-

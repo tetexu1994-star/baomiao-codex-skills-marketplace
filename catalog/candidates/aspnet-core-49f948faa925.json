@@ -1,0 +1,108 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T10:00:00Z",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "files": [
+    {
+      "bytes": 11357,
+      "path": "LICENSE.txt",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "bytes": 5544,
+      "path": "SKILL.md",
+      "sha256": "1f487ef3565e5ac1ee6c93cbeb9ac666292b30285877c82ddb0a77c9777fe92f"
+    },
+    {
+      "bytes": 222,
+      "path": "agents/openai.yaml",
+      "sha256": "06a421ca2f92fc86d83dc7c02e31ad5c85da8193eebbe17aa883ef274e26011a"
+    },
+    {
+      "bytes": 2270,
+      "path": "assets/dotnet-logo.png",
+      "sha256": "7f561a8f84ca88130803ecc8664914a4c619530836c705a4b9169704b4195d7c"
+    },
+    {
+      "bytes": 2412,
+      "path": "references/_sections.md",
+      "sha256": "eefa51074986d078dd108857ff1e376bf6b75935ee125ebdafef47ba53a57f19"
+    },
+    {
+      "bytes": 3040,
+      "path": "references/apis-minimal-and-controllers.md",
+      "sha256": "156283486289a1765d0cad6f7c296bad2f8aa45ad24d730c8ed0b845713cfee1"
+    },
+    {
+      "bytes": 2422,
+      "path": "references/data-state-and-services.md",
+      "sha256": "9b0f2253c77a9ade7ebd39103de8fdfe1ae0cd73f71a86936bb1f5ccde064ef4"
+    },
+    {
+      "bytes": 4182,
+      "path": "references/program-and-pipeline.md",
+      "sha256": "375d4e4580ce43f72f5d3d01e7c26a292eec2f43dc63c03f0200a4e24dbcd543"
+    },
+    {
+      "bytes": 1896,
+      "path": "references/realtime-grpc-and-background-work.md",
+      "sha256": "ba6cfd463620b608c33ed65bcc4d6b25c4ec921cc77bd2fb9379cb486a11a824"
+    },
+    {
+      "bytes": 2941,
+      "path": "references/security-and-identity.md",
+      "sha256": "a661dc33dc64e44f9a389d08c20f4e89f1ed62970197a3d2df35036b07884f35"
+    },
+    {
+      "bytes": 2040,
+      "path": "references/source-map.md",
+      "sha256": "21e11fee79253f9c0050a3fb207b91e0c44360572662b2c900a855d0a332fa93"
+    },
+    {
+      "bytes": 3700,
+      "path": "references/stack-selection.md",
+      "sha256": "9de61ba6c4c1fbb9b4b68d2fb6a9f3ed475feb87d912999c8a1c81911f38c8a3"
+    },
+    {
+      "bytes": 2698,
+      "path": "references/testing-performance-and-operations.md",
+      "sha256": "14fecd1e3f5c7a54de2e7ffdd51a91a52101da5765f1ccdfd1f6c6437dd6c8ec"
+    },
+    {
+      "bytes": 2478,
+      "path": "references/ui-blazor.md",
+      "sha256": "37267429839b21d084b35749550e85fa96077e06e96fef4917d558b8602afdcc"
+    },
+    {
+      "bytes": 1954,
+      "path": "references/ui-mvc.md",
+      "sha256": "25657bf06f9f485967cc07d9cd93b5631d4a49871cd63bd7b2ae982fb776e659"
+    },
+    {
+      "bytes": 1937,
+      "path": "references/ui-razor-pages.md",
+      "sha256": "3f3e2dc6e47ce6202649f28fd3143087c067048e60cb997030f8f0bc17a09f1a"
+    },
+    {
+      "bytes": 2085,
+      "path": "references/versioning-and-upgrades.md",
+      "sha256": "3a51900fb9046ea9c0aec738410389854ab2474950253ab0719909aaf709a840"
+    }
+  ],
+  "license_evidence": "LICENSE.txt",
+  "path": "skills/.curated/aspnet-core",
+  "policy": "candidate-only",
+  "repository": "https://github.com/openai/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 17,
+    "findings": [],
+    "total_bytes": 53178,
+    "verdict": "review-required"
+  },
+  "source_id": "openai-curated"
+}

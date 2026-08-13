@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "notion-spec-to-implementation",
+  "name": "Notion 需求落地",
+  "summary_zh": "把 Notion 中的产品需求或功能规格转换为实施计划、任务、里程碑和持续进度记录。",
+  "category": "效率规划",
+  "tags": [
+    "Notion",
+    "需求",
+    "任务拆解",
+    "项目管理"
+  ],
+  "publisher": {
+    "name": "OpenAI",
+    "kind": "official",
+    "url": "https://github.com/openai"
+  },
+  "source": {
+    "repository": "https://github.com/openai/skills",
+    "commit": "49f948faa9258a0c61caceaf225e179651397431",
+    "path": "skills/.curated/notion-spec-to-implementation",
+    "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-spec-to-implementation/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-spec-to-implementation/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "MIT",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "high",
+    "capabilities": [
+      "network",
+      "credentials",
+      "external-write"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "需要 Notion OAuth；会读取规格并创建或更新计划、任务、里程碑和状态。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（增强权限复核）",
+    "reviewed_at": "2026-08-13T11:20:00Z",
+    "evidence": "docs/reviews/enhanced-permissions-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/notion-spec-to-implementation",
+    "requires_auth": true,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "confirm-enhanced-permissions",
+      "backup-existing"
+    ]
+  }
+}

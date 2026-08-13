@@ -1,0 +1,122 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T13:00:00Z",
+  "commit": "e75f841df3482c00d90144cca37d9b2a3b6ff0fb",
+  "files": [
+    {
+      "bytes": 7826,
+      "path": "SKILL.md",
+      "sha256": "3f0481f7def4c7d4e0fcd81c213cf8c8d3d66bef5ece9c1811859ae9c3e7cb79"
+    },
+    {
+      "bytes": 18097,
+      "path": "references/advanced-patterns.md",
+      "sha256": "77f4ac7fc3f3a21caa7880bef6447f328febd904593e0cd1b7c29046d184c257"
+    },
+    {
+      "bytes": 4308,
+      "path": "references/entity-code-repository.md",
+      "sha256": "59c8d06efae7bcd0c02fac3267459571edd88377f26cc5b378fbc28d6169c016"
+    },
+    {
+      "bytes": 6515,
+      "path": "references/entity-connector.md",
+      "sha256": "6f87f1765c937291d09000ef89bf8dbe4db7c2347eadcf489000f2294e528126"
+    },
+    {
+      "bytes": 5001,
+      "path": "references/entity-database.md",
+      "sha256": "e7149467a0845151c810243b2e7f297dc709f4df0b73999be5ffeda8f4441998"
+    },
+    {
+      "bytes": 12129,
+      "path": "references/entity-feature-flag.md",
+      "sha256": "a7002598333cbacb32a6f07d2bd8f18dcb13e80a762e47527f49c87ac977684d"
+    },
+    {
+      "bytes": 6767,
+      "path": "references/entity-gitops.md",
+      "sha256": "7340738ca29938954eae35b200b4ec03a61b37d83d16755c07b17c244fc486f8"
+    },
+    {
+      "bytes": 1880,
+      "path": "references/entity-override.md",
+      "sha256": "a255539b6c123f35ab731cb0c3ae763ba00275dcec73631bc769bac8a4c4a061"
+    },
+    {
+      "bytes": 38143,
+      "path": "references/entity-pipeline.md",
+      "sha256": "a5f83b86a5f2eff1929c312c69c68d2bcfe325c1c2f2e1a06ae7d061668ea2f6"
+    },
+    {
+      "bytes": 6653,
+      "path": "references/entity-sbom.md",
+      "sha256": "42e4b0ae31284afe2a84d2bf7c1782925f31350457532860c8d5348705250dbc"
+    },
+    {
+      "bytes": 5346,
+      "path": "references/entity-secret.md",
+      "sha256": "ff48c52a9e18cd5e54977dee6bb9ddb5de0b0948d361d78f74d4bf86fc470cbf"
+    },
+    {
+      "bytes": 8062,
+      "path": "references/entity-security-tests.md",
+      "sha256": "dd91b1372bb4e02948cd1d4c58207e5bf01ccff140e263f559641e8393604418"
+    },
+    {
+      "bytes": 5479,
+      "path": "references/entity-service-env-infra.md",
+      "sha256": "e5c1db922639180264d2d6130823bd541a5d6631649947c11f1ea63f87a691aa"
+    },
+    {
+      "bytes": 3090,
+      "path": "references/entity-template.md",
+      "sha256": "dda88445f2621b6783e87739df72e49d8e72c7b467b05ca21734f05867c0b0be"
+    },
+    {
+      "bytes": 25374,
+      "path": "references/entity-terraform.md",
+      "sha256": "4dea0e3d9aa66a640b07d4c0e7d524fbae610be1c8096a8209758939d6c332e7"
+    },
+    {
+      "bytes": 2767,
+      "path": "references/entity-upstream-firewall.md",
+      "sha256": "e6db81fb0e8b0f1a7f158f91e019c69f7ce7cd0456542a50ebb8f9ebfa396137"
+    },
+    {
+      "bytes": 1557,
+      "path": "references/entity-variable.md",
+      "sha256": "6eea76080bdc571face6c48d4602c3a7540cad05bcdc21d3f4d3b38aebf7472e"
+    },
+    {
+      "bytes": 5972,
+      "path": "references/quality-tests.md",
+      "sha256": "da510d1d7cafb67e7eaeb8a13a6a5b162f2fd86be08dc6967c2af1a931553088"
+    },
+    {
+      "bytes": 8590,
+      "path": "references/rego-writing-guide.md",
+      "sha256": "3a1db63d3d5e287b0312fcca095ff69f6f3e0ce6d5acd1b26230214705b2cfe8"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
+  },
+  "path": "skills/create-policy",
+  "policy": "candidate-only",
+  "repository": "https://github.com/harness/harness-skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 19,
+    "findings": [],
+    "total_bytes": 173556,
+    "verdict": "review-required"
+  },
+  "source_id": "harness-official"
+}

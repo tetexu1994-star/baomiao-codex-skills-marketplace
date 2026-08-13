@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "brand-guidelines",
+  "name": "Anthropic 品牌样式参考",
+  "summary_zh": "在明确需要 Anthropic 视觉风格时参考其公开颜色与字体规范，避免凭印象拼凑品牌样式。",
+  "category": "多媒体",
+  "tags": [
+    "品牌",
+    "配色",
+    "字体",
+    "Anthropic"
+  ],
+  "publisher": {
+    "name": "Anthropic",
+    "kind": "official",
+    "url": "https://github.com/anthropics"
+  },
+  "source": {
+    "repository": "https://github.com/anthropics/skills",
+    "commit": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
+    "path": "skills/brand-guidelines",
+    "skill_url": "https://raw.githubusercontent.com/anthropics/skills/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/brand-guidelines/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/anthropics/skills/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/brand-guidelines/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "low",
+    "capabilities": [
+      "none"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "纯品牌样式参考，不含脚本；商标仍归 Anthropic，本市场不暗示认可、合作或官方授权。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（扩容复核）",
+    "reviewed_at": "2026-08-13T10:30:00Z",
+    "evidence": "docs/reviews/ecosystem-expansion-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/brand-guidelines",
+    "requires_auth": false,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "backup-existing"
+    ]
+  }
+}

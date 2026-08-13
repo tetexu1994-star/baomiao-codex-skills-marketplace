@@ -1,0 +1,42 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T13:00:00Z",
+  "commit": "e75f841df3482c00d90144cca37d9b2a3b6ff0fb",
+  "files": [
+    {
+      "bytes": 12419,
+      "path": "SKILL.md",
+      "sha256": "278f0723074b67a10c92d2006d1005645eed29c1eb2671cf8bd8463cc5760da2"
+    },
+    {
+      "bytes": 12522,
+      "path": "references/native-actions.md",
+      "sha256": "f7bb1a13b2ee71123482a31914b318be91ae6032b0bf0578ae085e2bd4a8babe"
+    },
+    {
+      "bytes": 16921,
+      "path": "references/v1-spec-schema.md",
+      "sha256": "d6b2280b15f6598a22ad95e5daaab2dcfec10c46c208695f4c96290d6b0483d2"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
+  },
+  "path": "skills/create-pipeline-v1",
+  "policy": "candidate-only",
+  "repository": "https://github.com/harness/harness-skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 3,
+    "findings": [],
+    "total_bytes": 41862,
+    "verdict": "review-required"
+  },
+  "source_id": "harness-official"
+}

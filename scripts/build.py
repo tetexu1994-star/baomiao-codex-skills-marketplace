@@ -6,6 +6,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import copy
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -23,7 +24,26 @@ def build(*, generated_at: Optional[str] = None) -> Tuple[Path, Path]:
     if errors:
         raise ValueError("\n".join(errors))
     generated_at = generated_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    entries = [entry for _, entry in load_entries()]
+    entries = []
+    for _, original in load_entries():
+        entry = copy.deepcopy(original)
+        candidates = [
+            json.loads(path.read_text(encoding="utf-8"))
+            for path in sorted((ROOT / "catalog" / "candidates").glob(f"{entry['id']}-*.json"))
+        ]
+        candidate = next(item for item in candidates if item.get("commit") == entry["source"]["commit"] and item.get("path") == entry["source"]["path"])
+        evidence = candidate.get("license_evidence")
+        if isinstance(evidence, str):
+            matching = next((item for item in candidate["files"] if item["path"] == evidence), None)
+            evidence = {"scope": "skill-directory", "path": evidence, "sha256": matching["sha256"] if matching else None}
+        entry["integrity"] = {
+            "algorithm": "sha256",
+            "file_count": candidate["scan"]["file_count"],
+            "total_bytes": candidate["scan"]["total_bytes"],
+            "files": candidate["files"],
+            "license_evidence": evidence,
+        }
+        entries.append(entry)
     entries.sort(key=lambda item: item["id"])
     document = {
         "schema_version": 1,

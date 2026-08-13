@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "winui-app",
+  "name": "WinUI 3 应用开发",
+  "summary_zh": "在 Windows 上搭建、开发和验证 WinUI 3 桌面应用，覆盖环境检查、XAML、导航、主题、性能和部署。",
+  "category": "研发工具",
+  "tags": [
+    "Windows",
+    "WinUI",
+    "C#",
+    "桌面应用"
+  ],
+  "publisher": {
+    "name": "OpenAI",
+    "kind": "official",
+    "url": "https://github.com/openai"
+  },
+  "source": {
+    "repository": "https://github.com/openai/skills",
+    "commit": "49f948faa9258a0c61caceaf225e179651397431",
+    "path": "skills/.curated/winui-app",
+    "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/winui-app/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/winui-app/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "high",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write",
+      "shell",
+      "network",
+      "system-config"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "可能通过 WinGet 启用开发者模式、安装或更新 Visual Studio/Windows SDK，并创建、构建和运行桌面应用。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（增强权限复核）",
+    "reviewed_at": "2026-08-13T11:20:00Z",
+    "evidence": "docs/reviews/enhanced-permissions-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/winui-app",
+    "requires_auth": false,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "confirm-enhanced-permissions",
+      "backup-existing"
+    ]
+  }
+}

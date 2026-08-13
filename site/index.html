@@ -49,8 +49,8 @@
 
     <section class="assurance-strip" aria-label="市场承诺">
       <p><b id="approved-count">—</b><span>已审核条目</span></p>
-      <p><b>0</b><span>浮动版本</span></p>
-      <p><b>0</b><span>未知许可证</span></p>
+      <p><b id="bundled-count">—</b><span>市场审核包</span></p>
+      <p><b id="direct-count">—</b><span>原始来源直装</span></p>
       <p><b>人工</b><span>最终发布门禁</span></p>
     </section>
 
@@ -58,7 +58,7 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">已审核目录</p>
-          <h2 id="catalog-title">少而清楚，比堆满更重要</h2>
+          <h2 id="catalog-title">规模可以增长，来源不能含糊</h2>
         </div>
         <p id="catalog-meta" role="status" aria-live="polite">正在读取目录…</p>
       </div>
@@ -71,11 +71,23 @@
         <label for="category">分类
           <select id="category" name="category"><option value="">全部分类</option></select>
         </label>
-        <label for="publisher">来源
+        <label for="publisher">发布者
           <select id="publisher" name="publisher">
-            <option value="">全部来源</option>
+            <option value="">全部发布者</option>
+          </select>
+        </label>
+        <label for="origin">归属
+          <select id="origin" name="origin">
+            <option value="">全部归属</option>
             <option value="official">官方来源</option>
             <option value="community">社区来源</option>
+          </select>
+        </label>
+        <label for="delivery">交付
+          <select id="delivery" name="delivery">
+            <option value="">全部方式</option>
+            <option value="copy-source-directory">市场审核包</option>
+            <option value="source-direct">原始来源直装</option>
           </select>
         </label>
         <label for="risk">风险
@@ -83,12 +95,14 @@
             <option value="">全部等级</option>
             <option value="low">低风险</option>
             <option value="medium">中风险</option>
+            <option value="high">增强权限</option>
           </select>
         </label>
         <button type="reset">清除筛选</button>
       </form>
 
       <div class="catalog-grid" id="catalog-list" aria-busy="true"></div>
+      <button class="load-more" id="load-more" type="button" hidden>继续显示</button>
       <div class="empty-state" id="empty-state" hidden>
         <strong>没有符合条件的技能</strong>
         <p>换一个关键词，或清除部分筛选条件。</p>
@@ -107,7 +121,7 @@
       </div>
       <ul>
         <li><b>01</b><span><strong>许可可核验</strong>Skill 目录或仓库必须有明确的再分发许可。</span></li>
-        <li><b>02</b><span><strong>全目录扫描</strong>脚本、凭证模式、危险命令与高风险权限默认阻断。</span></li>
+        <li><b>02</b><span><strong>全目录扫描</strong>可执行文件与危险命令阻断；增强权限必须单独确认。</span></li>
         <li><b>03</b><span><strong>来源不隐身</strong>展示原作者、仓库、提交与许可证链接。</span></li>
         <li><b>04</b><span><strong>安装可回退</strong>替换旧版本前本地备份，失败后原子恢复。</span></li>
       </ul>

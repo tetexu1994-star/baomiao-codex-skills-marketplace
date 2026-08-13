@@ -1,10 +1,12 @@
 "use strict";
 
-const state = { entries: [], query: "", category: "", publisher: "", risk: "" };
+const PAGE_SIZE = 18;
+const state = { entries: [], query: "", category: "", publisher: "", origin: "", delivery: "", risk: "", limit: PAGE_SIZE };
 const labels = {
-  official: "官方来源", community: "社区来源", low: "低风险", medium: "中风险",
+  official: "官方来源", community: "社区来源", low: "低风险", medium: "中风险", high: "增强权限",
+  "copy-source-directory": "市场审核包", "source-direct": "原始来源直装",
   "filesystem-read": "读取文件", "filesystem-write": "写入文件", shell: "运行本机命令",
-  browser: "浏览器", network: "联网", credentials: "使用凭证", "external-write": "写入外部服务", none: "无需额外权限"
+  browser: "浏览器", network: "联网", credentials: "使用凭证", "external-write": "写入外部服务", "system-config": "修改系统配置", none: "无需额外权限"
 };
 
 function element(tag, className, text) {
@@ -34,6 +36,7 @@ function renderCard(entry) {
   const badges = element("div", "badges");
   badges.append(makePill(labels[entry.publisher.kind], entry.publisher.kind));
   badges.append(makePill(labels[entry.risk.level], entry.risk.level));
+  badges.append(makePill(labels[entry.install.mode], "delivery"));
   top.append(badges, element("span", "category-label", entry.category));
 
   const title = element("h3", "", entry.name);
@@ -50,6 +53,7 @@ function renderCard(entry) {
   const factRows = [
     ["发布者", entry.publisher.name],
     ["许可证", `${entry.license.spdx} · ${entry.license.scope === "skill-directory" ? "目录级" : "仓库级"}`],
+    ["交付方式", labels[entry.install.mode]],
     ["固定版本", entry.source.commit.slice(0, 12)],
     ["审核", `${entry.review.reviewed_at.slice(0, 10)} · ${entry.review.reviewer}`]
   ];
@@ -72,25 +76,33 @@ function renderCard(entry) {
   detailsBody.append(links);
   details.append(detailsBody);
 
-  article.append(top, title, summary, capabilityBox, facts, details);
+  article.append(top, title, summary);
+  if (entry.risk.level === "high") article.append(element("p", "enhanced-notice", "安装前需逐项确认增强权限"));
+  article.append(capabilityBox, facts, details);
   return article;
 }
 
 function matches(entry) {
-  const haystack = [entry.name, entry.summary_zh, entry.category, ...entry.tags].join(" ").toLocaleLowerCase("zh-CN");
+  const haystack = [entry.name, entry.summary_zh, entry.category, entry.publisher.name, ...entry.tags].join(" ").toLocaleLowerCase("zh-CN");
   return (!state.query || haystack.includes(state.query)) &&
     (!state.category || entry.category === state.category) &&
-    (!state.publisher || entry.publisher.kind === state.publisher) &&
+    (!state.publisher || entry.publisher.name === state.publisher) &&
+    (!state.origin || entry.publisher.kind === state.origin) &&
+    (!state.delivery || entry.install.mode === state.delivery) &&
     (!state.risk || entry.risk.level === state.risk);
 }
 
 function render() {
   const list = document.querySelector("#catalog-list");
   const visible = state.entries.filter(matches);
-  list.replaceChildren(...visible.map(renderCard));
+  const rendered = visible.slice(0, state.limit);
+  list.replaceChildren(...rendered.map(renderCard));
   list.setAttribute("aria-busy", "false");
   document.querySelector("#empty-state").hidden = visible.length !== 0;
-  document.querySelector("#catalog-meta").textContent = `显示 ${visible.length} / ${state.entries.length} 个已审核技能`;
+  document.querySelector("#catalog-meta").textContent = `显示 ${rendered.length} / 匹配 ${visible.length} · 总计 ${state.entries.length}`;
+  const more = document.querySelector("#load-more");
+  more.hidden = rendered.length >= visible.length;
+  more.textContent = `继续显示（还剩 ${Math.max(0, visible.length - rendered.length)} 个）`;
 }
 
 function bindFilters() {
@@ -99,12 +111,19 @@ function bindFilters() {
     state.query = document.querySelector("#search").value.trim().toLocaleLowerCase("zh-CN");
     state.category = document.querySelector("#category").value;
     state.publisher = document.querySelector("#publisher").value;
+    state.origin = document.querySelector("#origin").value;
+    state.delivery = document.querySelector("#delivery").value;
     state.risk = document.querySelector("#risk").value;
+    state.limit = PAGE_SIZE;
     render();
   };
   form.addEventListener("input", read);
   form.addEventListener("change", read);
   form.addEventListener("reset", () => window.setTimeout(read, 0));
+  document.querySelector("#load-more").addEventListener("click", () => {
+    state.limit += PAGE_SIZE;
+    render();
+  });
 }
 
 async function loadCatalog() {
@@ -121,7 +140,16 @@ async function loadCatalog() {
       option.value = category;
       select.append(option);
     });
+    const publishers = [...new Set(state.entries.map((entry) => entry.publisher.name))].sort((a, b) => a.localeCompare(b, "zh-CN"));
+    const publisherSelect = document.querySelector("#publisher");
+    publishers.forEach((publisher) => {
+      const option = element("option", "", publisher);
+      option.value = publisher;
+      publisherSelect.append(option);
+    });
     document.querySelector("#approved-count").textContent = String(state.entries.length);
+    document.querySelector("#bundled-count").textContent = String(state.entries.filter((entry) => entry.install.mode === "copy-source-directory").length);
+    document.querySelector("#direct-count").textContent = String(state.entries.filter((entry) => entry.install.mode === "source-direct").length);
     render();
   } catch (error) {
     document.querySelector("#catalog-list").setAttribute("aria-busy", "false");
@@ -132,4 +160,3 @@ async function loadCatalog() {
 
 bindFilters();
 loadCatalog();
-

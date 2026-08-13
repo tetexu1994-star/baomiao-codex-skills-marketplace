@@ -1,0 +1,47 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T13:00:00Z",
+  "commit": "e75f841df3482c00d90144cca37d9b2a3b6ff0fb",
+  "files": [
+    {
+      "bytes": 17987,
+      "path": "SKILL.md",
+      "sha256": "ae98224ea2da83e3f94a1e8109b56b40eef4dfe4c423382534cd00269fb3f258"
+    },
+    {
+      "bytes": 5940,
+      "path": "references/artifact-verification-step.md",
+      "sha256": "35982875db05558e258a4796588854cd8ee81839ca6cb0c1c04eb9556f19df2d"
+    },
+    {
+      "bytes": 5254,
+      "path": "references/cd-containerized-step-group.md",
+      "sha256": "34624b62d573d7b19da869e581da82b4ecb0bc47991d647d1827e425112e818b"
+    },
+    {
+      "bytes": 6094,
+      "path": "references/interactive-wizard-flow.md",
+      "sha256": "fc50818572bd83dc4256172f34c76417562c7c6cf69148fc7dce8e3838de8e71"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
+  },
+  "path": "skills/verify-sign",
+  "policy": "candidate-only",
+  "repository": "https://github.com/harness/harness-skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 4,
+    "findings": [],
+    "total_bytes": 35275,
+    "verdict": "review-required"
+  },
+  "source_id": "harness-official"
+}

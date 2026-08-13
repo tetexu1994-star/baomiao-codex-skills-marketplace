@@ -1,0 +1,32 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T13:00:00Z",
+  "commit": "e75f841df3482c00d90144cca37d9b2a3b6ff0fb",
+  "files": [
+    {
+      "bytes": 3709,
+      "path": "SKILL.md",
+      "sha256": "c61d7de7c5194590f147ac3d69f25547dc0e6fabcf5fd7c8b419908348920d88"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
+  },
+  "path": "skills/create-environment",
+  "policy": "candidate-only",
+  "repository": "https://github.com/harness/harness-skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 1,
+    "findings": [],
+    "total_bytes": 3709,
+    "verdict": "review-required"
+  },
+  "source_id": "harness-official"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "theme-factory",
+  "version": "1.0.0",
+  "description": "为文档、演示、报告和网页选择并应用统一主题。",
+  "author": {"name": "Anthropic", "url": "https://github.com/anthropics"},
+  "repository": "https://github.com/anthropics/skills",
+  "homepage": "https://github.com/anthropics/skills/tree/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/theme-factory",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "文档主题工厂",
+    "shortDescription": "统一文档和演示的配色字体。",
+    "longDescription": "固定来源于 Anthropic Skills；内含十套主题与预览，支持先确认再应用。",
+    "developerName": "Anthropic",
+    "category": "Design",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": ["为这份演示文稿推荐一套合适的主题。"]
+  }
+}

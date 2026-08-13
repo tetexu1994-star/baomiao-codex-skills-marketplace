@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "aspnet-core",
+  "name": "ASP.NET Core 开发指南",
+  "summary_zh": "按微软当前工程实践开发、审查和升级 ASP.NET Core 应用，覆盖 Blazor、MVC、API、认证、测试与部署。",
+  "category": "研发工具",
+  "tags": [
+    ".NET",
+    "ASP.NET",
+    "后端",
+    "Web API",
+    "Windows"
+  ],
+  "publisher": {
+    "name": "OpenAI",
+    "kind": "official",
+    "url": "https://github.com/openai"
+  },
+  "source": {
+    "repository": "https://github.com/openai/skills",
+    "commit": "49f948faa9258a0c61caceaf225e179651397431",
+    "path": "skills/.curated/aspnet-core",
+    "skill_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/aspnet-core/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/aspnet-core/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "medium",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write",
+      "shell"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "Skill 本身不含脚本；实际开发会读取和修改项目，并运行 dotnet 构建、测试或迁移命令。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（扩容复核）",
+    "reviewed_at": "2026-08-13T10:30:00Z",
+    "evidence": "docs/reviews/ecosystem-expansion-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/aspnet-core",
+    "requires_auth": false,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "backup-existing"
+    ]
+  }
+}

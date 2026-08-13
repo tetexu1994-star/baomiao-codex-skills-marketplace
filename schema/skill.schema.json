@@ -23,13 +23,14 @@
     },
     "source": {
       "type": "object", "additionalProperties": false,
-      "required": ["repository", "commit", "path", "skill_url", "license_url"],
+      "required": ["repository", "commit", "path", "skill_url", "license_url", "license_path"],
       "properties": {
         "repository": {"type": "string", "pattern": "^https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},
         "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
         "path": {"type": "string", "pattern": "^skills/[A-Za-z0-9_./-]+$"},
         "skill_url": {"type": "string", "pattern": "^https://raw\\.githubusercontent\\.com/"},
-        "license_url": {"type": "string", "pattern": "^https://raw\\.githubusercontent\\.com/"}
+        "license_url": {"type": "string", "pattern": "^https://raw\\.githubusercontent\\.com/"},
+        "license_path": {"type": "string", "pattern": "^[A-Za-z0-9_./-]+$"}
       }
     },
     "license": {
@@ -46,7 +47,7 @@
       "required": ["level", "capabilities", "has_executable_files", "notes_zh"],
       "properties": {
         "level": {"enum": ["low", "medium", "high", "blocked"]},
-        "capabilities": {"type": "array", "uniqueItems": true, "items": {"enum": ["filesystem-read", "filesystem-write", "network", "shell", "browser", "credentials", "external-write", "none"]}},
+        "capabilities": {"type": "array", "uniqueItems": true, "items": {"enum": ["filesystem-read", "filesystem-write", "network", "shell", "browser", "credentials", "external-write", "system-config", "none"]}},
         "has_executable_files": {"type": "boolean"},
         "notes_zh": {"type": "string", "minLength": 4, "maxLength": 240}
       }
@@ -65,10 +66,40 @@
       "type": "object", "additionalProperties": false,
       "required": ["mode", "destination", "requires_auth", "preflight"],
       "properties": {
-        "mode": {"const": "copy-source-directory"},
+        "mode": {"enum": ["copy-source-directory", "source-direct"]},
         "destination": {"type": "string", "pattern": "^%USERPROFILE%/\\.codex/skills/[a-z0-9-]+$"},
         "requires_auth": {"type": "boolean"},
-        "preflight": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"enum": ["verify-catalog-digest", "verify-source-commit", "verify-license", "scan-files", "show-source-and-risk", "confirm-user", "backup-existing"]}}
+        "preflight": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"enum": ["verify-catalog-digest", "verify-source-commit", "verify-license", "scan-files", "show-source-and-risk", "confirm-user", "confirm-enhanced-permissions", "backup-existing"]}}
+      }
+    },
+    "integrity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["algorithm", "file_count", "total_bytes", "files", "license_evidence"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "file_count": {"type": "integer", "minimum": 1},
+        "total_bytes": {"type": "integer", "minimum": 1},
+        "files": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "bytes", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "bytes": {"type": "integer", "minimum": 0},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "license_evidence": {
+          "type": "object", "additionalProperties": false,
+          "required": ["scope", "path", "sha256"],
+          "properties": {
+            "scope": {"enum": ["skill-directory", "repository"]},
+            "path": {"type": "string", "minLength": 1},
+            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
       }
     }
   }

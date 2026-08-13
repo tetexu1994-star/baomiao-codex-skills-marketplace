@@ -1,0 +1,47 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T13:00:00Z",
+  "commit": "e75f841df3482c00d90144cca37d9b2a3b6ff0fb",
+  "files": [
+    {
+      "bytes": 24613,
+      "path": "SKILL.md",
+      "sha256": "093deaa4f21c539d76ecdac69516bb6d6ce30b5ca6085c03bf0213434d19521f"
+    },
+    {
+      "bytes": 10158,
+      "path": "references/cd-containerized-step-group.md",
+      "sha256": "891ff9a1cdd4c857e8532a089c6c9354a28c5d16b3d012fd3278c8668e347d04"
+    },
+    {
+      "bytes": 12064,
+      "path": "references/interactive-wizard-flow.md",
+      "sha256": "594e9857d6149d934839f45ad044eb45167bb0c653a30fa887cab43002794016"
+    },
+    {
+      "bytes": 9029,
+      "path": "references/sbom-orchestration-step.md",
+      "sha256": "bc7f1f46ee1674daa2fa8ffe218b7aec1aad4838a9fe0db10664b92a15fe4c6f"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
+  },
+  "path": "skills/create-sbom",
+  "policy": "candidate-only",
+  "repository": "https://github.com/harness/harness-skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 4,
+    "findings": [],
+    "total_bytes": 55864,
+    "verdict": "review-required"
+  },
+  "source_id": "harness-official"
+}

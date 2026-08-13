@@ -1,0 +1,19 @@
+{
+  "name": "brand-guidelines",
+  "version": "1.0.0",
+  "description": "在明确需要时应用 Anthropic 公开的颜色和字体规范。",
+  "author": {"name": "Anthropic", "url": "https://github.com/anthropics"},
+  "repository": "https://github.com/anthropics/skills",
+  "homepage": "https://github.com/anthropics/skills/tree/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/brand-guidelines",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Anthropic 品牌样式参考",
+    "shortDescription": "参考 Anthropic 品牌颜色和字体。",
+    "longDescription": "固定来源于 Anthropic Skills；仅用于需要 Anthropic 视觉风格的明确场景。",
+    "developerName": "Anthropic",
+    "category": "Design",
+    "capabilities": [],
+    "defaultPrompt": ["按 Anthropic 公开品牌规范整理这个视觉稿。"]
+  }
+}

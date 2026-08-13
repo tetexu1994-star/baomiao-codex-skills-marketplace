@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "frontend-design",
+  "name": "前端视觉设计指导",
+  "summary_zh": "帮助网页和应用建立更有辨识度的视觉方向，系统处理字体、布局、动效、文案与响应式设计。",
+  "category": "研发工具",
+  "tags": [
+    "前端",
+    "UI",
+    "视觉设计",
+    "响应式"
+  ],
+  "publisher": {
+    "name": "Anthropic",
+    "kind": "official",
+    "url": "https://github.com/anthropics"
+  },
+  "source": {
+    "repository": "https://github.com/anthropics/skills",
+    "commit": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
+    "path": "skills/frontend-design",
+    "skill_url": "https://raw.githubusercontent.com/anthropics/skills/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/frontend-design/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/anthropics/skills/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/frontend-design/LICENSE.txt",
+    "license_path": "LICENSE.txt"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "skill-directory",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "medium",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "纯设计指导，无脚本或联网要求；落地页面时通常需要读取并修改项目文件。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（扩容复核）",
+    "reviewed_at": "2026-08-13T10:30:00Z",
+    "evidence": "docs/reviews/ecosystem-expansion-2026-08-13.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/frontend-design",
+    "requires_auth": false,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "backup-existing"
+    ]
+  }
+}

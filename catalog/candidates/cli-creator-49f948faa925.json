@@ -1,0 +1,43 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T10:00:00Z",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "files": [
+    {
+      "bytes": 10776,
+      "path": "LICENSE.txt",
+      "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9"
+    },
+    {
+      "bytes": 10502,
+      "path": "SKILL.md",
+      "sha256": "24058eabf0aafce6def3fb937ac93cbe3fa341c653c658dc589edb77f73d6152"
+    },
+    {
+      "bytes": 280,
+      "path": "agents/openai.yaml",
+      "sha256": "356c648dcdd7e10d65df0c348175344b36f28c7da51e031010a7385124a89f4c"
+    },
+    {
+      "bytes": 5244,
+      "path": "references/agent-cli-patterns.md",
+      "sha256": "ac11612b780a80a97b15a5ffca23b21a182f854003911cce2363dd69b6126272"
+    }
+  ],
+  "license_evidence": "LICENSE.txt",
+  "path": "skills/.curated/cli-creator",
+  "policy": "candidate-only",
+  "repository": "https://github.com/openai/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 4,
+    "findings": [],
+    "total_bytes": 26802,
+    "verdict": "review-required"
+  },
+  "source_id": "openai-curated"
+}

@@ -44,8 +44,8 @@ def semantic_errors(path: Path, entry: dict, *, root: Path = ROOT) -> List[str]:
     evidence = review.get("evidence", "")
     if evidence and not (root / evidence).is_file():
         errors.append(f"审核证据不存在：{evidence}")
-    if risk.get("level") not in {"low", "medium"}:
-        errors.append("high/blocked 风险不得发布")
+    if risk.get("level") not in {"low", "medium", "high"}:
+        errors.append("blocked 风险不得发布")
     if risk.get("has_executable_files") is not False:
         errors.append("包含可执行文件的 Skill 不得发布")
     capabilities = risk.get("capabilities", [])
@@ -53,19 +53,32 @@ def semantic_errors(path: Path, entry: dict, *, root: Path = ROOT) -> List[str]:
         errors.append("能力 none 不能与其他能力并存")
     if install.get("requires_auth") and "credentials" not in capabilities:
         errors.append("需要认证时必须声明 credentials 能力")
+    if risk.get("level") == "high":
+        if "confirm-enhanced-permissions" not in install.get("preflight", []):
+            errors.append("高风险条目必须启用增强权限确认")
+        if capabilities == ["none"] or not capabilities:
+            errors.append("高风险条目必须列出具体能力")
     match = re.fullmatch(r"https://github\.com/([^/]+)/([^/]+)", repository)
     if match and re.fullmatch(r"[0-9a-f]{40}", commit) and source_path:
         owner, repo = match.groups()
         prefix = f"https://raw.githubusercontent.com/{owner}/{repo}/{commit}/{source_path}"
         if source.get("skill_url") != f"{prefix}/SKILL.md":
             errors.append("skill_url 必须对应固定提交与目录")
-        if source.get("license_url") != f"{prefix}/LICENSE.txt":
+        license_path = source.get("license_path", "")
+        expected_license = (
+            f"https://raw.githubusercontent.com/{owner}/{repo}/{commit}/{license_path}"
+            if entry.get("license", {}).get("scope") == "repository"
+            else f"{prefix}/{license_path}"
+        )
+        if source.get("license_url") != expected_license:
             errors.append("license_url 必须对应固定提交与目录")
     return errors
 
 
 def bundle_errors(entry: dict, *, root: Path = ROOT) -> List[str]:
     """Ensure the installable plugin is byte-for-byte the reviewed candidate."""
+    if entry.get("install", {}).get("mode") == "source-direct":
+        return candidate_errors(entry, root=root)
     entry_id = entry["id"]
     errors: List[str] = []
     plugin_root = root / "plugins" / entry_id
@@ -102,6 +115,29 @@ def bundle_errors(entry: dict, *, root: Path = ROOT) -> List[str]:
     return errors
 
 
+def candidate_errors(entry: dict, *, root: Path = ROOT) -> List[str]:
+    """Ensure source-direct entries still point at the exact reviewed candidate."""
+    entry_id = entry["id"]
+    candidates = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted((root / "catalog" / "candidates").glob(f"{entry_id}-*.json"))
+    ]
+    candidate = next((item for item in candidates if item.get("commit") == entry["source"]["commit"] and item.get("path") == entry["source"]["path"]), None)
+    if candidate is None:
+        return ["没有与 source-direct 固定来源相同的候选摘要"]
+    errors: List[str] = []
+    if candidate.get("scan", {}).get("verdict") != "review-required":
+        errors.append("source-direct 候选自动扫描未通过")
+    if not any(item.get("path") == "SKILL.md" for item in candidate.get("files", [])):
+        errors.append("source-direct 候选缺少 SKILL.md 摘要")
+    evidence = candidate.get("license_evidence", {})
+    if not isinstance(evidence, dict) or evidence.get("scope") != entry["license"]["scope"]:
+        errors.append("source-direct 候选许可证作用域不匹配")
+    elif evidence.get("path") != entry["source"]["license_path"] or not re.fullmatch(r"[0-9a-f]{64}", evidence.get("sha256", "")):
+        errors.append("source-direct 候选许可证证据不完整")
+    return errors
+
+
 def marketplace_errors(entries: List[Tuple[Path, dict]], *, root: Path = ROOT) -> List[str]:
     path = root / ".agents" / "plugins" / "marketplace.json"
     if not path.is_file():
@@ -111,14 +147,18 @@ def marketplace_errors(entries: List[Tuple[Path, dict]], *, root: Path = ROOT) -
     if market.get("name") != "baomiao-codex":
         errors.append("Codex 市场名必须为 baomiao-codex")
     plugins = market.get("plugins", [])
-    if {item.get("name") for item in plugins} != {entry["id"] for _, entry in entries}:
-        errors.append("Codex 市场条目必须与 approved 目录完全一致")
+    bundled_entries = [entry for _, entry in entries if entry.get("install", {}).get("mode") == "copy-source-directory"]
+    if {item.get("name") for item in plugins} != {entry["id"] for entry in bundled_entries}:
+        errors.append("Codex 插件市场条目必须与 approved 中的打包条目完全一致")
+    entries_by_id = {entry["id"]: entry for entry in bundled_entries}
     for plugin in plugins:
         expected_path = f"./plugins/{plugin.get('name')}"
         if plugin.get("source") != {"source": "local", "path": expected_path}:
             errors.append(f"{plugin.get('name')}: marketplace source 必须指向本仓库插件目录")
         policy = plugin.get("policy", {})
-        if policy.get("installation") != "AVAILABLE" or policy.get("authentication") != "ON_INSTALL":
+        entry = entries_by_id.get(plugin.get("name"), {})
+        expected_authentication = "ON_USE" if entry.get("install", {}).get("requires_auth") else "ON_INSTALL"
+        if policy.get("installation") != "AVAILABLE" or policy.get("authentication") != expected_authentication:
             errors.append(f"{plugin.get('name')}: marketplace policy 不完整")
     return errors
 
@@ -131,6 +171,7 @@ def validate_all(directory: Path = APPROVED, *, root: Path = ROOT, online: bool 
     entries = load_entries(directory)
     if not entries:
         errors.append("公开目录不能为空")
+    online_cache: dict[str, bytes] = {}
     for path, entry in entries:
         entry_errors: List[str] = []
         for error in sorted(validator.iter_errors(entry), key=lambda item: list(item.path)):
@@ -146,11 +187,15 @@ def validate_all(directory: Path = APPROVED, *, root: Path = ROOT, online: bool 
             errors.extend(f"{path.name}: {message}" for message in bundle_errors(entry, root=root))
         if online and not entry_errors:
             try:
-                skill = fetch_bytes(entry["source"]["skill_url"])
-                license_text = fetch_bytes(entry["source"]["license_url"])
+                skill_url = entry["source"]["skill_url"]
+                license_url = entry["source"]["license_url"]
+                skill = online_cache.setdefault(skill_url, fetch_bytes(skill_url)) if skill_url not in online_cache else online_cache[skill_url]
+                license_text = online_cache.setdefault(license_url, fetch_bytes(license_url)) if license_url not in online_cache else online_cache[license_url]
                 if not skill.startswith(b"---"):
                     errors.append(f"{path.name}: 上游 SKILL.md 缺少 frontmatter")
                 if entry["license"]["spdx"] == "Apache-2.0" and b"Apache License" not in license_text:
+                    errors.append(f"{path.name}: 上游许可证证据与 SPDX 不匹配")
+                if entry["license"]["spdx"] == "MIT" and b"Permission is hereby granted, free of charge" not in license_text:
                     errors.append(f"{path.name}: 上游许可证证据与 SPDX 不匹配")
             except Exception as exc:
                 errors.append(f"{path.name}: 在线校验失败：{exc}")

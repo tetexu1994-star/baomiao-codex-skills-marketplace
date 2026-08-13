@@ -1,0 +1,353 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T10:00:00Z",
+  "commit": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
+  "files": [
+    {
+      "bytes": 11345,
+      "path": "LICENSE.txt",
+      "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "bytes": 72716,
+      "path": "SKILL.md",
+      "sha256": "57c1e405c5110a14aeff2da10d25b95c188d801fc9a779fa7d7a25ccbf46b890"
+    },
+    {
+      "bytes": 18448,
+      "path": "csharp/claude-api/README.md",
+      "sha256": "b2c4e063d831855fafca794f328221400f188341e994b610abc4eeb9036bb28f"
+    },
+    {
+      "bytes": 413,
+      "path": "csharp/claude-api/batches.md",
+      "sha256": "3031c3d8555d9e4f0a6e07923d31553a563a1daefcadebda7db13ef7d6c959d4"
+    },
+    {
+      "bytes": 679,
+      "path": "csharp/claude-api/files-api.md",
+      "sha256": "413d08653a31766fdc3196f25af6ce386b085c41372dcbf33e9205cd35253731"
+    },
+    {
+      "bytes": 793,
+      "path": "csharp/claude-api/streaming.md",
+      "sha256": "8cd323dceb3d28963fcde3ecd18f2fecde0c7d87b441f7361dab5e8795f5fee2"
+    },
+    {
+      "bytes": 6022,
+      "path": "csharp/claude-api/tool-use.md",
+      "sha256": "80013059920daaea42a32ccb1786071c36068871c84115fc3dffca334bdd90f6"
+    },
+    {
+      "bytes": 9201,
+      "path": "curl/examples.md",
+      "sha256": "f22a32eba79ad9b95823aa3902b96b26734099ceb2d65f1121c06455061de125"
+    },
+    {
+      "bytes": 8761,
+      "path": "curl/managed-agents.md",
+      "sha256": "4ce030992c4664fff98fb3fd4a6b5fd8df83d15f03fa8c4a1e39e1a46744fd02"
+    },
+    {
+      "bytes": 7780,
+      "path": "go/claude-api/README.md",
+      "sha256": "4158b5f54c065896e711a0cf620597f2bc7cb89fc9ce76ace1ff32f1e08468cf"
+    },
+    {
+      "bytes": 713,
+      "path": "go/claude-api/files-api.md",
+      "sha256": "144c12678497f872436aed71944e0e9ba73fea08f4a771e0bec5c1c40d620866"
+    },
+    {
+      "bytes": 1039,
+      "path": "go/claude-api/streaming.md",
+      "sha256": "066a5195398a1c66835d306f5d725708788046e34bf70a0f3a2df53e397537ca"
+    },
+    {
+      "bytes": 8435,
+      "path": "go/claude-api/tool-use.md",
+      "sha256": "24a0afa6908cd8ed2fe25d19a7f2b4c5c916edebba4d789f42714d4862c6f6e0"
+    },
+    {
+      "bytes": 18949,
+      "path": "go/managed-agents/README.md",
+      "sha256": "84f9b6ea1b1f235625cb51a0975fce7246027eff855b4970daf9093d8a88db23"
+    },
+    {
+      "bytes": 11322,
+      "path": "java/claude-api/README.md",
+      "sha256": "90132fd003be83cc6c98105201ddcde56ea73aadc74cd96f916c59142319f2b8"
+    },
+    {
+      "bytes": 969,
+      "path": "java/claude-api/files-api.md",
+      "sha256": "81550cec88f2de0c9af8d6826a4e624668a18ffa25ff7217595e403045a88800"
+    },
+    {
+      "bytes": 661,
+      "path": "java/claude-api/streaming.md",
+      "sha256": "de8d63789e440eb00610908007f6a1593d5fdbdca5708fcafb8e6a50a4f58f3d"
+    },
+    {
+      "bytes": 9542,
+      "path": "java/claude-api/tool-use.md",
+      "sha256": "ddd83530ff690a9deca073cb62011688f28d7f75dea890e47fd58875cddb2a83"
+    },
+    {
+      "bytes": 16956,
+      "path": "java/managed-agents/README.md",
+      "sha256": "1f1dfbc0c2ef71c0eeec05fe7944866f08c7c2673185bb831aab40c3d942d300"
+    },
+    {
+      "bytes": 6123,
+      "path": "php/claude-api/README.md",
+      "sha256": "a2e284941579eec8affd1492e634c7d696e429ba0558c4fac8932ece4940001e"
+    },
+    {
+      "bytes": 447,
+      "path": "php/claude-api/batches.md",
+      "sha256": "fb250d5ff1b20b8041db9b3ad8d35736fa6c6c13415198eead3d73719ea1b65a"
+    },
+    {
+      "bytes": 241,
+      "path": "php/claude-api/files-api.md",
+      "sha256": "a1f2467c6674696b4036ca13026c1f19c0e661bbf94b6e1da0deeb1492958871"
+    },
+    {
+      "bytes": 682,
+      "path": "php/claude-api/streaming.md",
+      "sha256": "b709f7206671ee5a52121c2d6af5ff5a69ec99ee01f647c5d85c4b2291fa6d07"
+    },
+    {
+      "bytes": 8099,
+      "path": "php/claude-api/tool-use.md",
+      "sha256": "2c482a407c669386452056eb0d9d553996c31a518d87d92632db44efe0fd7a48"
+    },
+    {
+      "bytes": 13526,
+      "path": "php/managed-agents/README.md",
+      "sha256": "3cdb977cd03ec247168fd41afe4c63a7c5fd56e67c6fac914d5977d451962c67"
+    },
+    {
+      "bytes": 19376,
+      "path": "python/claude-api/README.md",
+      "sha256": "69cc557fa4a5c107a00702d1ef9b270ac53d4ab5ea9ab3eae757195bea381693"
+    },
+    {
+      "bytes": 5586,
+      "path": "python/claude-api/batches.md",
+      "sha256": "4bfe0df8ec547a0a218a41d22f0be08881a0bd5bbde29f4df9d02d7151c22fc3"
+    },
+    {
+      "bytes": 4373,
+      "path": "python/claude-api/files-api.md",
+      "sha256": "7f308a5bb6ae9d90222255d7702eea975c503366e22b4313f977604176ba4786"
+    },
+    {
+      "bytes": 6548,
+      "path": "python/claude-api/streaming.md",
+      "sha256": "73b102cb41430bd37759ce99b338f1a819e1463a599ed3f983e504d1e2b32efb"
+    },
+    {
+      "bytes": 19419,
+      "path": "python/claude-api/tool-use.md",
+      "sha256": "75385ca26f00312ec1d209a3de8e7a4bfbbe715a8b07e10bb5259213e177dc22"
+    },
+    {
+      "bytes": 10357,
+      "path": "python/managed-agents/README.md",
+      "sha256": "87ae8c61a066ee1e75aec73bc19ea97547df6fded57cdedb3a6f10575f2061ac"
+    },
+    {
+      "bytes": 4481,
+      "path": "ruby/claude-api/README.md",
+      "sha256": "bdd9d432bfd6880853617bbf3426601cda6675b039b31fed1dc2d942598e4ce3"
+    },
+    {
+      "bytes": 235,
+      "path": "ruby/claude-api/streaming.md",
+      "sha256": "82123285e61034f54bcacb714d2672bb172e780adecf09a32881297d3e68c31b"
+    },
+    {
+      "bytes": 1063,
+      "path": "ruby/claude-api/tool-use.md",
+      "sha256": "7ea00862705f482aa79336297d5180eeeb64e90b7df1fbf5a3240088b3a4eaf3"
+    },
+    {
+      "bytes": 10460,
+      "path": "ruby/managed-agents/README.md",
+      "sha256": "6f2cdffef9ed8e3fe5f55d1e62c4937d35808ca5478b23485819cfa2dbbc7b49"
+    },
+    {
+      "bytes": 8600,
+      "path": "shared/agent-design.md",
+      "sha256": "b557f337f9af78525da310e88c766a851e0169a27d1f5b28b65ca039e259855c"
+    },
+    {
+      "bytes": 16210,
+      "path": "shared/anthropic-cli.md",
+      "sha256": "3f52c507dd15b2582e6b07346e0087baa7023b7fb4d0e6465d4bb402fdb1578f"
+    },
+    {
+      "bytes": 3878,
+      "path": "shared/claude-platform-on-aws.md",
+      "sha256": "0bb938bc94c40619cdb2a973227b9bac00b55fa17a7e6ffab09e57b895a2f492"
+    },
+    {
+      "bytes": 12182,
+      "path": "shared/error-codes.md",
+      "sha256": "15bb04905a2b0c5ed995d1a034db552e89d9aae3803e0aa1ecdd36b5f9742883"
+    },
+    {
+      "bytes": 18929,
+      "path": "shared/live-sources.md",
+      "sha256": "ac18eeb1964884c8851a9f01a4fab5aa59c52e220fb9905b7985273031973681"
+    },
+    {
+      "bytes": 33634,
+      "path": "shared/managed-agents-api-reference.md",
+      "sha256": "5a4058cc62966313531ba8012d39e0e56a3569f4f96f58ea5ab5806a8e1b7aa8"
+    },
+    {
+      "bytes": 10881,
+      "path": "shared/managed-agents-client-patterns.md",
+      "sha256": "2a190b44e4223024622a4e8a69dc34b3905eb84670e6015a8b825279942917b9"
+    },
+    {
+      "bytes": 32934,
+      "path": "shared/managed-agents-core.md",
+      "sha256": "84aa960da1b0d10c51ae50cf55d5e77ec8fcbe98894845569e1b09b8b7945072"
+    },
+    {
+      "bytes": 12105,
+      "path": "shared/managed-agents-environments.md",
+      "sha256": "cca59b6ccc6cf93ab84ca308cdca72897c3b7aeddabfdf9a2c2a03d4708897b6"
+    },
+    {
+      "bytes": 22908,
+      "path": "shared/managed-agents-events.md",
+      "sha256": "886fabf895b092effe05ffc176253c376168db2d7f22d5b6e09276e20d668980"
+    },
+    {
+      "bytes": 10006,
+      "path": "shared/managed-agents-memory.md",
+      "sha256": "383cb9f92f4bf63b8c351619b2273a0b06ce37e6eb2652240517b115d1783536"
+    },
+    {
+      "bytes": 25099,
+      "path": "shared/managed-agents-multiagent.md",
+      "sha256": "54196d00d1e8564e7bb36f29a6ace90274a7287c5ef19077c357426ee0a08bcb"
+    },
+    {
+      "bytes": 10460,
+      "path": "shared/managed-agents-onboarding.md",
+      "sha256": "249f5b3fd07f3ccac805fef08efea0c9ea66c14b0cd62591cc88a6ba8f64eb6e"
+    },
+    {
+      "bytes": 7286,
+      "path": "shared/managed-agents-outcomes.md",
+      "sha256": "08dff4a86e2abf684840c64716672236b54e7d35bdbb2db110945697726f02e5"
+    },
+    {
+      "bytes": 12635,
+      "path": "shared/managed-agents-overview.md",
+      "sha256": "191127727773e861be098254234d685a7578221eae06a7aea8d9407ab8f0aecb"
+    },
+    {
+      "bytes": 8411,
+      "path": "shared/managed-agents-scheduled-deployments.md",
+      "sha256": "ef67eb4c5d3be1290f9052a882affe90398eecebafbe89688f25037dbe683091"
+    },
+    {
+      "bytes": 10181,
+      "path": "shared/managed-agents-self-hosted-sandboxes.md",
+      "sha256": "225865291eb1eda677451a416849523b9be1bf81661c6c0306408501b089e8bc"
+    },
+    {
+      "bytes": 23108,
+      "path": "shared/managed-agents-tools.md",
+      "sha256": "4f61a2cd85e85b31b995312495393923e474a6b2cf9efd101113e430aa2e7c99"
+    },
+    {
+      "bytes": 11392,
+      "path": "shared/managed-agents-webhooks.md",
+      "sha256": "6e13a5ac17206e879dadbec75fc8cafe3ae859570c676ec005f5df35acfe03ac"
+    },
+    {
+      "bytes": 175673,
+      "path": "shared/model-migration.md",
+      "sha256": "02d90dea7b1304aaf24100d23e77c79cbfd03e16e51e744c6d0a27470a1423fd"
+    },
+    {
+      "bytes": 12146,
+      "path": "shared/models.md",
+      "sha256": "683f4dabcc88084e142c53d5b646943cdf71188b7dba64d0dbcc0f3cf850f398"
+    },
+    {
+      "bytes": 5945,
+      "path": "shared/platform-availability.md",
+      "sha256": "50023537ade1f59962827395469b51397c823480cd34f98805f7399e13b8edfa"
+    },
+    {
+      "bytes": 16291,
+      "path": "shared/prompt-caching.md",
+      "sha256": "d3bf68cda9787815d5e1c0a793cedb434c9c468fc3ed6ff04e27c293f5b384c8"
+    },
+    {
+      "bytes": 1604,
+      "path": "shared/token-counting.md",
+      "sha256": "0065d762551b79c9c1ccee568b1daee65e2f79b1ee2ec0ea347b1db384289813"
+    },
+    {
+      "bytes": 33807,
+      "path": "shared/tool-use-concepts.md",
+      "sha256": "d98f8a9ad88c424d9d6130f43d1d6fc8ab0d82c4756f7695407b081745dffaad"
+    },
+    {
+      "bytes": 15179,
+      "path": "typescript/claude-api/README.md",
+      "sha256": "b7312f68b2502f2002dbf6f1da4493bad90ad6463c0c161975cd3316e1521dca"
+    },
+    {
+      "bytes": 2592,
+      "path": "typescript/claude-api/batches.md",
+      "sha256": "db0d4c3b2c901a3e42f42fef09081b08fe4c5d21c85b519a1fe8898819a39db5"
+    },
+    {
+      "bytes": 2259,
+      "path": "typescript/claude-api/files-api.md",
+      "sha256": "c93a25de00840f61e1e757e031e1defab8cc4990ed1d03ad0ce002f8feb88f9e"
+    },
+    {
+      "bytes": 5843,
+      "path": "typescript/claude-api/streaming.md",
+      "sha256": "2c690be93d15325bfcdb66bc99d276e0f6bf2f78bbc697aa150d92bd4a0d950c"
+    },
+    {
+      "bytes": 19116,
+      "path": "typescript/claude-api/tool-use.md",
+      "sha256": "5ba08718623f6f007cdd5180d1bb636cc80744b1c3587bb23be8708eda5830cf"
+    },
+    {
+      "bytes": 9844,
+      "path": "typescript/managed-agents/README.md",
+      "sha256": "e25ad9eb349f901f9dc1f6feace318d4abe35756b967f1a4f36036b724d72c71"
+    }
+  ],
+  "license_evidence": "LICENSE.txt",
+  "path": "skills/claude-api",
+  "policy": "candidate-only",
+  "repository": "https://github.com/anthropics/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 66,
+    "findings": [],
+    "total_bytes": 906898,
+    "verdict": "review-required"
+  },
+  "source_id": "anthropic-official"
+}

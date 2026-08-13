@@ -1,0 +1,128 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T11:00:00Z",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "files": [
+    {
+      "bytes": 11357,
+      "path": "LICENSE.txt",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "bytes": 11272,
+      "path": "SKILL.md",
+      "sha256": "917341ec9eb688d73e21362910a7178a92b2ae49544b7d8f17ee9e19adfe2ea8"
+    },
+    {
+      "bytes": 202,
+      "path": "agents/openai.yaml",
+      "sha256": "78ce2654ae038782bc270a6a6474f3cbf7df10889d646882dd140ab6c42346f4"
+    },
+    {
+      "bytes": 8770,
+      "path": "assets/winui.png",
+      "sha256": "c5ad3df6585bcbf596060e451c4b8141c3492d664a04a2041d9bd8b60445c87f"
+    },
+    {
+      "bytes": 2515,
+      "path": "config.yaml",
+      "sha256": "fd335882f053f82290342f2f49fae4b1bf3deb2317cf2c23298e119d5c5f17da"
+    },
+    {
+      "bytes": 4279,
+      "path": "references/_sections.md",
+      "sha256": "54f055a86da3ef06e50a857ca9ab4cc256f5938a247774377d6d037045a2feda"
+    },
+    {
+      "bytes": 2026,
+      "path": "references/accessibility-input-and-localization.md",
+      "sha256": "62d03a806ce883ac4ef58947a1f0b173011dbfbfcfb0cb992cca95b8c25696a3"
+    },
+    {
+      "bytes": 4332,
+      "path": "references/build-run-and-launch-verification.md",
+      "sha256": "a6e15a7fbc7969a5e716653bc7848a974ed9471b1fef914ff70778c3c80c2c24"
+    },
+    {
+      "bytes": 1954,
+      "path": "references/community-toolkit-controls-and-helpers.md",
+      "sha256": "abb4dd07d96094bf37b928d3769b52d23b411e45e76221ee0008ef6565dfc449"
+    },
+    {
+      "bytes": 6012,
+      "path": "references/controls-layout-and-adaptive-ui.md",
+      "sha256": "90d2087e73aa617cea8c853f5d8b2440b5e5eb6f3c9e55fedd84e7bf4be7ee15"
+    },
+    {
+      "bytes": 3730,
+      "path": "references/foundation-environment-audit-and-remediation.md",
+      "sha256": "8bd585792a576a40c882918916135789dc84eb6e319fbb5ee4ebd2fbedc38928"
+    },
+    {
+      "bytes": 4412,
+      "path": "references/foundation-setup-and-project-selection.md",
+      "sha256": "4440a2a6babd2c293d6f0efc7fb3a6975b2978e711295924ecf145e139124a72"
+    },
+    {
+      "bytes": 3381,
+      "path": "references/foundation-template-first-recovery.md",
+      "sha256": "6718919c530b0bb0c4abc8aea7f56564412db58e60d8e3bfd282dabc86d5d94b"
+    },
+    {
+      "bytes": 2479,
+      "path": "references/foundation-winui-app-structure.md",
+      "sha256": "5d2a8e8ca4a7e7058722566622bddca98ae18c136c0c3f76dd0a5edfb78cd51c"
+    },
+    {
+      "bytes": 1577,
+      "path": "references/motion-animations-and-polish.md",
+      "sha256": "d22b9b919bdc9dd5674da28b5980988a41e1cc5ee37182c0a470268b9d126134"
+    },
+    {
+      "bytes": 1759,
+      "path": "references/performance-diagnostics-and-responsiveness.md",
+      "sha256": "01d47d229c1903b875e6dc0b55d0935963afed2bd99b65638a06bfdfe931359e"
+    },
+    {
+      "bytes": 2201,
+      "path": "references/sample-source-map.md",
+      "sha256": "fd03ee0e1abd41bd3cf2fa7f5131686498597d56122f219742854ac4d33f0ce2"
+    },
+    {
+      "bytes": 3551,
+      "path": "references/shell-navigation-and-windowing.md",
+      "sha256": "3fda8c2dc98c710c08f901d83475391d53bb6e92fa2ace140693f5783380bf71"
+    },
+    {
+      "bytes": 3948,
+      "path": "references/styling-theming-materials-and-icons.md",
+      "sha256": "14c9b4aff55d63a8afc3501643a8fc0e75056f0cdd55331f356d50ad6ad45014"
+    },
+    {
+      "bytes": 4288,
+      "path": "references/testing-debugging-and-review-checklists.md",
+      "sha256": "1e3e2890e14f3216cf6485839592293d5b02652da19453a460cfa2368e89fb10"
+    },
+    {
+      "bytes": 2731,
+      "path": "references/windows-app-sdk-lifecycle-notifications-and-deployment.md",
+      "sha256": "099ee45361e1d0ef5c017b08bda43699e578dad615e27438591798a95e353009"
+    }
+  ],
+  "license_evidence": "LICENSE.txt",
+  "path": "skills/.curated/winui-app",
+  "policy": "candidate-only",
+  "repository": "https://github.com/openai/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 21,
+    "findings": [],
+    "total_bytes": 86776,
+    "verdict": "review-required"
+  },
+  "source_id": "openai-curated"
+}

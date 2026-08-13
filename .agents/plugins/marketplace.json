@@ -39,6 +39,108 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "aspnet-core",
+      "source": {"source": "local", "path": "./plugins/aspnet-core"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Developer Tools"
+    },
+    {
+      "name": "cli-creator",
+      "source": {"source": "local", "path": "./plugins/cli-creator"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Developer Tools"
+    },
+    {
+      "name": "frontend-design",
+      "source": {"source": "local", "path": "./plugins/frontend-design"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Design"
+    },
+    {
+      "name": "internal-comms",
+      "source": {"source": "local", "path": "./plugins/internal-comms"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity"
+    },
+    {
+      "name": "theme-factory",
+      "source": {"source": "local", "path": "./plugins/theme-factory"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Design"
+    },
+    {
+      "name": "brand-guidelines",
+      "source": {"source": "local", "path": "./plugins/brand-guidelines"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Design"
+    },
+    {
+      "name": "claude-api",
+      "source": {"source": "local", "path": "./plugins/claude-api"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "category": "Developer Tools"
+    },
+    {
+      "name": "linear",
+      "source": {"source": "local", "path": "./plugins/linear"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "category": "Productivity"
+    },
+    {
+      "name": "netlify-deploy",
+      "source": {"source": "local", "path": "./plugins/netlify-deploy"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "category": "Developer Tools"
+    },
+    {
+      "name": "notion-knowledge-capture",
+      "source": {"source": "local", "path": "./plugins/notion-knowledge-capture"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "category": "Productivity"
+    },
+    {
+      "name": "notion-meeting-intelligence",
+      "source": {"source": "local", "path": "./plugins/notion-meeting-intelligence"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "category": "Productivity"
+    },
+    {
+      "name": "notion-research-documentation",
+      "source": {"source": "local", "path": "./plugins/notion-research-documentation"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "category": "Productivity"
+    },
+    {
+      "name": "notion-spec-to-implementation",
+      "source": {"source": "local", "path": "./plugins/notion-spec-to-implementation"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "category": "Productivity"
+    },
+    {
+      "name": "playwright-interactive",
+      "source": {"source": "local", "path": "./plugins/playwright-interactive"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Developer Tools"
+    },
+    {
+      "name": "security-best-practices",
+      "source": {"source": "local", "path": "./plugins/security-best-practices"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Developer Tools"
+    },
+    {
+      "name": "winui-app",
+      "source": {"source": "local", "path": "./plugins/winui-app"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Developer Tools"
+    },
+    {
+      "name": "yeet",
+      "source": {"source": "local", "path": "./plugins/yeet"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "category": "Developer Tools"
     }
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "name": "frontend-design",
+  "version": "1.0.0",
+  "description": "为网页和应用建立有辨识度、可落地的视觉方向。",
+  "author": {"name": "Anthropic", "url": "https://github.com/anthropics"},
+  "repository": "https://github.com/anthropics/skills",
+  "homepage": "https://github.com/anthropics/skills/tree/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/frontend-design",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "前端视觉设计指导",
+    "shortDescription": "设计更有辨识度的产品界面。",
+    "longDescription": "固定来源于 Anthropic Skills；指导字体、布局、动效、文案与响应式设计。",
+    "developerName": "Anthropic",
+    "category": "Design",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": ["帮我为这个页面建立明确而有辨识度的视觉方向。"]
+  }
+}

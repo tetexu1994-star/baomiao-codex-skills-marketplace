@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "create-trigger",
+  "name": "创建流水线触发器",
+  "summary_zh": "为 Harness 流水线创建 Webhook、定时或制品触发器。",
+  "category": "研发工具",
+  "tags": [
+    "Harness",
+    "MCP",
+    "DevOps",
+    "官方源码"
+  ],
+  "publisher": {
+    "name": "Harness",
+    "kind": "official",
+    "url": "https://github.com/harness"
+  },
+  "source": {
+    "repository": "https://github.com/harness/harness-skills",
+    "commit": "e75f841df3482c00d90144cca37d9b2a3b6ff0fb",
+    "path": "skills/create-trigger",
+    "skill_url": "https://raw.githubusercontent.com/harness/harness-skills/e75f841df3482c00d90144cca37d9b2a3b6ff0fb/skills/create-trigger/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/harness/harness-skills/e75f841df3482c00d90144cca37d9b2a3b6ff0fb/LICENSE",
+    "license_path": "LICENSE"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "repository",
+    "verified_at": "2026-08-13"
+  },
+  "risk": {
+    "level": "high",
+    "capabilities": [
+      "network",
+      "credentials",
+      "external-write"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "需要连接 Harness MCP v2 并使用用户自己的 Harness 授权；可修改远端资源，执行前必须逐项确认。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（Harness 专项复核）",
+    "reviewed_at": "2026-08-13T13:10:00Z",
+    "evidence": "docs/reviews/harness-official-2026-08-13.md"
+  },
+  "install": {
+    "mode": "source-direct",
+    "destination": "%USERPROFILE%/.codex/skills/create-trigger",
+    "requires_auth": true,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "confirm-enhanced-permissions",
+      "backup-existing"
+    ]
+  }
+}

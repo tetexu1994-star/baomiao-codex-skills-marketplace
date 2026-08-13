@@ -1,0 +1,118 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-13T11:00:00Z",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "files": [
+    {
+      "bytes": 1057,
+      "path": "LICENSE.txt",
+      "sha256": "0f377d9b2a1db642e4b0531ffa126e96d9bc6c085f8d9441f220fb25f723c6f8"
+    },
+    {
+      "bytes": 3521,
+      "path": "SKILL.md",
+      "sha256": "6e22c4c6df441e849fa6b4b825371b579c9bb4896f97bedca5f8536020427a81"
+    },
+    {
+      "bytes": 524,
+      "path": "agents/openai.yaml",
+      "sha256": "1e4ba970e5e4b0e1fbbea6f1c3795a70e38d9c670c5a652c932b2d04982ca377"
+    },
+    {
+      "bytes": 15777,
+      "path": "assets/notion-small.svg",
+      "sha256": "00f5e4b758cc5c3e36e783dca2fabfafd05169c2f2175063e56d2e1fb6a55f81"
+    },
+    {
+      "bytes": 8526,
+      "path": "assets/notion.png",
+      "sha256": "5eef1e62d96a3d09bc9d18e4140486c22799145b017033bd0924c2c49d741cd4"
+    },
+    {
+      "bytes": 4427,
+      "path": "evaluations/README.md",
+      "sha256": "5fdf4830a9b4889b55f1636675d2d26161945530298b6a34a19f4c7f7fc9cc0f"
+    },
+    {
+      "bytes": 2401,
+      "path": "evaluations/basic-spec-implementation.json",
+      "sha256": "0b1aa05f74e3e3503b4faaa0263cbbb1142d679140322682bc2dba6148648b50"
+    },
+    {
+      "bytes": 2561,
+      "path": "evaluations/spec-to-tasks.json",
+      "sha256": "fea35f66e20c8f1f918815ef13d77f8ee85a3a86d8902c0d0b7d1cfbdb19cf45"
+    },
+    {
+      "bytes": 13579,
+      "path": "examples/api-feature.md",
+      "sha256": "5ac3e41507ad34c1a18d3c964a431c464fdaa1593bda96e5cf00b169a4ee46c6"
+    },
+    {
+      "bytes": 2443,
+      "path": "examples/database-migration.md",
+      "sha256": "575ef697c6c9c55add54b43714460adb3bfa8aa2bec3ecbebd7e16757be511d3"
+    },
+    {
+      "bytes": 1662,
+      "path": "examples/ui-component.md",
+      "sha256": "5fa8788e1f3fd53e00729065cb574cf46db3bd866d254f108b91b41a08318307"
+    },
+    {
+      "bytes": 456,
+      "path": "reference/milestone-summary-template.md",
+      "sha256": "52bebb1e531a69a85b5f9764e27b0129dbed1258e34669ae7b26d8bb6d536efe"
+    },
+    {
+      "bytes": 9020,
+      "path": "reference/progress-tracking.md",
+      "sha256": "1aefc791440c61e26169cc955d7e4e08699e3cc8c3f506d4a8a9be684be90447"
+    },
+    {
+      "bytes": 420,
+      "path": "reference/progress-update-template.md",
+      "sha256": "649ff810bc8b14b91df74b2506a11f2837a64a9880010466b6ce6d532967bb9a"
+    },
+    {
+      "bytes": 480,
+      "path": "reference/quick-implementation-plan.md",
+      "sha256": "7e19f4aafe8b5312825624247f7cced405482718f67ece9d8f88a4bdbf323055"
+    },
+    {
+      "bytes": 6942,
+      "path": "reference/spec-parsing.md",
+      "sha256": "e978a605c45b13001bb68850b635d87be694e79b415d766aa6975a0c3068f5ee"
+    },
+    {
+      "bytes": 3286,
+      "path": "reference/standard-implementation-plan.md",
+      "sha256": "98405060e286d0d60140648996d757cc102abb588ae2eaaaabf0a99e93530a15"
+    },
+    {
+      "bytes": 597,
+      "path": "reference/task-creation-template.md",
+      "sha256": "010a9a3b1d95633220bb93ffcab5f2f49e897c5d4e4231940d691719bec1be34"
+    },
+    {
+      "bytes": 7965,
+      "path": "reference/task-creation.md",
+      "sha256": "60a2eb24530097b7c4011582bb3954576655a30c0c95e9a8a12ff6a19aee3a26"
+    }
+  ],
+  "license_evidence": "LICENSE.txt",
+  "path": "skills/.curated/notion-spec-to-implementation",
+  "policy": "candidate-only",
+  "repository": "https://github.com/openai/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 19,
+    "findings": [],
+    "total_bytes": 85644,
+    "verdict": "review-required"
+  },
+  "source_id": "openai-curated"
+}

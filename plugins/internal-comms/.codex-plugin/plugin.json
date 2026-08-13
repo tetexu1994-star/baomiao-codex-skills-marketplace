@@ -1,0 +1,19 @@
+{
+  "name": "internal-comms",
+  "version": "1.0.0",
+  "description": "用清晰模板撰写项目进展、管理层更新和内部通讯。",
+  "author": {"name": "Anthropic", "url": "https://github.com/anthropics"},
+  "repository": "https://github.com/anthropics/skills",
+  "homepage": "https://github.com/anthropics/skills/tree/f17010c9bb483898c1d9c9f42dde2b3a98889434/skills/internal-comms",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "内部沟通写作",
+    "shortDescription": "写周报、项目更新和事故报告。",
+    "longDescription": "固定来源于 Anthropic Skills；提供 3P、FAQ、内部通讯和项目更新模板。",
+    "developerName": "Anthropic",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": ["把这些信息整理成清晰的项目周报。"]
+  }
+}

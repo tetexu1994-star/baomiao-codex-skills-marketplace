@@ -1,23 +1,31 @@
 # 暴喵 Codex Skills 市场
 
-面向中国大陆 Windows 用户的中文 Codex Skill 索引。这里不追求“搬得多”，而是让每个条目都能回答：**谁发布、从哪里下载、固定到哪个版本、采用什么许可证、需要哪些权限、谁审核过。**
+面向中国大陆 Windows 用户的中文 Codex Skill 索引。规模可以增长，但每个条目都必须回答：**谁发布、从哪里下载、固定到哪个版本、采用什么许可证、需要哪些权限、谁审核过。**
 
 暴喵客户端可以利用自身网络加速能力访问 GitHub 官方/原始来源，但不得改写来源、代理第三方身份或上传用户凭证。当前仓库是可发布的 MVP；它不是失效市场的镜像，也没有复制参考仓库中无明确许可的内容。
 
 ## 当前内容
 
 - 中文静态首页：搜索、分类、官方/社区、风险筛选和来源详情；
-- 严格的 [Skill 元数据 Schema](schema/skill.schema.json)；
+- 严格的 [Skill 元数据 Schema](schema/skill.schema.json)；公开构建会在同一条目上附加 schema 已定义的 `integrity` 文件摘要；
 - `catalog/candidates/` 与 `catalog/approved/` 双区隔离；
 - 允许来源、固定提交、完整目录枚举和保守型安全扫描；
 - 人工审核后才构建的 `dist/catalog.json` + SHA-256；
 - [暴喵客户端一键安装契约](docs/client-contract.md)；
 - GitHub Actions CI 与 Pages 发布流程；
-- 3 个少量但真实、可核验的 OpenAI 官方 Skill 条目。
+- 72 个真实、可核验条目：20 个 OpenAI / Anthropic 市场审核包，52 个 Harness 原始来源直装条目；
+- 两种交付方式都下发逐文件 SHA-256、文件数、总字节数和许可证摘要，另保留完整暂缓与拒绝记录。
+
+## 两种交付方式
+
+- **市场审核包**：仓库内保存与候选摘要逐字节一致的插件目录，进入 `.agents/plugins/marketplace.json`，适合 Codex marketplace 直接安装。
+- **原始来源直装**：仓库不复制上游 Skill 正文，只保存中文索引、固定提交、许可证证据、完整文件摘要和审核记录。暴喵客户端从条目展示的原始 GitHub 地址下载并逐文件校验。
+
+页面会分别标明两种方式。它们采用同一套许可证、固定提交、静态扫描和人工审核门禁；“直装”不等于跳过审核。
 
 ## 信任边界
 
-“已审核”不是绝对安全保证。MVP 会拒绝无许可证、浮动版本、可执行文件、疑似凭证、危险命令、高风险或未人工审核的条目。客户端每次安装仍必须重新扫描固定提交的完整目录，并在替换旧版本前备份。
+“已审核”不是绝对安全保证。市场会拒绝无许可证、浮动版本、可执行文件、疑似凭证、危险命令或未人工审核的条目。需要 OAuth、外部写入、浏览器控制、系统配置或无沙箱运行的内容可以进入“增强权限”层，但客户端必须额外展示并逐项确认。每次安装仍必须重新扫描固定提交的完整目录，并在替换旧版本前备份。
 
 参考仓库的详细结论见 [审查报告](docs/reviews/reference-repository.md)。市场关键取舍见 [决策记录](docs/decisions/)。
 
@@ -46,9 +54,15 @@ codex plugin marketplace add <暴喵账号>/<仓库名> --ref main
 codex plugin add pdf@baomiao-codex
 codex plugin add define-goal@baomiao-codex
 codex plugin add security-threat-model@baomiao-codex
+codex plugin add aspnet-core@baomiao-codex
+codex plugin add internal-comms@baomiao-codex
+codex plugin add frontend-design@baomiao-codex
+codex plugin add linear@baomiao-codex
+codex plugin add notion-knowledge-capture@baomiao-codex
+codex plugin add winui-app@baomiao-codex
 ```
 
-这些插件包是对明确采用 Apache-2.0 的固定上游目录的合规打包，包内保留许可证；每个 `plugin.json` 的 `homepage` 指向审核提交。暴喵客户端自有的一键安装流程仍应按客户端契约直接读取原始上游，而不是把本市场包装冒充上游。
+这些插件包是对明确许可的固定上游目录的合规打包，包内保留许可证；每个 `plugin.json` 的 `homepage` 指向审核提交。此命令只覆盖 20 个市场审核包；52 个 Harness 条目由暴喵客户端按 `source-direct` 契约从固定上游安装。
 
 macOS/Linux 的命令相同，只需把虚拟环境激活改为：
 
@@ -79,6 +93,28 @@ GitHub 公共 API 无 token 也可使用，但有速率限制。维护者如需�
 
 同步器把 `main` 解析成完整提交哈希，再枚举允许目录的全部文件。候选文件名包含提交哈希前缀，因此新同步不会覆盖旧审核证据。候选中的 `scan.verdict` 仅表示自动扫描结果，不能把 `candidate` 状态自动改成 `approved`。完整审核步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
+来源较多时可用 `--source` 只同步一组，例如：
+
+```powershell
+python -m scripts.sync_candidates --source harness-official --ref main
+```
+
+GitHub API 限流时，可以先用 Git 克隆官方仓库，再让同步器直接读取固定提交的 Git 对象；它会核对 `origin`，不会读取未提交工作树：
+
+```powershell
+git clone --filter=blob:none https://github.com/openai/skills.git .cache/openai-skills
+git clone --filter=blob:none https://github.com/anthropics/skills.git .cache/anthropic-skills
+git clone --filter=blob:none https://github.com/harness/harness-skills.git .cache/harness-skills
+python -m scripts.sync_candidates --ref main `
+  --local-source openai-curated=.cache/openai-skills `
+  --local-source anthropic-official=.cache/anthropic-skills `
+  --local-source harness-official=.cache/harness-skills
+```
+
+本轮全网来源审查、7 个新增条目与暂缓原因见 [生态扩容审查](docs/reviews/ecosystem-expansion-2026-08-13.md)。
+增强权限层的 10 个新增条目和逐项能力复核见 [增强权限扩容审查](docs/reviews/enhanced-permissions-2026-08-13.md)。
+Harness 官方 55 个候选（发布 52 个、暂缓 3 个）的许可、目录和风险分组见 [Harness 专项复核](docs/reviews/harness-official-2026-08-13.md)。
+
 ## 生成物
 
 - `dist/catalog.json`：客户端稳定接口；
@@ -108,4 +144,4 @@ git push -u origin main
 
 ## 许可证
 
-本市场的代码与文档采用 [MIT](LICENSE)。各 Skill 仍归各自上游作者，采用条目 `license` 和 `source.license_url` 指向的许可证；本仓库 MVP 不复制其正文。
+本市场的代码与文档采用 [MIT](LICENSE)。各 Skill 仍归各自上游作者，采用条目 `license` 和 `source.license_url` 指向的许可证。`plugins/` 内仅包含 20 个明确许可的审核包；52 个 Harness 条目只做索引和原始来源直装，不复制正文。

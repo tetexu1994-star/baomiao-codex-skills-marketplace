@@ -15,7 +15,8 @@
 - Skill 名称、中文说明、分类；
 - 发布者名称与“官方/社区”标记；
 - 原始 GitHub 仓库、完整提交哈希和目录；
-- SPDX 许可证与许可证原文链接；
+- SPDX 许可证、作用域与许可证原文链接；
+- 交付方式：市场审核包或原始来源直装；两者都显示真正的上游身份；
 - 风险等级、能力清单、是否含可执行文件；
 - 人工审核者、审核时间和证据；
 - 目标安装目录与现有版本是否会被替换。
@@ -28,17 +29,21 @@
 
 1. `verify-catalog-digest`：验证市场目录摘要。
 2. `verify-source-commit`：只下载 `source.commit` 指定的 40 位提交，禁止用 `main`/tag 替代。
-3. `verify-license`：目标目录内许可证须存在，并与声明 SPDX 相符。
+3. `verify-license`：读取 `source.license_url`，核对 SPDX、作用域与 `integrity.license_evidence.sha256`。目录级许可证必须包含在下载文件清单内；仓库级许可证可以位于 `source.path` 外，但必须单独下载为随附许可说明。
 4. `scan-files`：先枚举完整目录，再下载；限制单文件和总大小，拒绝符号链接、路径穿越、设备文件及未知重定向。重跑与市场同步器相同或更严格的秘密、高危命令和可执行文件扫描。
 5. `show-source-and-risk`：把第 2 节信息显示给用户。
 6. `confirm-user`：用户明确点击“从原始来源安装”。
-7. `backup-existing`：替换前创建本地原子备份。
+7. `confirm-enhanced-permissions`：仅对 `risk.level: high` 执行；用独立确认页逐项列出 OAuth/凭证、外部写入、浏览器控制、本机命令、系统配置与无沙箱要求。不得与普通安装确认合并，也不得预选同意。
+8. `backup-existing`：替换前创建本地原子备份。
 
 扫描规则要随客户端版本更新；不能因为条目已由市场审核就跳过安装时扫描。
 
+增强权限条目允许功能更强，但不代表自动获得权限。OAuth 必须由对应服务的官方登录页完成；系统配置、部署、推送、创建外部记录或关闭沙箱等动作仍应在实际使用时遵循 Codex 的逐次授权与用户指令。客户端不得代替用户保存第三方 token，也不得把“安装 Skill”解释成“授权所有后续操作”。
+
 ## 4. 下载与身份边界
 
-- 客户端下载 `source.path` 整个目录，不能只下载 `SKILL.md` 而遗漏许可证、references 或 assets。
+- 客户端下载 `source.path` 整个目录，不能只下载 `SKILL.md` 而遗漏目录内的许可证、references 或 assets；仓库级许可证按上一节单独随附。
+- 按 `integrity.files` 校验相对路径、文件数、总字节数和每个文件的 SHA-256；上游目录多出、缺少或改变任何文件都以 `SOURCE_CHANGED` 阻断。
 - 请求目标仅限 `github.com`、`api.github.com`、`raw.githubusercontent.com`，重定向后重新校验主机。
 - 公共来源无需 token。私有来源不属于 v1 市场。
 - 不把 GitHub token、Codex 凭证、Cookie、设备标识或安装目录上传给市场、暴喵加速层或上游。
@@ -64,6 +69,7 @@ type InstallRequestV1 = {
   catalogSha256Url: string;
   skillId: string;
   expectedCommit: string;
+  expectedCatalogDigest: string;
 };
 
 type InstallResultV1 = {
@@ -77,3 +83,4 @@ type InstallResultV1 = {
 
 客户端不得接受请求体覆盖条目中的来源、许可证、风险或目标目录。`reasonCode` 使用稳定枚举并提供中文解释，例如 `CATALOG_DIGEST_MISMATCH`、`SOURCE_CHANGED`、`EXECUTABLE_FOUND`、`USER_CANCELLED`、`ROLLBACK_COMPLETED`。
 
+对增强权限条目，客户端还应记录用户确认的能力枚举与确认时间，但不得记录 token、OAuth code、Cookie 或外部服务内容。若客户端版本不认识某个能力枚举，必须以 `UNSUPPORTED_CAPABILITY` 阻断，不能忽略未知能力。
