@@ -8,7 +8,7 @@
     "Harness",
     "MCP",
     "DevOps",
-    "官方源码"
+    "官方插件"
   ],
   "publisher": {
     "name": "Harness",
@@ -45,7 +45,7 @@
     "evidence": "docs/reviews/harness-official-2026-08-13.md"
   },
   "install": {
-    "mode": "source-direct",
+    "mode": "copy-source-directory",
     "destination": "%USERPROFILE%/.codex/skills/manage-freeze-windows",
     "requires_auth": true,
     "preflight": [

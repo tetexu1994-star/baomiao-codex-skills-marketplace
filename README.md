@@ -1,6 +1,6 @@
-# 暴喵 Codex Skills 市场
+# 暴喵 Codex 插件市场
 
-面向中国大陆 Windows 用户的中文 Codex Skill 索引。规模可以增长，但每个条目都必须回答：**谁发布、从哪里下载、固定到哪个版本、采用什么许可证、需要哪些权限、谁审核过。**
+面向中国大陆 Windows 用户的中文 Codex 插件市场。每个插件包封装一个可被 Codex 加载的 Skill，并明确展示发布者、原始来源、固定版本、许可证和所需权限。
 
 暴喵客户端可以利用自身网络加速能力访问 GitHub 官方/原始来源，但不得改写来源、代理第三方身份或上传用户凭证。当前仓库是可发布的 MVP；它不是失效市场的镜像，也没有复制参考仓库中无明确许可的内容。
 
@@ -13,15 +13,12 @@
 - 人工审核后才构建的 `dist/catalog.json` + SHA-256；
 - [暴喵客户端一键安装契约](docs/client-contract.md)；
 - GitHub Actions CI 与 Pages 发布流程；
-- 72 个真实、可核验条目：20 个 OpenAI / Anthropic 市场审核包，52 个 Harness 原始来源直装条目；
-- 两种交付方式都下发逐文件 SHA-256、文件数、总字节数和许可证摘要，另保留完整暂缓与拒绝记录。
+- 72 个真实、可核验、可由 Codex Marketplace 发现的插件：20 个 OpenAI / Anthropic 插件和 52 个 Harness 插件；
+- 所有插件包都保留上游许可证，下发逐文件 SHA-256、文件数、总字节数和许可证摘要；另保留完整暂缓与拒绝记录。
 
-## 两种交付方式
+## 插件形态
 
-- **市场审核包**：仓库内保存与候选摘要逐字节一致的插件目录，进入 `.agents/plugins/marketplace.json`，适合 Codex marketplace 直接安装。
-- **原始来源直装**：仓库不复制上游 Skill 正文，只保存中文索引、固定提交、许可证证据、完整文件摘要和审核记录。暴喵客户端从条目展示的原始 GitHub 地址下载并逐文件校验。
-
-页面会分别标明两种方式。它们采用同一套许可证、固定提交、静态扫描和人工审核门禁；“直装”不等于跳过审核。
+72 个条目全部进入 `.agents/plugins/marketplace.json`。仓库中的每个 `plugins/<id>/` 都有 `.codex-plugin/plugin.json`，并在 `skills/<id>/` 中保存固定提交的 Skill 内容与适用许可证。插件清单与候选摘要逐字节核对；“插件”是安装与发现单元，“Skill”是插件内承载的能力。
 
 ## 信任边界
 
@@ -62,7 +59,7 @@ codex plugin add notion-knowledge-capture@baomiao-codex
 codex plugin add winui-app@baomiao-codex
 ```
 
-这些插件包是对明确许可的固定上游目录的合规打包，包内保留许可证；每个 `plugin.json` 的 `homepage` 指向审核提交。此命令只覆盖 20 个市场审核包；52 个 Harness 条目由暴喵客户端按 `source-direct` 契约从固定上游安装。
+这些插件包是对明确许可的固定上游目录的合规打包，包内保留许可证；每个 `plugin.json` 的 `homepage` 指向审核提交。上述方式适用于全部 72 个插件。
 
 macOS/Linux 的命令相同，只需把虚拟环境激活改为：
 
@@ -144,4 +141,4 @@ git push -u origin main
 
 ## 许可证
 
-本市场的代码与文档采用 [MIT](LICENSE)。各 Skill 仍归各自上游作者，采用条目 `license` 和 `source.license_url` 指向的许可证。`plugins/` 内仅包含 20 个明确许可的审核包；52 个 Harness 条目只做索引和原始来源直装，不复制正文。
+本市场的代码与文档采用 [MIT](LICENSE)。各插件内的 Skill 仍归各自上游作者，采用条目 `license` 和 `source.license_url` 指向的许可证。`plugins/` 内只包含许可范围明确、固定版本且通过当前门禁的 72 个插件包。

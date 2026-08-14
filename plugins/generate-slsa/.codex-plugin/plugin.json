@@ -1,0 +1,27 @@
+{
+  "name": "generate-slsa",
+  "version": "1.0.0",
+  "description": "在流水线中生成 SLSA 构建来源证明并关联制品。",
+  "author": {
+    "name": "Harness",
+    "url": "https://github.com/harness"
+  },
+  "repository": "https://github.com/harness/harness-skills",
+  "homepage": "https://github.com/harness/harness-skills/tree/e75f841df3482c00d90144cca37d9b2a3b6ff0fb/skills/generate-slsa",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "生成 SLSA 证明",
+    "shortDescription": "在流水线中生成 SLSA 构建来源证明并关联制品。",
+    "longDescription": "固定来源于 Harness 官方 Skills；需要连接 Harness MCP v2 并使用用户自己的 Harness 授权；可修改远端资源，执行前必须逐项确认。",
+    "developerName": "Harness",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Network",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "使用 生成 SLSA 证明 完成当前任务，并在外部写入前说明影响。"
+    ]
+  }
+}

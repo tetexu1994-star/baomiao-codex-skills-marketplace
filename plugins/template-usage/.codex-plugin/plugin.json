@@ -1,0 +1,26 @@
+{
+  "name": "template-usage",
+  "version": "1.0.0",
+  "description": "查询 Harness 模板引用与使用情况，辅助模板治理和升级。",
+  "author": {
+    "name": "Harness",
+    "url": "https://github.com/harness"
+  },
+  "repository": "https://github.com/harness/harness-skills",
+  "homepage": "https://github.com/harness/harness-skills/tree/e75f841df3482c00d90144cca37d9b2a3b6ff0fb/skills/template-usage",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "模板使用分析",
+    "shortDescription": "查询 Harness 模板引用与使用情况，辅助模板治理和升级。",
+    "longDescription": "固定来源于 Harness 官方 Skills；需要连接 Harness MCP v2 并使用用户自己的 Harness 授权；默认用于读取、分析和生成建议。",
+    "developerName": "Harness",
+    "category": "Productivity",
+    "capabilities": [
+      "Network"
+    ],
+    "defaultPrompt": [
+      "使用 模板使用分析 完成当前任务，并在外部写入前说明影响。"
+    ]
+  }
+}

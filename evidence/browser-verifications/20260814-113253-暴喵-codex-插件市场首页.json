@@ -1,0 +1,28 @@
+{
+  "schema_version": "browser-verification/v1",
+  "created_at": "2026-08-14T11:32:53.180255+08:00",
+  "target": "暴喵 Codex 插件市场首页",
+  "url": "http://127.0.0.1:8000/",
+  "verdict": "pass",
+  "checks": [
+    "页面标题与品牌均为 Codex 插件市场",
+    "公开总数为 72，首批直接展示 18 张插件卡片",
+    "Windows 搜索匹配 ASP.NET Core 与 WinUI 3 两个插件",
+    "导航与页面均不展示审核标准，且不再展示内部交付筛选",
+    "875px 可见视口无横向溢出"
+  ],
+  "manual_steps": [],
+  "screenshots": [
+    "evidence/browser-verifications/screenshots/plugin-market-visible.jpg"
+  ],
+  "notes": "在 Codex 内置浏览器中完成可见页面、筛选交互和 DOM 状态检查。",
+  "git": {
+    "repo_root": "/Users/tetexu/baomiao-codex-skills-marketplace",
+    "branch": "main",
+    "commit": "6ebd592c90469496e1f37ebe3947262b64034c4b"
+  },
+  "artifact_paths": {
+    "json": "/Users/tetexu/baomiao-codex-skills-marketplace/evidence/browser-verifications/20260814-113253-暴喵-codex-插件市场首页.json",
+    "markdown": "/Users/tetexu/baomiao-codex-skills-marketplace/evidence/browser-verifications/20260814-113253-暴喵-codex-插件市场首页.md"
+  }
+}

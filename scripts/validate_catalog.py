@@ -96,6 +96,12 @@ def bundle_errors(entry: dict, *, root: Path = ROOT) -> List[str]:
     if candidate.get("scan", {}).get("verdict") != "review-required":
         errors.append("候选自动扫描未通过")
     expected = {item["path"]: item["sha256"] for item in candidate.get("files", [])}
+    if entry.get("license", {}).get("scope") == "repository":
+        evidence = candidate.get("license_evidence", {})
+        if not isinstance(evidence, dict) or not re.fullmatch(r"[0-9a-f]{64}", evidence.get("sha256", "")):
+            errors.append("仓库级许可证候选证据不完整")
+        else:
+            expected["LICENSE"] = evidence["sha256"]
     actual_paths = sorted(path.relative_to(skill_root).as_posix() for path in skill_root.rglob("*") if path.is_file()) if skill_root.is_dir() else []
     if sorted(expected) != actual_paths:
         errors.append("插件 Skill 文件清单与审核候选不一致")
@@ -157,8 +163,8 @@ def marketplace_errors(entries: List[Tuple[Path, dict]], *, root: Path = ROOT) -
             errors.append(f"{plugin.get('name')}: marketplace source 必须指向本仓库插件目录")
         policy = plugin.get("policy", {})
         entry = entries_by_id.get(plugin.get("name"), {})
-        expected_authentication = "ON_USE" if entry.get("install", {}).get("requires_auth") else "ON_INSTALL"
-        if policy.get("installation") != "AVAILABLE" or policy.get("authentication") != expected_authentication:
+        allowed_authentication = {"ON_INSTALL", "ON_USE"} if entry.get("install", {}).get("requires_auth") else {"ON_INSTALL"}
+        if policy.get("installation") != "AVAILABLE" or policy.get("authentication") not in allowed_authentication:
             errors.append(f"{plugin.get('name')}: marketplace policy 不完整")
     return errors
 

@@ -5,7 +5,7 @@
       "id": "ai-operations",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/ai-operations",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -19,12 +19,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 5742,
             "path": "SKILL.md",
             "sha256": "8f8f87fd8091549afd4afc9390720e697bed26beab214ccc3ff91a9839b6a7f9"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -32,7 +37,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 5742
+        "total_bytes": 16505
       },
       "license": {
         "scope": "repository",
@@ -74,7 +79,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -82,7 +87,7 @@
       "id": "analyze-costs",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/analyze-costs",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -96,12 +101,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 4774,
             "path": "SKILL.md",
             "sha256": "67b082f57294144eb9dd7b65ecf000d41a9e10da4ed8d50dfc7640fcf8896aeb"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -109,7 +119,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 4774
+        "total_bytes": 15537
       },
       "license": {
         "scope": "repository",
@@ -151,7 +161,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -159,7 +169,7 @@
       "id": "approve-exempt",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/approve-exempt",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -174,12 +184,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 23167,
             "path": "SKILL.md",
             "sha256": "3ad2b844f6c608d1bf04d35912bdc12bb939000261dfebe443840d51548939d1"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -187,7 +202,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 23167
+        "total_bytes": 33930
       },
       "license": {
         "scope": "repository",
@@ -230,7 +245,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -397,7 +412,7 @@
       "id": "audit-report",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/audit-report",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -411,7 +426,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 2,
+        "file_count": 3,
         "files": [
           {
             "bytes": 5268,
@@ -422,6 +437,11 @@
             "bytes": 3176,
             "path": "references/report-templates.md",
             "sha256": "cc1a64259bdf8f51ab16b02805e3e575c73a6271b883e3057047f740c8efad9c"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -429,7 +449,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 8444
+        "total_bytes": 19207
       },
       "license": {
         "scope": "repository",
@@ -471,7 +491,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -560,7 +580,7 @@
       "id": "chaos-experiment",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/chaos-experiment",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -575,12 +595,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 3791,
             "path": "SKILL.md",
             "sha256": "21a475e0b50b3e84f0fbc68918e227548d07c94880f99ed314b06a5f2338f647"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -588,7 +613,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 3791
+        "total_bytes": 14554
       },
       "license": {
         "scope": "repository",
@@ -631,7 +656,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1140,7 +1165,7 @@
       "id": "configure-agent-pr-attestation",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/configure-agent-pr-attestation",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1155,12 +1180,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 8229,
             "path": "SKILL.md",
             "sha256": "c13c77462a8189ff1c55699975940f5058c17ac1f2e19e79199869ef481c1f8f"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1168,7 +1198,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 8229
+        "total_bytes": 18992
       },
       "license": {
         "scope": "repository",
@@ -1211,7 +1241,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1219,7 +1249,7 @@
       "id": "configure-container-scan",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/configure-container-scan",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1234,12 +1264,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 17343,
             "path": "SKILL.md",
             "sha256": "31635308dd66c0918346d39220c22cdebfbf862131d9d7df86d6478e8b6939fd"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1247,7 +1282,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 17343
+        "total_bytes": 28106
       },
       "license": {
         "scope": "repository",
@@ -1290,7 +1325,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1298,7 +1333,7 @@
       "id": "configure-dast-scan",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/configure-dast-scan",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1313,12 +1348,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 23889,
             "path": "SKILL.md",
             "sha256": "654e1aa0373227f7ab2796cdd28d8ea850b495bc49276c20c89a99c170272a23"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1326,7 +1366,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 23889
+        "total_bytes": 34652
       },
       "license": {
         "scope": "repository",
@@ -1369,7 +1409,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1377,7 +1417,7 @@
       "id": "configure-repo-scan",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/configure-repo-scan",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1392,7 +1432,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 2,
+        "file_count": 3,
         "files": [
           {
             "bytes": 8986,
@@ -1403,6 +1443,11 @@
             "bytes": 9307,
             "path": "references/scanner-types.md",
             "sha256": "c4396b08afe9013da6a232631ca01a36e30a0758d91f48b5d08b04f0e81705ad"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1410,7 +1455,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 18293
+        "total_bytes": 29056
       },
       "license": {
         "scope": "repository",
@@ -1453,7 +1498,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1461,7 +1506,7 @@
       "id": "configure-secret-scan",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/configure-secret-scan",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1476,12 +1521,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 11157,
             "path": "SKILL.md",
             "sha256": "3de3c7c8a7a1e6f464f224b84f2f12d7db9f57506e78376af412f5232f830723"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1489,7 +1539,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 11157
+        "total_bytes": 21920
       },
       "license": {
         "scope": "repository",
@@ -1532,7 +1582,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1540,7 +1590,7 @@
       "id": "create-agent",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-agent",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1555,12 +1605,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 21903,
             "path": "SKILL.md",
             "sha256": "f5fe240b2802151c8d608523df1fc12a0c8a5103853721d142efb1a8c43eacac"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1568,7 +1623,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 21903
+        "total_bytes": 32666
       },
       "license": {
         "scope": "repository",
@@ -1611,7 +1666,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1619,7 +1674,7 @@
       "id": "create-agent-template",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-agent-template",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1634,7 +1689,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 2,
+        "file_count": 3,
         "files": [
           {
             "bytes": 8666,
@@ -1645,6 +1700,11 @@
             "bytes": 10534,
             "path": "references/agent-examples.md",
             "sha256": "a58374e8ff2f71a9185502a3456317f3c621471386c7871c6ab333b6a9338c61"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1652,7 +1712,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 19200
+        "total_bytes": 29963
       },
       "license": {
         "scope": "repository",
@@ -1695,7 +1755,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1703,7 +1763,7 @@
       "id": "create-connector",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-connector",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1718,12 +1778,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 7945,
             "path": "SKILL.md",
             "sha256": "4e513f06003e0e0e951e9bd306a673b7ca22b146fdd24b95989554d6e8d9cf08"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1731,7 +1796,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 7945
+        "total_bytes": 18708
       },
       "license": {
         "scope": "repository",
@@ -1774,7 +1839,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1782,7 +1847,7 @@
       "id": "create-environment",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-environment",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1797,12 +1862,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 3709,
             "path": "SKILL.md",
             "sha256": "c61d7de7c5194590f147ac3d69f25547dc0e6fabcf5fd7c8b419908348920d88"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1810,7 +1880,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 3709
+        "total_bytes": 14472
       },
       "license": {
         "scope": "repository",
@@ -1853,7 +1923,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1861,7 +1931,7 @@
       "id": "create-infrastructure",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-infrastructure",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1876,12 +1946,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 5031,
             "path": "SKILL.md",
             "sha256": "48a7400fd66c543c0d065059e4519e23f266369bfc9f148b2635467fcbad6bf9"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1889,7 +1964,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 5031
+        "total_bytes": 15794
       },
       "license": {
         "scope": "repository",
@@ -1932,7 +2007,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -1940,7 +2015,7 @@
       "id": "create-pipeline",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-pipeline",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -1955,7 +2030,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 4,
+        "file_count": 5,
         "files": [
           {
             "bytes": 20802,
@@ -1976,6 +2051,11 @@
             "bytes": 9665,
             "path": "references/v0-pipeline-schema.md",
             "sha256": "7afa804c67d9eab4731fe9693ac7a20c2976c3e728e9def20a90dc5baa097e38"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -1983,7 +2063,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 52982
+        "total_bytes": 63745
       },
       "license": {
         "scope": "repository",
@@ -2026,7 +2106,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2034,7 +2114,7 @@
       "id": "create-pipeline-v1",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-pipeline-v1",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2049,7 +2129,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 3,
+        "file_count": 4,
         "files": [
           {
             "bytes": 12419,
@@ -2065,6 +2145,11 @@
             "bytes": 16921,
             "path": "references/v1-spec-schema.md",
             "sha256": "d6b2280b15f6598a22ad95e5daaab2dcfec10c46c208695f4c96290d6b0483d2"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2072,7 +2157,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 41862
+        "total_bytes": 52625
       },
       "license": {
         "scope": "repository",
@@ -2115,7 +2200,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2123,7 +2208,7 @@
       "id": "create-policy",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-policy",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2138,7 +2223,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 19,
+        "file_count": 20,
         "files": [
           {
             "bytes": 7826,
@@ -2234,6 +2319,11 @@
             "bytes": 8590,
             "path": "references/rego-writing-guide.md",
             "sha256": "3a1db63d3d5e287b0312fcca095ff69f6f3e0ce6d5acd1b26230214705b2cfe8"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2241,7 +2331,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 173556
+        "total_bytes": 184319
       },
       "license": {
         "scope": "repository",
@@ -2284,7 +2374,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2292,7 +2382,7 @@
       "id": "create-sbom",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-sbom",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2307,7 +2397,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 4,
+        "file_count": 5,
         "files": [
           {
             "bytes": 24613,
@@ -2328,6 +2418,11 @@
             "bytes": 9029,
             "path": "references/sbom-orchestration-step.md",
             "sha256": "bc7f1f46ee1674daa2fa8ffe218b7aec1aad4838a9fe0db10664b92a15fe4c6f"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2335,7 +2430,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 55864
+        "total_bytes": 66627
       },
       "license": {
         "scope": "repository",
@@ -2378,7 +2473,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2386,7 +2481,7 @@
       "id": "create-secret",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-secret",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2401,7 +2496,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 2,
+        "file_count": 3,
         "files": [
           {
             "bytes": 6917,
@@ -2412,6 +2507,11 @@
             "bytes": 2772,
             "path": "references/secret-types.md",
             "sha256": "553cb8f93edda83e5f7c3b6cae2e2f4a035eaa35bd3733b6e6373bf732301644"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2419,7 +2519,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 9689
+        "total_bytes": 20452
       },
       "license": {
         "scope": "repository",
@@ -2462,7 +2562,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2470,7 +2570,7 @@
       "id": "create-template",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-template",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2485,12 +2585,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6382,
             "path": "SKILL.md",
             "sha256": "18b507960e71bb61ea441e6112485d52ebc5942920fa655811b800dc6d38698a"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2498,7 +2603,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6382
+        "total_bytes": 17145
       },
       "license": {
         "scope": "repository",
@@ -2541,7 +2646,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2549,7 +2654,7 @@
       "id": "create-trigger",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/create-trigger",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2564,12 +2669,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 5835,
             "path": "SKILL.md",
             "sha256": "4fda52404037b7b9c99298ed8cbb98f148493a5d45b3bf6aabaa7725897c62d1"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2577,7 +2687,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 5835
+        "total_bytes": 16598
       },
       "license": {
         "scope": "repository",
@@ -2620,7 +2730,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2628,7 +2738,7 @@
       "id": "dbops-changeset",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/dbops-changeset",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2643,7 +2753,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 2,
+        "file_count": 3,
         "files": [
           {
             "bytes": 31105,
@@ -2654,6 +2764,11 @@
             "bytes": 18793,
             "path": "reference.md",
             "sha256": "4d8704ec6846d5f397c99836b78ba536c6dde0211d59c7511a0bc4f903b498be"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2661,7 +2776,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 49898
+        "total_bytes": 60661
       },
       "license": {
         "scope": "repository",
@@ -2704,7 +2819,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2712,7 +2827,7 @@
       "id": "debug-pipeline",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/debug-pipeline",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2726,12 +2841,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6494,
             "path": "SKILL.md",
             "sha256": "9b631e5644f4ad0344e60a416ced67cf0ffcb42b6218e2f2bb4d060334291fc7"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2739,7 +2859,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6494
+        "total_bytes": 17257
       },
       "license": {
         "scope": "repository",
@@ -2781,7 +2901,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2875,7 +2995,7 @@
       "id": "deployment-readiness",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/deployment-readiness",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2889,12 +3009,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6637,
             "path": "SKILL.md",
             "sha256": "076c78ed54ac0a92e15ed5ac2d8cc185db0200442dabbbdcda104a97a3aa2227"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2902,7 +3027,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6637
+        "total_bytes": 17400
       },
       "license": {
         "scope": "repository",
@@ -2944,7 +3069,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -2952,7 +3077,7 @@
       "id": "dora-metrics",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/dora-metrics",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -2966,12 +3091,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6371,
             "path": "SKILL.md",
             "sha256": "1bcaaff8fe399e80b52984cca20f69fd1738a327e9af9fb676209cf8196f985d"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -2979,7 +3109,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6371
+        "total_bytes": 17134
       },
       "license": {
         "scope": "repository",
@@ -3021,7 +3151,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3029,7 +3159,7 @@
       "id": "exempt-vuln",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/exempt-vuln",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3044,12 +3174,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 27584,
             "path": "SKILL.md",
             "sha256": "51b5f8df9b3dc3f7e61ab6b7c6ad1571f62ed8d9a299cece4c539fb42d8a3c5a"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3057,7 +3192,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 27584
+        "total_bytes": 38347
       },
       "license": {
         "scope": "repository",
@@ -3100,7 +3235,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3190,7 +3325,7 @@
       "id": "generate-slsa",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/generate-slsa",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3205,7 +3340,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 4,
+        "file_count": 5,
         "files": [
           {
             "bytes": 11964,
@@ -3226,6 +3361,11 @@
             "bytes": 6182,
             "path": "references/slsa-generation-step.md",
             "sha256": "cd1fed7824c342b5269e0bd6b97da96f200eecc658fd7ff52aaaf3be247ea61a"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3233,7 +3373,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 26221
+        "total_bytes": 36984
       },
       "license": {
         "scope": "repository",
@@ -3276,7 +3416,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3284,7 +3424,7 @@
       "id": "gitops-status",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/gitops-status",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3298,12 +3438,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 4206,
             "path": "SKILL.md",
             "sha256": "920dcd4bcffbf589d142554849d8003fdb488130d3aa558fb1dc89f3d051ff42"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3311,7 +3456,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 4206
+        "total_bytes": 14969
       },
       "license": {
         "scope": "repository",
@@ -3353,7 +3498,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3361,7 +3506,7 @@
       "id": "incident-response",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/incident-response",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3375,12 +3520,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6852,
             "path": "SKILL.md",
             "sha256": "7eb5985478d5a3c7967dbba5b4694f87d28731733f7d02ebae5348260d97269e"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3388,7 +3538,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6852
+        "total_bytes": 17615
       },
       "license": {
         "scope": "repository",
@@ -3430,7 +3580,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3638,7 +3788,7 @@
       "id": "manage-artifacts",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-artifacts",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3653,12 +3803,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 5445,
             "path": "SKILL.md",
             "sha256": "47f41484ef6b3cfe08f52518e74375deacdcaf298dec570352ffdf53c687c140"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3666,7 +3821,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 5445
+        "total_bytes": 16208
       },
       "license": {
         "scope": "repository",
@@ -3709,7 +3864,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3717,7 +3872,7 @@
       "id": "manage-cde",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-cde",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3732,12 +3887,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 4933,
             "path": "SKILL.md",
             "sha256": "d788b35be07244d0cbd0a201f98757ee01c9ccf04190c4692d239fc9039a0c22"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3745,7 +3905,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 4933
+        "total_bytes": 15696
       },
       "license": {
         "scope": "repository",
@@ -3788,7 +3948,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3796,7 +3956,7 @@
       "id": "manage-delegates",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-delegates",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3811,12 +3971,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 4389,
             "path": "SKILL.md",
             "sha256": "b13c9fac9ba87470084204295bb92398033eabf923e5cdba3fe0a433264ae80f"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3824,7 +3989,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 4389
+        "total_bytes": 15152
       },
       "license": {
         "scope": "repository",
@@ -3867,7 +4032,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3875,7 +4040,7 @@
       "id": "manage-feature-flags",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-feature-flags",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3890,12 +4055,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 5843,
             "path": "SKILL.md",
             "sha256": "5394617fee11953534432b525684eae91180cb3ca52a97166fc3ff7c45b6408f"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3903,7 +4073,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 5843
+        "total_bytes": 16606
       },
       "license": {
         "scope": "repository",
@@ -3946,7 +4116,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -3954,7 +4124,7 @@
       "id": "manage-freeze-windows",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-freeze-windows",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -3969,12 +4139,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 10995,
             "path": "SKILL.md",
             "sha256": "5d9c83ac1af566d3ec692911b667829ac31e927a93856210b9f0d12e2752a16e"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -3982,7 +4157,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 10995
+        "total_bytes": 21758
       },
       "license": {
         "scope": "repository",
@@ -4025,7 +4200,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -4033,7 +4208,7 @@
       "id": "manage-iacm",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-iacm",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -4048,12 +4223,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6595,
             "path": "SKILL.md",
             "sha256": "fcdd2d1b3e9651225e3a7eef4b29c45d0e84d9f566ea0e3a55812c35979d8d97"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -4061,7 +4241,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6595
+        "total_bytes": 17358
       },
       "license": {
         "scope": "repository",
@@ -4104,7 +4284,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -4112,7 +4292,7 @@
       "id": "manage-idp",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-idp",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -4127,12 +4307,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6994,
             "path": "SKILL.md",
             "sha256": "1692154511bfaef05661e58097626f13e4d54694dc1f205635ae60ed84a672e6"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -4140,7 +4325,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6994
+        "total_bytes": 17757
       },
       "license": {
         "scope": "repository",
@@ -4183,7 +4368,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -4191,7 +4376,7 @@
       "id": "manage-pull-requests",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-pull-requests",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -4206,12 +4391,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 10027,
             "path": "SKILL.md",
             "sha256": "2255093ae6b947cdf63fc192de82df5371317a60afcd7ec1792beeb1ec896437"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -4219,7 +4409,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 10027
+        "total_bytes": 20790
       },
       "license": {
         "scope": "repository",
@@ -4262,7 +4452,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -4270,7 +4460,7 @@
       "id": "manage-roles",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-roles",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -4285,7 +4475,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 2,
+        "file_count": 3,
         "files": [
           {
             "bytes": 6069,
@@ -4296,6 +4486,11 @@
             "bytes": 2585,
             "path": "references/builtin-roles.md",
             "sha256": "078fc225335a305156a00c0bf5ea61a7cf57e1b749ca50c76f862515080e6517"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -4303,7 +4498,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 8654
+        "total_bytes": 19417
       },
       "license": {
         "scope": "repository",
@@ -4346,7 +4541,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -4354,7 +4549,7 @@
       "id": "manage-slos",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-slos",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -4368,12 +4563,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6101,
             "path": "SKILL.md",
             "sha256": "1502bbc43770e8667b7868b88bf2d39a335aff5322222a4ec1a8a0ade1a48c9e"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -4381,7 +4581,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6101
+        "total_bytes": 16864
       },
       "license": {
         "scope": "repository",
@@ -4423,7 +4623,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -4431,7 +4631,7 @@
       "id": "manage-supply-chain",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-supply-chain",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -4446,12 +4646,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 5855,
             "path": "SKILL.md",
             "sha256": "f16e7907e8df36de249d45c7f8e3b7dd6166e95a66466d26c87cb9aa65e0ac60"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -4459,7 +4664,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 5855
+        "total_bytes": 16618
       },
       "license": {
         "scope": "repository",
@@ -4502,7 +4707,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -4510,7 +4715,7 @@
       "id": "manage-users",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/manage-users",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -4525,12 +4730,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 5091,
             "path": "SKILL.md",
             "sha256": "a4947941fc4ffd1c464c682b7bbacbd87ed5fcc74797892d29e69123b17ed312"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -4538,7 +4748,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 5091
+        "total_bytes": 15854
       },
       "license": {
         "scope": "repository",
@@ -4581,7 +4791,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -4589,7 +4799,7 @@
       "id": "migrate-pipeline",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/migrate-pipeline",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -4604,12 +4814,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 4059,
             "path": "SKILL.md",
             "sha256": "12d2925b85d11facc377ff03d5eae2ab01e37e532de79ad740ca20c2941eabe5"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -4617,7 +4832,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 4059
+        "total_bytes": 14822
       },
       "license": {
         "scope": "repository",
@@ -4660,7 +4875,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -5476,7 +5691,7 @@
       "id": "optimize-pipeline",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/optimize-pipeline",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -5490,12 +5705,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6531,
             "path": "SKILL.md",
             "sha256": "db6d25d9c2a946760c4287ca895f29406e64529494500ed39314a25f879a58cd"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -5503,7 +5723,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6531
+        "total_bytes": 17294
       },
       "license": {
         "scope": "repository",
@@ -5545,7 +5765,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -5753,7 +5973,7 @@
       "id": "pr-analysis",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/pr-analysis",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -5767,12 +5987,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6503,
             "path": "SKILL.md",
             "sha256": "0e2531ed7793baf354d87656783ff282dffe2a6f57ff32d64c502878055de018"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -5780,7 +6005,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6503
+        "total_bytes": 17266
       },
       "license": {
         "scope": "repository",
@@ -5822,7 +6047,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -5830,7 +6055,7 @@
       "id": "run-pipeline",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/run-pipeline",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -5845,12 +6070,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6237,
             "path": "SKILL.md",
             "sha256": "d635b7f9d3f78fe9d8f77b3dfa25b44537d53bea5e7471589a581e0f7686bbe0"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -5858,7 +6088,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6237
+        "total_bytes": 17000
       },
       "license": {
         "scope": "repository",
@@ -5901,7 +6131,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -5909,7 +6139,7 @@
       "id": "scorecard-review",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/scorecard-review",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -5923,12 +6153,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 3769,
             "path": "SKILL.md",
             "sha256": "1aa9b23552b1d6f8fe5093cf408d21cbc805b3af071cb1dbda53500a70afb82f"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -5936,7 +6171,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 3769
+        "total_bytes": 14532
       },
       "license": {
         "scope": "repository",
@@ -5978,7 +6213,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -6124,7 +6359,7 @@
       "id": "security-report",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/security-report",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -6138,12 +6373,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 4485,
             "path": "SKILL.md",
             "sha256": "1ff9ef89fd364168a275b84e0f1eb9abfc488c136f76402fccf4815c62d67d78"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -6151,7 +6391,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 4485
+        "total_bytes": 15248
       },
       "license": {
         "scope": "repository",
@@ -6193,7 +6433,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -6298,7 +6538,7 @@
       "id": "sei-analytics",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/sei-analytics",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -6312,12 +6552,17 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 1,
+        "file_count": 2,
         "files": [
           {
             "bytes": 6621,
             "path": "SKILL.md",
             "sha256": "dff42ec540119c8a6972f3fbb86e076accebfa3a94b3b6b1512a5051ed95cb24"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -6325,7 +6570,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 6621
+        "total_bytes": 17384
       },
       "license": {
         "scope": "repository",
@@ -6367,7 +6612,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -6375,7 +6620,7 @@
       "id": "sign-artifact",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/sign-artifact",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -6390,7 +6635,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 4,
+        "file_count": 5,
         "files": [
           {
             "bytes": 18609,
@@ -6411,6 +6656,11 @@
             "bytes": 9763,
             "path": "references/interactive-wizard-flow.md",
             "sha256": "ff566616e94ea42b940926672dd976b8b6f29fd498d88a1a27f14f9cccc3c79d"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -6418,7 +6668,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 37980
+        "total_bytes": 48743
       },
       "license": {
         "scope": "repository",
@@ -6461,7 +6711,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -6469,7 +6719,7 @@
       "id": "template-usage",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/template-usage",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -6483,7 +6733,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 2,
+        "file_count": 3,
         "files": [
           {
             "bytes": 5526,
@@ -6494,6 +6744,11 @@
             "bytes": 2068,
             "path": "references/report-templates.md",
             "sha256": "99e5719fdf744f723b3ff1b3cfa5e607c728563d13338b51e0853007f1c7f53e"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -6501,7 +6756,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 7594
+        "total_bytes": 18357
       },
       "license": {
         "scope": "repository",
@@ -6543,7 +6798,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -6689,7 +6944,7 @@
       "id": "verify-sign",
       "install": {
         "destination": "%USERPROFILE%/.codex/skills/verify-sign",
-        "mode": "source-direct",
+        "mode": "copy-source-directory",
         "preflight": [
           "verify-catalog-digest",
           "verify-source-commit",
@@ -6704,7 +6959,7 @@
       },
       "integrity": {
         "algorithm": "sha256",
-        "file_count": 4,
+        "file_count": 5,
         "files": [
           {
             "bytes": 17987,
@@ -6725,6 +6980,11 @@
             "bytes": 6094,
             "path": "references/interactive-wizard-flow.md",
             "sha256": "fc50818572bd83dc4256172f34c76417562c7c6cf69148fc7dce8e3838de8e71"
+          },
+          {
+            "bytes": 10763,
+            "path": "LICENSE",
+            "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
           }
         ],
         "license_evidence": {
@@ -6732,7 +6992,7 @@
           "scope": "repository",
           "sha256": "26d257bf3f93a8831062619edbd0ba302c3b11f19062e1d7b051f603aa3895dc"
         },
-        "total_bytes": 35275
+        "total_bytes": 46038
       },
       "license": {
         "scope": "repository",
@@ -6775,7 +7035,7 @@
         "Harness",
         "MCP",
         "DevOps",
-        "官方源码"
+        "官方插件"
       ]
     },
     {
@@ -7064,9 +7324,9 @@
   ],
   "marketplace": {
     "client_contract": "docs/client-contract.md",
-    "generated_at": "2026-08-13T15:00:00Z",
+    "generated_at": "2026-08-13T00:00:00Z",
     "id": "baomiao-codex-skills",
-    "name_zh": "暴喵 Codex Skills 市场",
+    "name_zh": "暴喵 Codex 插件市场",
     "review_policy": "human-approved-only"
   },
   "schema_version": 1

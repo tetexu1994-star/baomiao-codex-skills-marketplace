@@ -36,11 +36,19 @@ def build(*, generated_at: Optional[str] = None) -> Tuple[Path, Path]:
         if isinstance(evidence, str):
             matching = next((item for item in candidate["files"] if item["path"] == evidence), None)
             evidence = {"scope": "skill-directory", "path": evidence, "sha256": matching["sha256"] if matching else None}
+        integrity_files = copy.deepcopy(candidate["files"])
+        if isinstance(evidence, dict) and evidence.get("scope") == "repository":
+            packaged_license = ROOT / "plugins" / entry["id"] / "skills" / entry["id"] / "LICENSE"
+            integrity_files.append({
+                "path": "LICENSE",
+                "bytes": packaged_license.stat().st_size,
+                "sha256": hashlib.sha256(packaged_license.read_bytes()).hexdigest(),
+            })
         entry["integrity"] = {
             "algorithm": "sha256",
-            "file_count": candidate["scan"]["file_count"],
-            "total_bytes": candidate["scan"]["total_bytes"],
-            "files": candidate["files"],
+            "file_count": len(integrity_files),
+            "total_bytes": sum(item["bytes"] for item in integrity_files),
+            "files": integrity_files,
             "license_evidence": evidence,
         }
         entries.append(entry)
@@ -49,7 +57,7 @@ def build(*, generated_at: Optional[str] = None) -> Tuple[Path, Path]:
         "schema_version": 1,
         "marketplace": {
             "id": "baomiao-codex-skills",
-            "name_zh": "暴喵 Codex Skills 市场",
+            "name_zh": "暴喵 Codex 插件市场",
             "generated_at": generated_at,
             "review_policy": "human-approved-only",
             "client_contract": "docs/client-contract.md"

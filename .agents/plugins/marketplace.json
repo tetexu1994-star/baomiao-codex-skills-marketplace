@@ -1,7 +1,7 @@
 {
   "name": "baomiao-codex",
   "interface": {
-    "displayName": "暴喵 Codex Skills"
+    "displayName": "\u66b4\u55b5 Codex \u63d2\u4ef6\u5e02\u573a"
   },
   "plugins": [
     {
@@ -42,104 +42,830 @@
     },
     {
       "name": "aspnet-core",
-      "source": {"source": "local", "path": "./plugins/aspnet-core"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/aspnet-core"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Developer Tools"
     },
     {
       "name": "cli-creator",
-      "source": {"source": "local", "path": "./plugins/cli-creator"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/cli-creator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Developer Tools"
     },
     {
       "name": "frontend-design",
-      "source": {"source": "local", "path": "./plugins/frontend-design"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Design"
     },
     {
       "name": "internal-comms",
-      "source": {"source": "local", "path": "./plugins/internal-comms"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/internal-comms"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Productivity"
     },
     {
       "name": "theme-factory",
-      "source": {"source": "local", "path": "./plugins/theme-factory"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/theme-factory"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Design"
     },
     {
       "name": "brand-guidelines",
-      "source": {"source": "local", "path": "./plugins/brand-guidelines"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/brand-guidelines"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Design"
     },
     {
       "name": "claude-api",
-      "source": {"source": "local", "path": "./plugins/claude-api"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/claude-api"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
       "category": "Developer Tools"
     },
     {
       "name": "linear",
-      "source": {"source": "local", "path": "./plugins/linear"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/linear"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
       "category": "Productivity"
     },
     {
       "name": "netlify-deploy",
-      "source": {"source": "local", "path": "./plugins/netlify-deploy"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/netlify-deploy"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
       "category": "Developer Tools"
     },
     {
       "name": "notion-knowledge-capture",
-      "source": {"source": "local", "path": "./plugins/notion-knowledge-capture"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/notion-knowledge-capture"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
       "category": "Productivity"
     },
     {
       "name": "notion-meeting-intelligence",
-      "source": {"source": "local", "path": "./plugins/notion-meeting-intelligence"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/notion-meeting-intelligence"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
       "category": "Productivity"
     },
     {
       "name": "notion-research-documentation",
-      "source": {"source": "local", "path": "./plugins/notion-research-documentation"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/notion-research-documentation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
       "category": "Productivity"
     },
     {
       "name": "notion-spec-to-implementation",
-      "source": {"source": "local", "path": "./plugins/notion-spec-to-implementation"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/notion-spec-to-implementation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
       "category": "Productivity"
     },
     {
       "name": "playwright-interactive",
-      "source": {"source": "local", "path": "./plugins/playwright-interactive"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/playwright-interactive"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Developer Tools"
     },
     {
       "name": "security-best-practices",
-      "source": {"source": "local", "path": "./plugins/security-best-practices"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/security-best-practices"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Developer Tools"
     },
     {
       "name": "winui-app",
-      "source": {"source": "local", "path": "./plugins/winui-app"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/winui-app"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Developer Tools"
     },
     {
       "name": "yeet",
-      "source": {"source": "local", "path": "./plugins/yeet"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+      "source": {
+        "source": "local",
+        "path": "./plugins/yeet"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "ai-operations",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ai-operations"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "analyze-costs",
+      "source": {
+        "source": "local",
+        "path": "./plugins/analyze-costs"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "approve-exempt",
+      "source": {
+        "source": "local",
+        "path": "./plugins/approve-exempt"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "audit-report",
+      "source": {
+        "source": "local",
+        "path": "./plugins/audit-report"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "chaos-experiment",
+      "source": {
+        "source": "local",
+        "path": "./plugins/chaos-experiment"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "configure-agent-pr-attestation",
+      "source": {
+        "source": "local",
+        "path": "./plugins/configure-agent-pr-attestation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "configure-container-scan",
+      "source": {
+        "source": "local",
+        "path": "./plugins/configure-container-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "configure-dast-scan",
+      "source": {
+        "source": "local",
+        "path": "./plugins/configure-dast-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "configure-repo-scan",
+      "source": {
+        "source": "local",
+        "path": "./plugins/configure-repo-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "configure-secret-scan",
+      "source": {
+        "source": "local",
+        "path": "./plugins/configure-secret-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-agent",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-agent"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-agent-template",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-agent-template"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-connector",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-connector"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-environment",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-environment"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-infrastructure",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-infrastructure"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-pipeline",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-pipeline"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-pipeline-v1",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-pipeline-v1"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-policy",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-policy"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-sbom",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-sbom"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-secret",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-secret"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-template",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-template"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "create-trigger",
+      "source": {
+        "source": "local",
+        "path": "./plugins/create-trigger"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "dbops-changeset",
+      "source": {
+        "source": "local",
+        "path": "./plugins/dbops-changeset"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "debug-pipeline",
+      "source": {
+        "source": "local",
+        "path": "./plugins/debug-pipeline"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "deployment-readiness",
+      "source": {
+        "source": "local",
+        "path": "./plugins/deployment-readiness"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "dora-metrics",
+      "source": {
+        "source": "local",
+        "path": "./plugins/dora-metrics"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "exempt-vuln",
+      "source": {
+        "source": "local",
+        "path": "./plugins/exempt-vuln"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "generate-slsa",
+      "source": {
+        "source": "local",
+        "path": "./plugins/generate-slsa"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "gitops-status",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gitops-status"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "incident-response",
+      "source": {
+        "source": "local",
+        "path": "./plugins/incident-response"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-artifacts",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-artifacts"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-cde",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-cde"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-delegates",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-delegates"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-feature-flags",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-feature-flags"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-freeze-windows",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-freeze-windows"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "manage-iacm",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-iacm"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-idp",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-idp"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-pull-requests",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-pull-requests"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-roles",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-roles"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-slos",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-slos"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-supply-chain",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-supply-chain"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "manage-users",
+      "source": {
+        "source": "local",
+        "path": "./plugins/manage-users"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "migrate-pipeline",
+      "source": {
+        "source": "local",
+        "path": "./plugins/migrate-pipeline"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "optimize-pipeline",
+      "source": {
+        "source": "local",
+        "path": "./plugins/optimize-pipeline"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "pr-analysis",
+      "source": {
+        "source": "local",
+        "path": "./plugins/pr-analysis"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "run-pipeline",
+      "source": {
+        "source": "local",
+        "path": "./plugins/run-pipeline"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "scorecard-review",
+      "source": {
+        "source": "local",
+        "path": "./plugins/scorecard-review"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "security-report",
+      "source": {
+        "source": "local",
+        "path": "./plugins/security-report"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "sei-analytics",
+      "source": {
+        "source": "local",
+        "path": "./plugins/sei-analytics"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "sign-artifact",
+      "source": {
+        "source": "local",
+        "path": "./plugins/sign-artifact"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "template-usage",
+      "source": {
+        "source": "local",
+        "path": "./plugins/template-usage"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "verify-sign",
+      "source": {
+        "source": "local",
+        "path": "./plugins/verify-sign"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Developer Tools"
     }
   ]

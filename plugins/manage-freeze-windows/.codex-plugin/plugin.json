@@ -1,0 +1,27 @@
+{
+  "name": "manage-freeze-windows",
+  "version": "1.0.0",
+  "description": "创建和维护 Harness 发布冻结窗口，控制敏感时段部署。",
+  "author": {
+    "name": "Harness",
+    "url": "https://github.com/harness"
+  },
+  "repository": "https://github.com/harness/harness-skills",
+  "homepage": "https://github.com/harness/harness-skills/tree/e75f841df3482c00d90144cca37d9b2a3b6ff0fb/skills/manage-freeze-windows",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "发布冻结窗口",
+    "shortDescription": "创建和维护 Harness 发布冻结窗口，控制敏感时段部署。",
+    "longDescription": "固定来源于 Harness 官方 Skills；需要连接 Harness MCP v2 并使用用户自己的 Harness 授权；可修改远端资源，执行前必须逐项确认。",
+    "developerName": "Harness",
+    "category": "Productivity",
+    "capabilities": [
+      "Network",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "使用 发布冻结窗口 完成当前任务，并在外部写入前说明影响。"
+    ]
+  }
+}

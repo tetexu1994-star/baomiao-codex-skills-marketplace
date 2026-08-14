@@ -1,4 +1,4 @@
-"""Materialize the human-reviewed Harness source-direct catalog entries.
+"""Materialize the human-reviewed Harness plugin catalog entries.
 
 This is deliberately separate from candidate sync: the sync command never publishes.
 Running this file reproduces only the review decisions recorded in REVIEW_METADATA.
@@ -88,7 +88,7 @@ def make_entry(skill_id: str, data: tuple[str, str, str, bool]) -> dict:
         "name": title,
         "summary_zh": summary,
         "category": category,
-        "tags": ["Harness", "MCP", "DevOps", "官方源码"],
+        "tags": ["Harness", "MCP", "DevOps", "官方插件"],
         "publisher": {"name": "Harness", "kind": "official", "url": "https://github.com/harness"},
         "source": {
             "repository": REPOSITORY,
@@ -112,7 +112,7 @@ def make_entry(skill_id: str, data: tuple[str, str, str, bool]) -> dict:
             "evidence": "docs/reviews/harness-official-2026-08-13.md",
         },
         "install": {
-            "mode": "source-direct",
+            "mode": "copy-source-directory",
             "destination": f"%USERPROFILE%/.codex/skills/{skill_id}",
             "requires_auth": True,
             "preflight": preflight,
@@ -130,7 +130,7 @@ def main() -> None:
     for skill_id, data in sorted(REVIEW_METADATA.items()):
         target = approved / f"{skill_id}.json"
         target.write_text(json.dumps(make_entry(skill_id, data), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"已从人工复核表生成 {len(REVIEW_METADATA)} 个 Harness source-direct 条目")
+    print(f"已从人工复核表生成 {len(REVIEW_METADATA)} 个 Harness 插件条目")
 
 
 if __name__ == "__main__":

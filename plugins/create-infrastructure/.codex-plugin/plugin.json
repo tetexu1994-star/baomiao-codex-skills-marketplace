@@ -1,0 +1,27 @@
+{
+  "name": "create-infrastructure",
+  "version": "1.0.0",
+  "description": "创建 Harness Kubernetes、ECS 或云部署目标定义。",
+  "author": {
+    "name": "Harness",
+    "url": "https://github.com/harness"
+  },
+  "repository": "https://github.com/harness/harness-skills",
+  "homepage": "https://github.com/harness/harness-skills/tree/e75f841df3482c00d90144cca37d9b2a3b6ff0fb/skills/create-infrastructure",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "创建基础设施定义",
+    "shortDescription": "创建 Harness Kubernetes、ECS 或云部署目标定义。",
+    "longDescription": "固定来源于 Harness 官方 Skills；需要连接 Harness MCP v2 并使用用户自己的 Harness 授权；可修改远端资源，执行前必须逐项确认。",
+    "developerName": "Harness",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Network",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "使用 创建基础设施定义 完成当前任务，并在外部写入前说明影响。"
+    ]
+  }
+}

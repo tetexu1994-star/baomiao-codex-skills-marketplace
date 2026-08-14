@@ -1,10 +1,9 @@
 "use strict";
 
 const PAGE_SIZE = 18;
-const state = { entries: [], query: "", category: "", publisher: "", origin: "", delivery: "", risk: "", limit: PAGE_SIZE };
+const state = { entries: [], query: "", category: "", publisher: "", origin: "", risk: "", limit: PAGE_SIZE };
 const labels = {
   official: "官方来源", community: "社区来源", low: "低风险", medium: "中风险", high: "增强权限",
-  "copy-source-directory": "市场审核包", "source-direct": "原始来源直装",
   "filesystem-read": "读取文件", "filesystem-write": "写入文件", shell: "运行本机命令",
   browser: "浏览器", network: "联网", credentials: "使用凭证", "external-write": "写入外部服务", "system-config": "修改系统配置", none: "无需额外权限"
 };
@@ -36,7 +35,6 @@ function renderCard(entry) {
   const badges = element("div", "badges");
   badges.append(makePill(labels[entry.publisher.kind], entry.publisher.kind));
   badges.append(makePill(labels[entry.risk.level], entry.risk.level));
-  badges.append(makePill(labels[entry.install.mode], "delivery"));
   top.append(badges, element("span", "category-label", entry.category));
 
   const title = element("h3", "", entry.name);
@@ -51,18 +49,17 @@ function renderCard(entry) {
 
   const facts = element("dl", "facts");
   const factRows = [
+    ["插件 ID", entry.id],
     ["发布者", entry.publisher.name],
     ["许可证", `${entry.license.spdx} · ${entry.license.scope === "skill-directory" ? "目录级" : "仓库级"}`],
-    ["交付方式", labels[entry.install.mode]],
-    ["固定版本", entry.source.commit.slice(0, 12)],
-    ["审核", `${entry.review.reviewed_at.slice(0, 10)} · ${entry.review.reviewer}`]
+    ["固定版本", entry.source.commit.slice(0, 12)]
   ];
   factRows.forEach(([term, detail]) => {
     facts.append(element("dt", "", term), element("dd", "", detail));
   });
 
   const details = element("details", "review-details");
-  details.append(element("summary", "", "查看来源与审核说明"));
+  details.append(element("summary", "", "查看来源与权限说明"));
   const detailsBody = element("div", "details-body");
   detailsBody.append(element("p", "", entry.risk.notes_zh));
   const path = element("code", "source-path", entry.source.path);
@@ -88,7 +85,6 @@ function matches(entry) {
     (!state.category || entry.category === state.category) &&
     (!state.publisher || entry.publisher.name === state.publisher) &&
     (!state.origin || entry.publisher.kind === state.origin) &&
-    (!state.delivery || entry.install.mode === state.delivery) &&
     (!state.risk || entry.risk.level === state.risk);
 }
 
@@ -99,7 +95,7 @@ function render() {
   list.replaceChildren(...rendered.map(renderCard));
   list.setAttribute("aria-busy", "false");
   document.querySelector("#empty-state").hidden = visible.length !== 0;
-  document.querySelector("#catalog-meta").textContent = `显示 ${rendered.length} / 匹配 ${visible.length} · 总计 ${state.entries.length}`;
+  document.querySelector("#catalog-meta").textContent = `显示 ${rendered.length} / 匹配 ${visible.length} · 共 ${state.entries.length} 个插件`;
   const more = document.querySelector("#load-more");
   more.hidden = rendered.length >= visible.length;
   more.textContent = `继续显示（还剩 ${Math.max(0, visible.length - rendered.length)} 个）`;
@@ -112,7 +108,6 @@ function bindFilters() {
     state.category = document.querySelector("#category").value;
     state.publisher = document.querySelector("#publisher").value;
     state.origin = document.querySelector("#origin").value;
-    state.delivery = document.querySelector("#delivery").value;
     state.risk = document.querySelector("#risk").value;
     state.limit = PAGE_SIZE;
     render();
@@ -148,8 +143,6 @@ async function loadCatalog() {
       publisherSelect.append(option);
     });
     document.querySelector("#approved-count").textContent = String(state.entries.length);
-    document.querySelector("#bundled-count").textContent = String(state.entries.filter((entry) => entry.install.mode === "copy-source-directory").length);
-    document.querySelector("#direct-count").textContent = String(state.entries.filter((entry) => entry.install.mode === "source-direct").length);
     render();
   } catch (error) {
     document.querySelector("#catalog-list").setAttribute("aria-busy", "false");

@@ -1,0 +1,26 @@
+{
+  "name": "incident-response",
+  "version": "1.0.0",
+  "description": "关联近期部署、评估影响范围并生成事故复盘素材。",
+  "author": {
+    "name": "Harness",
+    "url": "https://github.com/harness"
+  },
+  "repository": "https://github.com/harness/harness-skills",
+  "homepage": "https://github.com/harness/harness-skills/tree/e75f841df3482c00d90144cca37d9b2a3b6ff0fb/skills/incident-response",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "事故响应分析",
+    "shortDescription": "关联近期部署、评估影响范围并生成事故复盘素材。",
+    "longDescription": "固定来源于 Harness 官方 Skills；需要连接 Harness MCP v2 并使用用户自己的 Harness 授权；默认用于读取、分析和生成建议。",
+    "developerName": "Harness",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Network"
+    ],
+    "defaultPrompt": [
+      "使用 事故响应分析 完成当前任务，并在外部写入前说明影响。"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "scorecard-review",
+  "version": "1.0.0",
+  "description": "查询 Harness 工程评分卡，分析团队或服务的质量与成熟度。",
+  "author": {
+    "name": "Harness",
+    "url": "https://github.com/harness"
+  },
+  "repository": "https://github.com/harness/harness-skills",
+  "homepage": "https://github.com/harness/harness-skills/tree/e75f841df3482c00d90144cca37d9b2a3b6ff0fb/skills/scorecard-review",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "工程评分卡评审",
+    "shortDescription": "查询 Harness 工程评分卡，分析团队或服务的质量与成熟度。",
+    "longDescription": "固定来源于 Harness 官方 Skills；需要连接 Harness MCP v2 并使用用户自己的 Harness 授权；默认用于读取、分析和生成建议。",
+    "developerName": "Harness",
+    "category": "Productivity",
+    "capabilities": [
+      "Network"
+    ],
+    "defaultPrompt": [
+      "使用 工程评分卡评审 完成当前任务，并在外部写入前说明影响。"
+    ]
+  }
+}
