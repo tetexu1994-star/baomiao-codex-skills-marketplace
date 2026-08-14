@@ -111,6 +111,7 @@ python -m scripts.sync_candidates --ref main `
 本轮全网来源审查、7 个新增条目与暂缓原因见 [生态扩容审查](docs/reviews/ecosystem-expansion-2026-08-13.md)。
 增强权限层的 10 个新增条目和逐项能力复核见 [增强权限扩容审查](docs/reviews/enhanced-permissions-2026-08-13.md)。
 Harness 官方 55 个候选（发布 52 个、暂缓 3 个）的许可、目录和风险分组见 [Harness 专项复核](docs/reviews/harness-official-2026-08-13.md)。
+百灵鸟默认市场 180 个插件与暴喵现状的逐项来源、形态、许可证和接入建议见 [百灵鸟市场对标表](docs/reviews/echobird-marketplace-crosswalk-2026-08-14.md)。该表可通过 `scripts.build_echobird_crosswalk` 从固定提交重新生成，只生成研究清单，不自动复制或发布插件。
 
 ## 生成物
 
