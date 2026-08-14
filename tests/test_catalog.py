@@ -102,6 +102,20 @@ class CatalogTests(TestCase):
         self.assertIn("normalizeSearch", script)
         self.assertIn('"匹配 Skills"', script)
 
+    def test_homepage_uses_product_shell_and_progressive_card_details(self):
+        html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        css = (ROOT / "site" / "assets" / "styles.css").read_text(encoding="utf-8")
+        script = (ROOT / "site" / "assets" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('class="hero-shell"', html)
+        self.assertIn('class="journey-steps"', html)
+        self.assertIn("20260814d", html)
+        self.assertIn("--canvas:", css)
+        self.assertIn("--surface:", css)
+        self.assertIn("--accent:", css)
+        self.assertIn('"card-meta"', script)
+        self.assertIn('detailsBody.append(facts', script)
+        self.assertNotIn("gap: 1px; background: #afbbc8", css)
+
     def test_pages_release_build_injects_repository_and_fixed_ref(self):
         workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
         self.assertIn('--marketplace-source "https://github.com/${{ github.repository }}"', workflow)

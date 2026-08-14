@@ -65,7 +65,7 @@ function renderCard(entry) {
   const title = element("h3", "", entry.name);
   const summary = element("p", "summary", entry.summary_zh);
   const capabilityBox = element("div", "capabilities");
-  capabilityBox.append(element("span", "capability-label", "运行能力"));
+  capabilityBox.append(element("span", "capability-label", "可能使用"));
   const capabilityList = element("ul");
   entry.risk.capabilities.forEach((capability) => {
     capabilityList.append(element("li", "", labels[capability] || capability));
@@ -75,6 +75,7 @@ function renderCard(entry) {
   const facts = element("dl", "facts");
   const includedSkills = skillNames(entry);
   const skillCount = includedSkills.length;
+  const cardMeta = element("p", "card-meta", `${entry.publisher.name} · ${skillCount} Skills · ${entry.license.spdx}`);
   const factRows = [
     ["插件 ID", entry.id],
     ["包含 Skills", String(skillCount)],
@@ -100,11 +101,11 @@ function renderCard(entry) {
   }
 
   const details = element("details", "review-details");
-  details.append(element("summary", "", "查看来源与权限说明"));
+  details.append(element("summary", "", "来源、版本与权限"));
   const detailsBody = element("div", "details-body");
   detailsBody.append(element("p", "", entry.risk.notes_zh));
   const path = element("code", "source-path", entry.source.path);
-  detailsBody.append(path);
+  detailsBody.append(facts, path);
   const links = element("div", "source-links");
   links.append(
     safeLink(entry.source.repository, "原始仓库 ↗"),
@@ -114,11 +115,11 @@ function renderCard(entry) {
   detailsBody.append(links);
   details.append(detailsBody);
 
-  article.append(top, title, summary);
+  article.append(top, title, summary, cardMeta);
   if (entry.risk.level === "high") article.append(element("p", "enhanced-notice", "安装前需逐项确认增强权限"));
   article.append(capabilityBox);
   if (bundlePreview) article.append(bundlePreview);
-  article.append(facts, details);
+  article.append(details);
   return article;
 }
 
@@ -253,6 +254,9 @@ function failImport(summary, status) {
   openButton.textContent = "一键导入暂不可用";
   openButton.disabled = true;
   copyButton.disabled = true;
+  const kicker = document.querySelector("#import-kicker");
+  kicker.className = "import-kicker is-error";
+  kicker.textContent = "一键导入暂不可用";
   document.querySelector("#import-summary").textContent = summary;
   setImportStatus(status);
 }
@@ -269,6 +273,9 @@ function renderImportReadiness() {
   document.querySelector("#import-count").textContent = `${descriptor.marketplace.plugin_count} 个插件`;
   document.querySelector("#import-command").textContent = descriptor.command.display;
   document.querySelector("#import-summary").textContent = `${descriptor.marketplace.plugin_count} 个插件，目录与导入描述已校验；加入市场后在 Codex 里按需启用。`;
+  const kicker = document.querySelector("#import-kicker");
+  kicker.className = "import-kicker is-ready";
+  kicker.textContent = "目录与来源已校验";
   const openButton = document.querySelector("#open-import");
   openButton.textContent = "暴喵一键导入";
   openButton.disabled = false;
