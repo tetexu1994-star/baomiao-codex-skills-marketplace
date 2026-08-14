@@ -1,0 +1,64 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-14T04:30:00Z",
+  "commit": "e1b747ed9fc0492342f97cc6ba7ac954279ac48f",
+  "content_kind": "skill-bundle",
+  "files": [
+    {
+      "bytes": 3707,
+      "path": "nvidia-skill-finder/BENCHMARK.md",
+      "sha256": "d410c655aab5ffcf89c17d7f9a10252f98505a0be2d6819d8a6e998f8ee8b039"
+    },
+    {
+      "bytes": 8353,
+      "path": "nvidia-skill-finder/SKILL.md",
+      "sha256": "51fe4ff117f34919527ad4540513910e16eb225f7ad04686fbbe985035fdf9cf"
+    },
+    {
+      "bytes": 277,
+      "path": "nvidia-skill-finder/agents/openai.yaml",
+      "sha256": "f2b29422520612505643c6a1dd2f441b4a1bf350fa51c6fe6ef45a526a72b739"
+    },
+    {
+      "bytes": 12378,
+      "path": "nvidia-skill-finder/evals/evals.json",
+      "sha256": "75f03167bc45e3eac9b616583ae3dcae7cc8362a8645a2393cfecd7f2444b08e"
+    },
+    {
+      "bytes": 3546,
+      "path": "nvidia-skill-finder/references/taxonomy-routing.md",
+      "sha256": "a24b594b06fa4e16c8937da54b9bfc2cbece8bcc66b9d02a6729434021a16848"
+    },
+    {
+      "bytes": 4065,
+      "path": "nvidia-skill-finder/skill-card.md",
+      "sha256": "aa6e203fa112801759bfd46452fe042d955af8e4589a6b74aec2a2d9e79f604b"
+    },
+    {
+      "bytes": 5065,
+      "path": "nvidia-skill-finder/skill.oms.sig",
+      "sha256": "4704ac9d425816e15eef0bd30f46fa123dac2db8f8fa588e11f6d3ad143d1b93"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE-CC-BY-4.0",
+    "scope": "repository",
+    "sha256": "8aca1bec720ca7a68f5e6a13e61eed6ca21c3925db15620bc39878be250af846"
+  },
+  "package_id": "nvidia-skills",
+  "path": "plugins/nvidia-skills/skills",
+  "policy": "candidate-only",
+  "repository": "https://github.com/NVIDIA/skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 7,
+    "findings": [],
+    "total_bytes": 37391,
+    "verdict": "review-required"
+  },
+  "source_id": "nvidia-skills-official"
+}

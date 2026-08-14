@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "id": "codebase-documentor-for-aws",
+  "name": "AWS 代码库文档生成",
+  "summary_zh": "分析 CDK、CloudFormation、Terraform 与应用代码，生成带源码引用的架构和组件文档，适合接手存量 AWS 项目。",
+  "category": "文档处理",
+  "tags": [
+    "AWS",
+    "代码库",
+    "架构文档",
+    "IaC"
+  ],
+  "publisher": {
+    "name": "Amazon Web Services",
+    "kind": "official",
+    "url": "https://github.com/awslabs"
+  },
+  "source": {
+    "repository": "https://github.com/awslabs/agent-plugins",
+    "commit": "bab56a3b9991aa0c6857b05198a61ba14a60bce4",
+    "path": "plugins/codebase-documentor-for-aws/skills",
+    "layout": "skill-bundle",
+    "entrypoint_path": "document-service/SKILL.md",
+    "skill_url": "https://raw.githubusercontent.com/awslabs/agent-plugins/bab56a3b9991aa0c6857b05198a61ba14a60bce4/plugins/codebase-documentor-for-aws/skills/document-service/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/awslabs/agent-plugins/bab56a3b9991aa0c6857b05198a61ba14a60bce4/LICENSE",
+    "license_path": "LICENSE"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "scope": "repository",
+    "verified_at": "2026-08-14"
+  },
+  "risk": {
+    "level": "high",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write",
+      "shell",
+      "network"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "包内无脚本；会遍历代码库并写入文档，联网仅用于按用户要求查询 AWS 资料。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（官方扩容）",
+    "reviewed_at": "2026-08-14T05:00:00Z",
+    "evidence": "docs/reviews/official-plugin-expansion-2026-08-14.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/codebase-documentor-for-aws",
+    "requires_auth": false,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "confirm-enhanced-permissions",
+      "backup-existing"
+    ]
+  }
+}

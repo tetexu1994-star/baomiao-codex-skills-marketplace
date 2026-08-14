@@ -29,3 +29,11 @@ The following Anthropic Skills are copied from commit `f17010c9bb483898c1d9c9f42
 Each copied Skill directory includes its upstream `LICENSE.txt`. The four Notion directories are distributed under the MIT License from Notion Labs, Inc.; the other listed Skill directories are distributed under Apache License 2.0. The marketplace metadata, Chinese descriptions, website, build scripts and original documentation in this repository are licensed under the repository's MIT License. “OpenAI”, “Anthropic”, “Notion” and other marks are used only to identify upstream publishers or services; their names and marks remain the property of their owners, and no endorsement is implied.
 
 The installable plugin packages also contain 52 Skills from commit `e75f841df3482c00d90144cca37d9b2a3b6ff0fb` of <https://github.com/harness/harness-skills>. They are licensed at repository scope under Apache License 2.0. Each packaged Skill includes a copy of the upstream repository license; catalog records retain the original publisher, source path, fixed commit, license link and reviewed file digests. “Harness” is used only to identify the upstream publisher and service, and no endorsement is implied.
+
+The marketplace also packages the following script-free official Skill subtrees:
+
+- 202 Microsoft Azure Skills from commit `00be373fec26109c3087728188f6a45554c47617` of <https://github.com/MicrosoftDocs/Agent-Skills>, under CC BY 4.0;
+- Amazon Location Service, AWS Amplify and Codebase Documentor Skills from commit `bab56a3b9991aa0c6857b05198a61ba14a60bce4` of <https://github.com/awslabs/agent-plugins>, under Apache License 2.0;
+- NVIDIA Skill Finder from commit `e1b747ed9fc0492342f97cc6ba7ac954279ac48f` of <https://github.com/NVIDIA/skills>, under CC BY 4.0.
+
+These are Skill-only wrappers. They do not include the upstream repositories' MCP definitions, hooks, installation scripts, tests or unrelated executable examples. Each wrapper contains the applicable repository license and points to the fixed upstream commit. “Microsoft”, “Azure”, “AWS”, “Amazon”, “NVIDIA” and related marks are used only to identify upstream publishers and services; no endorsement is implied.

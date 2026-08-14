@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import tempfile
 from pathlib import Path
@@ -42,7 +43,8 @@ class CatalogTests(TestCase):
         first, _ = build(generated_at="2026-08-13T00:00:00Z")
         payload_one = first.read_bytes()
         payload = json.loads(payload_one)
-        self.assertEqual(len(payload["entries"]), 72)
+        self.assertEqual(len(payload["entries"]), 77)
+        self.assertEqual(sum(1 for entry in payload["entries"] for file in entry["integrity"]["files"] if file["path"].endswith("SKILL.md")), 278)
         self.assertTrue(all(entry["install"]["mode"] == "copy-source-directory" for entry in payload["entries"]))
         self.assertTrue(all(entry["integrity"]["files"] for entry in payload["entries"]))
         self.assertTrue(all(entry["integrity"]["algorithm"] == "sha256" for entry in payload["entries"]))
@@ -52,6 +54,50 @@ class CatalogTests(TestCase):
         self.assertEqual([error.message for entry in payload["entries"] for error in validator.iter_errors(entry)], [])
         second, _ = build(generated_at="2026-08-13T00:00:00Z")
         self.assertEqual(payload_one, second.read_bytes())
+
+    def test_build_writes_one_click_import_descriptor(self):
+        build(
+            generated_at="2026-08-14T00:00:00Z",
+            marketplace_source="https://github.com/baomiao-ai/codex-plugins",
+            marketplace_ref="1234567890abcdef1234567890abcdef12345678",
+            public_base_url="https://baomiao-ai.github.io/codex-plugins",
+        )
+        descriptor_path = ROOT / "site" / "marketplace-import.json"
+        digest_path = ROOT / "site" / "marketplace-import.sha256"
+        self.assertTrue(descriptor_path.is_file())
+        self.assertTrue(digest_path.is_file())
+        descriptor = json.loads(descriptor_path.read_text(encoding="utf-8"))
+        import_schema = json.loads((ROOT / "schema" / "marketplace-import.schema.json").read_text(encoding="utf-8"))
+        self.assertEqual([error.message for error in Draft202012Validator(import_schema).iter_errors(descriptor)], [])
+        self.assertEqual(descriptor["schema_version"], 1)
+        self.assertEqual(descriptor["marketplace"]["id"], "baomiao-codex")
+        self.assertEqual(descriptor["marketplace"]["source"], "https://github.com/baomiao-ai/codex-plugins")
+        self.assertEqual(descriptor["marketplace"]["ref"], "1234567890abcdef1234567890abcdef12345678")
+        self.assertEqual(descriptor["marketplace"]["manifest_path"], ".agents/plugins/marketplace.json")
+        self.assertEqual(descriptor["marketplace"]["plugin_count"], 77)
+        self.assertEqual(descriptor["catalog"]["url"], "https://baomiao-ai.github.io/codex-plugins/catalog.json")
+        self.assertNotIn("token", json.dumps(descriptor).lower())
+        expected_digest = digest_path.read_text(encoding="utf-8").split()[0]
+        self.assertEqual(expected_digest, hashlib.sha256(descriptor_path.read_bytes()).hexdigest())
+
+    def test_homepage_has_accessible_import_controls(self):
+        html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        script = (ROOT / "site" / "assets" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('id="open-import"', html)
+        self.assertIn('id="import-dialog"', html)
+        self.assertIn('id="copy-import-command"', html)
+        self.assertIn('id="import-status"', html)
+        self.assertIn("baomiao://codex/marketplace/import", script)
+        self.assertIn("复制失败，请在确认框中手动选择命令", script)
+        self.assertIn('event.key === "Escape"', script)
+        self.assertNotIn("GITHUB_TOKEN", html + script)
+
+    def test_pages_release_build_injects_repository_and_fixed_ref(self):
+        workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
+        self.assertIn('--marketplace-source "https://github.com/${{ github.repository }}"', workflow)
+        self.assertIn('--marketplace-ref "${{ github.sha }}"', workflow)
+        self.assertIn('--public-base-url "$PUBLIC_BASE_URL"', workflow)
+        self.assertIn("BAOMIAO_PAGES_URL", workflow)
 
     def test_runtime_auth_uses_on_use_policy(self):
         entry = copy.deepcopy(self.sample)

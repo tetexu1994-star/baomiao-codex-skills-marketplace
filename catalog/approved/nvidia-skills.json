@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "id": "nvidia-skills",
+  "name": "NVIDIA Skill 查找器",
+  "summary_zh": "从 NVIDIA 官方技能体系中定位适合 GPU、CUDA、推理、训练、机器人和仿真的 Skill，并给出来源与安装建议。",
+  "category": "研发工具",
+  "tags": [
+    "NVIDIA",
+    "GPU",
+    "CUDA",
+    "AI"
+  ],
+  "publisher": {
+    "name": "NVIDIA",
+    "kind": "official",
+    "url": "https://github.com/NVIDIA"
+  },
+  "source": {
+    "repository": "https://github.com/NVIDIA/skills",
+    "commit": "e1b747ed9fc0492342f97cc6ba7ac954279ac48f",
+    "path": "plugins/nvidia-skills/skills",
+    "layout": "skill-bundle",
+    "entrypoint_path": "nvidia-skill-finder/SKILL.md",
+    "skill_url": "https://raw.githubusercontent.com/NVIDIA/skills/e1b747ed9fc0492342f97cc6ba7ac954279ac48f/plugins/nvidia-skills/skills/nvidia-skill-finder/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/NVIDIA/skills/e1b747ed9fc0492342f97cc6ba7ac954279ac48f/LICENSE-CC-BY-4.0",
+    "license_path": "LICENSE-CC-BY-4.0"
+  },
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "scope": "repository",
+    "verified_at": "2026-08-14"
+  },
+  "risk": {
+    "level": "high",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write",
+      "network",
+      "shell"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "仅打包官方 Skill Finder，不批量复制 NVIDIA 大仓库；建议安装任何结果前仍需单独核对来源。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（官方扩容）",
+    "reviewed_at": "2026-08-14T05:00:00Z",
+    "evidence": "docs/reviews/official-plugin-expansion-2026-08-14.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/nvidia-skills",
+    "requires_auth": false,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "confirm-enhanced-permissions",
+      "backup-existing"
+    ]
+  }
+}

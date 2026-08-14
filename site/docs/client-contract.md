@@ -2,6 +2,28 @@
 
 本契约描述客户端如何消费 `dist/catalog.json` 并安装市场中的 Codex 插件。它是暴喵市场自定义的前置校验契约，不冒充 Codex 官方插件协议；最终插件注册与加载行为应以用户当前 Codex 版本为准。
 
+## 0. 一键导入整个市场
+
+网站主按钮使用以下自定义协议把请求交给暴喵客户端：
+
+```text
+baomiao://codex/marketplace/import?manifest=<URL编码后的marketplace-import.json地址>&digest=<64位SHA-256>
+```
+
+这不是 Codex 或 OpenAI 官方深链。它只用于唤起暴喵；最终注册动作必须调用用户本机当前版本的 Codex CLI。客户端按以下顺序处理：
+
+1. 只接受 `baomiao://codex/marketplace/import`，拒绝额外 action、fragment、用户名、密码与未知查询参数。
+2. 正式版 `manifest` 只接受 HTTPS 且必须属于暴喵发布配置中的 Pages 域名；开发版可以显式允许 `http://127.0.0.1` 或 `http://localhost`，不得接受局域网 IP。
+3. 下载原始字节，计算 SHA-256 并与 URL 中 `digest` 比对；再按 `schema/marketplace-import.schema.json` 校验。禁止跟随到非允许域名，限制响应大小为 64 KiB。
+4. 只接受 `profile: release`、GitHub HTTPS `marketplace.source`、40 位 `marketplace.ref`、固定清单路径 `.agents/plugins/marketplace.json`。开发构建可以接受当前机器的 `local-preview`，但不得进入正式客户端。
+5. 从 GitHub 固定提交读取市场清单，核对 `manifest_sha256`、市场名 `baomiao-codex` 和 `plugin_count`。同时校验目录及其摘要。
+6. 确认页明确展示来源仓库、完整提交、市场名、插件数，以及“只添加市场，不自动安装插件”。用户点击确认前不得修改 Codex 配置。
+7. 不经过 shell，不执行描述文件中的 `command.display`，而是客户端自行构造参数数组：`["plugin", "marketplace", "add", source, "--ref", ref]`，调用可信安装路径中的 `codex.exe`。
+8. 添加前调用 `codex plugin marketplace list`。同名同来源已存在时返回 `already-added`；同名不同来源时阻断并让用户选择，不得静默覆盖。
+9. 添加失败不改变原配置。用户要撤销时调用 `codex plugin marketplace remove baomiao-codex`；卸载市场不等于删除用户项目或第三方账号数据。
+
+网页必须同时显示等价的 Codex 命令并提供复制按钮。自定义协议未注册、客户端未启动或校验失败时，用户仍能手动运行该命令；页面不得伪装成已经成功导入。
+
 ## 1. 获取目录
 
 客户端通过暴喵的网络加速能力请求暴喵 GitHub 仓库的 raw/Pages 地址；加速层只做网络传输，不改写内容、来源字段或发布者身份。获取 `catalog.json` 后必须同时获取 `catalog.sha256`，按原始字节计算 SHA-256 并比对。解析器只接受 `schema_version: 1` 和 HTTPS URL。
@@ -64,6 +86,18 @@
 ## 6. 最小接口
 
 ```ts
+type MarketplaceImportRequestV1 = {
+  manifestUrl: string;
+  expectedManifestDigest: string;
+};
+
+type MarketplaceImportResultV1 = {
+  status: "added" | "already-added" | "cancelled" | "blocked" | "failed";
+  marketplaceName?: "baomiao-codex";
+  installedRef?: string;
+  reasonCode?: string;
+};
+
 type InstallRequestV1 = {
   catalogUrl: string;
   catalogSha256Url: string;
@@ -84,3 +118,5 @@ type InstallResultV1 = {
 客户端不得接受请求体覆盖条目中的来源、许可证、风险或目标目录。`reasonCode` 使用稳定枚举并提供中文解释，例如 `CATALOG_DIGEST_MISMATCH`、`SOURCE_CHANGED`、`EXECUTABLE_FOUND`、`USER_CANCELLED`、`ROLLBACK_COMPLETED`。
 
 对增强权限条目，客户端还应记录用户确认的能力枚举与确认时间，但不得记录 token、OAuth code、Cookie 或外部服务内容。若客户端版本不认识某个能力枚举，必须以 `UNSUPPORTED_CAPABILITY` 阻断，不能忽略未知能力。
+
+市场导入稳定错误码至少包括 `IMPORT_DIGEST_MISMATCH`、`IMPORT_SOURCE_NOT_ALLOWED`、`IMPORT_SCHEMA_UNSUPPORTED`、`MARKETPLACE_MANIFEST_MISMATCH`、`MARKETPLACE_NAME_CONFLICT`、`CODEX_NOT_FOUND`、`USER_CANCELLED`。日志可以记录来源域名、提交和错误码，不得记录 URL 凭证、用户目录、Codex 配置全文或第三方 token。

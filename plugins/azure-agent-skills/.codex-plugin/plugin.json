@@ -1,0 +1,28 @@
+{
+  "name": "azure-agent-skills",
+  "version": "1.0.0",
+  "description": "一个插件收录 202 个 Microsoft Azure Skills，覆盖计算、数据、AI、网络、安全、迁移和运维，不把同系列能力拆成数百张卡片。",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://github.com/MicrosoftDocs"
+  },
+  "repository": "https://github.com/MicrosoftDocs/Agent-Skills",
+  "homepage": "https://github.com/MicrosoftDocs/Agent-Skills/tree/00be373fec26109c3087728188f6a45554c47617/skills",
+  "license": "CC-BY-4.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Azure 官方技能合集",
+    "shortDescription": "一个插件收录 202 个 Microsoft Azure Skills，覆盖计算、数据、AI、网络、安全、迁移和运维，不把同系列能力拆成数百张卡片。",
+    "longDescription": "固定来源于 Microsoft 官方仓库；包含 202 个纯文档 Skills；部分工作流会调用 Azure CLI 或修改云资源，执行前必须再次确认。",
+    "developerName": "Microsoft",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Network"
+    ],
+    "defaultPrompt": [
+      "使用 Azure 官方技能合集 处理当前任务，并在执行命令或外部写入前说明影响。"
+    ]
+  }
+}

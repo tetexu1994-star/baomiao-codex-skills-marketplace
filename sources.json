@@ -111,6 +111,66 @@
       "policy": "candidate-only",
       "max_file_bytes": 524288,
       "allow_executable_files": false
+    },
+    {
+      "id": "aws-agent-plugins-official",
+      "repository": "https://github.com/awslabs/agent-plugins",
+      "api_repository": "https://api.github.com/repos/awslabs/agent-plugins",
+      "content_kind": "skill-bundle",
+      "allowed_paths": [
+        "plugins/amazon-location-service/skills",
+        "plugins/aws-amplify/skills",
+        "plugins/codebase-documentor-for-aws/skills"
+      ],
+      "package_ids": {
+        "plugins/amazon-location-service/skills": "amazon-location-service",
+        "plugins/aws-amplify/skills": "aws-amplify",
+        "plugins/codebase-documentor-for-aws/skills": "codebase-documentor-for-aws"
+      },
+      "license_files": ["LICENSE"],
+      "license_scope": "repository",
+      "policy": "candidate-only",
+      "max_file_bytes": 524288,
+      "allow_executable_files": false
+    },
+    {
+      "id": "microsoft-agent-skills-official",
+      "repository": "https://github.com/MicrosoftDocs/Agent-Skills",
+      "api_repository": "https://api.github.com/repos/MicrosoftDocs/Agent-Skills",
+      "content_kind": "skill-bundle",
+      "allowed_paths": ["skills"],
+      "package_ids": {"skills": "azure-agent-skills"},
+      "license_files": ["LICENSE"],
+      "license_scope": "repository",
+      "policy": "candidate-only",
+      "max_file_bytes": 524288,
+      "allow_executable_files": false
+    },
+    {
+      "id": "nvidia-skills-official",
+      "repository": "https://github.com/NVIDIA/skills",
+      "api_repository": "https://api.github.com/repos/NVIDIA/skills",
+      "content_kind": "skill-bundle",
+      "allowed_paths": ["plugins/nvidia-skills/skills"],
+      "package_ids": {"plugins/nvidia-skills/skills": "nvidia-skills"},
+      "license_files": ["LICENSE-CC-BY-4.0"],
+      "license_scope": "repository",
+      "policy": "candidate-only",
+      "max_file_bytes": 524288,
+      "allow_executable_files": false
+    },
+    {
+      "id": "appwrite-official",
+      "repository": "https://github.com/appwrite/codex-plugin",
+      "api_repository": "https://api.github.com/repos/appwrite/codex-plugin",
+      "content_kind": "skill-bundle",
+      "allowed_paths": ["plugins/appwrite/skills"],
+      "package_ids": {"plugins/appwrite/skills": "appwrite"},
+      "license_files": ["LICENSE"],
+      "license_scope": "repository",
+      "policy": "candidate-only",
+      "max_file_bytes": 524288,
+      "allow_executable_files": false
     }
   ]
 }

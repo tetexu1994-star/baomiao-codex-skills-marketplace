@@ -11,14 +11,25 @@
 - `catalog/candidates/` 与 `catalog/approved/` 双区隔离；
 - 允许来源、固定提交、完整目录枚举和保守型安全扫描；
 - 人工审核后才构建的 `dist/catalog.json` + SHA-256；
-- [暴喵客户端一键安装契约](docs/client-contract.md)；
+- [暴喵客户端一键导入契约](docs/client-contract.md)：一次加入整个市场，再在 Codex 中按需启用插件；
 - GitHub Actions CI 与 Pages 发布流程；
-- 72 个真实、可核验、可由 Codex Marketplace 发现的插件：20 个 OpenAI / Anthropic 插件和 52 个 Harness 插件；
+- 77 个真实、可核验、可由 Codex Marketplace 发现的插件：20 个 OpenAI / Anthropic、52 个 Harness，以及 5 个 AWS / Microsoft / NVIDIA 官方插件；
+- 插件内部合计 278 个 Skills，其中 Azure 官方合集包含 202 个，不拆卡片虚增插件数；
 - 所有插件包都保留上游许可证，下发逐文件 SHA-256、文件数、总字节数和许可证摘要；另保留完整暂缓与拒绝记录。
 
 ## 插件形态
 
-72 个条目全部进入 `.agents/plugins/marketplace.json`。仓库中的每个 `plugins/<id>/` 都有 `.codex-plugin/plugin.json`，并在 `skills/<id>/` 中保存固定提交的 Skill 内容与适用许可证。插件清单与候选摘要逐字节核对；“插件”是安装与发现单元，“Skill”是插件内承载的能力。
+77 个条目全部进入 `.agents/plugins/marketplace.json`。仓库中的每个 `plugins/<id>/` 都有 `.codex-plugin/plugin.json`；单 Skill 插件保存在 `skills/<id>/`，官方合集插件则在同一 `skills/` 下保留多个上游 Skill 目录。插件清单与候选摘要逐字节核对；“插件”是安装与发现单元，“Skill”是插件内承载的能力。
+
+## 一键导入整个市场
+
+首页的“暴喵一键导入”读取并校验 `marketplace-import.json` 与 SHA-256，然后打开暴喵客户端协议。客户端必须再次展示 GitHub 来源、40 位固定提交和插件数量，经用户确认后以参数数组调用：
+
+```powershell
+codex plugin marketplace add https://github.com/<暴喵账号>/<仓库名> --ref <40位发布提交>
+```
+
+页面始终提供复制命令回退。一键导入只注册市场，不安装全部插件、不登录第三方服务，也不授予插件后续操作权限。暴喵协议是客户端便利层，不冒充 Codex 官方深链；实际市场添加由当前 Codex CLI 完成。
 
 ## 信任边界
 
@@ -59,7 +70,7 @@ codex plugin add notion-knowledge-capture@baomiao-codex
 codex plugin add winui-app@baomiao-codex
 ```
 
-这些插件包是对明确许可的固定上游目录的合规打包，包内保留许可证；每个 `plugin.json` 的 `homepage` 指向审核提交。上述方式适用于全部 72 个插件。
+这些插件包是对明确许可的固定上游目录的合规打包，包内保留许可证；每个 `plugin.json` 的 `homepage` 指向审核提交。上述方式适用于全部 77 个插件。
 
 macOS/Linux 的命令相同，只需把虚拟环境激活改为：
 
@@ -74,6 +85,16 @@ python -m unittest discover -s tests -v
 python -m scripts.validate_catalog
 python -m scripts.validate_catalog --online
 python -m scripts.build --generated-at 2026-08-13T08:00:00Z
+```
+
+正式发布构建必须额外写入最终 GitHub 仓库、Pages 地址和本次发布提交：
+
+```powershell
+python -m scripts.build `
+  --generated-at 2026-08-14T08:00:00Z `
+  --marketplace-source https://github.com/<暴喵账号>/<仓库名> `
+  --marketplace-ref <40位发布提交> `
+  --public-base-url https://<暴喵账号>.github.io/<仓库名>
 ```
 
 `--online` 会读取每条记录中固定提交的 `SKILL.md` 与许可证，适合发布前运行；普通单元测试不依赖网络。
@@ -111,6 +132,7 @@ python -m scripts.sync_candidates --ref main `
 本轮全网来源审查、7 个新增条目与暂缓原因见 [生态扩容审查](docs/reviews/ecosystem-expansion-2026-08-13.md)。
 增强权限层的 10 个新增条目和逐项能力复核见 [增强权限扩容审查](docs/reviews/enhanced-permissions-2026-08-13.md)。
 Harness 官方 55 个候选（发布 52 个、暂缓 3 个）的许可、目录和风险分组见 [Harness 专项复核](docs/reviews/harness-official-2026-08-13.md)。
+AWS、Microsoft、NVIDIA 官方来源的固定版本、206 个新增 Skills 与拒绝项见 [官方插件扩容复核](docs/reviews/official-plugin-expansion-2026-08-14.md)。
 百灵鸟默认市场 180 个插件与暴喵现状的逐项来源、形态、许可证和接入建议见 [百灵鸟市场对标表](docs/reviews/echobird-marketplace-crosswalk-2026-08-14.md)。该表可通过 `scripts.build_echobird_crosswalk` 从固定提交重新生成，只生成研究清单，不自动复制或发布插件。
 
 ## 生成物
@@ -118,6 +140,7 @@ Harness 官方 55 个候选（发布 52 个、暂缓 3 个）的许可、目录�
 - `dist/catalog.json`：客户端稳定接口；
 - `dist/catalog.sha256`：目录原始字节的摘要；
 - `site/catalog.json` 与 `site/catalog.sha256`：GitHub Pages 同源副本。
+- `site/marketplace-import.json` 与 `site/marketplace-import.sha256`：暴喵客户端一键导入描述及摘要。
 
 固定 `--generated-at` 时构建结果可复现。发布流水线使用提交时间生成该字段，避免构建机器当前时间造成漂移。
 
@@ -142,4 +165,4 @@ git push -u origin main
 
 ## 许可证
 
-本市场的代码与文档采用 [MIT](LICENSE)。各插件内的 Skill 仍归各自上游作者，采用条目 `license` 和 `source.license_url` 指向的许可证。`plugins/` 内只包含许可范围明确、固定版本且通过当前门禁的 72 个插件包。
+本市场的代码与文档采用 [MIT](LICENSE)。各插件内的 Skill 仍归各自上游作者，采用条目 `license` 和 `source.license_url` 指向的许可证。`plugins/` 内只包含许可范围明确、固定版本且通过当前门禁的 77 个插件包。

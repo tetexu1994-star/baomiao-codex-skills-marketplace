@@ -1,0 +1,32 @@
+{
+  "schema_version": "browser-verification/v1",
+  "created_at": "2026-08-14T15:44:53.176402+08:00",
+  "target": "暴喵 Codex 插件市场：77 个插件与一键导入",
+  "url": "http://127.0.0.1:8000/",
+  "verdict": "pass",
+  "checks": [
+    "首页显示 77 个可安装插件，首屏渲染 18 张卡片",
+    "暴喵一键导入按钮完成描述文件摘要校验后启用",
+    "确认框展示本地来源、固定提交、77 个插件和 Codex 回退命令",
+    "Escape 关闭确认框并把焦点返回导入按钮",
+    "Azure 搜索仅匹配 1 个插件并展示包含 202 个 Skills",
+    "320/768/1024/1440 四档无横向溢出",
+    "浏览器控制台无 error 或 warning"
+  ],
+  "manual_steps": [],
+  "screenshots": [
+    "evidence/browser-verifications/screenshots/plugin-market-77-home.jpg",
+    "evidence/browser-verifications/screenshots/one-click-import.jpg",
+    "evidence/browser-verifications/screenshots/one-click-import-mobile.jpg"
+  ],
+  "notes": "在 Codex 内置浏览器完成。自定义协议未实际触发，避免修改本机 Codex marketplace 配置；复制命令和确认流程已验收。",
+  "git": {
+    "repo_root": "/Users/tetexu/baomiao-codex-skills-marketplace",
+    "branch": "main",
+    "commit": "5c6b16bdcdf12da814a8808c9d9c0fbd508a6d83"
+  },
+  "artifact_paths": {
+    "json": "/Users/tetexu/baomiao-codex-skills-marketplace/evidence/browser-verifications/20260814-154453-暴喵-codex-插件市场-77-个插件与一键导入.json",
+    "markdown": "/Users/tetexu/baomiao-codex-skills-marketplace/evidence/browser-verifications/20260814-154453-暴喵-codex-插件市场-77-个插件与一键导入.md"
+  }
+}

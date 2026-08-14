@@ -1,0 +1,64 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-14T04:30:00Z",
+  "commit": "bab56a3b9991aa0c6857b05198a61ba14a60bce4",
+  "content_kind": "skill-bundle",
+  "files": [
+    {
+      "bytes": 12831,
+      "path": "amazon-location-service/SKILL.md",
+      "sha256": "b988ad4344d49e87cf8fe94075b68fc92297a12ef319226960bf515d6e54782e"
+    },
+    {
+      "bytes": 9094,
+      "path": "amazon-location-service/references/address-input.md",
+      "sha256": "aa936e18e90ba1e4c6eee403ffee174d846c1309183e8ef68c8444860f715f55"
+    },
+    {
+      "bytes": 16273,
+      "path": "amazon-location-service/references/address-verification.md",
+      "sha256": "9c3a817da05963c564e95f22dcc762154e16980617f4ff5a9bab4ef6ac91379a"
+    },
+    {
+      "bytes": 41611,
+      "path": "amazon-location-service/references/calculate-routes.md",
+      "sha256": "7549fc51d00091ab0d6f9e6b859250211b81b22957fecf488ecf725b0d3aafbc"
+    },
+    {
+      "bytes": 10884,
+      "path": "amazon-location-service/references/dynamic-map.md",
+      "sha256": "f221cd2e1ab859528600e75622d3d516e9f3bee63b5020c836806cd4b77df4d9"
+    },
+    {
+      "bytes": 17830,
+      "path": "amazon-location-service/references/places-search.md",
+      "sha256": "3294fd5260e6ec7bb0671b487c1de0da06b09fa0dac355503beda2424183702b"
+    },
+    {
+      "bytes": 15276,
+      "path": "amazon-location-service/references/web-javascript.md",
+      "sha256": "34c440f48f98b4f236d4196770a5267e725b0b5197d3b4af4d22267dfa03f496"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+  },
+  "package_id": "amazon-location-service",
+  "path": "plugins/amazon-location-service/skills",
+  "policy": "candidate-only",
+  "repository": "https://github.com/awslabs/agent-plugins",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 7,
+    "findings": [],
+    "total_bytes": 123799,
+    "verdict": "review-required"
+  },
+  "source_id": "aws-agent-plugins-official"
+}

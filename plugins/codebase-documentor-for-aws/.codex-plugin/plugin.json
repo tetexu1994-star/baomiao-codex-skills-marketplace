@@ -1,0 +1,28 @@
+{
+  "name": "codebase-documentor-for-aws",
+  "version": "1.0.0",
+  "description": "分析 CDK、CloudFormation、Terraform 与应用代码，生成带源码引用的架构和组件文档，适合接手存量 AWS 项目。",
+  "author": {
+    "name": "Amazon Web Services",
+    "url": "https://github.com/awslabs"
+  },
+  "repository": "https://github.com/awslabs/agent-plugins",
+  "homepage": "https://github.com/awslabs/agent-plugins/tree/bab56a3b9991aa0c6857b05198a61ba14a60bce4/plugins/codebase-documentor-for-aws/skills",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AWS 代码库文档生成",
+    "shortDescription": "分析 CDK、CloudFormation、Terraform 与应用代码，生成带源码引用的架构和组件文档，适合接手存量 AWS 项目。",
+    "longDescription": "固定来源于 Amazon Web Services 官方仓库；包内无脚本；会遍历代码库并写入文档，联网仅用于按用户要求查询 AWS 资料。",
+    "developerName": "Amazon Web Services",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Network"
+    ],
+    "defaultPrompt": [
+      "使用 AWS 代码库文档生成 处理当前任务，并在执行命令或外部写入前说明影响。"
+    ]
+  }
+}

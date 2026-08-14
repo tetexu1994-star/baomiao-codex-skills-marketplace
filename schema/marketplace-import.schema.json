@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:baomiao:codex-marketplace:import:v1",
+  "title": "暴喵 Codex 市场导入描述",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "profile", "marketplace", "catalog", "command"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "profile": {"enum": ["local-preview", "release"]},
+    "marketplace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display_name", "source", "ref", "manifest_path", "manifest_sha256", "plugin_count"],
+      "properties": {
+        "id": {"const": "baomiao-codex"},
+        "display_name": {"type": "string", "minLength": 1},
+        "source": {"type": "string", "minLength": 1},
+        "ref": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "manifest_path": {"const": ".agents/plugins/marketplace.json"},
+        "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "plugin_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "sha256_url", "sha256"],
+      "properties": {
+        "url": {"type": "string", "minLength": 1},
+        "sha256_url": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["executable", "args", "display"],
+      "properties": {
+        "executable": {"const": "codex"},
+        "args": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+        "display": {"type": "string", "pattern": "^codex plugin marketplace add "}
+      }
+    }
+  }
+}

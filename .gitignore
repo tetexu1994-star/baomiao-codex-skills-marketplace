@@ -7,3 +7,5 @@ output/playwright/
 .DS_Store
 site/catalog.json
 site/catalog.sha256
+site/marketplace-import.json
+site/marketplace-import.sha256

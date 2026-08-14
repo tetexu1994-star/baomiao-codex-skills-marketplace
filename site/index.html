@@ -8,8 +8,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>暴喵 Codex 插件市场</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23071426'/%3E%3Cpath d='M7 23V18h4v5zm7 0V13h4v10zm7 0V7h4v16z' fill='%23ffb000'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20260814a">
-  <script src="assets/app.js?v=20260814a" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260814b">
+  <script src="assets/app.js?v=20260814b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#catalog">跳到插件列表</a>
@@ -29,16 +29,29 @@
       <div>
         <p class="eyebrow">为中国大陆 Windows 用户准备</p>
         <h1 id="market-title">中文 Codex 插件市场</h1>
-        <p class="lede">搜索需要的插件，查看来源与权限，然后通过暴喵客户端安装。</p>
+        <p class="lede">先把市场加入 Codex，再搜索需要的插件、查看来源与权限并按需启用。</p>
       </div>
       <p class="plugin-total"><b id="approved-count">—</b><span>个可安装插件</span></p>
+    </section>
+
+    <section class="import-strip" aria-labelledby="import-title">
+      <div class="import-copy">
+        <p class="eyebrow">一次导入，按需启用</p>
+        <h2 id="import-title">把整个市场加入 Codex</h2>
+        <p id="import-summary">正在校验市场来源与固定版本…</p>
+      </div>
+      <div class="import-actions">
+        <button class="primary-action" id="open-import" type="button" disabled>正在准备一键导入…</button>
+        <button class="secondary-action" id="copy-import-command" type="button" disabled>复制 Codex 命令</button>
+        <p id="import-status" role="status" aria-live="polite"></p>
+      </div>
     </section>
 
     <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
       <div class="section-heading">
         <div>
           <p class="eyebrow">插件目录</p>
-          <h2 id="catalog-title">搜索，筛选，直接安装</h2>
+          <h2 id="catalog-title">搜索，筛选，按需启用</h2>
         </div>
         <p id="catalog-meta" role="status" aria-live="polite">正在读取目录…</p>
       </div>
@@ -88,8 +101,34 @@
 
   </main>
 
+  <dialog class="import-dialog" id="import-dialog" aria-labelledby="import-dialog-title">
+    <div class="dialog-heading">
+      <div>
+        <p class="eyebrow">导入前确认</p>
+        <h2 id="import-dialog-title">添加暴喵插件市场</h2>
+      </div>
+      <button class="dialog-close" id="close-import" type="button" aria-label="关闭导入确认框">×</button>
+    </div>
+    <p class="dialog-explainer">这一步只把市场加入 Codex，不会自动安装或授权其中的插件。之后你可以在 Codex 里逐个启用。</p>
+    <dl class="import-facts">
+      <dt>来源仓库</dt><dd id="import-source">—</dd>
+      <dt>固定版本</dt><dd id="import-ref">—</dd>
+      <dt>市场内容</dt><dd id="import-count">—</dd>
+      <dt>执行方式</dt><dd>由暴喵客户端调用本机 Codex CLI</dd>
+    </dl>
+    <div class="command-preview">
+      <span>Codex 回退命令</span>
+      <code id="import-command">—</code>
+    </div>
+    <div class="dialog-actions">
+      <button class="primary-action" id="confirm-import" type="button">确认并交给暴喵</button>
+      <button class="secondary-action" id="copy-dialog-command" type="button">复制命令</button>
+      <button class="text-action" id="cancel-import" type="button">取消</button>
+    </div>
+  </dialog>
+
   <footer>
-    <p><strong>暴喵 Codex 插件市场</strong> · 72 个可安装插件</p>
+    <p><strong>暴喵 Codex 插件市场</strong> · <span id="footer-count">—</span> 个可安装插件</p>
     <p>“官方来源”仅说明上游身份，不代表暴喵对第三方功能作担保。</p>
   </footer>
 </body>

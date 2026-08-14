@@ -27,7 +27,9 @@
       "properties": {
         "repository": {"type": "string", "pattern": "^https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},
         "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
-        "path": {"type": "string", "pattern": "^skills/[A-Za-z0-9_./-]+$"},
+        "path": {"type": "string", "pattern": "^(?:skills(?:/[A-Za-z0-9_./-]+)?|plugins/[A-Za-z0-9_./-]+/skills)$"},
+        "layout": {"enum": ["single-skill", "skill-bundle"]},
+        "entrypoint_path": {"type": "string", "pattern": "^[A-Za-z0-9_./-]+/SKILL\\.md$"},
         "skill_url": {"type": "string", "pattern": "^https://raw\\.githubusercontent\\.com/"},
         "license_url": {"type": "string", "pattern": "^https://raw\\.githubusercontent\\.com/"},
         "license_path": {"type": "string", "pattern": "^[A-Za-z0-9_./-]+$"}

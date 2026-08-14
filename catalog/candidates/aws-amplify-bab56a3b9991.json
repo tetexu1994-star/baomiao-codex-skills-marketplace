@@ -1,0 +1,114 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-14T04:30:00Z",
+  "commit": "bab56a3b9991aa0c6857b05198a61ba14a60bce4",
+  "content_kind": "skill-bundle",
+  "files": [
+    {
+      "bytes": 13007,
+      "path": "amplify-workflow/SKILL.md",
+      "sha256": "f7cebb69953804ac7f1aa4787a1ee6ce6597e166b50ab9a4c872912f37ddda5e"
+    },
+    {
+      "bytes": 8615,
+      "path": "amplify-workflow/references/advanced-features.md",
+      "sha256": "be88291a0aef16616ae0c90d44d0ac59fe0de543b492da5c54d9f26242491a8b"
+    },
+    {
+      "bytes": 7633,
+      "path": "amplify-workflow/references/ai.md",
+      "sha256": "1cef52e9c381481c43a759aba62b3ed0296eb3fc29b3cda99b3fc7957022b026"
+    },
+    {
+      "bytes": 7563,
+      "path": "amplify-workflow/references/auth-backend.md",
+      "sha256": "5777a7394838cb0384fc5d42f7838018686e952d8f3905998dee1e308d9416fc"
+    },
+    {
+      "bytes": 15024,
+      "path": "amplify-workflow/references/auth-mobile.md",
+      "sha256": "9f45ceb4e877f23e7aacf5d2c5e383104832cc0c8f311ad075d824010f002397"
+    },
+    {
+      "bytes": 7526,
+      "path": "amplify-workflow/references/auth-web.md",
+      "sha256": "310ec55ebe0284185dd7d0d5cb540e3d58e31f56c16c784263b0e88cb69d6819"
+    },
+    {
+      "bytes": 5148,
+      "path": "amplify-workflow/references/core-mobile.md",
+      "sha256": "8a1e0101ecfdbab86b2721a879f126db8d968eb0398cd1d5e68cf2ab7230e6f4"
+    },
+    {
+      "bytes": 5105,
+      "path": "amplify-workflow/references/core-web.md",
+      "sha256": "b77ee0582d46c11ba4e967a52df766a15bd0f46fb4f2f314fad473c661c872df"
+    },
+    {
+      "bytes": 10345,
+      "path": "amplify-workflow/references/data-backend.md",
+      "sha256": "66ebacba937e28cd109388b6c51c396e69ecba00d5e76d17cb8dfc2adc60f6e5"
+    },
+    {
+      "bytes": 5117,
+      "path": "amplify-workflow/references/data-mobile.md",
+      "sha256": "02118022f20aee621aeb41aa5d8a5d14e76f6e045cff412e09c06c0051f44913"
+    },
+    {
+      "bytes": 4166,
+      "path": "amplify-workflow/references/data-web.md",
+      "sha256": "a2dd4c88d7b0b67ad22809deb9ddb86758a58e3884d25324dcce8a356d36481c"
+    },
+    {
+      "bytes": 9388,
+      "path": "amplify-workflow/references/deployment.md",
+      "sha256": "79f996ed6f2d7353d62a9a401be5fa1d6e69b2e214c8383f64a00674f3450260"
+    },
+    {
+      "bytes": 8297,
+      "path": "amplify-workflow/references/functions-and-api.md",
+      "sha256": "cb64a666036a1e377ceba7203bca04b00ead91bcccaddb39f80e8db9c37021ba"
+    },
+    {
+      "bytes": 6095,
+      "path": "amplify-workflow/references/scaffolding.md",
+      "sha256": "8f5137d5223c8750a4e783e02f06e071ececa9d48feae0b28207e7b665b47ef8"
+    },
+    {
+      "bytes": 4472,
+      "path": "amplify-workflow/references/storage-backend.md",
+      "sha256": "8124750a1fb25c7e45de9d9e58767c50cd3e356fd69bc1d16ccae6494e772041"
+    },
+    {
+      "bytes": 9174,
+      "path": "amplify-workflow/references/storage-mobile.md",
+      "sha256": "5a0bf459804f00530857b26033a7fa28e237b5f585dbc13b7e770cb3a93df995"
+    },
+    {
+      "bytes": 4541,
+      "path": "amplify-workflow/references/storage-web.md",
+      "sha256": "b430a38b6549fe0e4d2b8d1c06ea1c6b4d0032c58dd866b7fe0eda720f6eab72"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+  },
+  "package_id": "aws-amplify",
+  "path": "plugins/aws-amplify/skills",
+  "policy": "candidate-only",
+  "repository": "https://github.com/awslabs/agent-plugins",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 17,
+    "findings": [],
+    "total_bytes": 131216,
+    "verdict": "review-required"
+  },
+  "source_id": "aws-agent-plugins-official"
+}

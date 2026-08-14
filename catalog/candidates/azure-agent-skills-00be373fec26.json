@@ -1,0 +1,1114 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-14T04:30:00Z",
+  "commit": "00be373fec26109c3087728188f6a45554c47617",
+  "content_kind": "skill-bundle",
+  "files": [
+    {
+      "bytes": 43747,
+      "path": "azure-active-directory-b2c/SKILL.md",
+      "sha256": "934ece4826165cfecc1e12f268bb5b1d55d37d1db52ecf46f252812911e0ed68"
+    },
+    {
+      "bytes": 6278,
+      "path": "azure-advisor/SKILL.md",
+      "sha256": "a376703177a8da36164afa86b5e778293b455bb3f8fa24500607472a214677f2"
+    },
+    {
+      "bytes": 6375,
+      "path": "azure-ai-vision/SKILL.md",
+      "sha256": "2d7cf3ffb22ac737ef054cc5b183f4340d1584bd69df4635594f84b04703bac6"
+    },
+    {
+      "bytes": 44172,
+      "path": "azure-aks-edge-essentials/SKILL.md",
+      "sha256": "6c444a2fbc409c44dcb3915b4d9cad9d604d4ca9b482513a90847b0e37635c7d"
+    },
+    {
+      "bytes": 2429,
+      "path": "azure-analysis-services/SKILL.md",
+      "sha256": "36f728566de10774a225f1e572a430f9c57c655dfd03add01eddf8a95bc661da"
+    },
+    {
+      "bytes": 4357,
+      "path": "azure-anomaly-detector/SKILL.md",
+      "sha256": "6e69a828902001dd0f36d5f36c31ebae893cb0e39de8ace83cdfbdb905a60a53"
+    },
+    {
+      "bytes": 3225,
+      "path": "azure-anyscale-on-azure/SKILL.md",
+      "sha256": "24a00f0d7b932360424050f332e763b5ef1a447fddb139e206e90d010f28d353"
+    },
+    {
+      "bytes": 5256,
+      "path": "azure-api-center/SKILL.md",
+      "sha256": "6e9a486644e091798e3d3ee149df63c8752f213912cdf1a0931cacfa648573c4"
+    },
+    {
+      "bytes": 38465,
+      "path": "azure-api-management/SKILL.md",
+      "sha256": "319119ffb3040699d94c3cb67ba5945bbfb593e368712d689d1a6654cf3c6e87"
+    },
+    {
+      "bytes": 24401,
+      "path": "azure-app-configuration/SKILL.md",
+      "sha256": "86733acccf61783a3f3d1b67c5d8cdb0286fcc741a2ae814e5fd055715c62692"
+    },
+    {
+      "bytes": 25865,
+      "path": "azure-app-service/SKILL.md",
+      "sha256": "835996b4394cb6f02d36f62e66141134f7e16ece1e3904006670c1adc296b947"
+    },
+    {
+      "bytes": 14195,
+      "path": "azure-app-testing/SKILL.md",
+      "sha256": "1752c43cf5b9bc3918ff79d396aacb6395a261814c085b5d8b8d0fdb29dd6bd4"
+    },
+    {
+      "bytes": 25653,
+      "path": "azure-application-gateway/SKILL.md",
+      "sha256": "85ec1f663add3735c2e82de38b7881aa3b4da46a9ffe1fafbd87c7d2eaf4a2e6"
+    },
+    {
+      "bytes": 2902,
+      "path": "azure-application-network/SKILL.md",
+      "sha256": "ccf043871e11affe031857f8fe268479359e0d1756b0e25ff53f4a410c047fc0"
+    },
+    {
+      "bytes": 48461,
+      "path": "azure-arc/SKILL.md",
+      "sha256": "4307dda3ed65809900a516945341f4d0b3a67e84940c7fba9de656de46b28d60"
+    },
+    {
+      "bytes": 61064,
+      "path": "azure-architecture/SKILL.md",
+      "sha256": "9a943bb3dcefb1d87395d1c0e2383772d010b25c7bcd9f9746865edd85d38b40"
+    },
+    {
+      "bytes": 4456,
+      "path": "azure-artifact-signing/SKILL.md",
+      "sha256": "955569ef76e2f465954b4ce7dae4f021b8dddf0b6629247cb032a456e4d1649a"
+    },
+    {
+      "bytes": 12404,
+      "path": "azure-artifacts/SKILL.md",
+      "sha256": "800f2ab81f7b628c58bb6be028a2003964907a894dc828c71e782b6a667f96cd"
+    },
+    {
+      "bytes": 6142,
+      "path": "azure-attestation/SKILL.md",
+      "sha256": "598a7cdc7a9770c89cfc1ffaabd67177dac70c256233ae7c833a4d170dd967f8"
+    },
+    {
+      "bytes": 17594,
+      "path": "azure-automation/SKILL.md",
+      "sha256": "548ba4789a0409b31133983477f8b9096dee8c76e6e061361c09f43fa36e2dcd"
+    },
+    {
+      "bytes": 40654,
+      "path": "azure-backup/SKILL.md",
+      "sha256": "0e2f9f2f9ce50d77141b7b916b16ffe58db367e08b18d7ababb420d8f7dbb5d5"
+    },
+    {
+      "bytes": 6976,
+      "path": "azure-bastion/SKILL.md",
+      "sha256": "e3ae142347587076c0670f0dd4236c5d57013683997f738f4e17c6f85fa97631"
+    },
+    {
+      "bytes": 14913,
+      "path": "azure-batch/SKILL.md",
+      "sha256": "d5857a8d04e7de46542dc4c1cc84c56ea1746f23944260722d12211669b8706c"
+    },
+    {
+      "bytes": 51300,
+      "path": "azure-blob-storage/SKILL.md",
+      "sha256": "a002ef6278e2cdd49a57dc621c9f9257094413ebbe5bae8cba6076f0eccb938d"
+    },
+    {
+      "bytes": 8041,
+      "path": "azure-blueprints/SKILL.md",
+      "sha256": "4ec39280e95c8ffe35831d5f1c886af03f4569dc3dc673d06a434adeb7987898"
+    },
+    {
+      "bytes": 9400,
+      "path": "azure-boards/SKILL.md",
+      "sha256": "e737afb6f46d55a643ec62859a505d07deee6d4bbe5bf11a7389bb007845cdff"
+    },
+    {
+      "bytes": 30755,
+      "path": "azure-bot-service/SKILL.md",
+      "sha256": "ffbf401835b719f8f0dbf5e030701de9accadae05441701c34c0e2d61e902f56"
+    },
+    {
+      "bytes": 2365,
+      "path": "azure-business-process-tracking/SKILL.md",
+      "sha256": "f19768f67043cea12e497679f1e12be55616f290ecf51b3004f2c501c6898b62"
+    },
+    {
+      "bytes": 12709,
+      "path": "azure-cache-redis/SKILL.md",
+      "sha256": "7fb028e66ba6ac804833678ea62cb32ebff29e8d58f49bb72f55bca3a4a6c927"
+    },
+    {
+      "bytes": 3347,
+      "path": "azure-carbon-optimization/SKILL.md",
+      "sha256": "a82c7193e720228d59bd8797decff8a20556eeca4d3930bc4400b004c98deac6"
+    },
+    {
+      "bytes": 10799,
+      "path": "azure-chaos-studio/SKILL.md",
+      "sha256": "f52db13246a28445c1085e977806b215f05aa9faf7c82f795811607c1328d1e0"
+    },
+    {
+      "bytes": 65843,
+      "path": "azure-cloud-adoption-framework/SKILL.md",
+      "sha256": "505deb3239a4a84e7d144814d2c85268c27920bc47cdee0909c17ff8bc44b689"
+    },
+    {
+      "bytes": 5155,
+      "path": "azure-cloud-hsm/SKILL.md",
+      "sha256": "471ace7830b4b1a4f965529d763af3788009d92041c20b41f8a989a6fc01ed59"
+    },
+    {
+      "bytes": 8800,
+      "path": "azure-cloud-services/SKILL.md",
+      "sha256": "338a977235faa55cb406b0df176521060fe15f46d16aa5103f2e092dec165bcc"
+    },
+    {
+      "bytes": 3522,
+      "path": "azure-cloud-shell/SKILL.md",
+      "sha256": "a64bd6a4e9ec203202d11ba2bc54b8caffd1b321ef520a811894d576a1d968b4"
+    },
+    {
+      "bytes": 39430,
+      "path": "azure-cognitive-search/SKILL.md",
+      "sha256": "941f5e93944b8ad0e8cf2d31f96298a7e0d5079c74bf2367825d20007574f17f"
+    },
+    {
+      "bytes": 76120,
+      "path": "azure-communication-services/SKILL.md",
+      "sha256": "9af19a576b613deb43264bfaf88f33bd0746e6e21f4852a7fc53930e64f77a14"
+    },
+    {
+      "bytes": 11620,
+      "path": "azure-confidential-computing/SKILL.md",
+      "sha256": "71412ece97d647c442aeb37581f75f8c530003aecc1ebc217e61b93b90bfcb3e"
+    },
+    {
+      "bytes": 6655,
+      "path": "azure-confidential-ledger/SKILL.md",
+      "sha256": "555a0d4f4885226993b2b975f4ae968b0ed7602c73e37bf1aca8438e73b149ed"
+    },
+    {
+      "bytes": 2322,
+      "path": "azure-connector-namespace/SKILL.md",
+      "sha256": "ae2388a332ee7836e773f90b5e07c485352ec6a97b0c3e8bf1f05d11ec75f3c0"
+    },
+    {
+      "bytes": 23620,
+      "path": "azure-container-apps/SKILL.md",
+      "sha256": "427200b333589696ab9c212eb87c73246aceafa3179852ad37ded35db1fe805a"
+    },
+    {
+      "bytes": 13153,
+      "path": "azure-container-instances/SKILL.md",
+      "sha256": "e1cbc40ff5edd9715c0489d264e7fe15732d96bd7771d51cc77ecc19ecd8f333"
+    },
+    {
+      "bytes": 18713,
+      "path": "azure-container-registry/SKILL.md",
+      "sha256": "e07c538098a8bac431369b9f3d0da445fa199c4112a6be20140630324abf1519"
+    },
+    {
+      "bytes": 5529,
+      "path": "azure-container-storage/SKILL.md",
+      "sha256": "4d0540c8b664abf96225bf180f0f71a99240f455b53335c57e92e131a03396e9"
+    },
+    {
+      "bytes": 7342,
+      "path": "azure-content-safety/SKILL.md",
+      "sha256": "5c75c6ff2888fa0afcc1e7448efa7930c4359be751cf6fc63fc04694260cab8b"
+    },
+    {
+      "bytes": 9545,
+      "path": "azure-content-understanding/SKILL.md",
+      "sha256": "daa62a573d130e06ea0621a9555e3980c98c4cdac407222a064f2a1aecfdbffe"
+    },
+    {
+      "bytes": 5946,
+      "path": "azure-copilot/SKILL.md",
+      "sha256": "ba0570fb16442901224a96dd8e1b61cce565302ac632ab735fe37f890df44aea"
+    },
+    {
+      "bytes": 78686,
+      "path": "azure-cosmos-db/SKILL.md",
+      "sha256": "d8a6573a07ff811fb48e91dd7efabdcacf5b9a40ced1cb72524e819d457edab2"
+    },
+    {
+      "bytes": 18636,
+      "path": "azure-cosmos-db/configuration.md",
+      "sha256": "c6f96cf2ed7f08d328e7dc57f7a4657f1dff7298920fa3501b2ca69ae64bfab4"
+    },
+    {
+      "bytes": 4175,
+      "path": "azure-cosmos-db/deployment.md",
+      "sha256": "c6031fa9c1dac9b3ffc8c601a8370675cce33211fd7378e3f1eb514e7999b42e"
+    },
+    {
+      "bytes": 20784,
+      "path": "azure-cosmos-db/integrations.md",
+      "sha256": "e93d019293ac38824a68784f8bb7b994a84bf8d62ac7d9d0ae2a28396b337e9f"
+    },
+    {
+      "bytes": 25563,
+      "path": "azure-cost-management/SKILL.md",
+      "sha256": "c59ff438af67a9520ef21d3c4a014e15ed0c630a5c6c3554aac30437fdd19533"
+    },
+    {
+      "bytes": 6303,
+      "path": "azure-custom-vision/SKILL.md",
+      "sha256": "92b8fbe2c936b6abe73a4fd899318e4c7b553000f83597fbadf88b125812e6c3"
+    },
+    {
+      "bytes": 18546,
+      "path": "azure-cyclecloud/SKILL.md",
+      "sha256": "a1cfe402138d33fa4e941218206a9f71b26480c158ebc4481bd044feafc27c0a"
+    },
+    {
+      "bytes": 17318,
+      "path": "azure-data-api-builder/SKILL.md",
+      "sha256": "adbd13089fba35570da6f0d2c1b37c81213e69b27decf0f657d7b759af55560d"
+    },
+    {
+      "bytes": 10555,
+      "path": "azure-data-box-family/SKILL.md",
+      "sha256": "c0f0fb5f7185a9690a50ef61438cc81dbc8fefe08b58179d51648e5d84ff1b37"
+    },
+    {
+      "bytes": 19639,
+      "path": "azure-data-explorer/SKILL.md",
+      "sha256": "be2c1a57ddc8d468a84c537e2e2608a4479e26c0fb966f1ee2119722f50138da"
+    },
+    {
+      "bytes": 62886,
+      "path": "azure-data-factory/SKILL.md",
+      "sha256": "1da5b3e4aa9ae9e49bae1b00f45b70409325388af2198e8594ee119231d15cdb"
+    },
+    {
+      "bytes": 6357,
+      "path": "azure-data-manager-for-agri/SKILL.md",
+      "sha256": "03ce88d75143a6da3a7083525450d23c5340ba7b1629f930116421b5e9826f32"
+    },
+    {
+      "bytes": 7217,
+      "path": "azure-data-science-vm/SKILL.md",
+      "sha256": "12904905e3939051683eb6f5824989984c9612e4252c43a1ade3ae44b390e5fd"
+    },
+    {
+      "bytes": 5305,
+      "path": "azure-data-share/SKILL.md",
+      "sha256": "d1f667fddc037378879b42084c000d03d4d64fb6fcc14fb68a3e0693d32b27bc"
+    },
+    {
+      "bytes": 5816,
+      "path": "azure-database-migration/SKILL.md",
+      "sha256": "2c2fb6ae0db2c942515663bba57796b4959297762bdeb4e3c7f0e77bfa5af0f0"
+    },
+    {
+      "bytes": 22459,
+      "path": "azure-database-mysql/SKILL.md",
+      "sha256": "d720711c239eb0ac2d9866ba222db287220addd960947e2ca95db2318d38aee9"
+    },
+    {
+      "bytes": 41194,
+      "path": "azure-database-postgresql/SKILL.md",
+      "sha256": "26075e3e2cdc4f896cd7fa7fc69866df808f49cf783641f68bf2d52e79538c14"
+    },
+    {
+      "bytes": 67479,
+      "path": "azure-databricks/SKILL.md",
+      "sha256": "30a631ab7c5f828b6ed6a0c003902c29b300aefc7bbe211ca7ebfe0240310240"
+    },
+    {
+      "bytes": 7903,
+      "path": "azure-databricks/architecture-patterns.md",
+      "sha256": "99aed15c835f94def5f94024d7917f6dc9850d3ac81296d15a9211150c2d6ad4"
+    },
+    {
+      "bytes": 136662,
+      "path": "azure-databricks/configuration.md",
+      "sha256": "39b24cb7dcf58f2cd0a29f5b4aff93b0a4ce157850e3ea83bc4a7c186e6ca91f"
+    },
+    {
+      "bytes": 8795,
+      "path": "azure-databricks/deployment.md",
+      "sha256": "5400ba8ded5ba9caa265bc9f8c86f2c425ea9921b706a7c5bd08064e46817606"
+    },
+    {
+      "bytes": 217446,
+      "path": "azure-databricks/integrations.md",
+      "sha256": "8d6c6c11c77c8db545efe72b0ae589fc9aaded1a72086325f42f3b33ca7bd0b5"
+    },
+    {
+      "bytes": 17516,
+      "path": "azure-databricks/limits-quotas.md",
+      "sha256": "67b3c54adfc81ee96c451f327fdbb5163e45fb7f2f548aa7070d19bdb01ed273"
+    },
+    {
+      "bytes": 59984,
+      "path": "azure-databricks/security.md",
+      "sha256": "462b2c5e16ec5135b6fbcc57a6557d06f0d93792ad7263ee58c39bc074742bca"
+    },
+    {
+      "bytes": 7925,
+      "path": "azure-ddos-protection/SKILL.md",
+      "sha256": "b95d04147f15535ff117211bc0ae0a88975e15163809381fa73e00ed827e9dd8"
+    },
+    {
+      "bytes": 4644,
+      "path": "azure-dedicated-hsm/SKILL.md",
+      "sha256": "f8e6024c17e1065c1d1a7c67850fda3b84e485496687b88ba04b5bf34bf158e0"
+    },
+    {
+      "bytes": 46615,
+      "path": "azure-defender-for-cloud/SKILL.md",
+      "sha256": "4795f2be13e3aaeff9d7e8d1e4176e6baa1650fbeda660a8d976ec5b77d275f5"
+    },
+    {
+      "bytes": 24045,
+      "path": "azure-defender-for-iot/SKILL.md",
+      "sha256": "067cd96dc133890b8bdc75b2c0928adff57edaa6fee6dcf566472a2959570e7b"
+    },
+    {
+      "bytes": 8329,
+      "path": "azure-deployment-environments/SKILL.md",
+      "sha256": "c14444fd3cd0e0ce9e2125043d645ffdf5c5e79d116c0e8879016ff3867bc711"
+    },
+    {
+      "bytes": 10366,
+      "path": "azure-dev-box/SKILL.md",
+      "sha256": "c29acecf0f5b87a804daa88498691c072be660f51afd8a5af2fccf72f46857fb"
+    },
+    {
+      "bytes": 48591,
+      "path": "azure-devops/SKILL.md",
+      "sha256": "ab8e1d7ebea11dc29d327df92148da37c9c3c46c983bf150db6186ac0838b897"
+    },
+    {
+      "bytes": 13813,
+      "path": "azure-devtest-labs/SKILL.md",
+      "sha256": "fe6b860d228dfd54194e5bb704f15b24850e614620fadc212dfcecdfbf310614"
+    },
+    {
+      "bytes": 12109,
+      "path": "azure-digital-twins/SKILL.md",
+      "sha256": "d95e077d82ae9a8e5bb80b3652fd26793a55cdbb143e451ef149cdbf6592c6f3"
+    },
+    {
+      "bytes": 7593,
+      "path": "azure-dns/SKILL.md",
+      "sha256": "181e065acd672945a2a94f0d5e512fea6c5b3a980b4f07f92a7e11101cd4d494"
+    },
+    {
+      "bytes": 11394,
+      "path": "azure-document-intelligence/SKILL.md",
+      "sha256": "aeb882adbc88c7c4ee93fe4a0f9a6be6fb7d182f2856b1c6684241b638b09c96"
+    },
+    {
+      "bytes": 17267,
+      "path": "azure-documentdb/SKILL.md",
+      "sha256": "f58c599c75c98c94b01915bde941db72e2eb7ae2c630bfabcb94ad219da049d1"
+    },
+    {
+      "bytes": 5991,
+      "path": "azure-durable-task/SKILL.md",
+      "sha256": "64317c2af5765bc701399a0d5d2289ed9eef431e5e50f4bc0378751e1bf5b650"
+    },
+    {
+      "bytes": 2792,
+      "path": "azure-education-hub/SKILL.md",
+      "sha256": "558dd1d342b325d6fc9e25a990fdf2c2b407e17e91115bebe4f6f6dd42bec0c8"
+    },
+    {
+      "bytes": 8100,
+      "path": "azure-elastic-san/SKILL.md",
+      "sha256": "120abad940756280b1ebe958fe3f5997df439932c54c41af3369e119f7932e9c"
+    },
+    {
+      "bytes": 10319,
+      "path": "azure-enclave/SKILL.md",
+      "sha256": "3bbe7dfb59dea9ad02d0ec954b2bc38794735f5691089b4d36c8aa05542b6f30"
+    },
+    {
+      "bytes": 9894,
+      "path": "azure-energy-data-services/SKILL.md",
+      "sha256": "71867e6bd82d2a97ecb2862a5c35fe81b85cd8df4a6dbae6ffdb0d4b91746049"
+    },
+    {
+      "bytes": 29831,
+      "path": "azure-event-grid/SKILL.md",
+      "sha256": "df94c44a9488de5245bac803b4f1c1478f18ac71a9f7734ee7bfab3b93724eb7"
+    },
+    {
+      "bytes": 15050,
+      "path": "azure-event-hubs/SKILL.md",
+      "sha256": "0f70d596ebec25639326da4ea205d2287ec9c17969d84eac253799e6bdd0309c"
+    },
+    {
+      "bytes": 14693,
+      "path": "azure-expressroute/SKILL.md",
+      "sha256": "bfbb43ac98630732ca149da519e2e04788803ba46a84cabc475270b0c4b78f4d"
+    },
+    {
+      "bytes": 3354,
+      "path": "azure-extended-zones/SKILL.md",
+      "sha256": "755ecd892a266386e35fd65ce1aab6276eb2c71ea68832e25146ad4e227b0d7e"
+    },
+    {
+      "bytes": 3935,
+      "path": "azure-external-attack-surface-management/SKILL.md",
+      "sha256": "8d91963d486b2a6204d76fd501ace061ef0f1ab6a729f21dc653671c531b5634"
+    },
+    {
+      "bytes": 6012,
+      "path": "azure-face/SKILL.md",
+      "sha256": "3d64aa8c237c0454498052941a68fc92031ea7967f94351905cbe884af7cca3f"
+    },
+    {
+      "bytes": 20683,
+      "path": "azure-files/SKILL.md",
+      "sha256": "1d92d03aa8ca4fec8c4e9b59e207d0bec7b2be4f34bd191c97831902ac4a7b8f"
+    },
+    {
+      "bytes": 4824,
+      "path": "azure-firewall-manager/SKILL.md",
+      "sha256": "63dc5dfa65bff37434bc7dcb9d5aca08fe63f286f3ef34c3418b0c63de9f5f54"
+    },
+    {
+      "bytes": 12349,
+      "path": "azure-firewall/SKILL.md",
+      "sha256": "9a2cced4d611c91c1bc37d36c65d1a520fe2fd633a21790e0fa872dc4a01f1db"
+    },
+    {
+      "bytes": 4721,
+      "path": "azure-firmware-analysis/SKILL.md",
+      "sha256": "b6baa95e1066d2c96293d702b449240b22c3d45e06bbaa9cf71c3ceaf203ac8a"
+    },
+    {
+      "bytes": 6267,
+      "path": "azure-fluid-relay/SKILL.md",
+      "sha256": "4d59605d4122656365a5f195439f1aae6169de224be4e4e17481eb19cd786a78"
+    },
+    {
+      "bytes": 13439,
+      "path": "azure-front-door/SKILL.md",
+      "sha256": "b4a90909dba32ed12b9372c22be531227a716db7486a1d4381fa626266aa35d5"
+    },
+    {
+      "bytes": 40165,
+      "path": "azure-functions/SKILL.md",
+      "sha256": "fe84a2d887d0976720a5ce13a2647cd1b7e62e8bbc9d1f37e52a82852493475d"
+    },
+    {
+      "bytes": 56221,
+      "path": "azure-hdinsight/SKILL.md",
+      "sha256": "e957760415372e63687d68d402277eb2079d9557359197f09bca58b3d7d082b4"
+    },
+    {
+      "bytes": 9112,
+      "path": "azure-health-bot/SKILL.md",
+      "sha256": "fd6bd96f3df7bf63b0be76030c33f29db5144480103c3b955ff318601e60a8d0"
+    },
+    {
+      "bytes": 26824,
+      "path": "azure-health-data-services/SKILL.md",
+      "sha256": "e50e4c900e463df438eb5748086458573662892ace6d7e92ba30f4cf7518094e"
+    },
+    {
+      "bytes": 20901,
+      "path": "azure-horizondb/SKILL.md",
+      "sha256": "46f6913f4d9aa41fc2a7b0d592f76d4ecd51960cebcb0b779b19c2b98f3d6319"
+    },
+    {
+      "bytes": 8556,
+      "path": "azure-hpc-cache/SKILL.md",
+      "sha256": "bca63c3ca3f355bc4fc1910d378686983692b8a3cab4f85024eed8336d8af186"
+    },
+    {
+      "bytes": 5602,
+      "path": "azure-immersive-reader/SKILL.md",
+      "sha256": "67e0ae570b993d2ac9e88043ed2d22178be087be1018a1923d2ea21bfcc0b32c"
+    },
+    {
+      "bytes": 4133,
+      "path": "azure-impact-reporting/SKILL.md",
+      "sha256": "5cf73abcdeebe9ad0a22262e51b03a150b4d6995e6b3d94e67edf575fd097e34"
+    },
+    {
+      "bytes": 3785,
+      "path": "azure-import-export/SKILL.md",
+      "sha256": "a5b2c1291b16e143d47affaa3719a61ee870fb24d8fce757850ccadda7a025fa"
+    },
+    {
+      "bytes": 5213,
+      "path": "azure-information-protection/SKILL.md",
+      "sha256": "09c239a756eec37bedfb186249d2585de58ff2bb797cabf70c072b719f6e3233"
+    },
+    {
+      "bytes": 2367,
+      "path": "azure-internet-peering/SKILL.md",
+      "sha256": "d0a665daf0b3eaffdaa51f2c432fa8f3e3b21b8410522f83e765bb3357c701b5"
+    },
+    {
+      "bytes": 12818,
+      "path": "azure-iot-central/SKILL.md",
+      "sha256": "2378de56d8b7d81c23964b7c12b3debe8c4de07d977382801ef956b74dcce389"
+    },
+    {
+      "bytes": 14484,
+      "path": "azure-iot-edge/SKILL.md",
+      "sha256": "3031bd87625a095dd19bb331d89dd7b2ac40af983b6ceab32073ba5d3a226339"
+    },
+    {
+      "bytes": 21917,
+      "path": "azure-iot-hub/SKILL.md",
+      "sha256": "48096b1084faf67c0fe6352b51ac0401360f721d1f2f41d434532896fcac6c54"
+    },
+    {
+      "bytes": 20694,
+      "path": "azure-iot-operations/SKILL.md",
+      "sha256": "1ae0b39308b52d65f92474c2db689fc91a8504a6839d38265e4339a98d637422"
+    },
+    {
+      "bytes": 3856,
+      "path": "azure-iot/SKILL.md",
+      "sha256": "e40541fe1aa1012764420296eaa1af6dc8225f05d1dd4981e9b196b4545cd5ca"
+    },
+    {
+      "bytes": 19392,
+      "path": "azure-key-vault/SKILL.md",
+      "sha256": "28e5c9fece9ea560fe147e59bf28abd204d2574081f4aa9c88ac1b2b38b7c54a"
+    },
+    {
+      "bytes": 64668,
+      "path": "azure-kubernetes-service/SKILL.md",
+      "sha256": "8148d338be92be35ea2f40ce00091f04b4145634a650d5b024bb47a4378fe068"
+    },
+    {
+      "bytes": 15957,
+      "path": "azure-lab-services/SKILL.md",
+      "sha256": "49b2162ad4b24f230ae882e0cf998702544afffdc547f00981d67352e9ba4ebb"
+    },
+    {
+      "bytes": 20406,
+      "path": "azure-language-service/SKILL.md",
+      "sha256": "9ceae4ca04c83643dfaf9c62687aae423e5f50d2375229efc95f78346681281e"
+    },
+    {
+      "bytes": 3286,
+      "path": "azure-large-instances/SKILL.md",
+      "sha256": "d088044b2cf8ffcad919dc451d6e8127539ff4dbf9526e1ef0c550b0ae13a4fd"
+    },
+    {
+      "bytes": 6347,
+      "path": "azure-lighthouse/SKILL.md",
+      "sha256": "601ec6abd6384c2433b147e5bfef4522e45ce3ff7918686c5b7020b7c3313355"
+    },
+    {
+      "bytes": 9606,
+      "path": "azure-load-balancer/SKILL.md",
+      "sha256": "5ba957193932f1a5f51795639de821251a73cd00f282830da27e04ff6fdd66fd"
+    },
+    {
+      "bytes": 51132,
+      "path": "azure-local/SKILL.md",
+      "sha256": "e71f2d0136d4b73550c4544c263629011d9db1ee9b4dc988ecc551b4295af0c4"
+    },
+    {
+      "bytes": 36494,
+      "path": "azure-logic-apps/SKILL.md",
+      "sha256": "aca4f3431381b8fbf1e5f88bc38a6bb3e6801e2c715e7db23ef27118a7655c5a"
+    },
+    {
+      "bytes": 75787,
+      "path": "azure-machine-learning/SKILL.md",
+      "sha256": "f4ff765edb806696c9faf49674193685d5aad9370a1e91d98cf9b7be4ce7a2b6"
+    },
+    {
+      "bytes": 12292,
+      "path": "azure-managed-applications/SKILL.md",
+      "sha256": "9e884324cbd3a2790583411e99b292266f5e017755d4f637bb1aac292a3c481e"
+    },
+    {
+      "bytes": 8702,
+      "path": "azure-managed-grafana/SKILL.md",
+      "sha256": "d0742a1a64cdcaf77fabd007200e7a9b7a7403e75eb83556508622f0ba366c53"
+    },
+    {
+      "bytes": 8028,
+      "path": "azure-managed-lustre/SKILL.md",
+      "sha256": "34e8a7aa81bb75ed1c54b668f0042237b2704b8f28ef0aae6325187a5037fcd8"
+    },
+    {
+      "bytes": 13037,
+      "path": "azure-managed-redis/SKILL.md",
+      "sha256": "f54fd195b5b5d4416077fa282e8c08d21de6c32be9bd5cd1a8caa1c752cc881a"
+    },
+    {
+      "bytes": 18907,
+      "path": "azure-maps/SKILL.md",
+      "sha256": "a664baf13533a229c34b504b08995d6eeeaa861157303bee6db5af06a9ad64ea"
+    },
+    {
+      "bytes": 4368,
+      "path": "azure-metrics-advisor/SKILL.md",
+      "sha256": "eebf0b207620df30e7d774a52a7a3bc66bc3e463734ec603160f0394e22aecf4"
+    },
+    {
+      "bytes": 11949,
+      "path": "azure-microsoft-discovery/SKILL.md",
+      "sha256": "25332b439fb26228e5e1b430a5f48aed5445f58fac0e7777f61fecfd9ae91a04"
+    },
+    {
+      "bytes": 2217,
+      "path": "azure-microsoft-opentelemetry/SKILL.md",
+      "sha256": "5e43f50efd77f435de2044d3a6653c044783cf1b260045be469f6ef9dfadc2cf"
+    },
+    {
+      "bytes": 21101,
+      "path": "azure-migrate/SKILL.md",
+      "sha256": "3824d531ed67babcbad2d314a37694dfc8fe75aa585bda605d57c2f1549740fb"
+    },
+    {
+      "bytes": 41180,
+      "path": "azure-monitor/SKILL.md",
+      "sha256": "83981792ed2a06b5806692543ee3306ba5ef513a557f7ce7208436c3b32ffdd4"
+    },
+    {
+      "bytes": 194147,
+      "path": "azure-monitor/configuration.md",
+      "sha256": "dc1e9a871b9e34baaa8d1545e9439189248eb4ee39c7b33652a627a1208881bf"
+    },
+    {
+      "bytes": 1983,
+      "path": "azure-monitor/deployment.md",
+      "sha256": "0053c398ded6ecb665849263a24e9c3d652fcfb44ab8a671f9076466cb7d2874"
+    },
+    {
+      "bytes": 48333,
+      "path": "azure-monitor/integrations.md",
+      "sha256": "1c6d19b5ac7055202077834a5f022c749936cf1fd150ca754b2f7c2224928b79"
+    },
+    {
+      "bytes": 6205,
+      "path": "azure-nat-gateway/SKILL.md",
+      "sha256": "9d650a40f245a0acc49bd7eec7f21dfcfae7b54648619d9f3cd07ec9013305c4"
+    },
+    {
+      "bytes": 30368,
+      "path": "azure-netapp-files/SKILL.md",
+      "sha256": "528c6425163cb0a6530ca0be19d0ade75210a501cfd951435625220c250d7ff0"
+    },
+    {
+      "bytes": 2808,
+      "path": "azure-network-function-manager/SKILL.md",
+      "sha256": "d0ea02b32ccd938b1f99c5a04d9759f6ea2d4abc886fc2a832fdec97980c9d88"
+    },
+    {
+      "bytes": 7862,
+      "path": "azure-network-watcher/SKILL.md",
+      "sha256": "1fdfe0ef807b6413978f441fa20629100d179541abd0446d206f7e8fc7044b6d"
+    },
+    {
+      "bytes": 7696,
+      "path": "azure-networking/SKILL.md",
+      "sha256": "35c85c007d0a0ee1fbfab5d4a05bb68a48368f893e9ca2c86da12a17eb2a19bc"
+    },
+    {
+      "bytes": 12951,
+      "path": "azure-notification-hubs/SKILL.md",
+      "sha256": "5755fca9f01a16333ec9836df595bb5990ca4eb3f83d8afd3baec4b6b5134fb2"
+    },
+    {
+      "bytes": 2268,
+      "path": "azure-nutanix/SKILL.md",
+      "sha256": "5a6717972edf0c0c58fe9ad143f03c769e7e71f59adb7dd79daf2f82982ad6d7"
+    },
+    {
+      "bytes": 2314,
+      "path": "azure-open-datasets/SKILL.md",
+      "sha256": "ad1fcee3ee4bc33537269032c4f09023bc6319988e39879c50690bf07099cc8d"
+    },
+    {
+      "bytes": 30633,
+      "path": "azure-operator-nexus/SKILL.md",
+      "sha256": "4e8532bf4b01380dfd6273a8ed9246b7e44f0f0a42a2412856a76392e8ca5d10"
+    },
+    {
+      "bytes": 7279,
+      "path": "azure-operator-service-manager/SKILL.md",
+      "sha256": "3fef17af82072c4a5a9be58670ef9ac5bf92f1e21f9aed0578dbee9f6eae9e0e"
+    },
+    {
+      "bytes": 3283,
+      "path": "azure-oracle/SKILL.md",
+      "sha256": "f964c9e07df9a168293a5a43f3103f99409efa90c65a794b09f980cdfc42ebd9"
+    },
+    {
+      "bytes": 5118,
+      "path": "azure-osconfig/SKILL.md",
+      "sha256": "635640ebcd01574c53696341077d913ce97d270e30f462c28bc540b232ed5a10"
+    },
+    {
+      "bytes": 7277,
+      "path": "azure-partner-solutions/SKILL.md",
+      "sha256": "59a0fc46a5ef168f6f48c102f2669d237fccf1f66136aa54ddfc6bc5df67e4c0"
+    },
+    {
+      "bytes": 6076,
+      "path": "azure-payment-hsm/SKILL.md",
+      "sha256": "ff7aa3f3fd7628b5adde89a7ab8e8df54e1ad0d1e59847980a5f5caf30339603"
+    },
+    {
+      "bytes": 2338,
+      "path": "azure-peering-service/SKILL.md",
+      "sha256": "75d0b61aeaa1be3135cd4a270b9cf2d9ed29156ff52fdb3ca9ad1ca5a1e845e7"
+    },
+    {
+      "bytes": 4573,
+      "path": "azure-personalizer/SKILL.md",
+      "sha256": "b234460af48608bc4b5aa3d1d98cbd0aad0059cdff11c1bdd68c3673b408813f"
+    },
+    {
+      "bytes": 90328,
+      "path": "azure-pipelines/SKILL.md",
+      "sha256": "01fe6a2b885a880a487034072122d696956554deeb69d7a870bc84cfe3572912"
+    },
+    {
+      "bytes": 9407,
+      "path": "azure-planetary-computer-pro/SKILL.md",
+      "sha256": "34132ace2624db8895a1082abaefbb4330ae4e664f67fcade0147df6bd9b4871"
+    },
+    {
+      "bytes": 6190,
+      "path": "azure-playwright-workspaces/SKILL.md",
+      "sha256": "b77d6e3beb8fa24ec3561b8305baa8690e6a43d86000d077dff6f9d4e323a38e"
+    },
+    {
+      "bytes": 31092,
+      "path": "azure-policy/SKILL.md",
+      "sha256": "0e00bc1dfb84860bcbe5519353fbf5d58232c9c673c34048df72cea9c7c09b2d"
+    },
+    {
+      "bytes": 4417,
+      "path": "azure-portal/SKILL.md",
+      "sha256": "2014c92fabfe89d6f0dc265ad4f325fad1dbe34e4c638ec40fd80297f91fc410"
+    },
+    {
+      "bytes": 7646,
+      "path": "azure-private-link/SKILL.md",
+      "sha256": "2622534d4845018ca3ef8ee6e7b59fba07559f225625f3a0b3574ede6a3854e3"
+    },
+    {
+      "bytes": 9636,
+      "path": "azure-quantum/SKILL.md",
+      "sha256": "790e70139217355bb509b4181149f404b640ea2d9d5866c84fc2e5e928e63529"
+    },
+    {
+      "bytes": 6484,
+      "path": "azure-queue-storage/SKILL.md",
+      "sha256": "9151933362d6dacebf6ef6fcc73c91d59d3a723bfb838107a577bf711e4ffa62"
+    },
+    {
+      "bytes": 2230,
+      "path": "azure-quotas/SKILL.md",
+      "sha256": "ea0e543c4e37fe993655d53f104b32e54672c21af77b96958556a88b39217cb1"
+    },
+    {
+      "bytes": 18051,
+      "path": "azure-rbac/SKILL.md",
+      "sha256": "54007c335588ef9435a0327215e939500607abe9b6186ac7ef1052cca457dd9e"
+    },
+    {
+      "bytes": 11433,
+      "path": "azure-redhat-openshift/SKILL.md",
+      "sha256": "26ae093e8eef39ec065fa5ee0f4cbf01d3bb8fe6693d253987ece62885608410"
+    },
+    {
+      "bytes": 4469,
+      "path": "azure-relay/SKILL.md",
+      "sha256": "b8f00600525ed08fb81c57990452a26d4c7947821faba63d1441a095e67a62b1"
+    },
+    {
+      "bytes": 9667,
+      "path": "azure-reliability/SKILL.md",
+      "sha256": "0cb0217ba45dca6f98de281e7133c7c00a56f59eb33d26a7f2286d6c4d5bb6b4"
+    },
+    {
+      "bytes": 26582,
+      "path": "azure-repos/SKILL.md",
+      "sha256": "bfc8678fa61253ca8b3dbc4446539734e2d29e95c9a1d9f874d2477cd13abaf9"
+    },
+    {
+      "bytes": 4092,
+      "path": "azure-resiliency/SKILL.md",
+      "sha256": "29ea2db8ee547e2f426731c1dba2cb8db2ebae30c12c4f9f52e436c943ab9a90"
+    },
+    {
+      "bytes": 7001,
+      "path": "azure-resource-graph/SKILL.md",
+      "sha256": "a27c22020f7c83901435239a61e579028c15928979e597c424b526c8124b8821"
+    },
+    {
+      "bytes": 61032,
+      "path": "azure-resource-manager/SKILL.md",
+      "sha256": "807d96e6a45c6a0d5a7b3f7e3d01655cd797f8ffc0be607d467094689ef677b7"
+    },
+    {
+      "bytes": 6222,
+      "path": "azure-route-server/SKILL.md",
+      "sha256": "439900211d66f879d9420aefe22f6c305077b443ecb145cadaf6bed87a32cca0"
+    },
+    {
+      "bytes": 31772,
+      "path": "azure-sap/SKILL.md",
+      "sha256": "411bdb9cb1d8e0b165a88fe54c4f50706739758416c688bae8e7c1f20bf183a8"
+    },
+    {
+      "bytes": 13417,
+      "path": "azure-security/SKILL.md",
+      "sha256": "c03fa90da2ba398e50daaff85e6ac28abef217901927d73b417d3a6699c9d398"
+    },
+    {
+      "bytes": 43800,
+      "path": "azure-sentinel/SKILL.md",
+      "sha256": "d8f6d1e11f5e171c349a37ec3be8402b70dc740506fbcba54f2ea9c87e30a66d"
+    },
+    {
+      "bytes": 18471,
+      "path": "azure-service-bus/SKILL.md",
+      "sha256": "ea436ddce7ef59d1f5de631c110d683b4b7e6513f51121afdd7654938f4606de"
+    },
+    {
+      "bytes": 9675,
+      "path": "azure-service-connector/SKILL.md",
+      "sha256": "3e4248849fb606b7f4042f30c366801d0acbc569dc08826edbe92eb116395876"
+    },
+    {
+      "bytes": 59623,
+      "path": "azure-service-fabric/SKILL.md",
+      "sha256": "6f8c241ef9553ece7ef3ed4b7ee17d1372446828b76bdb8ffab2941f4457134e"
+    },
+    {
+      "bytes": 6734,
+      "path": "azure-service-health/SKILL.md",
+      "sha256": "ce26c07fa387c25b9796ea82816ea59133693d9c37a2f64892ecdece90e40de7"
+    },
+    {
+      "bytes": 13347,
+      "path": "azure-signalr-service/SKILL.md",
+      "sha256": "31d05b2acf512404917d210a4c016a2a382a614693fd18b82192406e52184f0c"
+    },
+    {
+      "bytes": 25141,
+      "path": "azure-site-recovery/SKILL.md",
+      "sha256": "65510936d42f454b69f850c589b7872418bef03d67ebd3a720c82c91a29fb9c3"
+    },
+    {
+      "bytes": 8478,
+      "path": "azure-sovereign-us/SKILL.md",
+      "sha256": "a1bac8786c5e59d6d142e178596cf0858488ff8e3b26ce7bf63cd89b8471a71b"
+    },
+    {
+      "bytes": 21694,
+      "path": "azure-speech/SKILL.md",
+      "sha256": "35aa54a4132c0367c351d1930dc18740eebbbe5fe03c68a16f453d04abb18607"
+    },
+    {
+      "bytes": 27951,
+      "path": "azure-spring-apps/SKILL.md",
+      "sha256": "543dfec24558756fb31555abb36e2b58dcb821150c0ce08f38f3eb53301be554"
+    },
+    {
+      "bytes": 46660,
+      "path": "azure-sql-database/SKILL.md",
+      "sha256": "6ea16c85324587866eb3dc1feea2462d8cf3789be7106aeb44833bbabaaf6a31"
+    },
+    {
+      "bytes": 36295,
+      "path": "azure-sql-managed-instance/SKILL.md",
+      "sha256": "7527937e354fd104854b6084a63ed8027f566efccfdcf18b9ab0a9a180a66579"
+    },
+    {
+      "bytes": 23004,
+      "path": "azure-sql-virtual-machines/SKILL.md",
+      "sha256": "7d4a6b1fa1238c2c7c47294c9b6719e2825003855c731ee4d3c1fb1c300d629a"
+    },
+    {
+      "bytes": 10769,
+      "path": "azure-sre-agent/SKILL.md",
+      "sha256": "7656279e9b6f34a1025ec46a500b16e6d2a3926660bb535300014d025c5e3db4"
+    },
+    {
+      "bytes": 27649,
+      "path": "azure-stack-edge/SKILL.md",
+      "sha256": "70ee3ab944a085567fafec6006b3c86a53fd664fc0ecfbbb0605d5d72558ae87"
+    },
+    {
+      "bytes": 12112,
+      "path": "azure-static-web-apps/SKILL.md",
+      "sha256": "d1f1e581fb22da1adad95be9c10794fb89ae533a756e210b305890fc25ccc525"
+    },
+    {
+      "bytes": 21110,
+      "path": "azure-stream-analytics/SKILL.md",
+      "sha256": "1d54d0e21f34aae1a466b0d1b292c89bcee2c5dac71bb2faf8a3ce40a9313457"
+    },
+    {
+      "bytes": 50628,
+      "path": "azure-synapse-analytics/SKILL.md",
+      "sha256": "7c212ee866d037873780e2d56a9a25da5d9d506333652f3867c7bd46e6016c8e"
+    },
+    {
+      "bytes": 5462,
+      "path": "azure-table-storage/SKILL.md",
+      "sha256": "543326424b92e6f61ac660cbf607655689b912d38498886dbc1831fbc7e13bac"
+    },
+    {
+      "bytes": 3435,
+      "path": "azure-test-plans/SKILL.md",
+      "sha256": "25ce5e5eac7b8ae9339c8a04017240413a8962f5f69d0c1019cc8eefb09522d5"
+    },
+    {
+      "bytes": 8936,
+      "path": "azure-traffic-manager/SKILL.md",
+      "sha256": "fc4c0bc4772ed4af8d6fd31876b0ad5aafeae9f57faa37cbbd3fa683f21bc724"
+    },
+    {
+      "bytes": 17444,
+      "path": "azure-translator/SKILL.md",
+      "sha256": "77f1c95c1540bac80d219d41d514543c7103b4fa0cd9f59f51d31536194c92a4"
+    },
+    {
+      "bytes": 11767,
+      "path": "azure-update-manager/SKILL.md",
+      "sha256": "9db058df8c8be27718869413668120bb1702d7d65feacec81bcd4600738fcf5b"
+    },
+    {
+      "bytes": 9006,
+      "path": "azure-video-indexer/SKILL.md",
+      "sha256": "2e2125cdcd7bd7c9816c45dba3073fea618cae399914a839e931a176a43fe8c7"
+    },
+    {
+      "bytes": 22408,
+      "path": "azure-virtual-desktop/SKILL.md",
+      "sha256": "6f991e7c318daa150010e0606bbe1dbfdbb224671dc3b41361599c19fc399526"
+    },
+    {
+      "bytes": 64639,
+      "path": "azure-virtual-machines/SKILL.md",
+      "sha256": "724588a1e07e4b0e63da0c0bcc602b5abf937f650a83e8c5dd84ed88b41badf5"
+    },
+    {
+      "bytes": 19867,
+      "path": "azure-virtual-machines/configuration.md",
+      "sha256": "c24c307c3724dfe40a3f1ac36f83f101307accfae7f6d587ced18733aba69ec3"
+    },
+    {
+      "bytes": 4231,
+      "path": "azure-virtual-machines/deployment.md",
+      "sha256": "1535e1f396e59c48d05b8e4789cd5618b496418eeffb4f4f8eef81fe5f7feab9"
+    },
+    {
+      "bytes": 7945,
+      "path": "azure-virtual-machines/integrations.md",
+      "sha256": "4b23de624d87ff783f1d8d44a58129b97d55d04481c7b2f2336a70f74b1b9709"
+    },
+    {
+      "bytes": 9744,
+      "path": "azure-virtual-network-manager/SKILL.md",
+      "sha256": "50f2b560283b5c69406b5bfb703a39aad439d9e0c89691c4b0fc491137cb8f17"
+    },
+    {
+      "bytes": 12776,
+      "path": "azure-virtual-network/SKILL.md",
+      "sha256": "c7dba0c93c896b1e4606f1b1de60e3cf5e8af6f15ae04fe8dec14572c7a09011"
+    },
+    {
+      "bytes": 17860,
+      "path": "azure-virtual-wan/SKILL.md",
+      "sha256": "03362bcf9195182bb4f2e4ac416d45f00df95659862cea8427e584699050bb0c"
+    },
+    {
+      "bytes": 16678,
+      "path": "azure-vm-scalesets/SKILL.md",
+      "sha256": "1c3316dc8c7e07f012be006fd4bab2961b63b5668900d30ae045d84a49fcae2f"
+    },
+    {
+      "bytes": 19075,
+      "path": "azure-vmware-solution/SKILL.md",
+      "sha256": "c5a3d437e703f44a0ebd5f158a3f7fc9f638c52fa961dc434271f9f86e718c9d"
+    },
+    {
+      "bytes": 19861,
+      "path": "azure-vpn-gateway/SKILL.md",
+      "sha256": "381ea6e291cf94a03131105b141343b1508c7c5510f6f9321f8573c23bdf9d56"
+    },
+    {
+      "bytes": 14139,
+      "path": "azure-web-application-firewall/SKILL.md",
+      "sha256": "dc74c92af48f4581a1d8cd9c82579544040c9df8a76dae6599c86d580977e161"
+    },
+    {
+      "bytes": 17490,
+      "path": "azure-web-pubsub/SKILL.md",
+      "sha256": "3ebbf1df30c2479f3d6fab0d97f7ce15e3569f10f1dc4f091af0fa6c7309185c"
+    },
+    {
+      "bytes": 30355,
+      "path": "azure-well-architected/SKILL.md",
+      "sha256": "b9d0f36f54702db2cbd9c44bfb7bd95ceefac36cf92064d83a9fc1a30b035143"
+    },
+    {
+      "bytes": 45108,
+      "path": "microsoft-foundry-classic/SKILL.md",
+      "sha256": "b126e8d88f3a09b6052200a93d588074abe71283397a5384b31f9d3b2ad2d9b0"
+    },
+    {
+      "bytes": 5139,
+      "path": "microsoft-foundry-local/SKILL.md",
+      "sha256": "4e982e906fcfb9e74ef17e2a89ade58bc3278ba8b6ff07fd9cd280bb981c29a5"
+    },
+    {
+      "bytes": 9437,
+      "path": "microsoft-foundry-tools/SKILL.md",
+      "sha256": "d82e8784c93ba99daa8352afd73bd244ed930f40d7a17baf65ee45076fe22ae1"
+    },
+    {
+      "bytes": 47202,
+      "path": "microsoft-foundry/SKILL.md",
+      "sha256": "5f49762bc148928adf4c68b67f77c3da9d5ec196afddbfd496bbca78cacf2dd5"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+  },
+  "package_id": "azure-agent-skills",
+  "path": "skills",
+  "policy": "candidate-only",
+  "repository": "https://github.com/MicrosoftDocs/Agent-Skills",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 217,
+    "findings": [],
+    "total_bytes": 4513513,
+    "verdict": "review-required"
+  },
+  "source_id": "microsoft-agent-skills-official"
+}

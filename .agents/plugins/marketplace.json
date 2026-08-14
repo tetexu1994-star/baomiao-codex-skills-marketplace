@@ -1,7 +1,7 @@
 {
   "name": "baomiao-codex",
   "interface": {
-    "displayName": "\u66b4\u55b5 Codex \u63d2\u4ef6\u5e02\u573a"
+    "displayName": "暴喵 Codex 插件市场"
   },
   "plugins": [
     {
@@ -861,6 +861,66 @@
       "source": {
         "source": "local",
         "path": "./plugins/verify-sign"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "amazon-location-service",
+      "source": {
+        "source": "local",
+        "path": "./plugins/amazon-location-service"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aws-amplify",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aws-amplify"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "codebase-documentor-for-aws",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codebase-documentor-for-aws"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "azure-agent-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/azure-agent-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "nvidia-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nvidia-skills"
       },
       "policy": {
         "installation": "AVAILABLE",

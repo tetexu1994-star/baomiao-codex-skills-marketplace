@@ -1,0 +1,28 @@
+{
+  "name": "aws-amplify",
+  "version": "1.0.0",
+  "description": "使用 Amplify Gen 2 构建认证、数据、存储、GraphQL API 与函数，并生成适合当前项目的全栈落地步骤。",
+  "author": {
+    "name": "Amazon Web Services",
+    "url": "https://github.com/awslabs"
+  },
+  "repository": "https://github.com/awslabs/agent-plugins",
+  "homepage": "https://github.com/awslabs/agent-plugins/tree/bab56a3b9991aa0c6857b05198a61ba14a60bce4/plugins/aws-amplify/skills",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AWS Amplify 全栈开发",
+    "shortDescription": "使用 Amplify Gen 2 构建认证、数据、存储、GraphQL API 与函数，并生成适合当前项目的全栈落地步骤。",
+    "longDescription": "固定来源于 Amazon Web Services 官方仓库；包内无脚本；会生成项目配置并可能部署到 AWS，任何云端写入仍需用户逐次确认。",
+    "developerName": "Amazon Web Services",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Network"
+    ],
+    "defaultPrompt": [
+      "使用 AWS Amplify 全栈开发 处理当前任务，并在执行命令或外部写入前说明影响。"
+    ]
+  }
+}

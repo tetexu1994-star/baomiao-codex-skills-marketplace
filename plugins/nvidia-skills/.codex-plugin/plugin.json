@@ -1,0 +1,28 @@
+{
+  "name": "nvidia-skills",
+  "version": "1.0.0",
+  "description": "从 NVIDIA 官方技能体系中定位适合 GPU、CUDA、推理、训练、机器人和仿真的 Skill，并给出来源与安装建议。",
+  "author": {
+    "name": "NVIDIA",
+    "url": "https://github.com/NVIDIA"
+  },
+  "repository": "https://github.com/NVIDIA/skills",
+  "homepage": "https://github.com/NVIDIA/skills/tree/e1b747ed9fc0492342f97cc6ba7ac954279ac48f/plugins/nvidia-skills/skills",
+  "license": "CC-BY-4.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "NVIDIA Skill 查找器",
+    "shortDescription": "从 NVIDIA 官方技能体系中定位适合 GPU、CUDA、推理、训练、机器人和仿真的 Skill，并给出来源与安装建议。",
+    "longDescription": "固定来源于 NVIDIA 官方仓库；仅打包官方 Skill Finder，不批量复制 NVIDIA 大仓库；建议安装任何结果前仍需单独核对来源。",
+    "developerName": "NVIDIA",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Network"
+    ],
+    "defaultPrompt": [
+      "使用 NVIDIA Skill 查找器 处理当前任务，并在执行命令或外部写入前说明影响。"
+    ]
+  }
+}

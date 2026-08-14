@@ -61,7 +61,20 @@ def resolve_local_commit(repository: Path, ref: str, expected_repository: str) -
     return commit
 
 
-def fetch_local_directory(repository: Path, commit: str, path: str, max_file_bytes: int) -> List[Tuple[str, bytes]]:
+def validate_content_kind(path: str, files: List[Tuple[str, bytes]], content_kind: str) -> None:
+    names = {name for name, _ in files}
+    if content_kind == "skill-directory":
+        if "SKILL.md" not in names:
+            raise ValueError(f"目录不存在或缺少 SKILL.md：{path}")
+        return
+    if content_kind == "skill-bundle":
+        if not any(name.endswith("/SKILL.md") for name in names):
+            raise ValueError(f"Skill 集合不存在或没有子目录 SKILL.md：{path}")
+        return
+    raise ValueError(f"不支持的 content_kind：{content_kind}")
+
+
+def fetch_local_directory(repository: Path, commit: str, path: str, max_file_bytes: int, content_kind: str = "skill-directory") -> List[Tuple[str, bytes]]:
     prefix = path.rstrip("/") + "/"
     listing = git_output(repository, "ls-tree", "-r", "-l", commit, "--", path).splitlines()
     files: List[Tuple[str, bytes]] = []
@@ -78,8 +91,9 @@ def fetch_local_directory(repository: Path, commit: str, path: str, max_file_byt
         if len(content) > max_file_bytes:
             raise ValueError(f"文件超过限制：{full_path}")
         files.append((full_path[len(prefix):], content))
-    if not files or "SKILL.md" not in {name for name, _ in files}:
-        raise ValueError(f"目录不存在或缺少 SKILL.md：{path}")
+    if not files:
+        raise ValueError(f"目录不存在：{path}")
+    validate_content_kind(path, files, content_kind)
     return files
 
 
@@ -106,11 +120,11 @@ def list_tree(owner: str, repo: str, commit: str, token: Optional[str]) -> List[
     return data.get("tree", [])
 
 
-def fetch_directory(owner: str, repo: str, commit: str, path: str, tree: List[dict], max_file_bytes: int, token: Optional[str]) -> List[Tuple[str, bytes]]:
+def fetch_directory(owner: str, repo: str, commit: str, path: str, tree: List[dict], max_file_bytes: int, token: Optional[str], content_kind: str = "skill-directory") -> List[Tuple[str, bytes]]:
     prefix = path.rstrip("/") + "/"
     blobs = [item for item in tree if item.get("type") == "blob" and item.get("path", "").startswith(prefix)]
-    if not blobs or not any(item["path"] == prefix + "SKILL.md" for item in blobs):
-        raise ValueError(f"目录不存在或缺少 SKILL.md：{path}")
+    if not blobs:
+        raise ValueError(f"目录不存在：{path}")
     files: List[Tuple[str, bytes]] = []
     for item in sorted(blobs, key=lambda value: value["path"]):
         if item.get("size", 0) > max_file_bytes:
@@ -123,6 +137,7 @@ def fetch_directory(owner: str, repo: str, commit: str, path: str, tree: List[di
         if len(content) > max_file_bytes:
             raise ValueError(f"文件超过限制：{item['path']}")
         files.append((item["path"][len(prefix):], content))
+    validate_content_kind(path, files, content_kind)
     return files
 
 
@@ -152,6 +167,8 @@ def candidate_document(source: dict, path: str, commit: str, files: List[Tuple[s
     return {
         "candidate_schema_version": 1,
         "source_id": source["id"],
+        "package_id": source.get("package_ids", {}).get(path, path.rstrip("/").split("/")[-1]),
+        "content_kind": source.get("content_kind", "skill-directory"),
         "repository": source["repository"],
         "commit": commit,
         "path": path,
@@ -206,12 +223,14 @@ def sync(*, ref: str = "main", checked_at: Optional[str] = None, output: Optiona
                 else fetch_tree_file(owner, repo, license_path, tree, source["max_file_bytes"], token)
             )
         for path in source["allowed_paths"]:
+            content_kind = source.get("content_kind", "skill-directory")
             if local_repository:
-                files = fetch_local_directory(local_repository, commit, path, source["max_file_bytes"])
+                files = fetch_local_directory(local_repository, commit, path, source["max_file_bytes"], content_kind)
             else:
-                files = fetch_directory(owner, repo, commit, path, tree, source["max_file_bytes"], token)
+                files = fetch_directory(owner, repo, commit, path, tree, source["max_file_bytes"], token, content_kind)
             candidate = candidate_document(source, path, commit, files, checked_at, repository_license)
-            name = f"{path.rstrip('/').split('/')[-1]}-{commit[:12]}.json"
+            package_id = source.get("package_ids", {}).get(path, path.rstrip("/").split("/")[-1])
+            name = f"{package_id}-{commit[:12]}.json"
             target = output / name
             target.write_text(json.dumps(candidate, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             written.append(target)

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "azure-agent-skills",
+  "name": "Azure 官方技能合集",
+  "summary_zh": "一个插件收录 202 个 Microsoft Azure Skills，覆盖计算、数据、AI、网络、安全、迁移和运维，不把同系列能力拆成数百张卡片。",
+  "category": "研发工具",
+  "tags": [
+    "Microsoft",
+    "Azure",
+    "云计算",
+    "合集"
+  ],
+  "publisher": {
+    "name": "Microsoft",
+    "kind": "official",
+    "url": "https://github.com/MicrosoftDocs"
+  },
+  "source": {
+    "repository": "https://github.com/MicrosoftDocs/Agent-Skills",
+    "commit": "00be373fec26109c3087728188f6a45554c47617",
+    "path": "skills",
+    "layout": "skill-bundle",
+    "entrypoint_path": "azure-architecture/SKILL.md",
+    "skill_url": "https://raw.githubusercontent.com/MicrosoftDocs/Agent-Skills/00be373fec26109c3087728188f6a45554c47617/skills/azure-architecture/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/MicrosoftDocs/Agent-Skills/00be373fec26109c3087728188f6a45554c47617/LICENSE",
+    "license_path": "LICENSE"
+  },
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "scope": "repository",
+    "verified_at": "2026-08-14"
+  },
+  "risk": {
+    "level": "high",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write",
+      "network",
+      "shell",
+      "credentials",
+      "external-write",
+      "system-config"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "包含 202 个纯文档 Skills；部分工作流会调用 Azure CLI 或修改云资源，执行前必须再次确认。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（官方扩容）",
+    "reviewed_at": "2026-08-14T05:00:00Z",
+    "evidence": "docs/reviews/official-plugin-expansion-2026-08-14.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/azure-agent-skills",
+    "requires_auth": true,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "confirm-enhanced-permissions",
+      "backup-existing"
+    ]
+  }
+}

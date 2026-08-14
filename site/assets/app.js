@@ -2,6 +2,7 @@
 
 const PAGE_SIZE = 18;
 const state = { entries: [], query: "", category: "", publisher: "", origin: "", risk: "", limit: PAGE_SIZE };
+const importState = { descriptor: null, digest: "", returnFocus: null };
 const labels = {
   official: "官方来源", community: "社区来源", low: "低风险", medium: "中风险", high: "增强权限",
   "filesystem-read": "读取文件", "filesystem-write": "写入文件", shell: "运行本机命令",
@@ -48,8 +49,10 @@ function renderCard(entry) {
   capabilityBox.append(capabilityList);
 
   const facts = element("dl", "facts");
+  const skillCount = entry.integrity.files.filter((file) => file.path.endsWith("SKILL.md")).length;
   const factRows = [
     ["插件 ID", entry.id],
+    ["包含 Skills", String(skillCount)],
     ["发布者", entry.publisher.name],
     ["许可证", `${entry.license.spdx} · ${entry.license.scope === "skill-directory" ? "目录级" : "仓库级"}`],
     ["固定版本", entry.source.commit.slice(0, 12)]
@@ -143,6 +146,7 @@ async function loadCatalog() {
       publisherSelect.append(option);
     });
     document.querySelector("#approved-count").textContent = String(state.entries.length);
+    document.querySelector("#footer-count").textContent = String(state.entries.length);
     render();
   } catch (error) {
     document.querySelector("#catalog-list").setAttribute("aria-busy", "false");
@@ -151,5 +155,123 @@ async function loadCatalog() {
   }
 }
 
+function isAllowedManifestUrl(url) {
+  if (url.protocol === "https:") return true;
+  return url.protocol === "http:" && ["127.0.0.1", "localhost"].includes(url.hostname);
+}
+
+async function sha256Hex(buffer) {
+  const digest = await crypto.subtle.digest("SHA-256", buffer);
+  return [...new Uint8Array(digest)].map((value) => value.toString(16).padStart(2, "0")).join("");
+}
+
+function validateImportDescriptor(descriptor) {
+  const market = descriptor.marketplace || {};
+  const command = descriptor.command || {};
+  if (descriptor.schema_version !== 1 || market.id !== "baomiao-codex") throw new Error("导入描述版本不支持");
+  if (!/^[0-9a-f]{40}$/.test(market.ref) || !Number.isInteger(market.plugin_count) || market.plugin_count < 1) throw new Error("导入描述缺少固定版本");
+  if (market.manifest_path !== ".agents/plugins/marketplace.json") throw new Error("市场清单路径不受支持");
+  if (command.executable !== "codex" || !Array.isArray(command.args) || !command.display.startsWith("codex plugin marketplace add ")) throw new Error("导入命令不受支持");
+  if (descriptor.profile === "release" && !market.source.startsWith("https://github.com/")) throw new Error("发布市场必须来自 GitHub HTTPS 仓库");
+}
+
+function setImportStatus(message) {
+  document.querySelector("#import-status").textContent = message;
+}
+
+async function copyImportCommand() {
+  const command = importState.descriptor?.command?.display;
+  if (!command) return;
+  let copied = false;
+  try {
+    await navigator.clipboard.writeText(command);
+    copied = true;
+  } catch (error) {
+    const field = element("textarea");
+    field.value = command;
+    field.setAttribute("readonly", "");
+    field.className = "clipboard-fallback";
+    document.body.append(field);
+    field.select();
+    copied = document.execCommand("copy");
+    field.remove();
+  }
+  setImportStatus(copied ? "Codex 导入命令已复制。" : "复制失败，请在确认框中手动选择命令。");
+}
+
+function openImportDialog() {
+  if (!importState.descriptor) return;
+  const dialog = document.querySelector("#import-dialog");
+  importState.returnFocus = document.activeElement;
+  dialog.showModal();
+  document.querySelector("#close-import").focus();
+}
+
+function closeImportDialog() {
+  const dialog = document.querySelector("#import-dialog");
+  if (dialog.open) dialog.close();
+  importState.returnFocus?.focus();
+}
+
+function handoffToBaomiao() {
+  if (!importState.descriptor) return;
+  const manifestUrl = new URL("marketplace-import.json", window.location.href);
+  if (!isAllowedManifestUrl(manifestUrl)) {
+    setImportStatus("当前页面来源不受支持，请复制 Codex 命令导入。");
+    closeImportDialog();
+    return;
+  }
+  const deepLink = `baomiao://codex/marketplace/import?manifest=${encodeURIComponent(manifestUrl.href)}&digest=${importState.digest}`;
+  setImportStatus("已把导入请求交给暴喵客户端；若没有弹出客户端，请复制 Codex 命令。");
+  closeImportDialog();
+  window.location.href = deepLink;
+}
+
+function bindImportControls() {
+  document.querySelector("#open-import").addEventListener("click", openImportDialog);
+  document.querySelector("#close-import").addEventListener("click", closeImportDialog);
+  document.querySelector("#cancel-import").addEventListener("click", closeImportDialog);
+  document.querySelector("#confirm-import").addEventListener("click", handoffToBaomiao);
+  document.querySelector("#copy-import-command").addEventListener("click", copyImportCommand);
+  document.querySelector("#copy-dialog-command").addEventListener("click", copyImportCommand);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && document.querySelector("#import-dialog").open) closeImportDialog();
+  });
+}
+
+async function loadImportDescriptor() {
+  const openButton = document.querySelector("#open-import");
+  const copyButton = document.querySelector("#copy-import-command");
+  try {
+    const [descriptorResponse, digestResponse] = await Promise.all([
+      fetch("marketplace-import.json", { cache: "no-store", credentials: "same-origin" }),
+      fetch("marketplace-import.sha256", { cache: "no-store", credentials: "same-origin" }),
+    ]);
+    if (!descriptorResponse.ok || !digestResponse.ok) throw new Error("导入描述读取失败");
+    const bytes = await descriptorResponse.arrayBuffer();
+    const expectedDigest = (await digestResponse.text()).trim().split(/\s+/)[0];
+    const actualDigest = await sha256Hex(bytes);
+    if (!/^[0-9a-f]{64}$/.test(expectedDigest) || actualDigest !== expectedDigest) throw new Error("导入描述摘要不匹配");
+    const descriptor = JSON.parse(new TextDecoder().decode(bytes));
+    validateImportDescriptor(descriptor);
+    importState.descriptor = descriptor;
+    importState.digest = actualDigest;
+    document.querySelector("#import-source").textContent = descriptor.marketplace.source;
+    document.querySelector("#import-ref").textContent = descriptor.marketplace.ref.slice(0, 12);
+    document.querySelector("#import-count").textContent = `${descriptor.marketplace.plugin_count} 个插件`;
+    document.querySelector("#import-command").textContent = descriptor.command.display;
+    document.querySelector("#import-summary").textContent = `${descriptor.marketplace.plugin_count} 个插件，加入市场后在 Codex 里按需启用。来源与固定版本会在执行前再次展示。`;
+    openButton.textContent = "暴喵一键导入";
+    openButton.disabled = false;
+    copyButton.disabled = false;
+  } catch (error) {
+    openButton.textContent = "一键导入暂不可用";
+    document.querySelector("#import-summary").textContent = "导入描述校验失败。插件目录仍可浏览，请稍后刷新页面。";
+    setImportStatus("未执行任何导入操作。");
+  }
+}
+
 bindFilters();
+bindImportControls();
 loadCatalog();
+loadImportDescriptor();

@@ -62,7 +62,8 @@ def semantic_errors(path: Path, entry: dict, *, root: Path = ROOT) -> List[str]:
     if match and re.fullmatch(r"[0-9a-f]{40}", commit) and source_path:
         owner, repo = match.groups()
         prefix = f"https://raw.githubusercontent.com/{owner}/{repo}/{commit}/{source_path}"
-        if source.get("skill_url") != f"{prefix}/SKILL.md":
+        entrypoint_path = source.get("entrypoint_path", "SKILL.md")
+        if source.get("skill_url") != f"{prefix}/{entrypoint_path}":
             errors.append("skill_url 必须对应固定提交与目录")
         license_path = source.get("license_path", "")
         expected_license = (
@@ -82,7 +83,8 @@ def bundle_errors(entry: dict, *, root: Path = ROOT) -> List[str]:
     entry_id = entry["id"]
     errors: List[str] = []
     plugin_root = root / "plugins" / entry_id
-    skill_root = plugin_root / "skills" / entry_id
+    layout = entry.get("source", {}).get("layout", "single-skill")
+    skill_root = plugin_root / "skills" if layout == "skill-bundle" else plugin_root / "skills" / entry_id
     manifest_path = plugin_root / ".codex-plugin" / "plugin.json"
     candidate_paths = sorted((root / "catalog" / "candidates").glob(f"{entry_id}*.json"))
     if not candidate_paths:

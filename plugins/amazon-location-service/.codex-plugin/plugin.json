@@ -1,0 +1,28 @@
+{
+  "name": "amazon-location-service",
+  "version": "1.0.0",
+  "description": "为应用接入地图、地点搜索、地理编码、路线规划和围栏能力，并提供 Amazon Location Service 的认证与集成建议。",
+  "author": {
+    "name": "Amazon Web Services",
+    "url": "https://github.com/awslabs"
+  },
+  "repository": "https://github.com/awslabs/agent-plugins",
+  "homepage": "https://github.com/awslabs/agent-plugins/tree/bab56a3b9991aa0c6857b05198a61ba14a60bce4/plugins/amazon-location-service/skills",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Amazon 地图与位置服务",
+    "shortDescription": "为应用接入地图、地点搜索、地理编码、路线规划和围栏能力，并提供 Amazon Location Service 的认证与集成建议。",
+    "longDescription": "固定来源于 Amazon Web Services 官方仓库；包内无脚本；工作流会修改项目并可能调用 AWS 服务，使用云账号前必须展示来源和权限。",
+    "developerName": "Amazon Web Services",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Network"
+    ],
+    "defaultPrompt": [
+      "使用 Amazon 地图与位置服务 处理当前任务，并在执行命令或外部写入前说明影响。"
+    ]
+  }
+}

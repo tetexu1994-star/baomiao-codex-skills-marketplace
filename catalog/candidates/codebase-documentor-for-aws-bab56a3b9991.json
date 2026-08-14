@@ -1,0 +1,74 @@
+{
+  "candidate_schema_version": 1,
+  "checked_at": "2026-08-14T04:30:00Z",
+  "commit": "bab56a3b9991aa0c6857b05198a61ba14a60bce4",
+  "content_kind": "skill-bundle",
+  "files": [
+    {
+      "bytes": 17627,
+      "path": "document-service/SKILL.md",
+      "sha256": "5a43cae02e5d0a67695429e2114355e2f75aaf949f7c88b713b495f8e99376a0"
+    },
+    {
+      "bytes": 2736,
+      "path": "document-service/references/business-context.md",
+      "sha256": "e1a026def740ce40477db2478052105ea1444b2cd12fb952648da22f46c2eec2"
+    },
+    {
+      "bytes": 3798,
+      "path": "document-service/references/citation-format.md",
+      "sha256": "be68f3d19500ded5a661d25a642dcc99c147369c76d566a6e760d3d1e0894526"
+    },
+    {
+      "bytes": 7963,
+      "path": "document-service/references/discovery-patterns.md",
+      "sha256": "eff8226f759e74aba68446c7a242d9b1cd5ab88ac2e33007ea38133f51e3cbc8"
+    },
+    {
+      "bytes": 1764,
+      "path": "document-service/references/error-scenarios.md",
+      "sha256": "8a567a395ac967eceb1617cbb4f623e986327d66786fddee295ab3320f65565d"
+    },
+    {
+      "bytes": 4005,
+      "path": "document-service/references/exclusion-patterns.md",
+      "sha256": "8cc2df84407843759c1c68d1a5b54febcbd5b6e3ac0aaffb472eee81a10d237f"
+    },
+    {
+      "bytes": 13843,
+      "path": "document-service/references/framework-patterns.md",
+      "sha256": "618551aa412b052eb2ecd5bc128ed0ecc32f0efa388593fa2923762d3025e948"
+    },
+    {
+      "bytes": 4002,
+      "path": "document-service/references/recursive-analysis.md",
+      "sha256": "bf138a2c18d447efc1a937847ffbcaefb82dbbe41b328f6b67d4181b8c8abb67"
+    },
+    {
+      "bytes": 7904,
+      "path": "document-service/references/technical-doc-template.md",
+      "sha256": "ce0c87c7cfe1dc7fac47e2358784dc2897ae0f6c71287d39a0d2657c24bce416"
+    }
+  ],
+  "license_evidence": {
+    "path": "LICENSE",
+    "scope": "repository",
+    "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+  },
+  "package_id": "codebase-documentor-for-aws",
+  "path": "plugins/codebase-documentor-for-aws/skills",
+  "policy": "candidate-only",
+  "repository": "https://github.com/awslabs/agent-plugins",
+  "review": {
+    "note": "自动同步结果不能直接发布",
+    "reviewer": null,
+    "status": "candidate"
+  },
+  "scan": {
+    "file_count": 9,
+    "findings": [],
+    "total_bytes": 63642,
+    "verdict": "review-required"
+  },
+  "source_id": "aws-agent-plugins-official"
+}
