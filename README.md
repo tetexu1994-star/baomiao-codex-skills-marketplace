@@ -23,7 +23,7 @@
 
 ## 一键导入整个市场
 
-首页的“暴喵一键导入”读取并校验 `marketplace-import.json` 与 SHA-256，然后打开暴喵客户端协议。客户端必须再次展示 GitHub 来源、40 位固定提交和插件数量，经用户确认后以参数数组调用：
+首页会分别校验 `catalog.json`、`marketplace-import.json` 及其 SHA-256，只有目录摘要、插件数量、同源地址和 Codex 参数数组全部一致时才启用“暴喵一键导入”。搜索同时覆盖插件名称与合集内部 Skill ID，例如 `azure functions` 会命中 `azure-functions`，无需把 202 个 Azure Skills 拆成 202 张插件卡片。客户端必须再次展示 GitHub 来源、40 位固定提交和插件数量，经用户确认后以参数数组调用：
 
 ```powershell
 codex plugin marketplace add https://github.com/<暴喵账号>/<仓库名> --ref <40位发布提交>

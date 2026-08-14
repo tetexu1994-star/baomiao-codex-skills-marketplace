@@ -92,6 +92,16 @@ class CatalogTests(TestCase):
         self.assertIn('event.key === "Escape"', script)
         self.assertNotIn("GITHUB_TOKEN", html + script)
 
+    def test_homepage_verifies_catalog_and_searches_bundle_skills(self):
+        script = (ROOT / "site" / "assets" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('fetchVerifiedJson("catalog.json", "catalog.sha256"', script)
+        self.assertIn("descriptor.catalog.sha256 !== state.catalogDigest", script)
+        self.assertIn("expectedCommandArgs", script)
+        self.assertIn("function skillNames(entry)", script)
+        self.assertIn("segments.length > 1 ? segments.at(-2) : entry.id", script)
+        self.assertIn("normalizeSearch", script)
+        self.assertIn('"匹配 Skills"', script)
+
     def test_pages_release_build_injects_repository_and_fixed_ref(self):
         workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
         self.assertIn('--marketplace-source "https://github.com/${{ github.repository }}"', workflow)

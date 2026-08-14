@@ -1,7 +1,7 @@
 "use strict";
 
 const PAGE_SIZE = 18;
-const state = { entries: [], query: "", category: "", publisher: "", origin: "", risk: "", limit: PAGE_SIZE };
+const state = { entries: [], catalogDigest: "", query: "", category: "", publisher: "", origin: "", risk: "", limit: PAGE_SIZE };
 const importState = { descriptor: null, digest: "", returnFocus: null };
 const labels = {
   official: "官方来源", community: "社区来源", low: "低风险", medium: "中风险", high: "增强权限",
@@ -30,6 +30,30 @@ function makePill(text, type) {
   return element("span", `pill pill-${type}`, text);
 }
 
+function skillNames(entry) {
+  return entry.integrity.files
+    .filter((file) => file.path.endsWith("SKILL.md"))
+    .map((file) => {
+      const segments = file.path.split("/");
+      return segments.length > 1 ? segments.at(-2) : entry.id;
+    })
+    .filter(Boolean);
+}
+
+function normalizeSearch(value) {
+  return value.normalize("NFKC")
+    .toLocaleLowerCase("zh-CN")
+    .replace(/[-_./\\]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function matchesQuery(value) {
+  if (!state.query) return true;
+  const haystack = normalizeSearch(value);
+  return state.query.split(" ").every((token) => haystack.includes(token));
+}
+
 function renderCard(entry) {
   const article = element("article", "skill-card");
   const top = element("div", "card-top");
@@ -49,7 +73,8 @@ function renderCard(entry) {
   capabilityBox.append(capabilityList);
 
   const facts = element("dl", "facts");
-  const skillCount = entry.integrity.files.filter((file) => file.path.endsWith("SKILL.md")).length;
+  const includedSkills = skillNames(entry);
+  const skillCount = includedSkills.length;
   const factRows = [
     ["插件 ID", entry.id],
     ["包含 Skills", String(skillCount)],
@@ -60,6 +85,19 @@ function renderCard(entry) {
   factRows.forEach(([term, detail]) => {
     facts.append(element("dt", "", term), element("dd", "", detail));
   });
+
+  let bundlePreview = null;
+  if (skillCount > 1) {
+    const matchedSkills = state.query ? includedSkills.filter((name) => matchesQuery(name)) : [];
+    const previewSkills = (matchedSkills.length ? matchedSkills : includedSkills).slice(0, 8);
+    bundlePreview = element("div", "bundle-preview");
+    bundlePreview.append(element("span", "bundle-label", matchedSkills.length ? "匹配 Skills" : "包含 Skills"));
+    const bundleList = element("ul");
+    previewSkills.forEach((name) => bundleList.append(element("li", "", name)));
+    bundlePreview.append(bundleList);
+    const hiddenCount = (matchedSkills.length || skillCount) - previewSkills.length;
+    if (hiddenCount > 0) bundlePreview.append(element("small", "", `另有 ${hiddenCount} 个，可继续搜索`));
+  }
 
   const details = element("details", "review-details");
   details.append(element("summary", "", "查看来源与权限说明"));
@@ -78,13 +116,15 @@ function renderCard(entry) {
 
   article.append(top, title, summary);
   if (entry.risk.level === "high") article.append(element("p", "enhanced-notice", "安装前需逐项确认增强权限"));
-  article.append(capabilityBox, facts, details);
+  article.append(capabilityBox);
+  if (bundlePreview) article.append(bundlePreview);
+  article.append(facts, details);
   return article;
 }
 
 function matches(entry) {
-  const haystack = [entry.name, entry.summary_zh, entry.category, entry.publisher.name, ...entry.tags].join(" ").toLocaleLowerCase("zh-CN");
-  return (!state.query || haystack.includes(state.query)) &&
+  const haystack = [entry.name, entry.id, entry.summary_zh, entry.category, entry.publisher.name, ...entry.tags, ...skillNames(entry)].join(" ");
+  return matchesQuery(haystack) &&
     (!state.category || entry.category === state.category) &&
     (!state.publisher || entry.publisher.name === state.publisher) &&
     (!state.origin || entry.publisher.kind === state.origin) &&
@@ -98,7 +138,7 @@ function render() {
   list.replaceChildren(...rendered.map(renderCard));
   list.setAttribute("aria-busy", "false");
   document.querySelector("#empty-state").hidden = visible.length !== 0;
-  document.querySelector("#catalog-meta").textContent = `显示 ${rendered.length} / 匹配 ${visible.length} · 共 ${state.entries.length} 个插件`;
+  document.querySelector("#catalog-meta").textContent = `目录已校验 · 显示 ${rendered.length} / 匹配 ${visible.length} · 共 ${state.entries.length} 个插件`;
   const more = document.querySelector("#load-more");
   more.hidden = rendered.length >= visible.length;
   more.textContent = `继续显示（还剩 ${Math.max(0, visible.length - rendered.length)} 个）`;
@@ -107,7 +147,7 @@ function render() {
 function bindFilters() {
   const form = document.querySelector("#filters");
   const read = () => {
-    state.query = document.querySelector("#search").value.trim().toLocaleLowerCase("zh-CN");
+    state.query = normalizeSearch(document.querySelector("#search").value);
     state.category = document.querySelector("#category").value;
     state.publisher = document.querySelector("#publisher").value;
     state.origin = document.querySelector("#origin").value;
@@ -126,11 +166,10 @@ function bindFilters() {
 
 async function loadCatalog() {
   try {
-    const response = await fetch("catalog.json", { cache: "no-store", credentials: "same-origin" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const payload = await response.json();
+    const { payload, digest } = await fetchVerifiedJson("catalog.json", "catalog.sha256", "目录");
     if (payload.schema_version !== 1 || !Array.isArray(payload.entries)) throw new Error("目录版本不支持");
     state.entries = payload.entries;
+    state.catalogDigest = digest;
     const categories = [...new Set(state.entries.map((entry) => entry.category))].sort((a, b) => a.localeCompare(b, "zh-CN"));
     const select = document.querySelector("#category");
     categories.forEach((category) => {
@@ -148,10 +187,12 @@ async function loadCatalog() {
     document.querySelector("#approved-count").textContent = String(state.entries.length);
     document.querySelector("#footer-count").textContent = String(state.entries.length);
     render();
+    renderImportReadiness();
   } catch (error) {
     document.querySelector("#catalog-list").setAttribute("aria-busy", "false");
     document.querySelector("#catalog-meta").textContent = "目录读取失败";
     document.querySelector("#error-state").hidden = false;
+    failImport("市场目录校验失败。一键导入已停用，刷新后仍失败请检查网络。", "目录未通过校验，未执行任何导入操作。");
   }
 }
 
@@ -165,18 +206,74 @@ async function sha256Hex(buffer) {
   return [...new Uint8Array(digest)].map((value) => value.toString(16).padStart(2, "0")).join("");
 }
 
+async function fetchVerifiedJson(documentPath, digestPath, label) {
+  const [documentResponse, digestResponse] = await Promise.all([
+    fetch(documentPath, { cache: "no-store", credentials: "same-origin" }),
+    fetch(digestPath, { cache: "no-store", credentials: "same-origin" }),
+  ]);
+  if (!documentResponse.ok || !digestResponse.ok) throw new Error(`${label}读取失败`);
+  const bytes = await documentResponse.arrayBuffer();
+  const expectedDigest = (await digestResponse.text()).trim().split(/\s+/)[0];
+  const actualDigest = await sha256Hex(bytes);
+  if (!/^[0-9a-f]{64}$/.test(expectedDigest) || actualDigest !== expectedDigest) throw new Error(`${label}摘要不匹配`);
+  return { payload: JSON.parse(new TextDecoder().decode(bytes)), digest: actualDigest };
+}
+
 function validateImportDescriptor(descriptor) {
   const market = descriptor.marketplace || {};
+  const catalog = descriptor.catalog || {};
   const command = descriptor.command || {};
-  if (descriptor.schema_version !== 1 || market.id !== "baomiao-codex") throw new Error("导入描述版本不支持");
+  if (descriptor.schema_version !== 1 || !["release", "local-preview"].includes(descriptor.profile) || market.id !== "baomiao-codex") throw new Error("导入描述版本不支持");
   if (!/^[0-9a-f]{40}$/.test(market.ref) || !Number.isInteger(market.plugin_count) || market.plugin_count < 1) throw new Error("导入描述缺少固定版本");
   if (market.manifest_path !== ".agents/plugins/marketplace.json") throw new Error("市场清单路径不受支持");
-  if (command.executable !== "codex" || !Array.isArray(command.args) || !command.display.startsWith("codex plugin marketplace add ")) throw new Error("导入命令不受支持");
-  if (descriptor.profile === "release" && !market.source.startsWith("https://github.com/")) throw new Error("发布市场必须来自 GitHub HTTPS 仓库");
+  if (descriptor.profile === "release") {
+    if (!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(market.source)) throw new Error("发布市场必须来自 GitHub HTTPS 仓库");
+    const sourceUrl = new URL(market.source);
+    const segments = sourceUrl.pathname.split("/").filter(Boolean);
+    if (sourceUrl.protocol !== "https:" || sourceUrl.hostname !== "github.com" || sourceUrl.port || sourceUrl.username || sourceUrl.password || sourceUrl.search || sourceUrl.hash || segments.length !== 2) throw new Error("发布市场必须来自 GitHub HTTPS 仓库");
+  } else if (!isAllowedManifestUrl(new URL(window.location.href)) || typeof market.source !== "string" || market.source.length < 2) {
+    throw new Error("本地预览来源不受支持");
+  }
+  const expectedCommandArgs = ["plugin", "marketplace", "add", market.source];
+  if (descriptor.profile === "release") expectedCommandArgs.push("--ref", market.ref);
+  if (command.executable !== "codex" || JSON.stringify(command.args) !== JSON.stringify(expectedCommandArgs) || !command.display.startsWith("codex plugin marketplace add ")) throw new Error("导入命令不受支持");
+  if (!/^[0-9a-f]{64}$/.test(catalog.sha256)) throw new Error("目录摘要无效");
+  const expectedCatalogUrl = new URL("catalog.json", window.location.href).href;
+  const expectedCatalogDigestUrl = new URL("catalog.sha256", window.location.href).href;
+  if (new URL(catalog.url).href !== expectedCatalogUrl || new URL(catalog.sha256_url).href !== expectedCatalogDigestUrl) throw new Error("目录地址与当前市场不一致");
 }
 
 function setImportStatus(message) {
   document.querySelector("#import-status").textContent = message;
+}
+
+function failImport(summary, status) {
+  const openButton = document.querySelector("#open-import");
+  const copyButton = document.querySelector("#copy-import-command");
+  openButton.textContent = "一键导入暂不可用";
+  openButton.disabled = true;
+  copyButton.disabled = true;
+  document.querySelector("#import-summary").textContent = summary;
+  setImportStatus(status);
+}
+
+function renderImportReadiness() {
+  if (!importState.descriptor || !state.catalogDigest) return;
+  const descriptor = importState.descriptor;
+  if (descriptor.catalog.sha256 !== state.catalogDigest || descriptor.marketplace.plugin_count !== state.entries.length) {
+    failImport("市场目录与导入描述不一致。一键导入已停用，请刷新页面。", "校验未通过，未执行任何导入操作。");
+    return;
+  }
+  document.querySelector("#import-source").textContent = descriptor.marketplace.source;
+  document.querySelector("#import-ref").textContent = descriptor.marketplace.ref.slice(0, 12);
+  document.querySelector("#import-count").textContent = `${descriptor.marketplace.plugin_count} 个插件`;
+  document.querySelector("#import-command").textContent = descriptor.command.display;
+  document.querySelector("#import-summary").textContent = `${descriptor.marketplace.plugin_count} 个插件，目录与导入描述已校验；加入市场后在 Codex 里按需启用。`;
+  const openButton = document.querySelector("#open-import");
+  openButton.textContent = "暴喵一键导入";
+  openButton.disabled = false;
+  document.querySelector("#copy-import-command").disabled = false;
+  setImportStatus("目录与导入描述已校验。");
 }
 
 async function copyImportCommand() {
@@ -240,34 +337,14 @@ function bindImportControls() {
 }
 
 async function loadImportDescriptor() {
-  const openButton = document.querySelector("#open-import");
-  const copyButton = document.querySelector("#copy-import-command");
   try {
-    const [descriptorResponse, digestResponse] = await Promise.all([
-      fetch("marketplace-import.json", { cache: "no-store", credentials: "same-origin" }),
-      fetch("marketplace-import.sha256", { cache: "no-store", credentials: "same-origin" }),
-    ]);
-    if (!descriptorResponse.ok || !digestResponse.ok) throw new Error("导入描述读取失败");
-    const bytes = await descriptorResponse.arrayBuffer();
-    const expectedDigest = (await digestResponse.text()).trim().split(/\s+/)[0];
-    const actualDigest = await sha256Hex(bytes);
-    if (!/^[0-9a-f]{64}$/.test(expectedDigest) || actualDigest !== expectedDigest) throw new Error("导入描述摘要不匹配");
-    const descriptor = JSON.parse(new TextDecoder().decode(bytes));
+    const { payload: descriptor, digest } = await fetchVerifiedJson("marketplace-import.json", "marketplace-import.sha256", "导入描述");
     validateImportDescriptor(descriptor);
     importState.descriptor = descriptor;
-    importState.digest = actualDigest;
-    document.querySelector("#import-source").textContent = descriptor.marketplace.source;
-    document.querySelector("#import-ref").textContent = descriptor.marketplace.ref.slice(0, 12);
-    document.querySelector("#import-count").textContent = `${descriptor.marketplace.plugin_count} 个插件`;
-    document.querySelector("#import-command").textContent = descriptor.command.display;
-    document.querySelector("#import-summary").textContent = `${descriptor.marketplace.plugin_count} 个插件，加入市场后在 Codex 里按需启用。来源与固定版本会在执行前再次展示。`;
-    openButton.textContent = "暴喵一键导入";
-    openButton.disabled = false;
-    copyButton.disabled = false;
+    importState.digest = digest;
+    renderImportReadiness();
   } catch (error) {
-    openButton.textContent = "一键导入暂不可用";
-    document.querySelector("#import-summary").textContent = "导入描述校验失败。插件目录仍可浏览，请稍后刷新页面。";
-    setImportStatus("未执行任何导入操作。");
+    failImport("导入描述校验失败。插件目录仍可浏览，请稍后刷新页面。", "未执行任何导入操作。");
   }
 }
 

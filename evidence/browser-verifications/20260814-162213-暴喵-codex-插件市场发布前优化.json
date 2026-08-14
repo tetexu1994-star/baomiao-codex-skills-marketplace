@@ -1,0 +1,31 @@
+{
+  "schema_version": "browser-verification/v1",
+  "created_at": "2026-08-14T16:22:13.790885+08:00",
+  "target": "暴喵 Codex 插件市场发布前优化",
+  "url": "http://127.0.0.1:8000/",
+  "verdict": "pass",
+  "checks": [
+    "目录与一键导入描述的 SHA-256 均通过并显示已校验状态",
+    "搜索 azure functions 命中 Azure 官方技能合集及内部 azure-functions Skill",
+    "320、768、1024、1440 像素均无横向溢出",
+    "单 Skill 插件计数恢复为 1，Azure 合集显示 202",
+    "导入对话框可用 Escape 关闭并把焦点返回一键导入按钮",
+    "控制台 0 error、0 warning"
+  ],
+  "manual_steps": [],
+  "screenshots": [
+    "evidence/browser-verifications/screenshots/market-optimized-320.png",
+    "evidence/browser-verifications/screenshots/market-optimized-1440.png",
+    "evidence/browser-verifications/screenshots/market-optimized-import-dialog.png"
+  ],
+  "notes": "桌面及移动断点使用 Playwright CLI 真实浏览器复验；内置浏览器额外确认本地预览已打开。未触发 baomiao://，避免修改本机 Codex 市场配置。",
+  "git": {
+    "repo_root": "/Users/tetexu/baomiao-codex-skills-marketplace",
+    "branch": "main",
+    "commit": "2ccff6d3530bdf078a6571ac82db17ed6adbfc9f"
+  },
+  "artifact_paths": {
+    "json": "/Users/tetexu/baomiao-codex-skills-marketplace/evidence/browser-verifications/20260814-162213-暴喵-codex-插件市场发布前优化.json",
+    "markdown": "/Users/tetexu/baomiao-codex-skills-marketplace/evidence/browser-verifications/20260814-162213-暴喵-codex-插件市场发布前优化.md"
+  }
+}

@@ -110,6 +110,11 @@ h2 { margin: 0; font-size: clamp(1.8rem, 2.7vw, 2.8rem); letter-spacing: -.035em
 .capability-label { color: #66788a; font-size: .7rem; font-weight: 700; }
 .capabilities ul { margin: .55rem 0 0; padding: 0; display: flex; gap: .4rem; flex-wrap: wrap; list-style: none; }
 .capabilities li { padding: .2rem .4rem; background: white; color: #324c68; font-size: .72rem; }
+.bundle-preview { margin-top: .75rem; padding: .65rem; border: 1px solid #cfdae4; background: #f8fafc; }
+.bundle-label { color: #52667c; font-size: .7rem; font-weight: 800; }
+.bundle-preview ul { margin: .55rem 0 0; padding: 0; display: flex; gap: .35rem; flex-wrap: wrap; list-style: none; }
+.bundle-preview li { padding: .2rem .4rem; color: #164963; background: #e6f7f8; font: .68rem/1.4 Consolas, monospace; overflow-wrap: anywhere; }
+.bundle-preview small { display: block; margin-top: .55rem; color: #66788a; font-size: .68rem; }
 .facts { display: grid; grid-template-columns: 68px 1fr; gap: .35rem; margin: 1rem 0; font-size: .75rem; }
 .facts dt { color: #718295; }
 .facts dd { margin: 0; overflow-wrap: anywhere; }
