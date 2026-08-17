@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "access": {
+        "command": {
+          "args": [
+            "plugin",
+            "list",
+            "--available",
+            "--json"
+          ],
+          "display": "codex plugin list --available --json",
+          "executable": "codex"
+        },
+        "marketplace_ids": [
+          "openai-curated-remote",
+          "openai-api-curated"
+        ],
+        "mode": "codex-native"
+      },
+      "boundaries": {
+        "availability": "account-and-product-dependent",
+        "count_mode": "runtime",
+        "credentials_handled_by": "codex",
+        "mirror_packages": false,
+        "notes_zh": [
+          "插件数量和可用范围以用户当前 Codex 版本、产品与账号为准。",
+          "暴喵只帮助访问和展示原始来源，不复制官方插件包，也不接触登录凭证。"
+        ]
+      },
+      "featured_plugins": [
+        {
+          "category_zh": "开发工具",
+          "id": "github",
+          "name": "GitHub"
+        },
+        {
+          "category_zh": "设计",
+          "id": "figma",
+          "name": "Figma"
+        },
+        {
+          "category_zh": "效率",
+          "id": "notion",
+          "name": "Notion"
+        },
+        {
+          "category_zh": "效率",
+          "id": "google-drive",
+          "name": "Google Drive"
+        },
+        {
+          "category_zh": "开发工具",
+          "id": "vercel",
+          "name": "Vercel"
+        },
+        {
+          "category_zh": "沟通",
+          "id": "slack",
+          "name": "Slack"
+        },
+        {
+          "category_zh": "开发工具",
+          "id": "supabase",
+          "name": "Supabase"
+        },
+        {
+          "category_zh": "研究",
+          "id": "zotero",
+          "name": "Zotero"
+        }
+      ],
+      "id": "codex-official-directory",
+      "name_zh": "Codex 官方插件目录",
+      "provenance": {
+        "archived_at": "2026-08-16",
+        "documentation": "https://learn.chatgpt.com/docs/build-plugins",
+        "historical_repository": "https://github.com/openai/plugins",
+        "historical_repository_status": "archived"
+      },
+      "publisher": {
+        "kind": "official",
+        "name": "OpenAI"
+      }
+    }
+  ]
+}

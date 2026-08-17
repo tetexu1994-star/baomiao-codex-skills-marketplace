@@ -171,6 +171,39 @@ def marketplace_errors(entries: List[Tuple[Path, dict]], *, root: Path = ROOT) -
     return errors
 
 
+def federated_source_errors(*, root: Path = ROOT) -> List[str]:
+    path = root / "catalog" / "federated" / "codex-official.json"
+    schema_path = root / "schema" / "federated-source.schema.json"
+    if not path.is_file():
+        return ["缺少 Codex 官方联邦来源描述"]
+    if not schema_path.is_file():
+        return ["缺少联邦来源 Schema"]
+    document = json.loads(path.read_text(encoding="utf-8"))
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors = [
+        f"联邦来源 {'.'.join(str(part) for part in error.path) or '$'}: {error.message}"
+        for error in sorted(validator.iter_errors(document), key=lambda item: list(item.path))
+    ]
+    serialized = json.dumps(document, ensure_ascii=False).lower()
+    if "plugin marketplace add" in serialized or "github.com/openai/plugins.git" in serialized:
+        errors.append("归档的 OpenAI 仓库不得作为可添加市场来源")
+    if "plugin_count" in serialized or "observed_plugin_count" in serialized:
+        errors.append("官方动态目录不得发布可变插件数量")
+    source_list = document.get("sources")
+    source = (
+        source_list[0]
+        if isinstance(source_list, list)
+        and source_list
+        and isinstance(source_list[0], dict)
+        else {}
+    )
+    command = source.get("access", {}).get("command", {})
+    if command.get("executable") != "codex" or command.get("args") != ["plugin", "list", "--available", "--json"]:
+        errors.append("官方目录只能通过只读 Codex 列表命令发现")
+    return errors
+
+
 def validate_all(directory: Path = APPROVED, *, root: Path = ROOT, online: bool = False) -> List[str]:
     schema = json.loads((root / "schema" / "skill.schema.json").read_text(encoding="utf-8"))
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
@@ -209,6 +242,7 @@ def validate_all(directory: Path = APPROVED, *, root: Path = ROOT, online: bool 
                 errors.append(f"{path.name}: 在线校验失败：{exc}")
     if directory.resolve() == (root / "catalog" / "approved").resolve():
         errors.extend(marketplace_errors(entries, root=root))
+        errors.extend(federated_source_errors(root=root))
     return errors
 
 

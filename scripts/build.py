@@ -79,6 +79,22 @@ def build_import_descriptor(*, source: str, ref: str, public_base_url: str, cata
     return target, digest_target
 
 
+def build_federated_sources() -> Tuple[Path, Path]:
+    source_path = ROOT / "catalog" / "federated" / "codex-official.json"
+    document = json.loads(source_path.read_text(encoding="utf-8"))
+    payload = (json.dumps(document, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8")
+    digest = hashlib.sha256(payload).hexdigest()
+    dist = ROOT / "dist"
+    site = ROOT / "site"
+    output = dist / "federated-sources.json"
+    digest_output = dist / "federated-sources.sha256"
+    output.write_bytes(payload)
+    digest_output.write_text(f"{digest}  federated-sources.json\n", encoding="utf-8")
+    shutil.copy2(output, site / "federated-sources.json")
+    shutil.copy2(digest_output, site / "federated-sources.sha256")
+    return output, digest_output
+
+
 def build(*, generated_at: Optional[str] = None, marketplace_source: Optional[str] = None, marketplace_ref: Optional[str] = None, public_base_url: Optional[str] = None) -> Tuple[Path, Path]:
     errors = validate_all()
     if errors:
@@ -141,6 +157,7 @@ def build(*, generated_at: Optional[str] = None, marketplace_source: Optional[st
     digest_path.write_text(f"{digest}  catalog.json\n", encoding="utf-8")
     shutil.copy2(catalog_path, site / "catalog.json")
     shutil.copy2(digest_path, site / "catalog.sha256")
+    build_federated_sources()
     build_import_descriptor(
         source=marketplace_source or str(ROOT),
         ref=marketplace_ref or current_commit(),

@@ -12,6 +12,7 @@
 - 允许来源、固定提交、完整目录枚举和保守型安全扫描；
 - 人工审核后才构建的 `dist/catalog.json` + SHA-256；
 - [暴喵客户端一键导入契约](docs/client-contract.md)：一次加入整个市场，再在 Codex 中按需启用插件；
+- 经过独立 Schema 与 SHA-256 校验的 Codex 官方动态目录描述：只让本机 Codex 查询当前可用插件，不复制官方包；
 - GitHub Actions CI 与 Pages 发布流程；
 - 77 个真实、可核验、可由 Codex Marketplace 发现的插件：20 个 OpenAI / Anthropic、52 个 Harness，以及 5 个 AWS / Microsoft / NVIDIA 官方插件；
 - 插件内部合计 278 个 Skills，其中 Azure 官方合集包含 202 个，不拆卡片虚增插件数；
@@ -20,6 +21,13 @@
 ## 插件形态
 
 77 个条目全部进入 `.agents/plugins/marketplace.json`。仓库中的每个 `plugins/<id>/` 都有 `.codex-plugin/plugin.json`；单 Skill 插件保存在 `skills/<id>/`，官方合集插件则在同一 `skills/` 下保留多个上游 Skill 目录。插件清单与候选摘要逐字节核对；“插件”是安装与发现单元，“Skill”是插件内承载的能力。
+
+## 两种来源，不混在一起计数
+
+- **暴喵精选市场：** 本仓库中的 77 个固定版本插件，可通过一键导入把市场加入 Codex，再逐个启用。
+- **Codex 官方插件目录：** 由用户本机 Codex 根据版本、产品和账号动态提供。网页只展示来源边界、示例和只读查看命令 `codex plugin list --available --json`，不镜像插件、不代替登录，也不把数量加到暴喵的 77 个里。
+
+OpenAI 的历史 `openai/plugins` 仓库已于 2026-08-16 归档，因此不作为持续同步或安装回退。详细结论见 [官方目录接入复核](docs/reviews/openai-official-directory-2026-08-17.md) 与 [决策 0011](docs/decisions/0011-codex-native-official-directory.md)。
 
 ## 一键导入整个市场
 
@@ -141,6 +149,7 @@ AWS、Microsoft、NVIDIA 官方来源的固定版本、206 个新增 Skills 与�
 - `dist/catalog.sha256`：目录原始字节的摘要；
 - `site/catalog.json` 与 `site/catalog.sha256`：GitHub Pages 同源副本。
 - `site/marketplace-import.json` 与 `site/marketplace-import.sha256`：暴喵客户端一键导入描述及摘要。
+- `dist/federated-sources.json` 与 `dist/federated-sources.sha256`：Codex 原生官方目录接入描述及摘要；构建时复制到 `site/`。
 
 固定 `--generated-at` 时构建结果可复现。发布流水线使用提交时间生成该字段，避免构建机器当前时间造成漂移。
 

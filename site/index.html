@@ -8,8 +8,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>暴喵 Codex 插件市场</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23071426'/%3E%3Cpath d='M7 23V18h4v5zm7 0V13h4v10zm7 0V7h4v16z' fill='%23ffb000'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20260814d">
-  <script src="assets/app.js?v=20260814d" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260817a">
+  <script src="assets/app.js?v=20260817a" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#catalog">跳到插件列表</a>
@@ -21,6 +21,7 @@
       </a>
       <nav aria-label="主导航">
         <a href="#import-title">一键导入</a>
+        <a href="#sources">插件来源</a>
         <a href="#catalog">浏览插件</a>
       </nav>
     </div>
@@ -36,8 +37,8 @@
         </div>
         <div class="market-stat">
           <b id="approved-count">—</b>
-          <span>个可安装插件</span>
-          <small>每个插件都保留原始来源</small>
+          <span>个暴喵精选</span>
+          <small>另可浏览 Codex 官方动态目录</small>
         </div>
         <ol class="journey-steps" aria-label="使用步骤">
           <li><span>1</span><b>加入市场</b><small>只添加目录</small></li>
@@ -62,10 +63,55 @@
       </section>
     </div>
 
+    <section class="source-router" id="sources" aria-labelledby="sources-title" aria-busy="true">
+      <div class="router-heading">
+        <div>
+          <p class="eyebrow">插件来源</p>
+          <h2 id="sources-title">两条来源，各走各的原始通道</h2>
+        </div>
+        <p>暴喵精选可以一键加入；官方插件由本机 Codex 提供，数量与可用范围以你的账号为准。</p>
+      </div>
+      <div class="source-map">
+        <article class="source-lane source-lane-baomiao">
+          <header>
+            <span class="source-code">SOURCE 01 · BAOMIAO</span>
+            <span class="source-state source-state-reviewed">已审核固定版本</span>
+          </header>
+          <h3>暴喵精选市场</h3>
+          <p><strong id="router-approved-count">—</strong> 个插件经过来源、许可证、权限和文件摘要检查。</p>
+          <ul class="source-facts">
+            <li>来源固定到 Git 提交</li>
+            <li>加入市场后仍按需启用</li>
+          </ul>
+          <a class="route-action route-action-baomiao" href="#import-title">加入暴喵市场</a>
+        </article>
+
+        <div class="route-rail" aria-hidden="true"><span></span></div>
+
+        <article class="source-lane source-lane-official" id="official-directory">
+          <header>
+            <span class="source-code">SOURCE 02 · CODEX NATIVE</span>
+            <span class="source-state source-state-loading" id="official-source-status">正在校验来源</span>
+          </header>
+          <h3>Codex 官方插件目录</h3>
+          <p>由本机 Codex 提供并随产品更新，暴喵不复制插件包、不代替官方登录。</p>
+          <ul class="official-featured" id="official-featured" aria-label="官方目录示例"></ul>
+          <p class="official-boundary" id="official-boundary">正在读取官方目录接入边界…</p>
+          <div class="official-actions">
+            <button class="route-action route-action-official" id="copy-official-command" type="button" disabled>复制查看命令</button>
+            <a id="official-docs" href="https://learn.chatgpt.com/docs/build-plugins" target="_blank" rel="noopener noreferrer">查看 OpenAI 说明 ↗</a>
+          </div>
+          <code class="official-command" id="official-command">—</code>
+          <p class="official-status" id="official-command-status" role="status" aria-live="polite"></p>
+          <p class="source-footnote" id="official-provenance">历史来源状态正在校验…</p>
+        </article>
+      </div>
+    </section>
+
     <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">精选插件目录</p>
+          <p class="eyebrow">暴喵精选目录</p>
           <h2 id="catalog-title">找到适合你的插件</h2>
           <p>按用途、发布者和权限筛选；技术来源放在卡片详情里，不挡住浏览。</p>
         </div>
@@ -146,7 +192,7 @@
   <footer>
     <div>
       <p><strong>暴喵 Codex 插件市场</strong> · <span id="footer-count">—</span> 个可安装插件</p>
-      <p>“官方来源”仅说明上游身份，不代表暴喵对第三方功能作担保。</p>
+      <p>暴喵精选与 Codex 官方目录分开标源；“官方来源”不代表暴喵对第三方功能作担保。</p>
     </div>
     <a href="contract.html">查看客户端接入说明</a>
   </footer>

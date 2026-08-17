@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:baomiao:codex-marketplace:federated-source:v1",
+  "title": "暴喵 Codex 联邦插件来源",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sources"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name_zh", "publisher", "access", "provenance", "featured_plugins", "boundaries"],
+        "properties": {
+          "id": {"const": "codex-official-directory"},
+          "name_zh": {"type": "string", "minLength": 1},
+          "publisher": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "kind"],
+            "properties": {
+              "name": {"const": "OpenAI"},
+              "kind": {"const": "official"}
+            }
+          },
+          "access": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["mode", "marketplace_ids", "command"],
+            "properties": {
+              "mode": {"const": "codex-native"},
+              "marketplace_ids": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {"enum": ["openai-curated-remote", "openai-api-curated"]}
+              },
+              "command": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["executable", "args", "display"],
+                "properties": {
+                  "executable": {"const": "codex"},
+                  "args": {"const": ["plugin", "list", "--available", "--json"]},
+                  "display": {"const": "codex plugin list --available --json"}
+                }
+              }
+            }
+          },
+          "provenance": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["documentation", "historical_repository", "historical_repository_status", "archived_at"],
+            "properties": {
+              "documentation": {"type": "string", "format": "uri", "pattern": "^https://learn\\.chatgpt\\.com/"},
+              "historical_repository": {"const": "https://github.com/openai/plugins"},
+              "historical_repository_status": {"const": "archived"},
+              "archived_at": {"const": "2026-08-16"}
+            }
+          },
+          "featured_plugins": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "name", "category_zh"],
+              "properties": {
+                "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+                "name": {"type": "string", "minLength": 1},
+                "category_zh": {"type": "string", "minLength": 1}
+              }
+            }
+          },
+          "boundaries": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["mirror_packages", "availability", "credentials_handled_by", "count_mode", "notes_zh"],
+            "properties": {
+              "mirror_packages": {"const": false},
+              "availability": {"const": "account-and-product-dependent"},
+              "credentials_handled_by": {"const": "codex"},
+              "count_mode": {"const": "runtime"},
+              "notes_zh": {
+                "type": "array",
+                "minItems": 2,
+                "items": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

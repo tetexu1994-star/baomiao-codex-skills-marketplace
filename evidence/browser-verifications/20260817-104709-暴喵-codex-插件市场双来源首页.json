@@ -1,0 +1,29 @@
+{
+  "schema_version": "browser-verification/v1",
+  "created_at": "2026-08-17T10:47:09.540996+08:00",
+  "target": "暴喵 Codex 插件市场双来源首页",
+  "url": "http://127.0.0.1:8000/#sources",
+  "verdict": "pass",
+  "checks": [
+    "官方动态目录描述通过摘要和前端白名单校验",
+    "复制查看命令反馈正常，命令保持为 codex plugin list --available --json",
+    "搜索 Azure 仅显示 Azure 官方技能合集",
+    "320、768、1024、1440 像素宽度无横向溢出",
+    "浏览器控制台无 error"
+  ],
+  "manual_steps": [],
+  "screenshots": [
+    "evidence/browser-verifications/screenshots/source-router-desktop.png",
+    "evidence/browser-verifications/screenshots/source-router-mobile-320.png"
+  ],
+  "notes": "在 Codex 内置浏览器中验证；77 个暴喵精选与 Codex 官方动态目录分开标源。",
+  "git": {
+    "repo_root": "/Users/tetexu/baomiao-codex-skills-marketplace",
+    "branch": "main",
+    "commit": "7e50c5b882d3cdbbfb37434cab376df28621f499"
+  },
+  "artifact_paths": {
+    "json": "/Users/tetexu/baomiao-codex-skills-marketplace/evidence/browser-verifications/20260817-104709-暴喵-codex-插件市场双来源首页.json",
+    "markdown": "/Users/tetexu/baomiao-codex-skills-marketplace/evidence/browser-verifications/20260817-104709-暴喵-codex-插件市场双来源首页.md"
+  }
+}

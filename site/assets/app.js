@@ -1,8 +1,10 @@
 "use strict";
 
 const PAGE_SIZE = 18;
+const OFFICIAL_LIST_ARGS = ["plugin", "list", "--available", "--json"];
 const state = { entries: [], catalogDigest: "", query: "", category: "", publisher: "", origin: "", risk: "", limit: PAGE_SIZE };
 const importState = { descriptor: null, digest: "", returnFocus: null };
+const federatedState = { source: null, command: "" };
 const labels = {
   official: "官方来源", community: "社区来源", low: "低风险", medium: "中风险", high: "增强权限",
   "filesystem-read": "读取文件", "filesystem-write": "写入文件", shell: "运行本机命令",
@@ -186,6 +188,7 @@ async function loadCatalog() {
       publisherSelect.append(option);
     });
     document.querySelector("#approved-count").textContent = String(state.entries.length);
+    document.querySelector("#router-approved-count").textContent = String(state.entries.length);
     document.querySelector("#footer-count").textContent = String(state.entries.length);
     render();
     renderImportReadiness();
@@ -283,16 +286,14 @@ function renderImportReadiness() {
   setImportStatus("目录与导入描述已校验。");
 }
 
-async function copyImportCommand() {
-  const command = importState.descriptor?.command?.display;
-  if (!command) return;
+async function copyText(value) {
   let copied = false;
   try {
-    await navigator.clipboard.writeText(command);
+    await navigator.clipboard.writeText(value);
     copied = true;
   } catch (error) {
     const field = element("textarea");
-    field.value = command;
+    field.value = value;
     field.setAttribute("readonly", "");
     field.className = "clipboard-fallback";
     document.body.append(field);
@@ -300,7 +301,80 @@ async function copyImportCommand() {
     copied = document.execCommand("copy");
     field.remove();
   }
+  return copied;
+}
+
+async function copyImportCommand() {
+  const command = importState.descriptor?.command?.display;
+  if (!command) return;
+  const copied = await copyText(command);
   setImportStatus(copied ? "Codex 导入命令已复制。" : "复制失败，请在确认框中手动选择命令。");
+}
+
+function validateFederatedDescriptor(descriptor) {
+  if (descriptor.schema_version !== 1 || !Array.isArray(descriptor.sources) || descriptor.sources.length !== 1) throw new Error("联邦来源版本不支持");
+  const source = descriptor.sources[0];
+  const command = source.access?.command || {};
+  const provenance = source.provenance || {};
+  const boundaries = source.boundaries || {};
+  if (source.id !== "codex-official-directory" || source.publisher?.name !== "OpenAI" || source.publisher?.kind !== "official") throw new Error("官方来源身份无效");
+  if (source.access?.mode !== "codex-native" || command.executable !== "codex" || JSON.stringify(command.args) !== JSON.stringify(OFFICIAL_LIST_ARGS) || command.display !== "codex plugin list --available --json") throw new Error("官方来源命令不受支持");
+  if (!Array.isArray(source.access.marketplace_ids) || source.access.marketplace_ids.length < 1 || !source.access.marketplace_ids.every((id) => ["openai-curated-remote", "openai-api-curated"].includes(id))) throw new Error("官方市场标识不受支持");
+  if (provenance.historical_repository !== "https://github.com/openai/plugins" || provenance.historical_repository_status !== "archived" || provenance.archived_at !== "2026-08-16") throw new Error("历史来源状态无效");
+  const docsUrl = new URL(provenance.documentation);
+  if (docsUrl.protocol !== "https:" || docsUrl.hostname !== "learn.chatgpt.com") throw new Error("官方文档地址无效");
+  if (boundaries.mirror_packages !== false || boundaries.availability !== "account-and-product-dependent" || boundaries.credentials_handled_by !== "codex" || boundaries.count_mode !== "runtime") throw new Error("官方来源边界无效");
+  if (!Array.isArray(source.featured_plugins) || source.featured_plugins.length < 1 || !source.featured_plugins.every((plugin) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(plugin.id))) throw new Error("官方插件示例无效");
+  if (!Array.isArray(boundaries.notes_zh) || boundaries.notes_zh.length < 2) throw new Error("官方来源说明不完整");
+  return source;
+}
+
+function renderFederatedSource(source) {
+  federatedState.source = source;
+  federatedState.command = source.access.command.display;
+  const status = document.querySelector("#official-source-status");
+  status.className = "source-state source-state-native";
+  status.textContent = "Codex 原生 · 动态";
+  const featured = document.querySelector("#official-featured");
+  featured.replaceChildren(...source.featured_plugins.map((plugin) => {
+    const item = element("li");
+    item.append(element("strong", "", plugin.name), element("small", "", plugin.category_zh));
+    return item;
+  }));
+  document.querySelector("#official-boundary").textContent = source.boundaries.notes_zh.join(" ");
+  document.querySelector("#official-command").textContent = source.access.command.display;
+  document.querySelector("#official-docs").href = source.provenance.documentation;
+  document.querySelector("#official-provenance").textContent = `历史示例仓库已于 ${source.provenance.archived_at} 归档，仅作来源证据，不作为安装回退。`;
+  document.querySelector("#copy-official-command").disabled = false;
+  document.querySelector("#sources").setAttribute("aria-busy", "false");
+}
+
+function failFederatedSource() {
+  const status = document.querySelector("#official-source-status");
+  status.className = "source-state source-state-error";
+  status.textContent = "来源描述未通过校验";
+  document.querySelector("#official-boundary").textContent = "暴喵精选目录仍可正常浏览。官方插件请直接在 Codex 的 Plugins 页面查看。";
+  document.querySelector("#official-provenance").textContent = "未执行命令，也未读取任何账号或凭证。";
+  document.querySelector("#sources").setAttribute("aria-busy", "false");
+}
+
+async function loadFederatedSources() {
+  try {
+    const { payload } = await fetchVerifiedJson("federated-sources.json", "federated-sources.sha256", "官方来源描述");
+    renderFederatedSource(validateFederatedDescriptor(payload));
+  } catch (error) {
+    failFederatedSource();
+  }
+}
+
+async function copyOfficialCommand() {
+  if (!federatedState.command) return;
+  const copied = await copyText(federatedState.command);
+  document.querySelector("#official-command-status").textContent = copied ? "官方目录命令已复制。" : "复制失败，请在 Codex 的 Plugins 页面查看官方目录。";
+}
+
+function bindFederatedControls() {
+  document.querySelector("#copy-official-command").addEventListener("click", copyOfficialCommand);
 }
 
 function openImportDialog() {
@@ -357,5 +431,7 @@ async function loadImportDescriptor() {
 
 bindFilters();
 bindImportControls();
+bindFederatedControls();
 loadCatalog();
 loadImportDescriptor();
+loadFederatedSources();

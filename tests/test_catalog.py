@@ -80,6 +80,30 @@ class CatalogTests(TestCase):
         expected_digest = digest_path.read_text(encoding="utf-8").split()[0]
         self.assertEqual(expected_digest, hashlib.sha256(descriptor_path.read_bytes()).hexdigest())
 
+    def test_build_writes_federated_source_descriptor(self):
+        build(generated_at="2026-08-17T00:00:00Z")
+        dist_path = ROOT / "dist" / "federated-sources.json"
+        digest_path = ROOT / "dist" / "federated-sources.sha256"
+        site_path = ROOT / "site" / "federated-sources.json"
+        site_digest_path = ROOT / "site" / "federated-sources.sha256"
+        self.assertTrue(dist_path.is_file())
+        self.assertTrue(digest_path.is_file())
+        self.assertEqual(dist_path.read_bytes(), site_path.read_bytes())
+        self.assertEqual(digest_path.read_bytes(), site_digest_path.read_bytes())
+        document = json.loads(dist_path.read_text(encoding="utf-8"))
+        schema = json.loads((ROOT / "schema" / "federated-source.schema.json").read_text(encoding="utf-8"))
+        self.assertEqual([error.message for error in Draft202012Validator(schema).iter_errors(document)], [])
+        source = document["sources"][0]
+        self.assertEqual(source["access"]["mode"], "codex-native")
+        self.assertEqual(source["access"]["command"]["executable"], "codex")
+        self.assertEqual(source["access"]["command"]["args"], ["plugin", "list", "--available", "--json"])
+        self.assertEqual(source["provenance"]["historical_repository_status"], "archived")
+        serialized = json.dumps(document).lower()
+        self.assertNotIn("plugin marketplace add", serialized)
+        self.assertNotIn("github.com/openai/plugins.git", serialized)
+        expected_digest = digest_path.read_text(encoding="utf-8").split()[0]
+        self.assertEqual(expected_digest, hashlib.sha256(dist_path.read_bytes()).hexdigest())
+
     def test_homepage_has_accessible_import_controls(self):
         html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         script = (ROOT / "site" / "assets" / "app.js").read_text(encoding="utf-8")
@@ -108,13 +132,25 @@ class CatalogTests(TestCase):
         script = (ROOT / "site" / "assets" / "app.js").read_text(encoding="utf-8")
         self.assertIn('class="hero-shell"', html)
         self.assertIn('class="journey-steps"', html)
-        self.assertIn("20260814d", html)
+        self.assertIn("20260817a", html)
         self.assertIn("--canvas:", css)
         self.assertIn("--surface:", css)
         self.assertIn("--accent:", css)
         self.assertIn('"card-meta"', script)
         self.assertIn('detailsBody.append(facts', script)
         self.assertNotIn("gap: 1px; background: #afbbc8", css)
+
+    def test_homepage_explains_two_plugin_sources(self):
+        html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        script = (ROOT / "site" / "assets" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('class="source-router"', html)
+        self.assertIn('id="official-directory"', html)
+        self.assertIn('id="copy-official-command"', html)
+        self.assertIn("由本机 Codex 提供", html)
+        self.assertIn("20260817a", html)
+        self.assertIn('fetchVerifiedJson("federated-sources.json", "federated-sources.sha256"', script)
+        self.assertIn("codex plugin list --available --json", script)
+        self.assertIn("官方目录命令已复制", script)
 
     def test_pages_release_build_injects_repository_and_fixed_ref(self):
         workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")

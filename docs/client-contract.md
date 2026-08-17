@@ -24,6 +24,18 @@ baomiao://codex/marketplace/import?manifest=<URL编码后的marketplace-import.j
 
 网页必须同时显示等价的 Codex 命令并提供复制按钮。自定义协议未注册、客户端未启动或校验失败时，用户仍能手动运行该命令；页面不得伪装成已经成功导入。
 
+## 0.5 Codex 官方动态目录
+
+`federated-sources.json` 描述的是另一个来源通道，不属于暴喵 Git marketplace，也不能合并进上述一键导入：
+
+1. 客户端先校验 `federated-sources.sha256` 和 `schema/federated-source.schema.json`，只接受 `id: codex-official-directory`、`access.mode: codex-native`。
+2. 不经过 shell，只能以参数数组 `["plugin", "list", "--available", "--json"]` 调用可信安装路径中的 `codex.exe`。网页中的 `command.display` 仅用于复制，不得直接执行。
+3. 以 Codex 返回的 marketplace/source 身份为准；`openai-curated-remote`、`openai-api-curated` 只是已知官方标识，不允许描述文件把第三方来源改写成官方。
+4. 插件数量、版本和可见范围以用户当前 Codex 版本、产品和账号为准。暴喵不得缓存为永久总数，也不得把官方条目计入 77 个暴喵精选插件。
+5. 官方登录、OAuth、API key 和 Cookie 只在 Codex 或对应服务的官方界面处理。暴喵不读取 Codex 列表中的凭证字段、不代理登录、不上传列表结果。
+6. `https://github.com/openai/plugins` 已于 2026-08-16 归档，只能显示为历史来源证据；原生目录失败时不得克隆该仓库、注册保留名称或用其 180 条历史快照回退。
+7. 原生目录读取失败不影响暴喵精选市场。客户端应提示用户打开 Codex 的 Plugins 页面，并返回稳定错误码 `OFFICIAL_DIRECTORY_UNAVAILABLE`。
+
 ## 1. 获取目录
 
 客户端通过暴喵的网络加速能力请求暴喵 GitHub 仓库的 raw/Pages 地址；加速层只做网络传输，不改写内容、来源字段或发布者身份。获取 `catalog.json` 后必须同时获取 `catalog.sha256`，按原始字节计算 SHA-256 并比对。解析器只接受 `schema_version: 1` 和 HTTPS URL。
