@@ -11,7 +11,8 @@
 - `catalog/candidates/` 与 `catalog/approved/` 双区隔离；
 - 允许来源、固定提交、完整目录枚举和保守型安全扫描；
 - 人工审核后才构建的 `dist/catalog.json` + SHA-256；
-- [暴喵客户端一键导入契约](docs/client-contract.md)：一次加入整个市场，再在 Codex 中按需启用插件；
+- GitHub 仓库直连：网页复制 `owner/repo@固定提交`，用户在 Codex 的“添加插件市场”中粘贴后即可按需安装；
+- [暴喵客户端接入契约](docs/client-contract.md)：保留为后续客户端增强能力，不是当前网页使用的前置条件；
 - 经过独立 Schema 与 SHA-256 校验的 Codex 官方动态目录描述：只让本机 Codex 查询当前可用插件，不复制官方包；
 - GitHub Actions CI 与 Pages 发布流程；
 - 77 个真实、可核验、可由 Codex Marketplace 发现的插件：20 个 OpenAI / Anthropic、52 个 Harness，以及 5 个 AWS / Microsoft / NVIDIA 官方插件；
@@ -24,20 +25,22 @@
 
 ## 两种来源，不混在一起计数
 
-- **暴喵精选市场：** 本仓库中的 77 个固定版本插件，可通过一键导入把市场加入 Codex，再逐个启用。
+- **暴喵精选市场：** 本仓库中的 77 个固定版本插件。用户复制仓库市场地址，在 Codex 中粘贴后再逐个启用。
 - **Codex 官方插件目录：** 由用户本机 Codex 根据版本、产品和账号动态提供。网页只展示来源边界、示例和只读查看命令 `codex plugin list --available --json`，不镜像插件、不代替登录，也不把数量加到暴喵的 77 个里。
 
 OpenAI 的历史 `openai/plugins` 仓库已于 2026-08-16 归档，因此不作为持续同步或安装回退。详细结论见 [官方目录接入复核](docs/reviews/openai-official-directory-2026-08-17.md) 与 [决策 0011](docs/decisions/0011-codex-native-official-directory.md)。
 
-## 一键导入整个市场
+## 最简单的使用方式：粘贴仓库地址
 
-首页会分别校验 `catalog.json`、`marketplace-import.json` 及其 SHA-256，只有目录摘要、插件数量、同源地址和 Codex 参数数组全部一致时才启用“暴喵一键导入”。搜索同时覆盖插件名称与合集内部 Skill ID，例如 `azure functions` 会命中 `azure-functions`，无需把 202 个 Azure Skills 拆成 202 张插件卡片。客户端必须再次展示 GitHub 来源、40 位固定提交和插件数量，经用户确认后以参数数组调用：
+首页会分别校验 `catalog.json`、`marketplace-import.json` 及其 SHA-256，只有目录摘要、插件数量、同源地址、固定提交和 Codex 参数数组全部一致时，才启用“复制市场地址”。用户打开 Codex 的插件页，点击“添加”→“添加插件市场”，粘贴网页复制的 `owner/repo@固定提交` 即可。搜索同时覆盖插件名称与合集内部 Skill ID，例如 `azure functions` 会命中 `azure-functions`，无需把 202 个 Azure Skills 拆成 202 张插件卡片。
+
+命令行只作为备用方式：
 
 ```powershell
 codex plugin marketplace add https://github.com/<暴喵账号>/<仓库名> --ref <40位发布提交>
 ```
 
-页面始终提供复制命令回退。一键导入只注册市场，不安装全部插件、不登录第三方服务，也不授予插件后续操作权限。暴喵协议是客户端便利层，不冒充 Codex 官方深链；实际市场添加由当前 Codex CLI 完成。
+加入市场只注册目录，不安装全部插件、不登录第三方服务，也不授予插件后续操作权限。当前网页不唤起自定义协议，也不要求暴喵客户端；后续如接入客户端协议，它仍只能作为可选便利层，不能冒充 Codex 官方深链。
 
 ## 信任边界
 

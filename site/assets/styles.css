@@ -199,6 +199,15 @@ h2 { margin: 0; font-size: clamp(1.9rem, 2.8vw, 2.9rem); letter-spacing: -.04em;
 .dialog-close { width: 2.5rem; height: 2.5rem; border-radius: 8px; color: #a9bbcf; background: transparent; font-size: 1.7rem; line-height: 1; }
 .dialog-close:hover { color: white; background: rgba(255,255,255,.07); }
 .dialog-explainer { margin: 0; padding: 1rem 1.5rem; color: #c7d2df; line-height: 1.65; }
+.import-steps { margin: 0 1.5rem 1rem; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; list-style: none; }
+.import-steps li { min-width: 0; padding: .8rem; display: flex; gap: .65rem; border: 1px solid #2d4965; border-radius: var(--radius-sm); background: #0b2037; }
+.import-steps li > span { width: 26px; height: 26px; flex: 0 0 26px; display: grid; place-items: center; border-radius: 50%; color: var(--navy); background: var(--accent); font-size: .72rem; font-weight: 900; }
+.import-steps p { margin: 0; display: grid; gap: .28rem; }
+.import-steps strong { font-size: .78rem; }
+.import-steps small { color: #9fb2c6; font-size: .66rem; line-height: 1.5; }
+.marketplace-paste { margin: 0 1.5rem 1rem; display: grid; gap: .45rem; }
+.marketplace-paste span { color: #9fb2c6; font-size: .72rem; }
+.marketplace-paste code { padding: .85rem; border: 1px solid #c68b12; border-radius: 8px; color: #071b33; background: #ffd474; font: 800 .78rem/1.6 "Cascadia Mono", Consolas, monospace; overflow-wrap: anywhere; user-select: all; }
 .import-facts { margin: 0 1.5rem; padding: 1rem; display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: .65rem 1rem; border-radius: 9px; background: var(--navy-2); font-size: .8rem; }
 .import-facts dt { color: #9fb2c6; }
 .import-facts dd { margin: 0; overflow-wrap: anywhere; }
@@ -272,6 +281,7 @@ footer a:hover { color: var(--accent); }
   .search-field { grid-column: auto; }
   .filters button { min-height: 48px; }
   .skill-card { padding: 1rem; }
+  .import-steps { grid-template-columns: 1fr; }
   .import-facts { grid-template-columns: 1fr; }
   .dialog-actions { display: grid; }
   footer { align-items: flex-start; flex-direction: column; }

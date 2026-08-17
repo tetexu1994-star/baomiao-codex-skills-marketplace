@@ -8,8 +8,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>暴喵 Codex 插件市场</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23071426'/%3E%3Cpath d='M7 23V18h4v5zm7 0V13h4v10zm7 0V7h4v16z' fill='%23ffb000'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20260817a">
-  <script src="assets/app.js?v=20260817a" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260817b">
+  <script src="assets/app.js?v=20260817b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#catalog">跳到插件列表</a>
@@ -20,7 +20,7 @@
         <span><strong>暴喵</strong><small>CODEX PLUGINS</small></span>
       </a>
       <nav aria-label="主导航">
-        <a href="#import-title">一键导入</a>
+        <a href="#import-title">加入市场</a>
         <a href="#sources">插件来源</a>
         <a href="#catalog">浏览插件</a>
       </nav>
@@ -32,7 +32,7 @@
       <section class="market-intro" aria-labelledby="market-title">
         <div class="market-copy">
           <p class="eyebrow">暴喵 Codex 插件市场</p>
-          <h1 id="market-title">找到插件，<br>一键加入 Codex</h1>
+          <h1 id="market-title">找到插件，<br>直接加入 Codex</h1>
           <p class="lede">为中国大陆 Windows 用户整理可安装的 Codex 插件。来源、版本和权限清楚展示，用到哪个再启用哪个。</p>
         </div>
         <div class="market-stat">
@@ -56,8 +56,8 @@
         </div>
         <p class="import-boundary"><strong>只添加市场目录</strong><span>不会批量安装插件，也不会上传账号凭证。</span></p>
         <div class="import-actions">
-          <button class="primary-action" id="open-import" type="button" disabled>正在准备一键导入…</button>
-          <button class="secondary-action" id="copy-import-command" type="button" disabled>复制 Codex 命令</button>
+          <button class="primary-action" id="open-import" type="button" disabled>正在准备市场地址…</button>
+          <button class="secondary-action" id="copy-import-command" type="button" disabled>查看添加步骤</button>
           <p id="import-status" role="status" aria-live="polite"></p>
         </div>
       </section>
@@ -69,7 +69,7 @@
           <p class="eyebrow">插件来源</p>
           <h2 id="sources-title">两条来源，各走各的原始通道</h2>
         </div>
-        <p>暴喵精选可以一键加入；官方插件由本机 Codex 提供，数量与可用范围以你的账号为准。</p>
+        <p>暴喵精选直接从 GitHub 仓库加入；官方插件由本机 Codex 提供，数量与可用范围以你的账号为准。</p>
       </div>
       <div class="source-map">
         <article class="source-lane source-lane-baomiao">
@@ -166,26 +166,35 @@
   <dialog class="import-dialog" id="import-dialog" aria-labelledby="import-dialog-title">
     <div class="dialog-heading">
       <div>
-        <p class="eyebrow">导入前确认</p>
-        <h2 id="import-dialog-title">添加暴喵插件市场</h2>
+        <p class="eyebrow">无需终端</p>
+        <h2 id="import-dialog-title">3 步加入插件市场</h2>
       </div>
       <button class="dialog-close" id="close-import" type="button" aria-label="关闭导入确认框">×</button>
     </div>
-    <p class="dialog-explainer">这一步只把市场加入 Codex，不会自动安装或授权其中的插件。之后你可以在 Codex 里逐个启用。</p>
+    <p class="dialog-explainer">Codex 可以直接读取你的 GitHub 仓库。复制下面的市场地址，再粘贴到“添加插件市场”即可。</p>
+    <ol class="import-steps">
+      <li><span>1</span><p><strong>打开 Codex 插件页</strong><small>点击“添加”→“添加插件市场”</small></p></li>
+      <li><span>2</span><p><strong>粘贴市场地址</strong><small>仓库与固定版本已一起写入</small></p></li>
+      <li><span>3</span><p><strong>按需安装插件</strong><small>加入市场不会批量安装 77 个插件</small></p></li>
+    </ol>
+    <div class="marketplace-paste">
+      <span>粘贴到“添加插件市场”</span>
+      <code id="import-paste-value">—</code>
+    </div>
     <dl class="import-facts">
       <dt>来源仓库</dt><dd id="import-source">—</dd>
       <dt>固定版本</dt><dd id="import-ref">—</dd>
       <dt>市场内容</dt><dd id="import-count">—</dd>
-      <dt>执行方式</dt><dd>由暴喵客户端调用本机 Codex CLI</dd>
+      <dt>读取方式</dt><dd>Codex 直接从 GitHub 仓库读取</dd>
     </dl>
     <div class="command-preview">
       <span>Codex 回退命令</span>
       <code id="import-command">—</code>
     </div>
     <div class="dialog-actions">
-      <button class="primary-action" id="confirm-import" type="button">确认并交给暴喵</button>
-      <button class="secondary-action" id="copy-dialog-command" type="button">复制命令</button>
-      <button class="text-action" id="cancel-import" type="button">取消</button>
+      <button class="primary-action" id="confirm-import" type="button">复制市场地址</button>
+      <button class="secondary-action" id="copy-dialog-command" type="button">复制命令（备用）</button>
+      <button class="text-action" id="cancel-import" type="button">关闭</button>
     </div>
   </dialog>
 
