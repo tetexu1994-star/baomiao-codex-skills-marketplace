@@ -29,7 +29,10 @@ class CatalogTests(TestCase):
             temp_path = Path(temp)
             (temp_path / "schema").mkdir()
             (temp_path / "docs" / "reviews").mkdir(parents=True)
-            (temp_path / "schema" / "skill.schema.json").write_text((ROOT / "schema" / "skill.schema.json").read_text(), encoding="utf-8")
+            (temp_path / "schema" / "skill.schema.json").write_text(
+                (ROOT / "schema" / "skill.schema.json").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
             entry = copy.deepcopy(self.sample)
             entry["source"]["commit"] = "main"
             (temp_path / "docs" / "reviews" / "x.md").write_text("ok", encoding="utf-8")
