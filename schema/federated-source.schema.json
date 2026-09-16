@@ -69,11 +69,21 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["id", "name", "category_zh"],
+              "required": ["id", "name", "name_zh", "category_zh", "summary_zh", "search_terms_zh", "requires_connection"],
               "properties": {
                 "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
                 "name": {"type": "string", "minLength": 1},
-                "category_zh": {"type": "string", "minLength": 1}
+                "name_zh": {"type": "string", "minLength": 1},
+                "category_zh": {"type": "string", "minLength": 1},
+                "summary_zh": {"type": "string", "minLength": 8, "maxLength": 100},
+                "search_terms_zh": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "uniqueItems": true,
+                  "items": {"type": "string", "minLength": 1, "maxLength": 20}
+                },
+                "requires_connection": {"type": "boolean"}
               }
             }
           },

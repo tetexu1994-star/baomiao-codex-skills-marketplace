@@ -10,7 +10,7 @@
     "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 64},
     "name": {"type": "string", "minLength": 1, "maxLength": 80},
     "summary_zh": {"type": "string", "minLength": 12, "maxLength": 180},
-    "category": {"enum": ["文档处理", "研发工具", "效率规划", "安全治理", "数据分析", "多媒体"]},
+    "category": {"enum": ["文档处理", "教育科研", "研发工具", "效率规划", "安全治理", "数据分析", "多媒体"]},
     "tags": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 20}},
     "publisher": {
       "type": "object", "additionalProperties": false,

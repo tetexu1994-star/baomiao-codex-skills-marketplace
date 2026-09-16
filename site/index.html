@@ -8,8 +8,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>暴喵 Codex 插件市场</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23071426'/%3E%3Cpath d='M7 23V18h4v5zm7 0V13h4v10zm7 0V7h4v16z' fill='%23ffb000'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20260817b">
-  <script src="assets/app.js?v=20260817b" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260916a">
+  <script src="assets/app.js?v=20260916a" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#catalog">跳到插件列表</a>
@@ -21,6 +21,7 @@
       </a>
       <nav aria-label="主导航">
         <a href="#import-title">加入市场</a>
+        <a href="#official-directory">论文科研</a>
         <a href="#sources">插件来源</a>
         <a href="#catalog">浏览插件</a>
       </nav>
@@ -33,7 +34,8 @@
         <div class="market-copy">
           <p class="eyebrow">暴喵 Codex 插件市场</p>
           <h1 id="market-title">找到插件，<br>直接加入 Codex</h1>
-          <p class="lede">为中国大陆 Windows 用户整理可安装的 Codex 插件。来源、版本和权限清楚展示，用到哪个再启用哪个。</p>
+          <p class="lede">为中国大陆 Windows 用户整理中文可发现、可安装的 Codex 插件。来源、版本和权限清楚展示，用到哪个再启用哪个。</p>
+          <a class="research-shortcut" href="#official-directory"><span>新</span>论文检索、文献综述与引文核验 <b>→</b></a>
         </div>
         <div class="market-stat">
           <b id="approved-count">—</b>
@@ -93,9 +95,9 @@
             <span class="source-code">SOURCE 02 · CODEX NATIVE</span>
             <span class="source-state source-state-loading" id="official-source-status">正在校验来源</span>
           </header>
-          <h3>Codex 官方插件目录</h3>
-          <p>由本机 Codex 提供并随产品更新，暴喵不复制插件包、不代替官方登录。</p>
-          <ul class="official-featured" id="official-featured" aria-label="官方目录示例"></ul>
+          <h3>论文科研与大众工具</h3>
+          <p>由本机 Codex 提供并随产品更新；暴喵补充中文用途说明，但不复制插件包、不代替官方登录。</p>
+          <ul class="official-featured" id="official-featured" aria-label="官方目录中文推荐"></ul>
           <p class="official-boundary" id="official-boundary">正在读取官方目录接入边界…</p>
           <div class="official-actions">
             <button class="route-action route-action-official" id="copy-official-command" type="button" disabled>复制查看命令</button>
@@ -121,7 +123,7 @@
       <form class="filters" id="filters" role="search">
         <label class="search-field" for="search">
           <span>搜索插件</span>
-          <input id="search" name="q" type="search" autocomplete="off" placeholder="例如：PDF、Windows、流水线">
+          <input id="search" name="q" type="search" autocomplete="off" placeholder="例如：论文、文献综述、PDF、Windows">
         </label>
         <label for="category">分类
           <select id="category" name="category"><option value="">全部分类</option></select>
@@ -152,8 +154,8 @@
       <div class="catalog-grid" id="catalog-list" aria-busy="true"></div>
       <button class="load-more" id="load-more" type="button" hidden>继续显示</button>
       <div class="empty-state" id="empty-state" hidden>
-        <strong>没有符合条件的插件</strong>
-        <p>换一个关键词，或清除部分筛选条件。</p>
+        <strong>暴喵精选中没有符合条件的插件</strong>
+        <p>上方官方推荐仍会按同一关键词筛选；也可以换词或清除条件。</p>
       </div>
       <div class="error-state" id="error-state" role="alert" hidden>
         <strong>目录暂时无法读取</strong>
@@ -175,7 +177,7 @@
     <ol class="import-steps">
       <li><span>1</span><p><strong>打开 Codex 插件页</strong><small>点击“添加”→“添加插件市场”</small></p></li>
       <li><span>2</span><p><strong>粘贴市场地址</strong><small>仓库与固定版本已一起写入</small></p></li>
-      <li><span>3</span><p><strong>按需安装插件</strong><small>加入市场不会批量安装 77 个插件</small></p></li>
+      <li><span>3</span><p><strong>按需安装插件</strong><small>加入市场不会批量安装整个市场</small></p></li>
     </ol>
     <div class="marketplace-paste">
       <span>粘贴到“添加插件市场”</span>

@@ -15,18 +15,26 @@
 - [暴喵客户端接入契约](docs/client-contract.md)：保留为后续客户端增强能力，不是当前网页使用的前置条件；
 - 经过独立 Schema 与 SHA-256 校验的 Codex 官方动态目录描述：只让本机 Codex 查询当前可用插件，不复制官方包；
 - GitHub Actions CI 与 Pages 发布流程；
-- 77 个真实、可核验、可由 Codex Marketplace 发现的插件：20 个 OpenAI / Anthropic、52 个 Harness，以及 5 个 AWS / Microsoft / NVIDIA 官方插件；
-- 插件内部合计 278 个 Skills，其中 Azure 官方合集包含 202 个，不拆卡片虚增插件数；
+- 78 个真实、可核验、可由 Codex Marketplace 发现的插件：20 个 OpenAI / Anthropic、52 个 Harness、5 个 AWS / Microsoft / NVIDIA 官方插件，以及 1 个中文学术研究工具箱；
+- 插件内部合计 288 个 Skills，其中 Azure 官方合集包含 202 个、中文学术工具箱包含 10 个，均不拆卡片虚增插件数；
 - 所有插件包都保留上游许可证，下发逐文件 SHA-256、文件数、总字节数和许可证摘要；另保留完整暂缓与拒绝记录。
 
 ## 插件形态
 
-77 个条目全部进入 `.agents/plugins/marketplace.json`。仓库中的每个 `plugins/<id>/` 都有 `.codex-plugin/plugin.json`；单 Skill 插件保存在 `skills/<id>/`，官方合集插件则在同一 `skills/` 下保留多个上游 Skill 目录。插件清单与候选摘要逐字节核对；“插件”是安装与发现单元，“Skill”是插件内承载的能力。
+78 个条目全部进入 `.agents/plugins/marketplace.json`。仓库中的每个 `plugins/<id>/` 都有 `.codex-plugin/plugin.json`；单 Skill 插件保存在 `skills/<id>/`，合集插件则在同一 `skills/` 下保留多个上游 Skill 目录。插件清单与候选摘要逐字节核对；“插件”是安装与发现单元，“Skill”是插件内承载的能力。
 
 ## 两种来源，不混在一起计数
 
-- **暴喵精选市场：** 本仓库中的 77 个固定版本插件。用户复制仓库市场地址，在 Codex 中粘贴后再逐个启用。
-- **Codex 官方插件目录：** 由用户本机 Codex 根据版本、产品和账号动态提供。网页只展示来源边界、示例和只读查看命令 `codex plugin list --available --json`，不镜像插件、不代替登录，也不把数量加到暴喵的 77 个里。
+- **暴喵精选市场：** 本仓库中的 78 个固定版本插件。用户复制仓库市场地址，在 Codex 中粘贴后再逐个启用。
+- **Codex 官方插件目录：** 由用户本机 Codex 根据版本、产品和账号动态提供。网页提供中文用途说明和只读查看命令 `codex plugin list --available --json`，不镜像插件、不代替登录，也不把数量加到暴喵的 78 个里。
+
+## 中文论文科研入口
+
+- 暴喵精选新增 **中文学术研究工具箱**：一个插件包含论文精读、文献综合、科研写作、研究设计、同行评审、科研图表与学术汇报等 10 个 Skills；插件名称、摘要、标签、风险说明和默认提示全部使用简体中文。
+- Codex 官方动态目录展示 SciSpace、Consensus、Sider Scholar、Scite、Elicit 等论文数据源的中文用途说明。它们需要用户在 Codex 中自行连接，暴喵不复制包、不接触凭证。
+- 首页搜索同时识别“论文、文献、综述、引文、科研、PDF”等中文关键词；研究数据源和方法工具继续分开标源。
+
+许可、安全边界和暂缓来源见 [中文学术研究扩容复核](docs/reviews/chinese-academic-research-expansion-2026-09-16.md) 与 [决策 0012](docs/decisions/0012-chinese-academic-research-routing.md)。
 
 OpenAI 的历史 `openai/plugins` 仓库已于 2026-08-16 归档，因此不作为持续同步或安装回退。详细结论见 [官方目录接入复核](docs/reviews/openai-official-directory-2026-08-17.md) 与 [决策 0011](docs/decisions/0011-codex-native-official-directory.md)。
 
@@ -81,7 +89,7 @@ codex plugin add notion-knowledge-capture@baomiao-codex
 codex plugin add winui-app@baomiao-codex
 ```
 
-这些插件包是对明确许可的固定上游目录的合规打包，包内保留许可证；每个 `plugin.json` 的 `homepage` 指向审核提交。上述方式适用于全部 77 个插件。
+这些插件包是对明确许可的固定上游目录的合规打包，包内保留许可证；每个 `plugin.json` 的 `homepage` 指向审核提交。上述方式适用于全部 78 个插件。
 
 macOS/Linux 的命令相同，只需把虚拟环境激活改为：
 
@@ -177,4 +185,4 @@ git push -u origin main
 
 ## 许可证
 
-本市场的代码与文档采用 [MIT](LICENSE)。各插件内的 Skill 仍归各自上游作者，采用条目 `license` 和 `source.license_url` 指向的许可证。`plugins/` 内只包含许可范围明确、固定版本且通过当前门禁的 77 个插件包。
+本市场的代码与文档采用 [MIT](LICENSE)。各插件内的 Skill 仍归各自上游作者，采用条目 `license` 和 `source.license_url` 指向的许可证。`plugins/` 内只包含许可范围明确、固定版本且通过当前门禁的 78 个插件包。

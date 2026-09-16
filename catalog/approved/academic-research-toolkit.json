@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "id": "academic-research-toolkit",
+  "name": "中文学术研究工具箱",
+  "summary_zh": "配有中文说明与默认提示，覆盖论文精读、文献综合、科研写作、研究设计、同行评审、科研图表与学术汇报的 10 项研究工作流。",
+  "category": "教育科研",
+  "tags": [
+    "论文",
+    "文献综述",
+    "科研写作",
+    "同行评审",
+    "研究设计",
+    "科研图表"
+  ],
+  "publisher": {
+    "name": "JJ Froehlich",
+    "kind": "community",
+    "url": "https://github.com/jjfroehlich"
+  },
+  "source": {
+    "repository": "https://github.com/jjfroehlich/agent-skills-for-academic-research",
+    "commit": "9b1b256e99055006725fe4c6b8f90d301ceef7b0",
+    "path": "skills",
+    "layout": "skill-bundle",
+    "entrypoint_path": "literature-reading-and-synthesis/SKILL.md",
+    "skill_url": "https://raw.githubusercontent.com/jjfroehlich/agent-skills-for-academic-research/9b1b256e99055006725fe4c6b8f90d301ceef7b0/skills/literature-reading-and-synthesis/SKILL.md",
+    "license_url": "https://raw.githubusercontent.com/jjfroehlich/agent-skills-for-academic-research/9b1b256e99055006725fe4c6b8f90d301ceef7b0/LICENSE",
+    "license_path": "LICENSE"
+  },
+  "license": {
+    "spdx": "MIT",
+    "scope": "repository",
+    "verified_at": "2026-09-16"
+  },
+  "risk": {
+    "level": "medium",
+    "capabilities": [
+      "filesystem-read",
+      "filesystem-write",
+      "network",
+      "browser"
+    ],
+    "has_executable_files": false,
+    "notes_zh": "插件包仅含 Markdown；按任务可能读取论文、联网核对公开来源并在用户目录生成研究笔记，不包含安装脚本或凭证文件。"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "暴喵市场维护者（中文科研扩容）",
+    "reviewed_at": "2026-09-16T08:30:00Z",
+    "evidence": "docs/reviews/chinese-academic-research-expansion-2026-09-16.md"
+  },
+  "install": {
+    "mode": "copy-source-directory",
+    "destination": "%USERPROFILE%/.codex/skills/academic-research-toolkit",
+    "requires_auth": false,
+    "preflight": [
+      "verify-catalog-digest",
+      "verify-source-commit",
+      "verify-license",
+      "scan-files",
+      "show-source-and-risk",
+      "confirm-user",
+      "backup-existing"
+    ]
+  }
+}

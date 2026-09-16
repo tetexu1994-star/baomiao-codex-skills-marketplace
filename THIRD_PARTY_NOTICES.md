@@ -1,5 +1,7 @@
 # Third-party notices
 
+The marketplace packages 10 script-free academic research Skills from commit `9b1b256e99055006725fe4c6b8f90d301ceef7b0` of <https://github.com/jjfroehlich/agent-skills-for-academic-research> as `academic-research-toolkit`, under the MIT License. The upstream Skill files are preserved byte-for-byte. Chinese marketplace metadata and default prompts are maintained by this repository and do not replace the upstream license or authorship.
+
 The installable plugin packages under `plugins/` contain the following OpenAI Skills, each copied from commit `49f948faa9258a0c61caceaf225e179651397431` of <https://github.com/openai/skills>:
 
 - `skills/.curated/pdf`

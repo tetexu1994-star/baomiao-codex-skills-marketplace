@@ -58,6 +58,10 @@ button, input, select, summary, a { outline-offset: 4px; }
 .market-intro .eyebrow { color: var(--accent); }
 h1 { margin: 0; font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif; font-size: clamp(2.65rem, 4.8vw, 4.45rem); font-weight: 850; line-height: 1.08; letter-spacing: -.055em; }
 .lede { max-width: 660px; margin: 1.35rem 0 0; color: #c3cfdd; font-size: 1rem; line-height: 1.75; }
+.research-shortcut { width: fit-content; margin-top: 1rem; padding: .62rem .75rem; display: inline-flex; align-items: center; gap: .55rem; border: 1px solid rgba(255, 179, 25, .45); border-radius: 8px; color: #ffe8ad; background: rgba(255, 179, 25, .08); font-size: .78rem; font-weight: 800; text-decoration: none; }
+.research-shortcut span { padding: .16rem .32rem; border-radius: 4px; color: var(--navy); background: var(--accent); font-size: .62rem; }
+.research-shortcut b { color: var(--accent); }
+.research-shortcut:hover { border-color: var(--accent); background: rgba(255, 179, 25, .14); }
 .market-stat { align-self: start; min-width: 116px; padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,.18); display: grid; }
 .market-stat b { color: var(--accent); font: 800 clamp(2.65rem, 4.2vw, 4rem)/1 Bahnschrift, "Cascadia Mono", Consolas, monospace; }
 .market-stat span { margin-top: .35rem; color: white; font-size: .82rem; font-weight: 800; }
@@ -96,7 +100,7 @@ h1 { margin: 0; font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif; fo
 .router-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
 .router-heading h2 { max-width: 650px; font-size: clamp(1.65rem, 2.5vw, 2.45rem); }
 .router-heading > p { max-width: 470px; margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.65; text-align: right; }
-.source-map { margin-top: 1.25rem; display: grid; grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr); align-items: stretch; }
+.source-map { margin-top: 1.25rem; display: grid; grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr); align-items: start; }
 .source-lane { min-width: 0; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface-soft); }
 .source-lane-baomiao { border-top: 3px solid var(--accent); }
 .source-lane-official { border-top: 3px solid var(--blue); background: #f6f8ff; }
@@ -119,14 +123,19 @@ h1 { margin: 0; font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif; fo
 .route-action-baomiao:hover { background: #ffc13f; }
 .route-action-official { color: white; background: var(--blue); }
 .route-action-official:hover { background: #1f57dc; }
-.route-rail { position: relative; display: grid; place-items: center; }
+.route-rail { position: relative; min-height: 130px; display: grid; place-items: center; }
 .route-rail::before { content: ""; width: 100%; height: 2px; background: linear-gradient(90deg, var(--accent) 0 49%, var(--blue) 51% 100%); }
 .route-rail span { position: absolute; width: 16px; height: 16px; border: 4px solid var(--surface); border-radius: 50%; background: var(--navy); box-shadow: 0 0 0 1px var(--line-strong); }
 .official-featured { margin: 1rem 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; list-style: none; }
 .official-featured:empty::before { content: "正在读取可用示例…"; grid-column: 1 / -1; color: var(--muted); font-size: .74rem; }
-.official-featured li { min-width: 0; padding: .45rem .55rem; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; border: 1px solid #dbe4fb; border-radius: 7px; background: white; }
-.official-featured strong { min-width: 0; color: #173e9b; font-size: .74rem; overflow-wrap: anywhere; }
-.official-featured small { flex: 0 0 auto; color: var(--muted); font-size: .62rem; }
+.official-featured li { min-width: 0; padding: .65rem; display: grid; gap: .45rem; align-content: start; border: 1px solid #dbe4fb; border-radius: 8px; background: white; }
+.official-plugin-copy { min-width: 0; }
+.official-featured strong { display: block; min-width: 0; color: #173e9b; font-size: .76rem; line-height: 1.4; overflow-wrap: anywhere; }
+.official-featured p { margin: .28rem 0 0; color: #5a6d86; font-size: .66rem; line-height: 1.5; }
+.official-plugin-meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.official-plugin-meta small { color: var(--muted); font-size: .61rem; }
+.official-connect { padding: .16rem .32rem; border-radius: 4px; color: #2857bf !important; background: #edf2ff; font-weight: 800; }
+.official-empty { grid-column: 1 / -1; color: var(--muted); font-size: .72rem; text-align: center; }
 .official-boundary { padding: .7rem .8rem; border-left: 3px solid var(--blue); color: #36516f !important; background: #eaf0ff; }
 .official-actions { margin-top: .8rem; display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
 .official-actions a { color: #235acb; font-size: .75rem; font-weight: 800; }
@@ -262,6 +271,7 @@ footer a:hover { color: var(--accent); }
   .market-stat { width: fit-content; padding: 0; display: flex; align-items: baseline; gap: .5rem; border: 0; }
   .market-stat b { font-size: 2.7rem; }
   .market-stat small { display: none; }
+  .research-shortcut { font-size: .72rem; }
   .journey-steps { gap: .35rem; }
   .journey-steps b { font-size: .74rem; }
   .journey-steps small { font-size: .62rem; }

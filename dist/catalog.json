@@ -1,6 +1,709 @@
 {
   "entries": [
     {
+      "category": "教育科研",
+      "id": "academic-research-toolkit",
+      "install": {
+        "destination": "%USERPROFILE%/.codex/skills/academic-research-toolkit",
+        "mode": "copy-source-directory",
+        "preflight": [
+          "verify-catalog-digest",
+          "verify-source-commit",
+          "verify-license",
+          "scan-files",
+          "show-source-and-risk",
+          "confirm-user",
+          "backup-existing"
+        ],
+        "requires_auth": false
+      },
+      "integrity": {
+        "algorithm": "sha256",
+        "file_count": 125,
+        "files": [
+          {
+            "bytes": 5669,
+            "path": "career-development/SKILL.md",
+            "sha256": "09bc0ee5de7136247c25f0b98008f4e30f131bb5ee34933779bff9a89e712bbb"
+          },
+          {
+            "bytes": 2770,
+            "path": "career-development/checklists/advisor-evaluation-checklist.md",
+            "sha256": "dd2b8cd6dd508beb28ccccbbd44115f0c78cb405df407c60f374c259d1f4b8c5"
+          },
+          {
+            "bytes": 2379,
+            "path": "career-development/checklists/application-review-checklist.md",
+            "sha256": "b24e1807cbbe25fc5d6c6b73a8c6db5fb6b5805aad56086402cc1be0f6a48600"
+          },
+          {
+            "bytes": 1744,
+            "path": "career-development/checklists/faculty-search-checklist.md",
+            "sha256": "10a43b7551efca7d4f729aca944a54c4537b007e4a1dd783df3eb62ab93d7fa5"
+          },
+          {
+            "bytes": 1612,
+            "path": "career-development/checklists/postdoc-choice-checklist.md",
+            "sha256": "3af66c0b7aad6f6f05f399672e0cd31955fdbbb609f747c32b85602157525cbf"
+          },
+          {
+            "bytes": 2027,
+            "path": "career-development/examples/advisor-question-bank.md",
+            "sha256": "811a3f4ef58cf998c567793cd89d8f0b8ebf70bfa0b90d76eebfff02c6abe744"
+          },
+          {
+            "bytes": 4079,
+            "path": "career-development/examples/career-material-examples.md",
+            "sha256": "2a69cfb6bb63d7a0a0dc364783f3cf4582872fa28049989b66c67f0013190756"
+          },
+          {
+            "bytes": 5720,
+            "path": "career-development/references/advisor-choice.md",
+            "sha256": "e6763e6269be3dfc8cb1741ef8c5cb0d84568c348db157392c8eb3a04c1e5023"
+          },
+          {
+            "bytes": 6490,
+            "path": "career-development/references/career-transitions.md",
+            "sha256": "9c51bac51d6351d5ec5c0f1c10fce3cc9863d34576c80da286ca9d9b78309095"
+          },
+          {
+            "bytes": 3672,
+            "path": "career-development/references/cover-letters.md",
+            "sha256": "36975b9d046617d019ef71651672e79bcf2692f234804e63a6ef00335f6d1ca4"
+          },
+          {
+            "bytes": 3887,
+            "path": "career-development/references/cv-resume.md",
+            "sha256": "30719def24d765fa4a92b0f6254c6b1d483baa7fa6ec93c38c542995d829ea06"
+          },
+          {
+            "bytes": 5277,
+            "path": "career-development/references/faculty-search.md",
+            "sha256": "61c276581841b33a53b51710921ac109cc32c4f5c053d4a2bcfa9e36996bf51a"
+          },
+          {
+            "bytes": 3918,
+            "path": "career-development/references/interviews.md",
+            "sha256": "afbc7cbf059dad37a109eba970f72e59d0593f6693cd32846381fcdd8d150ee8"
+          },
+          {
+            "bytes": 5852,
+            "path": "career-development/references/phd-applications.md",
+            "sha256": "41324466a9292528359b9c8e81906c1776b2aed6b3f8d11c9503e59f1c8b699b"
+          },
+          {
+            "bytes": 4594,
+            "path": "career-development/references/postdoc-applications.md",
+            "sha256": "5720b316b4f4b8d836ffa2e022c8b757872ea5b3c65a3114e33d358459d5ab01"
+          },
+          {
+            "bytes": 4347,
+            "path": "career-development/references/recommendation-letters.md",
+            "sha256": "f66eec0ddfa21dbe04a154a9396f98423deeb851f5fce69f7abffe4046c40945"
+          },
+          {
+            "bytes": 7256,
+            "path": "data-visualization-and-figures/SKILL.md",
+            "sha256": "6270fd0620d5f1a6ddfb45dcbdcac3e46c800296fff14fc3e3e2c85b1ca771db"
+          },
+          {
+            "bytes": 2269,
+            "path": "data-visualization-and-figures/checklists/figure-critique.md",
+            "sha256": "275a94ce1b35e5d5b2246b378d633366b654f309d79e53b73631904a843bdcaa"
+          },
+          {
+            "bytes": 1914,
+            "path": "data-visualization-and-figures/checklists/publication-readiness.md",
+            "sha256": "cf519cd34c7d4eae1bebc2525f736e8b8560f26c5e459e8acc140a8c6516fd47"
+          },
+          {
+            "bytes": 2093,
+            "path": "data-visualization-and-figures/examples/figure-review.md",
+            "sha256": "189319aabc16bfe66974347a9d110c68a623eecbbaa17cd06dd9aeae0290bac4"
+          },
+          {
+            "bytes": 1238,
+            "path": "data-visualization-and-figures/examples/visual-readiness-examples.md",
+            "sha256": "36ddf9ba4647c6a2158eec48547a9eebe2a8f33eab78a55874ce3bc818351bb1"
+          },
+          {
+            "bytes": 4072,
+            "path": "data-visualization-and-figures/references/biological-images.md",
+            "sha256": "855ffb37e921c1650a729cd344009e0d2c6fa37cceaf9f4daa1b277ea61a89bc"
+          },
+          {
+            "bytes": 4265,
+            "path": "data-visualization-and-figures/references/chart-selection.md",
+            "sha256": "3617b2c6953b58c9dbe12c897ea777a08f2b3ab198244aabbf4877512e4e1f2c"
+          },
+          {
+            "bytes": 3661,
+            "path": "data-visualization-and-figures/references/color-and-accessibility.md",
+            "sha256": "d39b1041f6b0cc6099e2dd94a7bd1847f06f237251a8afc107b611da2078b9b1"
+          },
+          {
+            "bytes": 3382,
+            "path": "data-visualization-and-figures/references/conceptual-figures.md",
+            "sha256": "fbce802297a252e2494e8479b973357ccce41e0f90609055a1a98c9041f6a5eb"
+          },
+          {
+            "bytes": 3373,
+            "path": "data-visualization-and-figures/references/layout-and-typography.md",
+            "sha256": "c94205f0df832fd02854d686eff79e6fa68b4144061bd0e73a16cf8212745aee"
+          },
+          {
+            "bytes": 3475,
+            "path": "data-visualization-and-figures/references/publication-technical-requirements.md",
+            "sha256": "56afe724636d1220c2c76dc8a8d51408f68e640d0f4df9c3c7862852036aa9ff"
+          },
+          {
+            "bytes": 3899,
+            "path": "data-visualization-and-figures/references/specialized-figures.md",
+            "sha256": "030a72dc10a840583bae450c727ea3dd24cbaabdddd19531ae4fff21d3df043a"
+          },
+          {
+            "bytes": 4045,
+            "path": "data-visualization-and-figures/references/statistics-and-uncertainty.md",
+            "sha256": "0c114818271fdf33a97bac7cf0c8af6dc4a324cb73c517759a8454481630084b"
+          },
+          {
+            "bytes": 4707,
+            "path": "grant-writing/SKILL.md",
+            "sha256": "2d438dd3a2e6d1a6b87b689f363e0bf91d6437497fde67f6ff1b4bc2d3cb9e6e"
+          },
+          {
+            "bytes": 2858,
+            "path": "grant-writing/checklists/grant-readiness-checklist.md",
+            "sha256": "34ca70a371051ba666f02d1b14bd32cfe2af661e3936bf565433c1ecbf55fa8f"
+          },
+          {
+            "bytes": 1031,
+            "path": "grant-writing/checklists/specific-aims-checklist.md",
+            "sha256": "369d078040d6e6d1a13fd061d58d89b97be7f9c474cbc208ddf5b6c8c023f5b1"
+          },
+          {
+            "bytes": 2025,
+            "path": "grant-writing/examples/aims-and-feasibility-examples.md",
+            "sha256": "20c234b00c7e314a35951fdf29bf45f56476c18df69b09192d8b0ce648399c83"
+          },
+          {
+            "bytes": 2309,
+            "path": "grant-writing/examples/grant-writing-templates.md",
+            "sha256": "6cd6cf33f682d77cf7f4109ec11e26778d36c4b69f74edb4afc0385237561e8b"
+          },
+          {
+            "bytes": 3863,
+            "path": "grant-writing/references/budget-and-feasibility.md",
+            "sha256": "938971461c7eba2c5ecbf43bbbbd2bef2ff96a021cfc7fc0315e2df835438b17"
+          },
+          {
+            "bytes": 3541,
+            "path": "grant-writing/references/funder-fit-and-compliance.md",
+            "sha256": "41c4b256082e24fd5bf015c6b4cf0b733a727e0dadf8599eb58babe51dbd87fd"
+          },
+          {
+            "bytes": 3808,
+            "path": "grant-writing/references/grant-narrative.md",
+            "sha256": "01c477ffa46a62a90d0c7ff952741fee9edad128ca392c9c087de1d6e71e8abc"
+          },
+          {
+            "bytes": 3743,
+            "path": "grant-writing/references/reviewer-perspective.md",
+            "sha256": "e3d6285d63ffbea7d7fe637c97c9e90a2102adef49a4530a02e79c300533e6b0"
+          },
+          {
+            "bytes": 3727,
+            "path": "grant-writing/references/significance-innovation-approach.md",
+            "sha256": "eaaed85509658087d5f393f3b98364a3ce2b98b0e083ffc10b3b23eee6cce2c2"
+          },
+          {
+            "bytes": 3364,
+            "path": "grant-writing/references/specific-aims.md",
+            "sha256": "a1ff75421c442e88a98d3461c5126c335c7c0a7a4bd280b37e3b4eab0de106b2"
+          },
+          {
+            "bytes": 5658,
+            "path": "literature-reading-and-synthesis/SKILL.md",
+            "sha256": "793a49df228a4977cb269732df93408ba7875acb776c8cbe96601a4abb06f8f0"
+          },
+          {
+            "bytes": 659,
+            "path": "literature-reading-and-synthesis/checklists/figure-unpacking-checklist.md",
+            "sha256": "80aceaaf2829243d130f968f34e24b71404885eeeae785962e7a6a08b7ec8ae9"
+          },
+          {
+            "bytes": 628,
+            "path": "literature-reading-and-synthesis/checklists/literature-tracking-checklist.md",
+            "sha256": "ab3caecf9598f4ab76ad8407509389b2507b3e57cfce7dbf73526f368141b3d5"
+          },
+          {
+            "bytes": 666,
+            "path": "literature-reading-and-synthesis/checklists/paper-reading-checklist.md",
+            "sha256": "4bcd696e9447a7a5f3a177afe908fbcb006ce8adead8c67960030b5d80f815a2"
+          },
+          {
+            "bytes": 1125,
+            "path": "literature-reading-and-synthesis/examples/literature-reading-templates.md",
+            "sha256": "22e44191125364b18000f2edf63d08c44b8de0a3309eb68caefbdecc7cf71894"
+          },
+          {
+            "bytes": 1266,
+            "path": "literature-reading-and-synthesis/examples/literature-tracking-examples.md",
+            "sha256": "5459944e26771162c35f04ca1d592e87eafd24465946daed05a58d5fe1d90e9c"
+          },
+          {
+            "bytes": 1684,
+            "path": "literature-reading-and-synthesis/examples/paper-reading-examples.md",
+            "sha256": "fec99df20a650ca5ee96b3742ab8ee465944a3ae29cab254bc9f4e78f539b675"
+          },
+          {
+            "bytes": 4263,
+            "path": "literature-reading-and-synthesis/references/claim-extraction.md",
+            "sha256": "d19096dc63f152636cf249a5b43354a7f9d6f946b54c2ade24cd8d30ec83e240"
+          },
+          {
+            "bytes": 4012,
+            "path": "literature-reading-and-synthesis/references/literature-tracking.md",
+            "sha256": "a0cc65eafabe73d4b3f13c747f90437663f96186e6c807ec95ca708ff3b8d59d"
+          },
+          {
+            "bytes": 4337,
+            "path": "literature-reading-and-synthesis/references/paper-reading-workflow.md",
+            "sha256": "497edbac68ddc67cb7d1762d9c54edcaa07593c7c4c84c3bb38225881a50e20f"
+          },
+          {
+            "bytes": 3872,
+            "path": "literature-reading-and-synthesis/references/synthesis-matrices.md",
+            "sha256": "d24257754f2b6e6e625ce1430b928c2c0006accc8a2415f38a84714d409e1e55"
+          },
+          {
+            "bytes": 5231,
+            "path": "mentoring-management-and-lab-culture/SKILL.md",
+            "sha256": "a70dd87f9e133739b4a57b9d9eac39853aedc888ba40193135892c2ce8c74c4d"
+          },
+          {
+            "bytes": 1554,
+            "path": "mentoring-management-and-lab-culture/checklists/hiring-onboarding-checklist.md",
+            "sha256": "24cf713b60b7727ea429981cd20c196bf6942985bee43b0b94e1483ad53fbc1b"
+          },
+          {
+            "bytes": 2021,
+            "path": "mentoring-management-and-lab-culture/checklists/lab-culture-review.md",
+            "sha256": "4ae85b15334b248fb18b60edd844f8683f174798ef84506dd74cb7041fdabac8"
+          },
+          {
+            "bytes": 1143,
+            "path": "mentoring-management-and-lab-culture/checklists/lab-handbook-checklist.md",
+            "sha256": "77c563d5e6391b76432b95b9b625abc7687c2828336deff87a7be5e386765982"
+          },
+          {
+            "bytes": 1362,
+            "path": "mentoring-management-and-lab-culture/checklists/mentoring-expectations-checklist.md",
+            "sha256": "b06ec657c6b2ac6adbbedac13964c029dcfd66d464a2c6dec938a89877757b27"
+          },
+          {
+            "bytes": 1493,
+            "path": "mentoring-management-and-lab-culture/checklists/performance-diagnosis-checklist.md",
+            "sha256": "48ef6bf10a63c7a05c811e3c110b9576d99961d3498df05a929733ebe1117ea0"
+          },
+          {
+            "bytes": 2808,
+            "path": "mentoring-management-and-lab-culture/examples/conversation-scripts.md",
+            "sha256": "cae6d8076769f8cbb59750461011712633383b56ee3ebc841d860e87be45405e"
+          },
+          {
+            "bytes": 2557,
+            "path": "mentoring-management-and-lab-culture/examples/management-templates.md",
+            "sha256": "6e5e0ff429162509c4701893e6e5506965364870cf918ecc7bb83fa557ca6ff7"
+          },
+          {
+            "bytes": 4866,
+            "path": "mentoring-management-and-lab-culture/references/conflict-and-feedback.md",
+            "sha256": "5352f29e7ec90cdbb04a5ddd3847bae723c69cd91df2f585123704012d7c02ab"
+          },
+          {
+            "bytes": 5076,
+            "path": "mentoring-management-and-lab-culture/references/healthy-lab-culture.md",
+            "sha256": "66709f39db40755579608d885ef27c24e7ed369b3adda14c99ebdc005d62d844"
+          },
+          {
+            "bytes": 4274,
+            "path": "mentoring-management-and-lab-culture/references/individual-development-plans.md",
+            "sha256": "3f57b51523bf1b7a3f6456262fa2734aeed5b20cdb46fc8442d5ee2461422fbf"
+          },
+          {
+            "bytes": 5426,
+            "path": "mentoring-management-and-lab-culture/references/lab-leadership.md",
+            "sha256": "5cde7efdb5d429fbd2d1e9c50a39a1209b5316661c8e485db96769fbf12554c3"
+          },
+          {
+            "bytes": 4563,
+            "path": "mentoring-management-and-lab-culture/references/lab-manuals.md",
+            "sha256": "15f6f0d891624b7719a5963f82463ab177e12a01944473e5240db0e59cdf198e"
+          },
+          {
+            "bytes": 5757,
+            "path": "mentoring-management-and-lab-culture/references/mentoring.md",
+            "sha256": "aac50f4cb0fff6df2b004582300ddf3e25faab505dedd6fe1f2c248e2de0f500"
+          },
+          {
+            "bytes": 5632,
+            "path": "publishing-and-peer-review/SKILL.md",
+            "sha256": "cb930f0f49f0e93b7436d096ecc494e043595ef4b25fb08cff3be774a7153966"
+          },
+          {
+            "bytes": 1567,
+            "path": "publishing-and-peer-review/checklists/response-to-reviewers.md",
+            "sha256": "45b3f2ea666e9d84a31564e957d73fe0cc03d9d59fdd6025d1ca9ff0d086fb9a"
+          },
+          {
+            "bytes": 2506,
+            "path": "publishing-and-peer-review/checklists/review-checklist.md",
+            "sha256": "8200039eefb425f4b11a8fc59f45e17ddca542ed63e362d568027ed7e7d82de5"
+          },
+          {
+            "bytes": 1888,
+            "path": "publishing-and-peer-review/checklists/submission-readiness.md",
+            "sha256": "ebf2d140eff67bc0492f234912719e59e914f834034fabda311a6e2ea85ff790"
+          },
+          {
+            "bytes": 1164,
+            "path": "publishing-and-peer-review/examples/decision-and-response-examples.md",
+            "sha256": "2197d6af1dfca887d16230e56a8ef3697c485eae44523cb33f3f5bbe5030b79f"
+          },
+          {
+            "bytes": 3572,
+            "path": "publishing-and-peer-review/examples/reviewer-comment-examples.md",
+            "sha256": "e6389befdad5474dd578adc39f45159be55ae5d9d0649e3c32a2c25eaec8fe59"
+          },
+          {
+            "bytes": 4675,
+            "path": "publishing-and-peer-review/references/editorial-process.md",
+            "sha256": "f912947701634df3637b5e4d36f9b9b08052dac721fdc25059e9368a3e1cb21f"
+          },
+          {
+            "bytes": 6014,
+            "path": "publishing-and-peer-review/references/journal-submission.md",
+            "sha256": "ad9476ad58121f96b5ff9d105371270de4f9e78b8e7b728c31d953b04878e9cc"
+          },
+          {
+            "bytes": 5979,
+            "path": "publishing-and-peer-review/references/peer-reviewing.md",
+            "sha256": "c7631dc75ff009ac69212b1058e8f484aa076444e302ddd600714130a11021f4"
+          },
+          {
+            "bytes": 5727,
+            "path": "publishing-and-peer-review/references/response-to-reviewers.md",
+            "sha256": "642b153ee63b84ef5039f25eaa1f583eae9a056c5d6b4274d97ddd607f5cbbb4"
+          },
+          {
+            "bytes": 4864,
+            "path": "publishing-and-peer-review/references/reviewer-ethics.md",
+            "sha256": "3e5ac44e3c57b25c2bc2c772c7062aba80def7e6c4f2f40b41ba79a13e2c52f2"
+          },
+          {
+            "bytes": 5386,
+            "path": "research-strategy-and-project-design/SKILL.md",
+            "sha256": "374a7a05bdf93c0b53be40b76504a9ad2243504b28f50ef6bf938059b891c250"
+          },
+          {
+            "bytes": 1357,
+            "path": "research-strategy-and-project-design/checklists/hypothesis-generation-checklist.md",
+            "sha256": "ae9370c9915a0a087d58491ef0c913ae8e42b8b4d44ab73b82b534f28e2f10d0"
+          },
+          {
+            "bytes": 1696,
+            "path": "research-strategy-and-project-design/checklists/project-triage-checklist.md",
+            "sha256": "6149b4575b29eb9cfc9f76af5e45d44fef4801cf8f6b5bf48f723a7e22082ddd"
+          },
+          {
+            "bytes": 1027,
+            "path": "research-strategy-and-project-design/examples/decision-criteria-examples.md",
+            "sha256": "390356fc0cade85ab28c22119d8d58e6155014e0cf3b88de324d59e32ce8cd3d"
+          },
+          {
+            "bytes": 2666,
+            "path": "research-strategy-and-project-design/examples/project-triage-examples.md",
+            "sha256": "e80c4ef4aa94c2a0ec2bde3cefe25150cbacabb88b4379a0fc578d0fd52af5bb"
+          },
+          {
+            "bytes": 3735,
+            "path": "research-strategy-and-project-design/references/choosing-problems.md",
+            "sha256": "19d151e3e2b4bf27bd1499dfe9063c3a077d4e8770537f4928a23e991957394a"
+          },
+          {
+            "bytes": 3029,
+            "path": "research-strategy-and-project-design/references/experiment-types.md",
+            "sha256": "6aae53967f437e10d40afcde73954420a4528117d3a3050df8dcb8b654a0d51d"
+          },
+          {
+            "bytes": 3523,
+            "path": "research-strategy-and-project-design/references/hypothesis-generation.md",
+            "sha256": "d96c611d286b37ae5abf358a412e9210b2e444375f3859ed9d0278a52f2be40b"
+          },
+          {
+            "bytes": 3248,
+            "path": "research-strategy-and-project-design/references/project-triage.md",
+            "sha256": "79254d212d247f68290091d53b45d40531e892016191599a0a5392a47735b901"
+          },
+          {
+            "bytes": 2848,
+            "path": "research-strategy-and-project-design/references/risk-and-kill-criteria.md",
+            "sha256": "b14c6663f6cb25eca502ef2502e2df02838017e9b453506be10c10fefcfa49ae"
+          },
+          {
+            "bytes": 6298,
+            "path": "scientific-communication/SKILL.md",
+            "sha256": "af59fd10f38d5d71f579dec1c6808c50eb290eefafc2d4b207881be5712b197b"
+          },
+          {
+            "bytes": 1829,
+            "path": "scientific-communication/checklists/poster-review.md",
+            "sha256": "b0ee269acd539f9467d4ff6422a551ad01dcfc1f3dc9c7313e5be5f8ad2df74b"
+          },
+          {
+            "bytes": 2079,
+            "path": "scientific-communication/checklists/talk-review.md",
+            "sha256": "10fe311b2d0dcab44c64c37e9f2c7cd275698900f8af41b53813a5d1d785b79e"
+          },
+          {
+            "bytes": 3240,
+            "path": "scientific-communication/examples/communication-feedback-examples.md",
+            "sha256": "0393ff2c9a4eb1bb75e3c10cf35179d336df81cf83f0a33fd122635c8c57e0f3"
+          },
+          {
+            "bytes": 1462,
+            "path": "scientific-communication/examples/rehearsal-and-audience-examples.md",
+            "sha256": "8cbae18e1f80a81882dc27e92e090e5c237e3f698ca29fbf15cbb93f2f22f58a"
+          },
+          {
+            "bytes": 3388,
+            "path": "scientific-communication/references/chalk-talks.md",
+            "sha256": "9bf345a15268b6a9a9b902d5d3b4510bce3067acba928071a73ff3ac62a9526e"
+          },
+          {
+            "bytes": 3720,
+            "path": "scientific-communication/references/delivery-and-qa.md",
+            "sha256": "a5cb9442006365d8943378d64773e67c0f5520001c3949cd50f492ddd55be456"
+          },
+          {
+            "bytes": 3049,
+            "path": "scientific-communication/references/elevator-pitches.md",
+            "sha256": "9f0733dcce9a6d0e258dbf7327a14819b2e8788f1255c3dbddf5f6ac02aa9a71"
+          },
+          {
+            "bytes": 3744,
+            "path": "scientific-communication/references/posters.md",
+            "sha256": "9e2eae925ce171f3afeeb60a201d29774d17e1554816fd81e92724e78c19e33d"
+          },
+          {
+            "bytes": 3917,
+            "path": "scientific-communication/references/slide-design.md",
+            "sha256": "193c5acdad679eae0e2945c5fa98c4d0fa75d28fda6bfb3bb8bfc3a59a56799d"
+          },
+          {
+            "bytes": 3147,
+            "path": "scientific-communication/references/storytelling.md",
+            "sha256": "4a7ff7479099ac46f07053c407db37737bb652532e655a5520a2776b2b53da5a"
+          },
+          {
+            "bytes": 4943,
+            "path": "scientific-communication/references/talk-structure.md",
+            "sha256": "7b567b9332a871c9c18be7edadc446511b94e2e84db62bf49d84be7d6b1c06cc"
+          },
+          {
+            "bytes": 9148,
+            "path": "scientific-feedback/SKILL.md",
+            "sha256": "e8e39a04aec23693c0ddb07077178c8edf57badabca1aeb63ac9a2cf94204a9c"
+          },
+          {
+            "bytes": 1260,
+            "path": "scientific-feedback/checklists/feedback-report-checklist.md",
+            "sha256": "73c7ec04c02cad4c442c9e89cb8fedb09e4baade5efdbcba7fc5b411a9d1ffdf"
+          },
+          {
+            "bytes": 1272,
+            "path": "scientific-feedback/checklists/manuscript-feedback-checklist.md",
+            "sha256": "a0e446eec6c31b2a3ee56f2d70790cc63604ed632d6cc9ec20bb0148f64e0f28"
+          },
+          {
+            "bytes": 993,
+            "path": "scientific-feedback/checklists/poster-feedback-checklist.md",
+            "sha256": "d5c744d15b34573c20a53319e872c7045b53f69fae93ba5ef65a0f8a69708d05"
+          },
+          {
+            "bytes": 970,
+            "path": "scientific-feedback/checklists/slide-feedback-checklist.md",
+            "sha256": "104ebb291d20e4f49401f0c723c58214603e3470661fb8f20177b2112f5d1230"
+          },
+          {
+            "bytes": 1190,
+            "path": "scientific-feedback/examples/manuscript-feedback-report.md",
+            "sha256": "5586860ffadd1da4cdf5f2400f6edde0f9fe4f3b0fe771b3e56dc8e2df9dc510"
+          },
+          {
+            "bytes": 1059,
+            "path": "scientific-feedback/examples/poster-feedback-report.md",
+            "sha256": "1ab5f7b58540a58cb0dc86a18e981c6ecdf7315058955e989ec004ae6fbfeaca"
+          },
+          {
+            "bytes": 1038,
+            "path": "scientific-feedback/examples/slide-feedback-report.md",
+            "sha256": "6f28fa2acc64b128a0c045b2bbf7574d64db975c5b6a46e6540b990c3051f596"
+          },
+          {
+            "bytes": 6536,
+            "path": "scientific-feedback/references/artifact-routing.md",
+            "sha256": "3f166abe3a16372bc23b5c9dbace566ba0770864954ba2bb7ef5854563212965"
+          },
+          {
+            "bytes": 3303,
+            "path": "scientific-feedback/references/feedback-principles.md",
+            "sha256": "aff0bbeafe64b53df30e904157bc9556d7234ca21ede63258c2df5ee9c2b5708"
+          },
+          {
+            "bytes": 3539,
+            "path": "scientific-feedback/references/review-modes.md",
+            "sha256": "f4728fbc9877684f7c8524eaa474b0b22ced98d7d44606343e9cacd9e59a4619"
+          },
+          {
+            "bytes": 3634,
+            "path": "scientific-feedback/references/tone-and-relationship.md",
+            "sha256": "74e3f1aafaecbf233536150db9960e049ec7df97c9615124dce38d07224f26f6"
+          },
+          {
+            "bytes": 7023,
+            "path": "scientific-writing/SKILL.md",
+            "sha256": "5fd7e86853d8a71031929eb1209307345904418ba8fd07058e4299f087086a7e"
+          },
+          {
+            "bytes": 1370,
+            "path": "scientific-writing/checklists/abstract-checklist.md",
+            "sha256": "1b3c26e650f6b16883612cd7df743159ad8fe97995e93b5e332edcc06cc16037"
+          },
+          {
+            "bytes": 1238,
+            "path": "scientific-writing/checklists/figure-legend-checklist.md",
+            "sha256": "b329842d20d4a0438a1ae21fbd772ded2c75b4e84046a2ec79944c4ab93c2dc1"
+          },
+          {
+            "bytes": 2571,
+            "path": "scientific-writing/checklists/manuscript-readiness.md",
+            "sha256": "c2d9e7e19b4f5df49fefbd810d4513849ae720d4e5afd8c7e4047a8b0f39034a"
+          },
+          {
+            "bytes": 864,
+            "path": "scientific-writing/examples/claim-calibration-examples.md",
+            "sha256": "3e28ed99e7bb973ce2d0b340edef8c70fa6aace645a560e8ffef8c4a95b8f411"
+          },
+          {
+            "bytes": 6361,
+            "path": "scientific-writing/examples/section-rewrite-examples.md",
+            "sha256": "e4597b0a76d497742291f9ed5f6ded773d504d0fd26a7746eb57be473c6d401d"
+          },
+          {
+            "bytes": 7177,
+            "path": "scientific-writing/references/abstracts.md",
+            "sha256": "268c0ef13ba481e163d9ff9d444183437208615acf293e1c0ca601688aa27231"
+          },
+          {
+            "bytes": 5041,
+            "path": "scientific-writing/references/authorship-and-contributions.md",
+            "sha256": "8d2304360393bd0a8067b0075cef9d39489fdf645e0408c2bcb7a671edcc5821"
+          },
+          {
+            "bytes": 5920,
+            "path": "scientific-writing/references/discussions.md",
+            "sha256": "fc58893b3bc38817107e253d94272789bb1275e357b0b70d9714d41d7b48e1b8"
+          },
+          {
+            "bytes": 4382,
+            "path": "scientific-writing/references/figure-legends.md",
+            "sha256": "893a303856c42fe8373f034742e6f69b7eb4ba83bc6fe874ece2ac6fd3afcc8b"
+          },
+          {
+            "bytes": 4660,
+            "path": "scientific-writing/references/introductions.md",
+            "sha256": "cf78e1f060a96dbd98056e491636f0cb002e15fb013157f7258832128b5543b7"
+          },
+          {
+            "bytes": 7780,
+            "path": "scientific-writing/references/paper-structure.md",
+            "sha256": "bc6f6b88ce667affaa47d4bda3313537e0535712bd0d7a2a30bebff284248056"
+          },
+          {
+            "bytes": 5721,
+            "path": "scientific-writing/references/results-sections.md",
+            "sha256": "3ce4af0f923fca06e97a1bb201f9081bd8a99a3278f89dec7bb0110c532a5629"
+          },
+          {
+            "bytes": 4721,
+            "path": "scientific-writing/references/thesis-writing.md",
+            "sha256": "4bf81262a4ec85372109971be2a11b1ef5c190b4e3d4575ff077b76d4ec2014a"
+          },
+          {
+            "bytes": 1068,
+            "path": "LICENSE",
+            "sha256": "b322fd3890175f8ae13591acc53f2a3af298ca8c8d8428bf362e7dabf357fbaf"
+          }
+        ],
+        "license_evidence": {
+          "path": "LICENSE",
+          "scope": "repository",
+          "sha256": "b322fd3890175f8ae13591acc53f2a3af298ca8c8d8428bf362e7dabf357fbaf"
+        },
+        "total_bytes": 433014
+      },
+      "license": {
+        "scope": "repository",
+        "spdx": "MIT",
+        "verified_at": "2026-09-16"
+      },
+      "name": "中文学术研究工具箱",
+      "publisher": {
+        "kind": "community",
+        "name": "JJ Froehlich",
+        "url": "https://github.com/jjfroehlich"
+      },
+      "review": {
+        "evidence": "docs/reviews/chinese-academic-research-expansion-2026-09-16.md",
+        "reviewed_at": "2026-09-16T08:30:00Z",
+        "reviewer": "暴喵市场维护者（中文科研扩容）",
+        "status": "approved"
+      },
+      "risk": {
+        "capabilities": [
+          "filesystem-read",
+          "filesystem-write",
+          "network",
+          "browser"
+        ],
+        "has_executable_files": false,
+        "level": "medium",
+        "notes_zh": "插件包仅含 Markdown；按任务可能读取论文、联网核对公开来源并在用户目录生成研究笔记，不包含安装脚本或凭证文件。"
+      },
+      "schema_version": 1,
+      "source": {
+        "commit": "9b1b256e99055006725fe4c6b8f90d301ceef7b0",
+        "entrypoint_path": "literature-reading-and-synthesis/SKILL.md",
+        "layout": "skill-bundle",
+        "license_path": "LICENSE",
+        "license_url": "https://raw.githubusercontent.com/jjfroehlich/agent-skills-for-academic-research/9b1b256e99055006725fe4c6b8f90d301ceef7b0/LICENSE",
+        "path": "skills",
+        "repository": "https://github.com/jjfroehlich/agent-skills-for-academic-research",
+        "skill_url": "https://raw.githubusercontent.com/jjfroehlich/agent-skills-for-academic-research/9b1b256e99055006725fe4c6b8f90d301ceef7b0/skills/literature-reading-and-synthesis/SKILL.md"
+      },
+      "summary_zh": "配有中文说明与默认提示，覆盖论文精读、文献综合、科研写作、研究设计、同行评审、科研图表与学术汇报的 10 项研究工作流。",
+      "tags": [
+        "论文",
+        "文献综述",
+        "科研写作",
+        "同行评审",
+        "研究设计",
+        "科研图表"
+      ]
+    },
+    {
       "category": "研发工具",
       "id": "ai-operations",
       "install": {
@@ -9026,7 +9729,7 @@
   ],
   "marketplace": {
     "client_contract": "docs/client-contract.md",
-    "generated_at": "2026-08-14T08:00:00Z",
+    "generated_at": "2026-08-14T00:00:00Z",
     "id": "baomiao-codex-skills",
     "name_zh": "暴喵 Codex 插件市场",
     "review_policy": "human-approved-only"

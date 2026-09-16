@@ -145,6 +145,7 @@ function render() {
   const more = document.querySelector("#load-more");
   more.hidden = rendered.length >= visible.length;
   more.textContent = `继续显示（还剩 ${Math.max(0, visible.length - rendered.length)} 个）`;
+  renderOfficialFeatured();
 }
 
 function bindFilters() {
@@ -348,7 +349,14 @@ function validateFederatedDescriptor(descriptor) {
   const docsUrl = new URL(provenance.documentation);
   if (docsUrl.protocol !== "https:" || docsUrl.hostname !== "learn.chatgpt.com") throw new Error("官方文档地址无效");
   if (boundaries.mirror_packages !== false || boundaries.availability !== "account-and-product-dependent" || boundaries.credentials_handled_by !== "codex" || boundaries.count_mode !== "runtime") throw new Error("官方来源边界无效");
-  if (!Array.isArray(source.featured_plugins) || source.featured_plugins.length < 1 || !source.featured_plugins.every((plugin) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(plugin.id))) throw new Error("官方插件示例无效");
+  if (!Array.isArray(source.featured_plugins) || source.featured_plugins.length < 1 || !source.featured_plugins.every((plugin) =>
+    /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(plugin.id) &&
+    typeof plugin.name === "string" && plugin.name.length > 0 &&
+    typeof plugin.name_zh === "string" && plugin.name_zh.length > 0 &&
+    typeof plugin.summary_zh === "string" && plugin.summary_zh.length >= 8 &&
+    Array.isArray(plugin.search_terms_zh) && plugin.search_terms_zh.length > 0 &&
+    typeof plugin.requires_connection === "boolean"
+  )) throw new Error("官方插件示例无效");
   if (!Array.isArray(boundaries.notes_zh) || boundaries.notes_zh.length < 2) throw new Error("官方来源说明不完整");
   return source;
 }
@@ -359,18 +367,36 @@ function renderFederatedSource(source) {
   const status = document.querySelector("#official-source-status");
   status.className = "source-state source-state-native";
   status.textContent = "Codex 原生 · 动态";
-  const featured = document.querySelector("#official-featured");
-  featured.replaceChildren(...source.featured_plugins.map((plugin) => {
-    const item = element("li");
-    item.append(element("strong", "", plugin.name), element("small", "", plugin.category_zh));
-    return item;
-  }));
+  renderOfficialFeatured();
   document.querySelector("#official-boundary").textContent = source.boundaries.notes_zh.join(" ");
   document.querySelector("#official-command").textContent = source.access.command.display;
   document.querySelector("#official-docs").href = source.provenance.documentation;
   document.querySelector("#official-provenance").textContent = `历史示例仓库已于 ${source.provenance.archived_at} 归档，仅作来源证据，不作为安装回退。`;
   document.querySelector("#copy-official-command").disabled = false;
   document.querySelector("#sources").setAttribute("aria-busy", "false");
+}
+
+function renderOfficialFeatured() {
+  if (!federatedState.source) return;
+  const featured = document.querySelector("#official-featured");
+  const plugins = federatedState.source.featured_plugins.filter((plugin) => {
+    const haystack = [plugin.name, plugin.name_zh, plugin.category_zh, plugin.summary_zh, ...plugin.search_terms_zh].join(" ");
+    return matchesQuery(haystack);
+  });
+  if (!plugins.length) {
+    featured.replaceChildren(element("li", "official-empty", "官方推荐中没有匹配项；暴喵精选结果仍显示在下方。"));
+    return;
+  }
+  featured.replaceChildren(...plugins.map((plugin) => {
+    const item = element("li");
+    const copy = element("div", "official-plugin-copy");
+    copy.append(element("strong", "", plugin.name_zh), element("p", "", plugin.summary_zh));
+    const meta = element("div", "official-plugin-meta");
+    meta.append(element("small", "", plugin.category_zh));
+    if (plugin.requires_connection) meta.append(element("small", "official-connect", "在 Codex 中连接"));
+    item.append(copy, meta);
+    return item;
+  }));
 }
 
 function failFederatedSource() {

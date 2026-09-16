@@ -171,6 +171,19 @@
       "policy": "candidate-only",
       "max_file_bytes": 524288,
       "allow_executable_files": false
+    },
+    {
+      "id": "academic-research-community",
+      "repository": "https://github.com/jjfroehlich/agent-skills-for-academic-research",
+      "api_repository": "https://api.github.com/repos/jjfroehlich/agent-skills-for-academic-research",
+      "content_kind": "skill-bundle",
+      "allowed_paths": ["skills"],
+      "package_ids": {"skills": "academic-research-toolkit"},
+      "license_files": ["LICENSE"],
+      "license_scope": "repository",
+      "policy": "candidate-only",
+      "max_file_bytes": 524288,
+      "allow_executable_files": false
     }
   ]
 }

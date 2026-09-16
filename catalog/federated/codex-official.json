@@ -32,14 +32,114 @@
         "archived_at": "2026-08-16"
       },
       "featured_plugins": [
-        {"id": "github", "name": "GitHub", "category_zh": "开发工具"},
-        {"id": "figma", "name": "Figma", "category_zh": "设计"},
-        {"id": "notion", "name": "Notion", "category_zh": "效率"},
-        {"id": "google-drive", "name": "Google Drive", "category_zh": "效率"},
-        {"id": "vercel", "name": "Vercel", "category_zh": "开发工具"},
-        {"id": "slack", "name": "Slack", "category_zh": "沟通"},
-        {"id": "supabase", "name": "Supabase", "category_zh": "开发工具"},
-        {"id": "zotero", "name": "Zotero", "category_zh": "研究"}
+        {
+          "id": "scispace",
+          "name": "SciSpace",
+          "name_zh": "SciSpace 论文检索",
+          "category_zh": "论文科研",
+          "summary_zh": "搜索论文并按摘要、方法、结果和结论整理成可筛选表格。",
+          "search_terms_zh": ["论文", "文献", "检索", "综述", "研究"],
+          "requires_connection": true
+        },
+        {
+          "id": "consensus",
+          "name": "Consensus",
+          "name_zh": "Consensus 学术证据",
+          "category_zh": "论文科研",
+          "summary_zh": "从同行评审论文中检索、综合证据并生成带出处的研究结果。",
+          "search_terms_zh": ["论文", "证据", "综述", "引用", "学术"],
+          "requires_connection": true
+        },
+        {
+          "id": "sider-scholar",
+          "name": "Sider Scholar",
+          "name_zh": "Sider Scholar 论文助手",
+          "category_zh": "论文科研",
+          "summary_zh": "搜索论文、阅读研究 PDF，并把结果保存到个人研究知识库。",
+          "search_terms_zh": ["论文", "PDF", "知识库", "文献", "研究"],
+          "requires_connection": true
+        },
+        {
+          "id": "scite",
+          "name": "Scite",
+          "name_zh": "Scite 引文核验",
+          "category_zh": "论文科研",
+          "summary_zh": "查看论文引用语境和引用关系，辅助核验参考文献是否支持主张。",
+          "search_terms_zh": ["引文", "引用", "参考文献", "核验", "论文"],
+          "requires_connection": true
+        },
+        {
+          "id": "elicit",
+          "name": "Elicit",
+          "name_zh": "Elicit 文献综述",
+          "category_zh": "论文科研",
+          "summary_zh": "检索文献、提取研究字段并生成结构化证据报告。",
+          "search_terms_zh": ["文献综述", "论文", "证据", "报告", "检索"],
+          "requires_connection": true
+        },
+        {
+          "id": "google-drive",
+          "name": "Google Drive",
+          "name_zh": "Google 文档与表格",
+          "category_zh": "办公效率",
+          "summary_zh": "在一个入口中处理 Drive、文档、表格和演示文稿。",
+          "search_terms_zh": ["网盘", "文档", "表格", "幻灯片", "办公"],
+          "requires_connection": true
+        },
+        {
+          "id": "canva",
+          "name": "Canva",
+          "name_zh": "Canva 设计",
+          "category_zh": "设计创作",
+          "summary_zh": "创建、修改和检查 Canva 设计，支持品牌与社交媒体尺寸。",
+          "search_terms_zh": ["设计", "海报", "社交媒体", "品牌", "图片"],
+          "requires_connection": true
+        },
+        {
+          "id": "todoist",
+          "name": "Todoist",
+          "name_zh": "Todoist 待办",
+          "category_zh": "办公效率",
+          "summary_zh": "用自然语言创建待办、周期任务并管理个人或团队项目。",
+          "search_terms_zh": ["待办", "任务", "日历", "提醒", "效率"],
+          "requires_connection": true
+        },
+        {
+          "id": "gamma",
+          "name": "Gamma",
+          "name_zh": "Gamma 演示与文档",
+          "category_zh": "办公效率",
+          "summary_zh": "把想法或报告制作成演示文稿、文档、网页和社交内容。",
+          "search_terms_zh": ["PPT", "演示", "文档", "网页", "汇报"],
+          "requires_connection": true
+        },
+        {
+          "id": "dropbox",
+          "name": "Dropbox",
+          "name_zh": "Dropbox 文件",
+          "category_zh": "文件管理",
+          "summary_zh": "查找、引用和保存 Dropbox 文件，并创建分享链接。",
+          "search_terms_zh": ["网盘", "文件", "搜索", "分享", "存储"],
+          "requires_connection": true
+        },
+        {
+          "id": "figma",
+          "name": "Figma",
+          "name_zh": "Figma 设计协作",
+          "category_zh": "设计创作",
+          "summary_zh": "读取设计上下文、检查界面并协助把设计落实为产品。",
+          "search_terms_zh": ["设计", "界面", "原型", "协作", "前端"],
+          "requires_connection": true
+        },
+        {
+          "id": "wolfram",
+          "name": "Wolfram",
+          "name_zh": "Wolfram 计算",
+          "category_zh": "数据计算",
+          "summary_zh": "进行数学、科学与结构化知识计算，适合公式和数据问题。",
+          "search_terms_zh": ["数学", "计算", "公式", "科学", "数据"],
+          "requires_connection": true
+        }
       ],
       "boundaries": {
         "mirror_packages": false,
